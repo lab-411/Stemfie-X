@@ -11,16 +11,16 @@ kernelspec:
   language: python
   name: python3
 ---
-# <font color='navy'> <b> Vlastnosti </b> </font>
+# <font color='navy'> <b> Diely </b> </font>
 
 
 ```{figure} ./img/banner.png
 :width: 800px
 ```
 
-## <font color='navy'> <b> Parametre </b> </font>
+## <font color='navy'> <b> Parametre  </b> </font>
 
-Vlastnosti dielov stavebnice `STEMFIE-X` definuje základná jednotka BU (Basic Unit) a priemer montážnych otvorov HR (Hole Radius). Rozmery dielov sú udávané v násobkoch alebo podieloch BU.
+Vlastnosti dielov stavebnice `STEMFIE-X` definuje základná jednotka **BU** (Basic Unit) a priemer montážnych otvorov **HR** (Hole Radius). Rozmery dielov sú udávané v násobkoch alebo podieloch BU.
 
 ```{figure} ./img/brace_rozmery.png
 :width: 350px
@@ -36,3 +36,43 @@ Diely sú vytlačené na 3D tlačiarni z materiálu PLA. Na rozdiel od stavební
 * hrúbka dielov H je 1, 1/2, 1/4 BU
 
 
+
+## <font color='navy'> <b> Spojky  </b> </font>
+
+```{figure} ./img/image_brace.png
+:width: 600px
+
+Spojky
+```
+
+## <font color='navy'> <b> Bloky </b> </font>
+
+```{figure} ./img/image_block.png
+:width: 600px
+
+Spojky
+```
+
+## <font color='navy'> <b> Kladky </b> </font>
+
+```{figure} ./img/image_pulley.png
+:width: 600px
+
+Kladky
+```
+
+## <font color='navy'> <b> Ozubené kolesá </b> </font>
+
+```{figure} ./img/gears_demo.png
+:width: 600px
+
+Ozubené kolesá
+```
+
+## <font color='navy'> <b> Základné bloky </b> </font>
+
+```{figure} ./img/image_base.png
+:width: 600px
+
+Základné bloky
+```

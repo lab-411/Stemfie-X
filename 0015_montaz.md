@@ -12,7 +12,7 @@ kernelspec:
   name: python3
 ---
 
-# <font color='navy'> <b> Montáž </b> </font>
+# <font color='navy'> <b> Montážne postupy  </b> </font>
 
 
 ```{figure} ./img/banner.png
