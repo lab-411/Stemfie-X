@@ -1,0 +1,624 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Spojky &#8212; Stemfie-X 0.1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=e1a75a79"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '0520_prg_brace';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Inštalácia" href="0500_prg_instalacia.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo_411.png" class="logo__image only-light" alt="Stemfie-X 0.1 documentation - Home"/>
+    <script>document.write(`<img src="_static/logo_411.png" class="logo__image only-dark" alt="Stemfie-X 0.1 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Úvod</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0005_uvod.html"><font color="navy"> <b> Vlastnosti </b> </font></a></li>
+<li class="toctree-l1"><a class="reference internal" href="0010_komponenty.html"><font color="navy"> <b> Diely </b> </font></a></li>
+<li class="toctree-l1"><a class="reference internal" href="0015_montaz.html"><font color="navy"> <b> Montáž  </b> </font></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Jednoduché konštrukcie</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0210_exm_bridge.html"><font color="navy"> <b> Priehradový most </b> </font></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Programovanie</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0500_prg_instalacia.html"><font color="navy"> <b> Inštalácia</b> </font></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><font color="navy"> <b> Spojky </b> </font></a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/0520_prg_brace.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><font color='navy'> <b> Spojky </b> </font></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funkcie"><font color="purple"> <b> Funkcie </b></font></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#znacenie-dielov"><font color="brown"> <b> Značenie dielov </b></font></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pouzitie"><font color="purple"> <b> Použitie </b></font></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spojka-so-strbinami"><font color="brown"> <b> Spojka so štrbinami </b></font></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oblukova-spojka"><font color="brown"> <b> Oblúková spojka </b></font></a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="spojky">
+<h1><font color='navy'> <b> Spojky </b> </font><a class="headerlink" href="#spojky" title="Link to this heading">#</a></h1>
+<figure class="align-default" id="stmx-112">
+<a class="reference internal image-reference" href="_images/banner.png"><img alt="_images/banner.png" src="_images/banner.png" style="width: 800px;" />
+</a>
+</figure>
+<figure class="align-default" id="stmx-110">
+<a class="reference internal image-reference" href="_images/image_brace.png"><img alt="_images/image_brace.png" src="_images/image_brace.png" style="width: 800px;" />
+</a>
+</figure>
+<p><strong>Spojky</strong> (Brace) sú základným konštrukčným typom dielov v <em>Stemfie-X</em> primárne určený pre spájanie dielov, ale je možné ich využiť aj ako konštrukčný prvok na vytváranie vystužených konštrukcií ako sú ramená žeriavov, robotov a pod. Spojky môžu obsahovať montážne otvory ako aj štrbiny. Štandardná hrúbka spojky je 1/4 <strong>BU</strong> (2.5mm), pomocou knižnice je možné programovo vytvárať spojky rôznych tvarov a konfigurácií. Lineárna spojka je rozmerovo kompatibilná s kovovými spojkami stavebníc <em>Meccano</em> a <em>Merkur</em>.</p>
+<section id="funkcie">
+<h2><font color='purple'> <b> Funkcie </b></font><a class="headerlink" href="#funkcie" title="Link to this heading">#</a></h2>
+<p>Základným typom je lineárna spojka <em>Brace</em>, oblúková spojka <em>Brace_Arc</em> a kruhová spojka <em>Brace_Circle</em>. Funkcie pre generovanie spojok majú formát</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Brace(size, height, holes, center)
+Brace_Arc(radius, angle, height, num_holes, center)
+Brace_Circle(radius, height, num_holes, center)
+
+Parametre       Default   Popis 
+--------------------------------------------------------------
+size            1         rozmery v počte otvorov 
+height          1         výška
+length          1         dĺžka 
+radius          5         polomer
+holes           True      lineárna spojka s otvormi / bez otvorov
+num_holes       4         počet montážnych otvorov
+angle           180       uhol v stupňoch
+center          True      poloha v strede súradnicovej sústavy 
+</pre></div>
+</div>
+<section id="znacenie-dielov">
+<h3><font color='brown'> <b> Značenie dielov </b></font><a class="headerlink" href="#znacenie-dielov" title="Link to this heading">#</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>brace_t_dd_hh_pp_ss[s]    basic form
+brace_t_dd_hh_pp          abbreviated forms, unlisted parameters have default values
+brace_t_dd_hh
+brace_t_dd
+
+t  - brace type                            dd - brace size               hh - brace height
+     B - simple brace                           01 ... 99 BU                  01 =    1 BU
+     C - circle brace                                                         ...
+     A - arc brace                                                            10 =   10 BU
+     X - user defined non standard brace                                      12 =  1/2 BU 
+                                                                              14 =  1/4 BU
+    
+ss - number of slots                       pp - number of holes if it does not match the size
+     00 ... 99                                  00 ... 99
+
+    
+brace_B_dd_hh_pp_ss
+    dd - brace size
+    pp - number of holes
+    ss - number of slots 
+    
+brace_C_dd_hh_pp_ss
+    dd - brace radius
+    hh - brace height     
+    pp - number of holes
+    ss - number of slots (TODO, not implemented)
+
+brace_A_dd_hh_pp_sss
+    dd  - brace radius
+    hh  - brace height, default value is 1/4 BU      
+    pp  - number of holes
+    sss - brace angle in [deg] 001 ... 180
+</pre></div>
+</div>
+</section>
+</section>
+<section id="pouzitie">
+<h2><font color='purple'> <b> Použitie </b></font><a class="headerlink" href="#pouzitie" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">lib</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">b</span> <span class="o">=</span> <span class="n">Brace</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">SVG</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">obj</span><span class="o">.</span><span class="n">toSvg</span><span class="p">()))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/23173bbfcf1a4de3dc865a111c817ac79b0627361ef0825f775514f75a340cbe.svg" src="_images/23173bbfcf1a4de3dc865a111c817ac79b0627361ef0825f775514f75a340cbe.svg" />
+</div>
+</div>
+<section id="spojka-so-strbinami">
+<h3><font color='brown'> <b> Spojka so štrbinami </b></font><a class="headerlink" href="#spojka-so-strbinami" title="Link to this heading">#</a></h3>
+<p>Štrbiny požadovanej dĺžky vytvoríme pomocou triedy <code class="docutils literal notranslate"><span class="pre">Hole_Slot</span></code> a posunieme ich pomocou operátora <strong>BU_Tx</strong> na potrebnú pozíciu.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">lib</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="k">class</span> <span class="nc">Brace_B_17_14_13_02</span><span class="p">(</span><span class="n">Stemfie_X</span><span class="p">):</span>   <span class="c1"># length 17 BU , 1/4 BU height, 14 holes, 2 slots </span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>        
+        <span class="n">b1</span> <span class="o">=</span> <span class="n">Brace</span><span class="p">(</span><span class="mi">17</span><span class="p">,</span> <span class="n">holes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">h1</span> <span class="o">=</span> <span class="n">Hole_Slot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">BU_Tx</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span>
+        <span class="n">h2</span> <span class="o">=</span> <span class="n">Hole_Slot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">BU_Tx</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+        <span class="n">b1</span><span class="o">.</span><span class="n">D</span><span class="p">([</span><span class="n">h1</span><span class="p">,</span> <span class="n">h2</span><span class="p">]</span> <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">obj</span> <span class="o">=</span> <span class="n">b1</span><span class="o">.</span><span class="n">obj</span>
+        
+<span class="n">b10</span> <span class="o">=</span> <span class="n">Brace_B_17_14_13_02</span><span class="p">()</span>
+<span class="n">display</span><span class="p">(</span><span class="n">SVG</span><span class="p">(</span><span class="n">b10</span><span class="o">.</span><span class="n">obj</span><span class="o">.</span><span class="n">toSvg</span><span class="p">()))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/5576a923f5e4d0985823ad9ba1cda675dc522912de8c277abd0a2b5c7952b3f7.svg" src="_images/5576a923f5e4d0985823ad9ba1cda675dc522912de8c277abd0a2b5c7952b3f7.svg" />
+</div>
+</div>
+</section>
+<section id="oblukova-spojka">
+<h3><font color='brown'> <b> Oblúková spojka </b></font><a class="headerlink" href="#oblukova-spojka" title="Link to this heading">#</a></h3>
+<p>Výpočet oblúkovej spojky pri zadanej polohe počatku, konca oblúka a polomeru oblúka. Príklad pre</p>
+<ul class="simple">
+<li><p>radius = 4 BU</p></li>
+<li><p>brace length = 7 BU</p></li>
+</ul>
+<figure class="align-default" id="id1">
+<a class="reference internal image-reference" href="_images/comp_11.png"><img alt="_images/comp_11.png" src="_images/comp_11.png" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Obr. 19 </span><span class="caption-text">Oblúková a lineárna spojka</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Výpočet uhla a offsetu uhlovej spojky</p>
+<figure class="align-default" id="id2">
+<a class="reference internal image-reference" href="_images/tetiva.png"><img alt="_images/tetiva.png" src="_images/tetiva.png" style="width: 300px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Obr. 20 </span><span class="caption-text">Tetiva oblúku</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>R    - circle radius, in BU units
+D    - chord length in BU units, D &gt;= 2*R+1
+
+beta - calculated angle
+H    - calculated offset
+</pre></div>
+</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+\beta &amp;= 2 \alpha      \\
+\\
+\frac{D-1}{2} &amp;= R \cdot \sin(\alpha)    \\
+\\
+\beta &amp;= 2 \alpha = 2 \cdot \arcsin \Big( \frac{D}{2R} \Big) \\
+H &amp;= R \cdot cos(\alpha) \\
+\end{align*}
+\end{split}\]</div>
+<p>Konštrukcia uhlovej spojky</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">lib</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">arcsin</span><span class="p">,</span> <span class="n">pi</span>
+
+<span class="n">D</span> <span class="o">=</span> <span class="mi">7</span>   <span class="c1"># D &gt;= 2*R+1  </span>
+<span class="n">R</span> <span class="o">=</span> <span class="mi">3</span>   <span class="c1"># arc radius</span>
+
+<span class="n">alpha</span> <span class="o">=</span> <span class="n">arcsin</span><span class="p">(</span> <span class="p">(</span><span class="n">D</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">R</span> <span class="p">)</span> <span class="p">)</span>
+<span class="n">beta</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">alpha</span>
+<span class="n">H</span> <span class="o">=</span> <span class="n">R</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span>
+<span class="n">bdeg</span> <span class="o">=</span> <span class="n">beta</span><span class="o">/</span><span class="n">pi</span><span class="o">*</span><span class="mi">180</span>     <span class="c1"># convert rad -&gt; deg</span>
+
+<span class="n">h</span> <span class="o">=</span> <span class="n">R</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span>
+<span class="n">br1</span> <span class="o">=</span> <span class="n">Brace_Arc</span><span class="p">(</span><span class="n">R</span><span class="p">,</span> <span class="n">bdeg</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">Rz</span><span class="p">(</span><span class="mi">90</span><span class="o">-</span><span class="n">bdeg</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">BU_T</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="n">H</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="n">bb4</span> <span class="o">=</span> <span class="n">Brace</span><span class="p">(</span><span class="n">D</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">BU_Tz</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">br1</span><span class="o">.</span><span class="n">U</span><span class="p">(</span><span class="n">bb4</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">SVG</span><span class="p">(</span><span class="n">br1</span><span class="o">.</span><span class="n">obj</span><span class="o">.</span><span class="n">toSvg</span><span class="p">()))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/2e4db467f739bef364b2d4284557c89674a4098c686eee85adf516c8454db373.svg" src="_images/2e4db467f739bef364b2d4284557c89674a4098c686eee85adf516c8454db373.svg" />
+</div>
+</div>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="0500_prg_instalacia.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><font color='navy'> <b> Inštalácia</b> </font></p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funkcie"><font color="purple"> <b> Funkcie </b></font></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#znacenie-dielov"><font color="brown"> <b> Značenie dielov </b></font></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pouzitie"><font color="purple"> <b> Použitie </b></font></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spojka-so-strbinami"><font color="brown"> <b> Spojka so štrbinami </b></font></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oblukova-spojka"><font color="brown"> <b> Oblúková spojka </b></font></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By pf
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025, pf.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

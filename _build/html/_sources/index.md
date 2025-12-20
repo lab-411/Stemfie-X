@@ -27,5 +27,16 @@
 0015_montaz.md
 ```
 
+```{toctree}
+:titlesonly: True
+:caption: Jednoduché konštrukcie
+0210_exm_bridge.md
+```
 
+```{toctree}
+:titlesonly: True
+:caption: Programovanie
+0500_prg_instalacia.md
+0520_prg_brace.md
+```
 

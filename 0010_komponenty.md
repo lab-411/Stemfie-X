@@ -18,50 +18,79 @@ kernelspec:
 :width: 800px
 ```
 
-## <font color='navy'> <b> Parametre  </b> </font>
+## <font color='purple'> <b> Parametre  </b> </font>
 
 Vlastnosti dielov stavebnice `STEMFIE-X` definuje základná jednotka **BU** (Basic Unit) a priemer montážnych otvorov **HR** (Hole Radius). Rozmery dielov sú udávané v násobkoch alebo podieloch BU.
 
 ```{figure} ./img/brace_rozmery.png
 :width: 350px
 
-Základné parametre dielov.
+Základné parametre dielov (spojka, D=8, H=1/4).
 ```
 
-Diely sú vytlačené na 3D tlačiarni z materiálu PLA. Na rozdiel od stavebníc, ktoré majú diely z plechu, musíme pri našich konštrukciách uvažovať hrúbku dielov. Všeobecné parametre stavebnice
+Na rozdiel od stavebníc, ktoré majú diely z plechu, musíme pri našich konštrukciách uvažovať hrúbku dielov. Štandardné parametre dielov sú
 
-* veľkost BU je 10mm
-* priemer montážnych otvorov HR je 4mm
-* veľkost dielov D je celočíselná 1,2 ... BU 
-* hrúbka dielov H je 1, 1/2, 1/4 BU
+* veľkost **BU** je 10mm
+* priemer montážnych otvorov **HR** je 4mm
+* veľkost dielov **D** je celočíselná v násobkoch 1,2 ... **BU** 
+* hrúbka dielov **H** je 1, 1/2, 1/3, 1/4 **BU**
+
+Pre jednoduchšiu orientáciu sú diely stavebnice označené typom, ktorý vychádza z ich tvaru a rozmerov. 
+
+### <font color='brown'> <b> 3D Tlač   </b> </font>
+
+Doporučené parametre 3D tlače upravte podľa vašej tlačiarne a použitého materiálu. Diely stavebnice sú v tejto pulikácii generované vo formáte *.step* alebo *.stl*, pre ich tlač použite programové vybavenie doporučované výrobcom tlačiarne.  
+
+* materiál PLA
+* hrúbka vrstvy 0.2mm, bez podpier
+* perimeter 4x
+* výplň 15%
+* teplota a rýchlosť tlače podľa doporučenia výrobcu filamentu
+
+```{figure} ./img/slicer.png
+:width: 500px
+
+Príprava tlače dielov stavebnice.
+```
 
 
+## <font color='purple'> <b> Prehľad dielov stavebnice </b> </font>
 
-## <font color='navy'> <b> Spojky  </b> </font>
+Sada základných typov dielov stavebnice pre konštrukcie v *Stemfie-X* je vygenerovaná vo formáte *.step* a *.stl* pripravených pre 3D tlač. Súčasťou stavebnice sú knižnice pre programovací jazyk *Python*, v ktorom je možné vytvárať si vlastné verzie dielov stavebnice.   
+
+### <font color='brown'> <b> Spojky  </b> </font>
+
+Spojky (Brace) sú základným typom dielov stavebnice, slúžia na spájanie častí konštrukcie, konštrukcie nosníkov a podpôr. V závislosti od použitia môžu mať rôzny tvar, hrúbku a počet montážnych otvorov. V niektorých prípadoch môžu byť dva lebo aj viacej otvorov nahradených montážnou štrbinou.
 
 ```{figure} ./img/image_brace.png
 :width: 600px
 
-Spojky
+Prevedenia spojok.
 ```
 
-## <font color='navy'> <b> Bloky </b> </font>
+### <font color='brown'> <b> Nosníky </b> </font>
+
+Nosníky (Beams) slúžia na konštrukciu nosných prvkov konštrukcií, základových platní a konštrukčných prvkov tam, kde sa vyžaduje zvýšená pevnosť alebo nosnosť.
 
 ```{figure} ./img/image_block.png
 :width: 600px
 
-Spojky
+Rozne prevedenia blokov.
 ```
 
-## <font color='navy'> <b> Kladky </b> </font>
+### <font color='brown'> <b> Kladky </b> </font>
+
+Kladky a držiaky kladiek slúžia na konštrukciu jednoduchých strojov, lanových prevodov a  kladkostrojov.
 
 ```{figure} ./img/image_pulley.png
 :width: 600px
 
-Kladky
+Kladky a držiaky kladiek.
 ```
 
-## <font color='navy'> <b> Ozubené kolesá </b> </font>
+### <font color='brown'> <b> Ozubené kolesá </b> </font>
+
+Ozubené kolesá sú základom pre konštrukciu prevodoviek k motorom a servám. 
 
 ```{figure} ./img/gears_demo.png
 :width: 600px
@@ -69,7 +98,9 @@ Kladky
 Ozubené kolesá
 ```
 
-## <font color='navy'> <b> Základné bloky </b> </font>
+### <font color='brown'> <b> Základné bloky </b> </font>
+
+Základné bloky sú podkladom pre konštrukciu vlastných neštandardných prvkov stavebnice.
 
 ```{figure} ./img/image_base.png
 :width: 600px

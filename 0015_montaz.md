@@ -12,15 +12,16 @@ kernelspec:
   name: python3
 ---
 
-# <font color='navy'> <b> Montážne postupy  </b> </font>
+# <font color='navy'> <b> Montáž  </b> </font>
 
 
 ```{figure} ./img/banner.png
 :width: 800px
 ```
 
+Pre pevné nepohyblivé spoje dielov môžeme použiť bežné dostupné skrutky, nastavovacie skrutky, závitové tyče s rozmerom M4. Pre pohyblivé spoje, osi, hriadele môžeme použiť tyče, paličky s priemerom 4mm, podľa potreby a použitia kovové, plastové alebo aj drevené. 
 
-## <font color='purple'> <b> Spájanie dielov </b> </font>
+## <font color='purple'> <b> Pevné spoje </b> </font>
 
 
 ### <font color='brown'> <b> Skrutkové spoje </b> </font>
@@ -34,6 +35,12 @@ Vhodné typy skrutiek sa vyrábajú pod normovaným označením
 * DIN934  Šesťhranná matica 
 * DIN439  Šesťhranná matica, nízky profil
 
+```{figure} ./img/m4_912_screew.jpg
+:width: 250px
+
+Označenie skrutiek DIN912.
+```
+
 Pri nákupe väčšieho množstva môže byť cena veľmi prijateľná, závisí od povrchovej úpravy. Ak chcete konštrukcie používať vo vonkajšom prostredí, zvoľte pozinkované prevedenie. Okrem kovových skrytiek môžete použiť aj plastové skrutky a matice z nylonu, ich cena je ale zvyčajne vyššia. Ako montážne náradie pre skrutky s vnútorným šesťhranom sú vhodné imbusové kľúče dostupné v sade alebo aj jednotlivo. 
 
 Na spájanie tenkých prvkov (napríklad dve spojky s hrúbkou BU=1/4) je vhodné použiť skrutku s maticou, podobne ako v prípade kovových stavebníc. 
@@ -41,10 +48,9 @@ Na spájanie tenkých prvkov (napríklad dve spojky s hrúbkou BU=1/4) je vhodn�
 ```{figure} ./img/asm_01.png
 :width: 600px
 
-
 Spájanie tenkých prvkov pomocou skrutky a matice.
 ```
-Na spájanie hrubších dielov (BU = 1/2 a viac) môžeme využiť fakt, že otvory v 3D tlačených prvkoch sú zvyčajne o niečo menšie ako stanovený priemer HR a skrutky si v nich vyrežú vlastný závit.
+Na spájanie hrubších dielov (BU = 1/2 a viac) môžeme využiť fakt, že otvory v 3D tlačených prvkoch sú zvyčajne o niečo menšie ako stanovený priemer HR a skrutky si v nich vyrežú vlastný závit, nie je potrebné použiť maticu.
 
 ```{figure} ./img/asm_02.png
 :width: 600px
@@ -61,9 +67,26 @@ Vhodné typy nastavovacích skrutiek sa vyrábajú pod normovaným označením
 * DIN 913 Nastavovacia skrutka s plochým hrotom
 * DIN 916 Závitový kolík
 
+
+```{figure} ./img/m4_913_cervik.jpg
+:width: 250px
+
+Označenie nastavovacích skrutiek DIN913.
+```
+
 ```{figure} ./img/asm_04.png
 :width: 600px
 
 Použitie nastavovacích skrutiek.
+```
+
+### <font color='brown'> <b> Spojovací materiál </b></font>
+
+Pre niektoré konštrukcie môžeme pre spájanie dielov využiť aj rôzne stĺpiky s vnútorným alebo vonkajším závitom M4, dostupné v rôznych dĺžkach, kovové alebo plastové.
+
+```{figure} ./img/stlpiky.png
+:width: 600px
+
+Použitie stlpikov.
 ```
 

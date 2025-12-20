@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Montážne postupy &#8212; Stemfie-X 0.1 documentation</title>
+    <title>Montáž &#8212; Stemfie-X 0.1 documentation</title>
   
   
   
@@ -30,7 +30,7 @@
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -49,6 +49,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = '0015_montaz';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Priehradový most" href="0210_exm_bridge.html" />
     <link rel="prev" title="Diely" href="0010_komponenty.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -161,9 +162,18 @@
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Úvod</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="0005_uvod.html"><font color="navy"> <b> Stemfie-X </b> </font></a></li>
+<li class="toctree-l1"><a class="reference internal" href="0005_uvod.html"><font color="navy"> <b> Vlastnosti </b> </font></a></li>
 <li class="toctree-l1"><a class="reference internal" href="0010_komponenty.html"><font color="navy"> <b> Diely </b> </font></a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#"><font color="navy"> <b> Montážne postupy  </b> </font></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><font color="navy"> <b> Montáž  </b> </font></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Jednoduché konštrukcie</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0210_exm_bridge.html"><font color="navy"> <b> Priehradový most </b> </font></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Programovanie</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0500_prg_instalacia.html"><font color="navy"> <b> Inštalácia</b> </font></a></li>
+<li class="toctree-l1"><a class="reference internal" href="0520_prg_brace.html"><font color="navy"> <b> Spojky </b> </font></a></li>
 </ul>
 
     </div>
@@ -302,7 +312,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><font color='navy'> <b> Montážne postupy  </b> </font></h1>
+    <h1><font color='navy'> <b> Montáž  </b> </font></h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -312,9 +322,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spajanie-dielov"><font color="purple"> <b> Spájanie dielov </b> </font></a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pevne-spoje"><font color="purple"> <b> Pevné spoje </b> </font></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skrutkove-spoje"><font color="brown"> <b> Skrutkové spoje </b> </font></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skryte-spoje"><font color="brown"> <b> Skryté spoje </b></font></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spojovaci-material"><font color="brown"> <b> Spojovací materiál </b></font></a></li>
 </ul>
 </li>
 </ul>
@@ -328,14 +339,15 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="montazne-postupy">
-<h1><font color='navy'> <b> Montážne postupy  </b> </font><a class="headerlink" href="#montazne-postupy" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="montaz">
+<h1><font color='navy'> <b> Montáž  </b> </font><a class="headerlink" href="#montaz" title="Link to this heading">#</a></h1>
 <figure class="align-default">
 <a class="reference internal image-reference" href="_images/banner.png"><img alt="_images/banner.png" src="_images/banner.png" style="width: 800px;" />
 </a>
 </figure>
-<section id="spajanie-dielov">
-<h2><font color='purple'> <b> Spájanie dielov </b> </font><a class="headerlink" href="#spajanie-dielov" title="Link to this heading">#</a></h2>
+<p>Pre pevné nepohyblivé spoje dielov môžeme použiť bežné dostupné skrutky, nastavovacie skrutky, závitové tyče s rozmerom M4. Pre pohyblivé spoje, osi, hriadele môžeme použiť tyče, paličky s priemerom 4mm, podľa potreby a použitia kovové, plastové alebo aj drevené.</p>
+<section id="pevne-spoje">
+<h2><font color='purple'> <b> Pevné spoje </b> </font><a class="headerlink" href="#pevne-spoje" title="Link to this heading">#</a></h2>
 <section id="skrutkove-spoje">
 <h3><font color='brown'> <b> Skrutkové spoje </b> </font><a class="headerlink" href="#skrutkove-spoje" title="Link to this heading">#</a></h3>
 <p>Ako štandardné spojovacie prvky skrutkových spojov môžete použiť bežné kovové skrutky a matice M4, ktoré sú dostupné v každom železiarstve alebo špecializovanom obchode so spojovacím materiálom. Skrutky sú dostupné v rôznych dĺžkach, prevedeniach a povrchových úpravách, vhodné dĺžky skrutiek sú 5, 6, 8, 10, 15 a 20 mm (označenia M4x5, M4x6, M4x8, M4x10, M4x15, M4x20).</p>
@@ -346,21 +358,28 @@ document.write(`
 <li><p>DIN934  Šesťhranná matica</p></li>
 <li><p>DIN439  Šesťhranná matica, nízky profil</p></li>
 </ul>
+<figure class="align-default" id="id1">
+<a class="reference internal image-reference" href="_images/m4_912_screew.jpg"><img alt="_images/m4_912_screew.jpg" src="_images/m4_912_screew.jpg" style="width: 250px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Obr. 10 </span><span class="caption-text">Označenie skrutiek DIN912.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Pri nákupe väčšieho množstva môže byť cena veľmi prijateľná, závisí od povrchovej úpravy. Ak chcete konštrukcie používať vo vonkajšom prostredí, zvoľte pozinkované prevedenie. Okrem kovových skrytiek môžete použiť aj plastové skrutky a matice z nylonu, ich cena je ale zvyčajne vyššia. Ako montážne náradie pre skrutky s vnútorným šesťhranom sú vhodné imbusové kľúče dostupné v sade alebo aj jednotlivo.</p>
 <p>Na spájanie tenkých prvkov (napríklad dve spojky s hrúbkou BU=1/4) je vhodné použiť skrutku s maticou, podobne ako v prípade kovových stavebníc.</p>
-<figure class="align-default" id="id1">
+<figure class="align-default" id="id2">
 <a class="reference internal image-reference" href="_images/asm_01.png"><img alt="_images/asm_01.png" src="_images/asm_01.png" style="width: 600px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Obr. 9 </span><span class="caption-text">Spájanie tenkých prvkov pomocou skrutky a matice.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+<p><span class="caption-number">Obr. 11 </span><span class="caption-text">Spájanie tenkých prvkov pomocou skrutky a matice.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Na spájanie hrubších dielov (BU = 1/2 a viac) môžeme využiť fakt, že otvory v 3D tlačených prvkoch sú zvyčajne o niečo menšie ako stanovený priemer HR a skrutky si v nich vyrežú vlastný závit.</p>
-<figure class="align-default" id="id2">
+<p>Na spájanie hrubších dielov (BU = 1/2 a viac) môžeme využiť fakt, že otvory v 3D tlačených prvkoch sú zvyčajne o niečo menšie ako stanovený priemer HR a skrutky si v nich vyrežú vlastný závit, nie je potrebné použiť maticu.</p>
+<figure class="align-default" id="id3">
 <a class="reference internal image-reference" href="_images/asm_02.png"><img alt="_images/asm_02.png" src="_images/asm_02.png" style="width: 600px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Obr. 10 </span><span class="caption-text">Spájanie hrubších prvkov.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+<p><span class="caption-number">Obr. 12 </span><span class="caption-text">Spájanie hrubších prvkov.</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -372,11 +391,29 @@ document.write(`
 <li><p>DIN 913 Nastavovacia skrutka s plochým hrotom</p></li>
 <li><p>DIN 916 Závitový kolík</p></li>
 </ul>
-<figure class="align-default" id="id3">
+<figure class="align-default" id="id4">
+<a class="reference internal image-reference" href="_images/m4_913_cervik.jpg"><img alt="_images/m4_913_cervik.jpg" src="_images/m4_913_cervik.jpg" style="width: 250px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Obr. 13 </span><span class="caption-text">Označenie nastavovacích skrutiek DIN913.</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id5">
 <a class="reference internal image-reference" href="_images/asm_04.png"><img alt="_images/asm_04.png" src="_images/asm_04.png" style="width: 600px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Obr. 11 </span><span class="caption-text">Použitie nastavovacích skrutiek.</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+<p><span class="caption-number">Obr. 14 </span><span class="caption-text">Použitie nastavovacích skrutiek.</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="spojovaci-material">
+<h3><font color='brown'> <b> Spojovací materiál </b></font><a class="headerlink" href="#spojovaci-material" title="Link to this heading">#</a></h3>
+<p>Pre niektoré konštrukcie môžeme pre spájanie dielov využiť aj rôzne stĺpiky s vnútorným alebo vonkajším závitom M4, dostupné v rôznych dĺžkach, kovové alebo plastové.</p>
+<figure class="align-default" id="id6">
+<a class="reference internal image-reference" href="_images/stlpiky.png"><img alt="_images/stlpiky.png" src="_images/stlpiky.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Obr. 15 </span><span class="caption-text">Použitie stlpikov.</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -403,6 +440,15 @@ document.write(`
         <p class="prev-next-title"><font color='navy'> <b> Diely </b> </font></p>
       </div>
     </a>
+    <a class="right-next"
+       href="0210_exm_bridge.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><font color='navy'> <b> Priehradový most </b> </font></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -419,9 +465,10 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spajanie-dielov"><font color="purple"> <b> Spájanie dielov </b> </font></a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pevne-spoje"><font color="purple"> <b> Pevné spoje </b> </font></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skrutkove-spoje"><font color="brown"> <b> Skrutkové spoje </b> </font></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skryte-spoje"><font color="brown"> <b> Skryté spoje </b></font></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spojovaci-material"><font color="brown"> <b> Spojovací materiál </b></font></a></li>
 </ul>
 </li>
 </ul>

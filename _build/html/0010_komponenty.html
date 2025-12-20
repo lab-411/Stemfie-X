@@ -30,7 +30,7 @@
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -49,8 +49,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = '0010_komponenty';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Montážne postupy" href="0015_montaz.html" />
-    <link rel="prev" title="Stemfie-X" href="0005_uvod.html" />
+    <link rel="next" title="Montáž" href="0015_montaz.html" />
+    <link rel="prev" title="Vlastnosti" href="0005_uvod.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -162,9 +162,18 @@
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Úvod</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="0005_uvod.html"><font color="navy"> <b> Stemfie-X </b> </font></a></li>
+<li class="toctree-l1"><a class="reference internal" href="0005_uvod.html"><font color="navy"> <b> Vlastnosti </b> </font></a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#"><font color="navy"> <b> Diely </b> </font></a></li>
-<li class="toctree-l1"><a class="reference internal" href="0015_montaz.html"><font color="navy"> <b> Montážne postupy  </b> </font></a></li>
+<li class="toctree-l1"><a class="reference internal" href="0015_montaz.html"><font color="navy"> <b> Montáž  </b> </font></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Jednoduché konštrukcie</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0210_exm_bridge.html"><font color="navy"> <b> Priehradový most </b> </font></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Programovanie</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0500_prg_instalacia.html"><font color="navy"> <b> Inštalácia</b> </font></a></li>
+<li class="toctree-l1"><a class="reference internal" href="0520_prg_brace.html"><font color="navy"> <b> Spojky </b> </font></a></li>
 </ul>
 
     </div>
@@ -313,12 +322,18 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parametre"><font color="navy"> <b> Parametre  </b> </font></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spojky"><font color="navy"> <b> Spojky  </b> </font></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bloky"><font color="navy"> <b> Bloky </b> </font></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kladky"><font color="navy"> <b> Kladky </b> </font></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ozubene-kolesa"><font color="navy"> <b> Ozubené kolesá </b> </font></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zakladne-bloky"><font color="navy"> <b> Základné bloky </b> </font></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parametre"><font color="purple"> <b> Parametre  </b> </font></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-tlac"><font color="brown"> <b> 3D Tlač   </b> </font></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prehlad-dielov-stavebnice"><font color="purple"> <b> Prehľad dielov stavebnice </b> </font></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spojky"><font color="brown"> <b> Spojky  </b> </font></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nosniky"><font color="brown"> <b> Nosníky </b> </font></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kladky"><font color="brown"> <b> Kladky </b> </font></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ozubene-kolesa"><font color="brown"> <b> Ozubené kolesá </b> </font></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zakladne-bloky"><font color="brown"> <b> Základné bloky </b> </font></a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -337,72 +352,100 @@ document.write(`
 </a>
 </figure>
 <section id="parametre">
-<h2><font color='navy'> <b> Parametre  </b> </font><a class="headerlink" href="#parametre" title="Link to this heading">#</a></h2>
+<h2><font color='purple'> <b> Parametre  </b> </font><a class="headerlink" href="#parametre" title="Link to this heading">#</a></h2>
 <p>Vlastnosti dielov stavebnice <code class="docutils literal notranslate"><span class="pre">STEMFIE-X</span></code> definuje základná jednotka <strong>BU</strong> (Basic Unit) a priemer montážnych otvorov <strong>HR</strong> (Hole Radius). Rozmery dielov sú udávané v násobkoch alebo podieloch BU.</p>
 <figure class="align-default" id="id1">
 <a class="reference internal image-reference" href="_images/brace_rozmery.png"><img alt="_images/brace_rozmery.png" src="_images/brace_rozmery.png" style="width: 350px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Obr. 3 </span><span class="caption-text">Základné parametre dielov.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+<p><span class="caption-number">Obr. 3 </span><span class="caption-text">Základné parametre dielov (spojka, D=8, H=1/4).</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Diely sú vytlačené na 3D tlačiarni z materiálu PLA. Na rozdiel od stavebníc, ktoré majú diely z plechu, musíme pri našich konštrukciách uvažovať hrúbku dielov. Všeobecné parametre stavebnice</p>
+<p>Na rozdiel od stavebníc, ktoré majú diely z plechu, musíme pri našich konštrukciách uvažovať hrúbku dielov. Štandardné parametre dielov sú</p>
 <ul class="simple">
-<li><p>veľkost BU je 10mm</p></li>
-<li><p>priemer montážnych otvorov HR je 4mm</p></li>
-<li><p>veľkost dielov D je celočíselná 1,2 … BU</p></li>
-<li><p>hrúbka dielov H je 1, 1/2, 1/4 BU</p></li>
+<li><p>veľkost <strong>BU</strong> je 10mm</p></li>
+<li><p>priemer montážnych otvorov <strong>HR</strong> je 4mm</p></li>
+<li><p>veľkost dielov <strong>D</strong> je celočíselná v násobkoch 1,2 … <strong>BU</strong></p></li>
+<li><p>hrúbka dielov <strong>H</strong> je 1, 1/2, 1/3, 1/4 <strong>BU</strong></p></li>
 </ul>
-</section>
-<section id="spojky">
-<h2><font color='navy'> <b> Spojky  </b> </font><a class="headerlink" href="#spojky" title="Link to this heading">#</a></h2>
+<p>Pre jednoduchšiu orientáciu sú diely stavebnice označené typom, ktorý vychádza z ich tvaru a rozmerov.</p>
+<section id="d-tlac">
+<h3><font color='brown'> <b> 3D Tlač   </b> </font><a class="headerlink" href="#d-tlac" title="Link to this heading">#</a></h3>
+<p>Doporučené parametre 3D tlače upravte podľa vašej tlačiarne a použitého materiálu. Diely stavebnice sú v tejto pulikácii generované vo formáte <em>.step</em> alebo <em>.stl</em>, pre ich tlač použite programové vybavenie doporučované výrobcom tlačiarne.</p>
+<ul class="simple">
+<li><p>materiál PLA</p></li>
+<li><p>hrúbka vrstvy 0.2mm, bez podpier</p></li>
+<li><p>perimeter 4x</p></li>
+<li><p>výplň 15%</p></li>
+<li><p>teplota a rýchlosť tlače podľa doporučenia výrobcu filamentu</p></li>
+</ul>
 <figure class="align-default" id="id2">
+<a class="reference internal image-reference" href="_images/slicer.png"><img alt="_images/slicer.png" src="_images/slicer.png" style="width: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Obr. 4 </span><span class="caption-text">Príprava tlače dielov stavebnice.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="prehlad-dielov-stavebnice">
+<h2><font color='purple'> <b> Prehľad dielov stavebnice </b> </font><a class="headerlink" href="#prehlad-dielov-stavebnice" title="Link to this heading">#</a></h2>
+<p>Sada základných typov dielov stavebnice pre konštrukcie v <em>Stemfie-X</em> je vygenerovaná vo formáte <em>.step</em> a <em>.stl</em> pripravených pre 3D tlač. Súčasťou stavebnice sú knižnice pre programovací jazyk <em>Python</em>, v ktorom je možné vytvárať si vlastné verzie dielov stavebnice.</p>
+<section id="spojky">
+<h3><font color='brown'> <b> Spojky  </b> </font><a class="headerlink" href="#spojky" title="Link to this heading">#</a></h3>
+<p>Spojky (Brace) sú základným typom dielov stavebnice, slúžia na spájanie častí konštrukcie, konštrukcie nosníkov a podpôr. V závislosti od použitia môžu mať rôzny tvar, hrúbku a počet montážnych otvorov. V niektorých prípadoch môžu byť dva lebo aj viacej otvorov nahradených montážnou štrbinou.</p>
+<figure class="align-default" id="id3">
 <a class="reference internal image-reference" href="_images/image_brace.png"><img alt="_images/image_brace.png" src="_images/image_brace.png" style="width: 600px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Obr. 4 </span><span class="caption-text">Spojky</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+<p><span class="caption-number">Obr. 5 </span><span class="caption-text">Prevedenia spojok.</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
-<section id="bloky">
-<h2><font color='navy'> <b> Bloky </b> </font><a class="headerlink" href="#bloky" title="Link to this heading">#</a></h2>
-<figure class="align-default" id="id3">
+<section id="nosniky">
+<h3><font color='brown'> <b> Nosníky </b> </font><a class="headerlink" href="#nosniky" title="Link to this heading">#</a></h3>
+<p>Nosníky (Beams) slúžia na konštrukciu nosných prvkov konštrukcií, základových platní a konštrukčných prvkov tam, kde sa vyžaduje zvýšená pevnosť alebo nosnosť.</p>
+<figure class="align-default" id="id4">
 <a class="reference internal image-reference" href="_images/image_block.png"><img alt="_images/image_block.png" src="_images/image_block.png" style="width: 600px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Obr. 5 </span><span class="caption-text">Spojky</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+<p><span class="caption-number">Obr. 6 </span><span class="caption-text">Rozne prevedenia blokov.</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="kladky">
-<h2><font color='navy'> <b> Kladky </b> </font><a class="headerlink" href="#kladky" title="Link to this heading">#</a></h2>
-<figure class="align-default" id="id4">
+<h3><font color='brown'> <b> Kladky </b> </font><a class="headerlink" href="#kladky" title="Link to this heading">#</a></h3>
+<p>Kladky a držiaky kladiek slúžia na konštrukciu jednoduchých strojov, lanových prevodov a  kladkostrojov.</p>
+<figure class="align-default" id="id5">
 <a class="reference internal image-reference" href="_images/image_pulley.png"><img alt="_images/image_pulley.png" src="_images/image_pulley.png" style="width: 600px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Obr. 6 </span><span class="caption-text">Kladky</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+<p><span class="caption-number">Obr. 7 </span><span class="caption-text">Kladky a držiaky kladiek.</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="ozubene-kolesa">
-<h2><font color='navy'> <b> Ozubené kolesá </b> </font><a class="headerlink" href="#ozubene-kolesa" title="Link to this heading">#</a></h2>
-<figure class="align-default" id="id5">
+<h3><font color='brown'> <b> Ozubené kolesá </b> </font><a class="headerlink" href="#ozubene-kolesa" title="Link to this heading">#</a></h3>
+<p>Ozubené kolesá sú základom pre konštrukciu prevodoviek k motorom a servám.</p>
+<figure class="align-default" id="id6">
 <a class="reference internal image-reference" href="_images/gears_demo.png"><img alt="_images/gears_demo.png" src="_images/gears_demo.png" style="width: 600px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Obr. 7 </span><span class="caption-text">Ozubené kolesá</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+<p><span class="caption-number">Obr. 8 </span><span class="caption-text">Ozubené kolesá</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="zakladne-bloky">
-<h2><font color='navy'> <b> Základné bloky </b> </font><a class="headerlink" href="#zakladne-bloky" title="Link to this heading">#</a></h2>
-<figure class="align-default" id="id6">
+<h3><font color='brown'> <b> Základné bloky </b> </font><a class="headerlink" href="#zakladne-bloky" title="Link to this heading">#</a></h3>
+<p>Základné bloky sú podkladom pre konštrukciu vlastných neštandardných prvkov stavebnice.</p>
+<figure class="align-default" id="id7">
 <a class="reference internal image-reference" href="_images/image_base.png"><img alt="_images/image_base.png" src="_images/image_base.png" style="width: 600px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Obr. 8 </span><span class="caption-text">Základné bloky</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+<p><span class="caption-number">Obr. 9 </span><span class="caption-text">Základné bloky</span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
+</section>
 </section>
 </section>
 
@@ -423,7 +466,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><font color='navy'> <b> Stemfie-X </b> </font></p>
+        <p class="prev-next-title"><font color='navy'> <b> Vlastnosti </b> </font></p>
       </div>
     </a>
     <a class="right-next"
@@ -431,7 +474,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><font color='navy'> <b> Montážne postupy  </b> </font></p>
+        <p class="prev-next-title"><font color='navy'> <b> Montáž  </b> </font></p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -451,12 +494,18 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parametre"><font color="navy"> <b> Parametre  </b> </font></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spojky"><font color="navy"> <b> Spojky  </b> </font></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bloky"><font color="navy"> <b> Bloky </b> </font></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kladky"><font color="navy"> <b> Kladky </b> </font></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ozubene-kolesa"><font color="navy"> <b> Ozubené kolesá </b> </font></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zakladne-bloky"><font color="navy"> <b> Základné bloky </b> </font></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parametre"><font color="purple"> <b> Parametre  </b> </font></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-tlac"><font color="brown"> <b> 3D Tlač   </b> </font></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prehlad-dielov-stavebnice"><font color="purple"> <b> Prehľad dielov stavebnice </b> </font></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spojky"><font color="brown"> <b> Spojky  </b> </font></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nosniky"><font color="brown"> <b> Nosníky </b> </font></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kladky"><font color="brown"> <b> Kladky </b> </font></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ozubene-kolesa"><font color="brown"> <b> Ozubené kolesá </b> </font></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zakladne-bloky"><font color="brown"> <b> Základné bloky </b> </font></a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
