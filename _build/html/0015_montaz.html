@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Popis stavebnice &#8212; Stemfie-X 0.1 documentation</title>
+    <title>Montáž &#8212; Stemfie-X 0.1 documentation</title>
   
   
   
@@ -30,7 +30,7 @@
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -46,10 +46,10 @@
     <script src="_static/copybutton.js?v=f281be69"></script>
     <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script src="_static/design-tabs.js?v=f930bc37"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '0005_cmp_uvod';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '0015_montaz';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Stemfie-X" href="index.html" />
+    <link rel="prev" title="Vlastnosti" href="0010_komponenty.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -161,7 +161,9 @@
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Úvod</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#"><font color="navy"> <b> Popis stavebnice </b> </font></a></li>
+<li class="toctree-l1"><a class="reference internal" href="0005_uvod.html"><font color="navy"> <b> Popis stavebnice </b> </font></a></li>
+<li class="toctree-l1"><a class="reference internal" href="0010_komponenty.html"><font color="navy"> <b> Vlastnosti </b> </font></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><font color="navy"> <b> Montáž </b> </font></a></li>
 </ul>
 
     </div>
@@ -216,7 +218,7 @@
       
       
       
-      <li><a href="_sources/0005_cmp_uvod.md" target="_blank"
+      <li><a href="_sources/0015_montaz.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -300,7 +302,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><font color='navy'> <b> Popis stavebnice </b> </font></h1>
+    <h1><font color='navy'> <b> Montáž </b> </font></h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -310,8 +312,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#historia"><font color="purple"> História </font></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pouzitie-stavebnice"><font color="purple"> Použitie stavebnice </font></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spajanie-dielov"><font color="purple"> <b> Spájanie dielov </b> </font></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skrutkove-spoje"><font color="brown"> <b> Skrutkové spoje </b> </font></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skryte-spoje"><font color="brown"> <b> Skryté spoje </b></font></a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -323,47 +328,58 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="popis-stavebnice">
-<h1><font color='navy'> <b> Popis stavebnice </b> </font><a class="headerlink" href="#popis-stavebnice" title="Link to this heading">#</a></h1>
-<figure class="align-default" id="stmx-33">
+  <section class="tex2jax_ignore mathjax_ignore" id="montaz">
+<h1><font color='navy'> <b> Montáž </b> </font><a class="headerlink" href="#montaz" title="Link to this heading">#</a></h1>
+<figure class="align-default">
 <a class="reference internal image-reference" href="_images/banner.png"><img alt="_images/banner.png" src="_images/banner.png" style="width: 800px;" />
 </a>
 </figure>
-<p><code class="docutils literal notranslate"><span class="pre">STEMFIE-X</span></code> je konštrukčná stavebnica zameraná na polytechnické vzdelávanie s podporou praktického osvojenia si skúseností z moderných technológií v oblasti návrhu a konštrukcie mechatronických systémov, konštrukčných materiálov, elektroniky, programovania a riadenia.</p>
-<p>Stavebnica pokrýva aktivity od jednoduchého spoznávania elementárnych princípov konštrukcie a činnosti mechanických systémov, cez návrh vlastných konštrukcií s využitím katalógu hotových dielov a 3D tlače vybraných dielov až po návrh zložitejších sústav s využitím programovania, parametrického projektovania, elektronických prvkov a riadenia.</p>
-<p>Základnými dielmi pre konštrukciu modelov sú pásy, bloky a platne s montážnymi otvormi vytlačené na 3D tlačiarni. Pre pokročilejšie konštrukcie je možné používať ozubené kolesá, kladky, držiaky motorov a serv. Pokročilí uživatelia si môžu upravovať a vytvárať vlastné diely pomocou konštruovania prostredníctvom programovania v jazyku Python. <strong>Možnosť tvorby vlastných dielov</strong> na základe vlastného návrhu <strong>odlišuje</strong> koncept stavebnice <em>STEMFIE-X</em> od ostatných polytechnických stavebníc, kde je uživateľ odkázaný len na sadu dodávaných dielov bez možnosti ich úprav.</p>
+<section id="spajanie-dielov">
+<h2><font color='purple'> <b> Spájanie dielov </b> </font><a class="headerlink" href="#spajanie-dielov" title="Link to this heading">#</a></h2>
+<section id="skrutkove-spoje">
+<h3><font color='brown'> <b> Skrutkové spoje </b> </font><a class="headerlink" href="#skrutkove-spoje" title="Link to this heading">#</a></h3>
+<p>Ako štandardné spojovacie prvky skrutkových spojov môžete použiť bežné kovové skrutky a matice M4, ktoré sú dostupné v každom železiarstve alebo špecializovanom obchode so spojovacím materiálom. Skrutky sú dostupné v rôznych dĺžkach, prevedeniach a povrchových úpravách, vhodné dĺžky skrutiek sú 5, 6, 8, 10, 15 a 20 mm (označenia M4x5, M4x6, M4x8, M4x10, M4x15, M4x20).</p>
+<p>Vhodné typy skrutiek sa vyrábajú pod normovaným označením</p>
+<ul class="simple">
+<li><p>DIN912  Šesťhranná skrutka s valcovou hlavou s vnútorným šesťhranom</p></li>
+<li><p>DIN7984 Šesťhranná skrutka s nízkou hlavou s valcovou hlavou s vnútorným šesťhranom</p></li>
+<li><p>DIN934  Šesťhranná matica</p></li>
+<li><p>DIN439  Šesťhranná matica, nízky profil</p></li>
+</ul>
+<p>Pri nákupe väčšieho množstva môže byť cena veľmi prijateľná, závisí od povrchovej úpravy. Ak chcete konštrukcie používať vo vonkajšom prostredí, zvoľte pozinkované prevedenie. Okrem kovových skrytiek môžete použiť aj plastové skrutky a matice z nylonu, ich cena je ale zvyčajne vyššia. Ako montážne náradie pre skrutky s vnútorným šesťhranom sú vhodné imbusové kľúče dostupné v sade alebo aj jednotlivo.</p>
+<p>Na spájanie tenkých prvkov (napríklad dve spojky s hrúbkou BU=1/4) je vhodné použiť skrutku s maticou, podobne ako v prípade kovových stavebníc.</p>
 <figure class="align-default" id="id1">
-<a class="reference internal image-reference" href="_images/most.jpg"><img alt="_images/most.jpg" src="_images/most.jpg" style="width: 550px;" />
+<a class="reference internal image-reference" href="_images/asm_01.png"><img alt="_images/asm_01.png" src="_images/asm_01.png" style="width: 600px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Obr. 1 </span><span class="caption-text">Jednoduchá konštrukcia mostu z dielov Stemfie-X.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+<p><span class="caption-number">Obr. 4 </span><span class="caption-text">Spájanie tenkých prvkov pomocou skrutky a matice.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Koncept stavebnice je navrhnutý tak, aby bola dostupná každého mladého konštruktéra. Všetky podklady a konštrukčné návrhy sú open-source, pre tlač dielov je možné využiť bežne dostupné 3D tlačiarne, pre tlač dielov je použitý recyklovateľný materiál PLA, ako spojovacie prvky sú použité skrutky a diely bežne dostupné v každom železiarstve, pre riadenie elektronických častí je možné využiť dostupné moduly a diely z platformy Arduino.</p>
-<section id="historia">
-<h2><font color='purple'> História </font><a class="headerlink" href="#historia" title="Link to this heading">#</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">STEMFIE-X</span></code> je odvodená z konštrukčnej stavebnice pre deti  <a class="reference external" href="https://stemfie.org/"><em>STEMFIE</em></a>. Myšlienka stavebnice je založená na návrhu a následnej 3D tlači univerzálnych komponentov a spojovacích prvkov a konštrukcii vlastných modelov. Modely je možné zostavovať z náverhov hotových sád dielov, ktoré sa vytlačia na 3D tlačiarni, na návrh a konštrukciu vlastných modelov je možné použiť grafické programy a konštrukčné CAD systémy ako FreeCAD, Blender a Tinkercad.</p>
-<p>Stavebnica <em>STEMFIE-X</em> využíva základné princípy projektu <em>STEMFIE</em> s úpravami pre použitie ako platforma pre vytváranie zložitejších štruktúr a modelov s použitím mechanických a elektronických prvkov - motorov, servopohonov, elektronických obvodov a riadenia mikrokontrolérmi. Stavebnica je primárne určená pre polytechnickú výučbu na základných a stredných školách a prvých semestrov vysokých škôl pri výučbe predmetov z oblasti programovania, parametrického modelovania, CAD systémov, konštrukcií strojov a mechanizmov.</p>
-<p>Základným rozdielom medzi <em>STEMFIE-X</em> a <em>STEMFIE</em> je veľkosť jednotka (BU), ktorá určuje vzdialenosti medzi montážnymi otvormi, pôvodná veľkosť 12.5mm v <em>STEMFIE</em> je upravená na veľkosť 10mm a montážne otvory majú priemer 4 mm. Tieto modifikácie umožňujú použiť ako spojovací materiál štandardné skrutky M4 a diely stavebnice sú rozmerovo kompatibilné s kovovými dielmi stavebníc <em>Meccano</em>, <em>Merkur</em>, <em>eitech</em> a podobnými.</p>
-<p>Základnými prvkami stavebnice sú spojky a bloky, ktoré je možné modifikovať v násobkoch BU, rotačné diely tvoria kladky a kolesá, pre pokročílé konštruekcie je možné využiť ozubené kolesá a pomocné prvky pre montáž motorov, serv a senzorov.</p>
+<p>Na spájanie hrubších dielov (BU = 1/2 a viac) môžeme využiť fakt, že otvory v 3D tlačených prvkoch sú zvyčajne o niečo menšie ako stanovený priemer HR a skrutky si v nich vyrežú vlastný závit.</p>
 <figure class="align-default" id="id2">
-<a class="reference internal image-reference" href="_images/stemfie_diely.png"><img alt="_images/stemfie_diely.png" src="_images/stemfie_diely.png" style="width: 350px;" />
+<a class="reference internal image-reference" href="_images/asm_02.png"><img alt="_images/asm_02.png" src="_images/asm_02.png" style="width: 600px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Obr. 2 </span><span class="caption-text">Základné prvky stavebnice Stemfie-X.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+<p><span class="caption-number">Obr. 5 </span><span class="caption-text">Spájanie hrubších prvkov.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
-<section id="pouzitie-stavebnice">
-<h2><font color='purple'> Použitie stavebnice </font><a class="headerlink" href="#pouzitie-stavebnice" title="Link to this heading">#</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">STEMFIE-X</span></code> je možné využívať v niekoľkých úrovniach</p>
+<section id="skryte-spoje">
+<h3><font color='brown'> <b> Skryté spoje </b></font><a class="headerlink" href="#skryte-spoje" title="Link to this heading">#</a></h3>
+<p>Ak hlavy štandardných skrutiek v niektorých spojoch z praktických alebo estetických dôvodov prekážajú, s trochou zručnosti je možné na spoje použiť nastavovacie skrutky. Dostupné sú v podobných dĺžkach ako štandardné skrutky, pre montáž budeme potrebovať imbusový kĺúč vhodnej veľkosti.</p>
+<p>Vhodné typy nastavovacích skrutiek sa vyrábajú pod normovaným označením</p>
 <ul class="simple">
-<li><p>jednoduchá stavebnica pre menšie deti z vopred pripravených dielov 3D tlačou. Cieľom je získanie základných zručností pri spájaní dielov skrutkami použitím bežného náradia a získanie elementárnych poznatkov o základných mechanických sústavách (kladka, navijak, páka …). Predpokladá sa asistencia učiteľa alebo rodiča.</p></li>
-<li><p>stavebnica modelov na základe pripravených konštrukčných pokladov pre 3D tlač. Cieľom je získanie zručností potrebných pre tlač dielov, prácu s 3D tlačiarňou a použitými materiálmi.</p></li>
-<li><p>tvorba vlastných modelov zostavených z katalógu dielov s možným rozšírením pre generovanie dielov pomocou software. Cieľom je získanie zručností pri návrhu vlastných konštrukcií a prácou s CAD systémami (FreeCAD …) pri overovaní si vytvorenej konštrukcie pred tlačou jej dielov.</p></li>
-<li><p>konštrukcia modelov podľa vlastného návrhu s parametrickým projektovaním špeciálnych dielov v programovacom jazyku Python a návrhového systému OpenCascade</p></li>
-<li><p>doplnenie vlastných modelov elektromechanické prvky, senzory a aktuátory s riadením pomocou modulov Arduina alebo podobnej platformy</p></li>
+<li><p>DIN 913 Nastavovacia skrutka s plochým hrotom</p></li>
+<li><p>DIN 916 Závitový kolík</p></li>
 </ul>
+<figure class="align-default" id="id3">
+<a class="reference internal image-reference" href="_images/asm_04.png"><img alt="_images/asm_04.png" src="_images/asm_04.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Obr. 6 </span><span class="caption-text">Použitie nastavovacích skrutiek.</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
 </section>
 </section>
 
@@ -379,12 +395,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="index.html"
+       href="0010_komponenty.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><center> <font color='navy'>  <b> Stemfie-X </b> </font> </center></p>
+        <p class="prev-next-title"><font color='navy'> <b> Vlastnosti </b> </font></p>
       </div>
     </a>
 </div>
@@ -403,8 +419,11 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#historia"><font color="purple"> História </font></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pouzitie-stavebnice"><font color="purple"> Použitie stavebnice </font></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spajanie-dielov"><font color="purple"> <b> Spájanie dielov </b> </font></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skrutkove-spoje"><font color="brown"> <b> Skrutkové spoje </b> </font></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skryte-spoje"><font color="brown"> <b> Skryté spoje </b></font></a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
