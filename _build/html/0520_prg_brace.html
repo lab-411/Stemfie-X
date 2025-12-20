@@ -51,7 +51,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = '0520_prg_brace';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Inštalácia" href="0500_prg_instalacia.html" />
+    <link rel="prev" title="Návrh komponentov" href="0505_prg_lib.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -174,6 +174,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Programovanie</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="0500_prg_instalacia.html"><font color="navy"> <b> Inštalácia</b> </font></a></li>
+<li class="toctree-l1"><a class="reference internal" href="0505_prg_lib.html"><font color="navy"> <b> Návrh komponentov</b> </font></a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#"><font color="navy"> <b> Spojky </b> </font></a></li>
 </ul>
 
@@ -417,13 +418,13 @@ brace_A_dd_hh_pp_sss
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">lib</span> <span class="kn">import</span> <span class="o">*</span>
 
-<span class="n">b</span> <span class="o">=</span> <span class="n">Brace</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">SVG</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">obj</span><span class="o">.</span><span class="n">toSvg</span><span class="p">()))</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">Brace</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>       <span class="c1"># brace_B_05</span>
+<span class="n">show</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span><span class="mi">50</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/23173bbfcf1a4de3dc865a111c817ac79b0627361ef0825f775514f75a340cbe.svg" src="_images/23173bbfcf1a4de3dc865a111c817ac79b0627361ef0825f775514f75a340cbe.svg" />
+<img alt="_images/2854e5048c49c32df3d82c9f7cb73f74a40b8a36ae6561cce91aea3b0dc781e7.svg" src="_images/2854e5048c49c32df3d82c9f7cb73f74a40b8a36ae6561cce91aea3b0dc781e7.svg" />
 </div>
 </div>
 <section id="spojka-so-strbinami">
@@ -442,12 +443,12 @@ brace_A_dd_hh_pp_sss
         <span class="bp">self</span><span class="o">.</span><span class="n">obj</span> <span class="o">=</span> <span class="n">b1</span><span class="o">.</span><span class="n">obj</span>
         
 <span class="n">b10</span> <span class="o">=</span> <span class="n">Brace_B_17_14_13_02</span><span class="p">()</span>
-<span class="n">display</span><span class="p">(</span><span class="n">SVG</span><span class="p">(</span><span class="n">b10</span><span class="o">.</span><span class="n">obj</span><span class="o">.</span><span class="n">toSvg</span><span class="p">()))</span>
+<span class="n">show</span><span class="p">(</span><span class="n">b10</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5576a923f5e4d0985823ad9ba1cda675dc522912de8c277abd0a2b5c7952b3f7.svg" src="_images/5576a923f5e4d0985823ad9ba1cda675dc522912de8c277abd0a2b5c7952b3f7.svg" />
+<img alt="_images/5f95475e65cf360eaf73fe7f535990a1ec5b5d1eec7970d261cf3ac769fa48b7.svg" src="_images/5f95475e65cf360eaf73fe7f535990a1ec5b5d1eec7970d261cf3ac769fa48b7.svg" />
 </div>
 </div>
 </section>
@@ -462,7 +463,7 @@ brace_A_dd_hh_pp_sss
 <a class="reference internal image-reference" href="_images/comp_11.png"><img alt="_images/comp_11.png" src="_images/comp_11.png" style="width: 400px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Obr. 19 </span><span class="caption-text">Oblúková a lineárna spojka</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+<p><span class="caption-number">Obr. 21 </span><span class="caption-text">Oblúková a lineárna spojka</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Výpočet uhla a offsetu uhlovej spojky</p>
@@ -470,7 +471,7 @@ brace_A_dd_hh_pp_sss
 <a class="reference internal image-reference" href="_images/tetiva.png"><img alt="_images/tetiva.png" src="_images/tetiva.png" style="width: 300px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Obr. 20 </span><span class="caption-text">Tetiva oblúku</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+<p><span class="caption-number">Obr. 22 </span><span class="caption-text">Tetiva oblúku</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>R    - circle radius, in BU units
@@ -495,6 +496,7 @@ H &amp;= R \cdot cos(\alpha) \\
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">lib</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">lib.utils</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">arcsin</span><span class="p">,</span> <span class="n">pi</span>
 
 <span class="n">D</span> <span class="o">=</span> <span class="mi">7</span>   <span class="c1"># D &gt;= 2*R+1  </span>
@@ -510,12 +512,12 @@ H &amp;= R \cdot cos(\alpha) \\
 <span class="n">bb4</span> <span class="o">=</span> <span class="n">Brace</span><span class="p">(</span><span class="n">D</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">BU_Tz</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
 
 <span class="n">br1</span><span class="o">.</span><span class="n">U</span><span class="p">(</span><span class="n">bb4</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">SVG</span><span class="p">(</span><span class="n">br1</span><span class="o">.</span><span class="n">obj</span><span class="o">.</span><span class="n">toSvg</span><span class="p">()))</span>
+<span class="n">show</span><span class="p">(</span><span class="n">br1</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">250</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/2e4db467f739bef364b2d4284557c89674a4098c686eee85adf516c8454db373.svg" src="_images/2e4db467f739bef364b2d4284557c89674a4098c686eee85adf516c8454db373.svg" />
+<img alt="_images/7f65b6025c2294800fa3adcead569bb848d879758a708095853b02392cd35833.svg" src="_images/7f65b6025c2294800fa3adcead569bb848d879758a708095853b02392cd35833.svg" />
 </div>
 </div>
 </section>
@@ -534,12 +536,12 @@ H &amp;= R \cdot cos(\alpha) \\
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="0500_prg_instalacia.html"
+       href="0505_prg_lib.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><font color='navy'> <b> Inštalácia</b> </font></p>
+        <p class="prev-next-title"><font color='navy'> <b> Návrh komponentov</b> </font></p>
       </div>
     </a>
 </div>

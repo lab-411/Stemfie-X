@@ -18,34 +18,29 @@ kernelspec:
 :name: prg_125
 ```
 
-Programové vybavenie stavebnice `Stemfie-X` pre tvorbu vlastných dielov je založené na programovacom jazyku *Python* a pozostáva z nasledujúcich častí
+Programové vybavenie stavebnice *Stemfie-X* umožňuje návrh a generovanie podkladov pre štandardné diely stavebnice, návrh vlastných dielov ako aj tvorbu jednoduchých zostáv. Programové vybavenie je založené na programovacom jazyku *Python* a pozostáva z nasledujúcich častí
 
-* Knižnica `Stemfie-X` pre vytváranie dielov stavebnice 
-* Platforma `CadQuery` pre parametrické projektovanie pomocou `OpenCascade`
-* Programy pre 3D tlač, prehliadače generovaných dielov, editory. 
+* Knižnica *Stemfie-X* pre vytváranie dielov stavebnice 
+* Knižnica *CadQuery* pre parametrické projektovanie založená na platforme *OpenCascade*
+* Editor pre tvorbu programov s prehliadačom *CQ-Editor*
+* Pomocné programy pre prehliadače generovaných dielov a zostáv (*f3d*, *FreeCAD*)
+* Programy pre prípravu podkladov pre 3D tlač
 
 ## <font color='purple'> <b> Inštalácia pre Linux </b></font>
 
-Knižnica `STEMFIE-X`nadstavbou nad `CadQuery` a je v dostupná v zdrojovom tvare v archíve [lib.zip](./lib/lib.zip). Knižnicu po rozbalení ju umiestnite do pracovného adresáru a pri vytváraní ju importujte do vašeho programu ako štandardnú knižnicu v Pythone. Knižnica je univerzálna pre všetky platformy. 
+* Knižnica *Stemfie-X* je nadstavbou nad knižnicou *CadQuery* a je v dostupná v zdrojovom tvare v archíve [lib.zip](./lib/lib.zip). Knižnicu po rozbalení umiestnite do pracovného adresáru a pri vytváraní ju importujte do vašeho programu ako štandardnú knižnicu v Pythone. Knižnica je univerzálna pre všetky platformy. 
 
-```python
-
-from lib import *
-b = Brace(5)
-...
-```
-
-Inštalácia platformy `CadQuery` je pomocou inštalátora *pip*. Inštalácia obsahuje všetky potrebné komponenty z *Open Cascade Technology (OCCT)* potrebné pre tvorbu konštrukcií. Dokumentácia ku `CadQuery` je dostupná [online](https://cadquery.readthedocs.io/en/latest/intro.html).
+* Inštalácia platformy *CadQuery* je možná pomocou inštalátora *pip*. Inštalácia obsahuje všetky potrebné komponenty z *Open Cascade Technology (OCCT)* potrebné pre tvorbu konštrukcií v stavebnici. Dokumentácia ku *CadQuery* je dostupná [online](https://cadquery.readthedocs.io/en/latest/intro.html).
 
     sudo dnf install git
     pip install git+https://github.com/CadQuery/cadquery.git
     
     
-Pre platformu `CadQuery` bol vytvorený editor [CQ-Editor](https://github.com/CadQuery/CQ-editor), v ktorom je možné vytvárať a editovať diely stavebnice. Inštalačný skript je dostupný na [github-e](https://github.com/CadQuery/CQ-editor/releases/tag/nightly).
+* Pre platformu *CadQuery* bolo vytvorené jednoduché prostredie [CQ-Editor](https://github.com/CadQuery/CQ-editor), v ktorom je možné vytvárať, editovať a prehliadať diely stavebnice. Inštalačný skript je dostupný na [github-e](https://github.com/CadQuery/CQ-editor/releases/tag/nightly).
     
 
 ```{figure} ./img/cq_editor.png
-:width: 700px
+:width: 650px
 :name: prg_126
 ```
 

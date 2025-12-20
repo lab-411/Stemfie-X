@@ -86,8 +86,8 @@ Základným typom je lineárna spojka *Brace*, oblúková spojka *Brace_Arc* a k
 ```{code-cell} ipython3  
 from lib import *
 
-b = Brace(5)
-display(SVG(b.obj.toSvg()))
+b = Brace(5)       # brace_B_05
+show(b, 400,50)
 ```
 
 
@@ -107,7 +107,7 @@ class Brace_B_17_14_13_02(Stemfie_X):   # length 17 BU , 1/4 BU height, 14 holes
         self.obj = b1.obj
         
 b10 = Brace_B_17_14_13_02()
-display(SVG(b10.obj.toSvg()))
+show(b10, 800, 50)
 ```
 
 ### <font color='brown'> <b> Oblúková spojka </b></font>
@@ -152,6 +152,7 @@ Konštrukcia uhlovej spojky
 
 ```{code-cell} ipython3  
 from lib import *
+from lib.utils import *
 from numpy import arcsin, pi
 
 D = 7   # D >= 2*R+1  
@@ -167,6 +168,8 @@ br1 = Brace_Arc(R, bdeg, 1/4, 3, center=True).Rz(90-bdeg/2).BU_T([0, -H, 0])
 bb4 = Brace(D, center=True).BU_Tz(-1/2)
 
 br1.U(bb4)
-display(SVG(br1.obj.toSvg()))
+show(br1, 500, 250)
 ```
+
+
 

@@ -49,7 +49,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = '0500_prg_instalacia';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Spojky" href="0520_prg_brace.html" />
+    <link rel="next" title="Návrh komponentov" href="0505_prg_lib.html" />
     <link rel="prev" title="Priehradový most" href="0210_exm_bridge.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -173,6 +173,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Programovanie</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#"><font color="navy"> <b> Inštalácia</b> </font></a></li>
+<li class="toctree-l1"><a class="reference internal" href="0505_prg_lib.html"><font color="navy"> <b> Návrh komponentov</b> </font></a></li>
 <li class="toctree-l1"><a class="reference internal" href="0520_prg_brace.html"><font color="navy"> <b> Spojky </b> </font></a></li>
 </ul>
 
@@ -341,29 +342,26 @@ document.write(`
 <a class="reference internal image-reference" href="_images/banner.png"><img alt="_images/banner.png" src="_images/banner.png" style="width: 800px;" />
 </a>
 </figure>
-<p>Programové vybavenie stavebnice <code class="docutils literal notranslate"><span class="pre">Stemfie-X</span></code> pre tvorbu vlastných dielov je založené na programovacom jazyku <em>Python</em> a pozostáva z nasledujúcich častí</p>
+<p>Programové vybavenie stavebnice <em>Stemfie-X</em> umožňuje návrh a generovanie podkladov pre štandardné diely stavebnice, návrh vlastných dielov ako aj tvorbu jednoduchých zostáv. Programové vybavenie je založené na programovacom jazyku <em>Python</em> a pozostáva z nasledujúcich častí</p>
 <ul class="simple">
-<li><p>Knižnica <code class="docutils literal notranslate"><span class="pre">Stemfie-X</span></code> pre vytváranie dielov stavebnice</p></li>
-<li><p>Platforma <code class="docutils literal notranslate"><span class="pre">CadQuery</span></code> pre parametrické projektovanie pomocou <code class="docutils literal notranslate"><span class="pre">OpenCascade</span></code></p></li>
-<li><p>Programy pre 3D tlač, prehliadače generovaných dielov, editory.</p></li>
+<li><p>Knižnica <em>Stemfie-X</em> pre vytváranie dielov stavebnice</p></li>
+<li><p>Knižnica <em>CadQuery</em> pre parametrické projektovanie založená na platforme <em>OpenCascade</em></p></li>
+<li><p>Editor pre tvorbu programov s prehliadačom <em>CQ-Editor</em></p></li>
+<li><p>Pomocné programy pre prehliadače generovaných dielov a zostáv (<em>f3d</em>, <em>FreeCAD</em>)</p></li>
+<li><p>Programy pre prípravu podkladov pre 3D tlač</p></li>
 </ul>
 <section id="instalacia-pre-linux">
 <h2><font color='purple'> <b> Inštalácia pre Linux </b></font><a class="headerlink" href="#instalacia-pre-linux" title="Link to this heading">#</a></h2>
-<p>Knižnica <code class="docutils literal notranslate"><span class="pre">STEMFIE-X</span></code>nadstavbou nad <code class="docutils literal notranslate"><span class="pre">CadQuery</span></code> a je v dostupná v zdrojovom tvare v archíve <a class="reference download internal" download="" href="_downloads/c7758403c3488bb679c27b0e286e55f6/lib.zip"><span class="xref download myst">lib.zip</span></a>. Knižnicu po rozbalení ju umiestnite do pracovného adresáru a pri vytváraní ju importujte do vašeho programu ako štandardnú knižnicu v Pythone. Knižnica je univerzálna pre všetky platformy.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="kn">from</span> <span class="nn">lib</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">Brace</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-<span class="o">...</span>
-</pre></div>
-</div>
-<p>Inštalácia platformy <code class="docutils literal notranslate"><span class="pre">CadQuery</span></code> je pomocou inštalátora <em>pip</em>. Inštalácia obsahuje všetky potrebné komponenty z <em>Open Cascade Technology (OCCT)</em> potrebné pre tvorbu konštrukcií. Dokumentácia ku <code class="docutils literal notranslate"><span class="pre">CadQuery</span></code> je dostupná <a class="reference external" href="https://cadquery.readthedocs.io/en/latest/intro.html">online</a>.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>sudo dnf install git
-pip install git+https://github.com/CadQuery/cadquery.git
-</pre></div>
-</div>
-<p>Pre platformu <code class="docutils literal notranslate"><span class="pre">CadQuery</span></code> bol vytvorený editor <a class="reference external" href="https://github.com/CadQuery/CQ-editor">CQ-Editor</a>, v ktorom je možné vytvárať a editovať diely stavebnice. Inštalačný skript je dostupný na <a class="reference external" href="https://github.com/CadQuery/CQ-editor/releases/tag/nightly">github-e</a>.</p>
+<ul>
+<li><p>Knižnica <em>Stemfie-X</em> je nadstavbou nad knižnicou <em>CadQuery</em> a je v dostupná v zdrojovom tvare v archíve <a class="reference download internal" download="" href="_downloads/c7758403c3488bb679c27b0e286e55f6/lib.zip"><span class="xref download myst">lib.zip</span></a>. Knižnicu po rozbalení umiestnite do pracovného adresáru a pri vytváraní ju importujte do vašeho programu ako štandardnú knižnicu v Pythone. Knižnica je univerzálna pre všetky platformy.</p></li>
+<li><p>Inštalácia platformy <em>CadQuery</em> je možná pomocou inštalátora <em>pip</em>. Inštalácia obsahuje všetky potrebné komponenty z <em>Open Cascade Technology (OCCT)</em> potrebné pre tvorbu konštrukcií v stavebnici. Dokumentácia ku <em>CadQuery</em> je dostupná <a class="reference external" href="https://cadquery.readthedocs.io/en/latest/intro.html">online</a>.</p>
+<p>sudo dnf install git
+pip install git+https://github.com/CadQuery/cadquery.git</p>
+</li>
+<li><p>Pre platformu <em>CadQuery</em> bolo vytvorené jednoduché prostredie <a class="reference external" href="https://github.com/CadQuery/CQ-editor">CQ-Editor</a>, v ktorom je možné vytvárať, editovať a prehliadať diely stavebnice. Inštalačný skript je dostupný na <a class="reference external" href="https://github.com/CadQuery/CQ-editor/releases/tag/nightly">github-e</a>.</p></li>
+</ul>
 <figure class="align-default" id="prg-126">
-<a class="reference internal image-reference" href="_images/cq_editor.png"><img alt="_images/cq_editor.png" src="_images/cq_editor.png" style="width: 700px;" />
+<a class="reference internal image-reference" href="_images/cq_editor.png"><img alt="_images/cq_editor.png" src="_images/cq_editor.png" style="width: 650px;" />
 </a>
 </figure>
 </section>
@@ -394,11 +392,11 @@ pip install git+https://github.com/CadQuery/cadquery.git
       </div>
     </a>
     <a class="right-next"
-       href="0520_prg_brace.html"
+       href="0505_prg_lib.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><font color='navy'> <b> Spojky </b> </font></p>
+        <p class="prev-next-title"><font color='navy'> <b> Návrh komponentov</b> </font></p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

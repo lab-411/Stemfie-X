@@ -1,0 +1,58 @@
+
+@startuml
+hide footbox
+scale 2
+
+class Assembly #Khaki
+class Workplane #Khaki
+
+Assembly  --o Construct
+Construct -> "Stemfie-X"
+Workplane --o "Stemfie-X"  
+
+
+"Stemfie-X" <|-- "Beam_Block"
+"Stemfie-X" <|--- "Braces"
+"Stemfie-X" <|--- "Holes"
+"Stemfie-X" <|---- "BU_Components"
+
+"BU_Components" <|-- "BU_Cube"
+"BU_Components" <|-- "BU_Cylinder"
+"BU_Components" <|-- "BU_Polyline"
+"BU_Components" <|-- "BU_Bar"
+
+"Holes" <|-- "Hole"
+"Holes" <|-- "Hole_List"
+"Holes" <|-- "Hole_Grid"
+"Holes" <|-- "Hole_Slot"
+
+"Braces" <|-- "Brace"
+"Braces" <|-- "Brace_Arc"
+"Braces" <|-- "Brace_Circle"
+
+
+class "Stemfie-X" {
+BU 
+HR
+self.obj
+BU_Tx() BU_Tx() BU_Tz()
+BU_Txy() BU_T() T()
+Rx() Ry() Rz() 
+Mx() Mx() Mz()
+MKx() MKy() MKz() 
+D()
+U()
+I()
+copy()
+}
+
+class "Construct" {
+self.name
+self.obj
+}
+
+class Holes{
+self.length
+}
+
+@enduml

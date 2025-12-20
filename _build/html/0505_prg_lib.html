@@ -1,0 +1,571 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Návrh komponentov &#8212; Stemfie-X 0.1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=e1a75a79"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '0505_prg_lib';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Spojky" href="0520_prg_brace.html" />
+    <link rel="prev" title="Inštalácia" href="0500_prg_instalacia.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo_411.png" class="logo__image only-light" alt="Stemfie-X 0.1 documentation - Home"/>
+    <script>document.write(`<img src="_static/logo_411.png" class="logo__image only-dark" alt="Stemfie-X 0.1 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Úvod</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0005_uvod.html"><font color="navy"> <b> Vlastnosti </b> </font></a></li>
+<li class="toctree-l1"><a class="reference internal" href="0010_komponenty.html"><font color="navy"> <b> Diely </b> </font></a></li>
+<li class="toctree-l1"><a class="reference internal" href="0015_montaz.html"><font color="navy"> <b> Montáž  </b> </font></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Jednoduché konštrukcie</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0210_exm_bridge.html"><font color="navy"> <b> Priehradový most </b> </font></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Programovanie</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0500_prg_instalacia.html"><font color="navy"> <b> Inštalácia</b> </font></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><font color="navy"> <b> Návrh komponentov</b> </font></a></li>
+<li class="toctree-l1"><a class="reference internal" href="0520_prg_brace.html"><font color="navy"> <b> Spojky </b> </font></a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/0505_prg_lib.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><font color='navy'> <b> Návrh komponentov</b> </font></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pouzitie"><font color="purple"> <b> Použitie </b></font></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformacie-objektov"><font color="purple"> <b> Transformácie objektov </b></font></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#posun"><font color="brown"> <b> Posun </b></font></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rotacia"><font color="brown"> <b> Rotácia </b></font></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zrkadlenie"><font color="brown"> <b> Zrkadlenie </b></font></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logicke-operacie"><font color="brown"> <b> Logické operácie </b></font></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vytvorenie-zlozeneho-objektu"><font color="purple"> <b> Vytvorenie zloženého objektu </b></font></a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="navrh-komponentov">
+<h1><font color='navy'> <b> Návrh komponentov</b> </font><a class="headerlink" href="#navrh-komponentov" title="Link to this heading">#</a></h1>
+<figure class="align-default" id="prg-100">
+<a class="reference internal image-reference" href="_images/banner.png"><img alt="_images/banner.png" src="_images/banner.png" style="width: 800px;" />
+</a>
+</figure>
+<p>Pri návrhu vlastných konštrukcií často potrebujeme upraviť a modifikovať štandardné diely alebo vytvárať nové diely. Je zrejmé, že nie je možné vytvoriť univerzálny katalóg dielov, možnosti stavebnice <em>Stemfie-X</em> sú rozsiahle, a je preto vhodnejšie požadované diely a ich varianty vytvoriť “na mieru” pomocou programu.</p>
+<p>Knižnicu <em>Stemfie-X</em> tvorí sada tried nad knižnicou <em>CadQuery</em>, ktoré implementujú elementárne objekty a operácie pre prácu s objektmi stavebnice. Diely stavebnice je možné vytvárať v jednom kroku volaním funkcií s parametrami dielov, nové diely je možné tvoriť z iných dielov pomocou jednoduchých operácií. Pre generovanie štandardných ako aj odvodených dielov stavebnice postačujú triedy knižnice <em>Stemfie-X</em>, pokročílí uživatelia ale môžu využiť všetky možnosti knižnice <a class="reference external" href="https://cadquery.readthedocs.io/en/latest/">CadQuery</a> a jazyka Python. Pre tvorbu špeciálnych komponentov je možné triedy rozšírovať dedením a pridaním ďalších špecifických vlastností.</p>
+<p>Štruktúru knižnice <em>Stemfie-X</em> zobrazuje nasledujúci diagram</p>
+<figure class="align-default" id="stm-0102">
+<a class="reference internal image-reference" href="_images/prg_101.png"><img alt="_images/prg_101.png" src="_images/prg_101.png" style="width: 800px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Obr. 19 </span><span class="caption-text">Štruktúra tried knižnice STEMFIE-X</span><a class="headerlink" href="#stm-0102" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="pouzitie">
+<h2><font color='purple'> <b> Použitie </b></font><a class="headerlink" href="#pouzitie" title="Link to this heading">#</a></h2>
+<p>Pre generovanie podkladov pre 3D tlač štandardných komponentov je potrebné importovať knižnicu <code class="docutils literal notranslate"><span class="pre">lib</span></code> a vygenerovať želaný komponent vytvorením objektu danej triedy. Vytvorený komponent exportujeme do súboru typu <code class="docutils literal notranslate"><span class="pre">step</span></code> alebo <code class="docutils literal notranslate"><span class="pre">stl</span></code>. Vygenerovaný komponent je možné skontrolovať vo vhodnom 3D prehliadači napr. <a class="reference external" href="https://f3d.app/">F3D</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">lib</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">w2</span> <span class="o">=</span> <span class="n">Wheel</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="c1">#w2.export_step(&#39;./step/wheel_02_14_12&#39;)</span>
+<span class="c1">#display(SVG(w2.obj.toSvg()))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<figure class="align-default" id="stm-0103">
+<a class="reference internal image-reference" href="_images/wheel_02_14_12_1.png"><img alt="_images/wheel_02_14_12_1.png" src="_images/wheel_02_14_12_1.png" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Obr. 20 </span><span class="caption-text">Vygenerovaný diel stavebnice v prehliadači F3D.</span><a class="headerlink" href="#stm-0103" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="transformacie-objektov">
+<h2><font color='purple'> <b> Transformácie objektov </b></font><a class="headerlink" href="#transformacie-objektov" title="Link to this heading">#</a></h2>
+<p>Metódy triedy <em>Stemfie_X</em> predstavujú v skrátenej podobe základné operácie na manipuláciu s objektmi.
+Pomocou týchto operácií môžete upravovať základné komponenty a pomocou nich vytvárať zložené alebo odvodené komponenty.</p>
+<section id="posun">
+<h3><font color='brown'> <b> Posun </b></font><a class="headerlink" href="#posun" title="Link to this heading">#</a></h3>
+<p>Posuny objektu v smeroch osí súradnicovej sústavy</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>BU_Tx(n)                      # posun objektu v smere x,y,z v jednotkách BU 
+BU_Ty(n)
+BU_Tz(n)
+BU_Txy([x,y])  BU_Txy(x,y)
+BU_Tyz([x,y])  BU_Tyz(y,z)
+BU_Tzx([z,x])  BU_Tzx(z,x)
+BU_T([x,y,z])  BU_T(x,y,z)
+
+Tx(d)                         # posun objektu v jednotkách [mm] 
+Ty(d)
+Tz(d)
+T([x,y,z])     T(x,y,z)
+</pre></div>
+</div>
+</section>
+<section id="rotacia">
+<h3><font color='brown'> <b> Rotácia </b></font><a class="headerlink" href="#rotacia" title="Link to this heading">#</a></h3>
+<p>Rotácie objektu okolo osí súradnicivej sústavy. Veľkosť uhla je v stupňoch.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Rx(angle)
+Ry(angle)
+Rz(angle)
+</pre></div>
+</div>
+</section>
+<section id="zrkadlenie">
+<h3><font color='brown'> <b> Zrkadlenie </b></font><a class="headerlink" href="#zrkadlenie" title="Link to this heading">#</a></h3>
+<p>Zrkadlenie objektu podľa osí súradnicivej sústavy.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Mx()       # zrkadlenie objektu
+My()
+Mz()
+
+MKx()      # zrkadlenie s kopírovaním
+MKy()
+MKz()  
+</pre></div>
+</div>
+</section>
+<section id="logicke-operacie">
+<h3><font color='brown'> <b> Logické operácie </b></font><a class="headerlink" href="#logicke-operacie" title="Link to this heading">#</a></h3>
+<p>Pre vytváranie zložených objektov sú definované základné logické operácie.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>U(c)   U([c1,c2 ...])     union
+D(c)   D([c1,c2 ...])     difference
+I(c)   I([c1,c2 ...])     intersection  
+</pre></div>
+</div>
+</section>
+</section>
+<section id="vytvorenie-zlozeneho-objektu">
+<h2><font color='purple'> <b> Vytvorenie zloženého objektu </b></font><a class="headerlink" href="#vytvorenie-zlozeneho-objektu" title="Link to this heading">#</a></h2>
+<p>S využitím knižnice základných komponentov a transformačných metód môžeme vytvárať zložené objekty. Najskôr vytvoríme jednotlivé objekty, pomocou transformačných vsťahov ich posunieme do správnej pozícia a nakoniec ich logickou operáciou zjednotíme do finálneho objektu.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">lib</span> <span class="kn">import</span> <span class="o">*</span>                         <span class="c1"># U-Shape Beam Block</span>
+<span class="n">b1</span> <span class="o">=</span> <span class="n">Beam_Block</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>                  <span class="c1"># components, rotating and shifting</span>
+<span class="n">b2</span> <span class="o">=</span> <span class="n">Beam_Block</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">Ry</span><span class="p">()</span>
+<span class="n">b3</span> <span class="o">=</span> <span class="n">Beam_Block</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">Ry</span><span class="p">(</span><span class="o">-</span><span class="mi">180</span><span class="p">)</span><span class="o">.</span><span class="n">BU_Tx</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">b1</span><span class="o">.</span><span class="n">U</span><span class="p">([</span><span class="n">b2</span><span class="p">,</span><span class="n">b3</span><span class="p">])</span>                             <span class="c1"># b1 = b1 + b2 + b3</span>
+<span class="n">b1</span><span class="o">.</span><span class="n">Rx</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>                                 <span class="c1"># rotate for view</span>
+
+<span class="c1">#display(SVG(b1.obj.toSvg()))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;lib.beams.Beam_Block at 0x7133cc1d1d30&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="0500_prg_instalacia.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><font color='navy'> <b> Inštalácia</b> </font></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="0520_prg_brace.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><font color='navy'> <b> Spojky </b> </font></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pouzitie"><font color="purple"> <b> Použitie </b></font></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformacie-objektov"><font color="purple"> <b> Transformácie objektov </b></font></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#posun"><font color="brown"> <b> Posun </b></font></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rotacia"><font color="brown"> <b> Rotácia </b></font></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zrkadlenie"><font color="brown"> <b> Zrkadlenie </b></font></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logicke-operacie"><font color="brown"> <b> Logické operácie </b></font></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vytvorenie-zlozeneho-objektu"><font color="purple"> <b> Vytvorenie zloženého objektu </b></font></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By pf
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025, pf.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

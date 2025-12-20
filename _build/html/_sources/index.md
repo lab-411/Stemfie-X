@@ -37,6 +37,7 @@
 :titlesonly: True
 :caption: Programovanie
 0500_prg_instalacia.md
+0505_prg_lib.md
 0520_prg_brace.md
 ```
 
