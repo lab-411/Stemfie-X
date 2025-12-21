@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Ako na to &#8212; Stemfie-X 0.1 documentation</title>
+    <title>Montážne otvory &#8212; Stemfie-X 0.1 documentation</title>
   
   
   
@@ -30,7 +30,7 @@
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -46,9 +46,11 @@
     <script src="_static/copybutton.js?v=f281be69"></script>
     <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script src="_static/design-tabs.js?v=f930bc37"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '0500_prg_akonato';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '0530_prg_holes';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Inštalácia" href="0900_instalacia.html" />
+    <link rel="prev" title="Nosníky" href="0525_prg_beam.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -111,8 +113,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -171,9 +171,12 @@
 <li class="toctree-l1"><a class="reference internal" href="0210_exm_bridge.html"><font color="navy"> <b> Priehradový most </b> </font></a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Programovanie</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0500_prg_ako_na_to.html"><font color="navy"> <b> Ako na to</b> </font></a></li>
 <li class="toctree-l1"><a class="reference internal" href="0505_prg_lib.html"><font color="navy"> <b> Návrh komponentov</b> </font></a></li>
 <li class="toctree-l1"><a class="reference internal" href="0520_prg_brace.html"><font color="navy"> <b> Spojky </b> </font></a></li>
+<li class="toctree-l1"><a class="reference internal" href="0525_prg_beam.html"><font color="navy"> <b> Nosníky </b> </font></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><font color="navy"> <b> Montážne otvory </b> </font></a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Prílohy</span></p>
 <ul class="nav bd-sidenav">
@@ -232,7 +235,7 @@
       
       
       
-      <li><a href="_sources/0500_prg_akonato.md" target="_blank"
+      <li><a href="_sources/0530_prg_holes.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -303,7 +306,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -314,11 +319,22 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><font color='navy'> <b> Ako na to</b> </font></h1>
+    <h1><font color='navy'> <b> Montážne otvory </b> </font></h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funkcie"><font color="purple"> <b> Funkcie </b></font></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#priklady-pouzitia"><font color="brown"> <b> Príklady použitia </b></font></a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -328,18 +344,89 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="ako-na-to">
-<h1><font color='navy'> <b> Ako na to</b> </font><a class="headerlink" href="#ako-na-to" title="Link to this heading">#</a></h1>
-<figure class="align-default" id="prg-100">
+  <section class="tex2jax_ignore mathjax_ignore" id="montazne-otvory">
+<h1><font color='navy'> <b> Montážne otvory </b> </font><a class="headerlink" href="#montazne-otvory" title="Link to this heading">#</a></h1>
+<figure class="align-default" id="holes-201">
 <a class="reference internal image-reference" href="_images/banner.png"><img alt="_images/banner.png" src="_images/banner.png" style="width: 800px;" />
 </a>
 </figure>
-<p>Pri návrhu našej konštrukcie sme zistili, že potrebujeme spojku v tvare T. Pri návrhu môžeme na náčrty používať štvorčekový papier s rastrom 5mm (BU/2), na ktorom získame prestavu o skutočnej veľkosti dielov.</p>
-<figure class="align-default" id="prg-126">
-<a class="reference internal image-reference" href="_images/prg_navrh.jpg"><img alt="_images/prg_navrh.jpg" src="_images/prg_navrh.jpg" style="width: 650px;" />
+<p>Pre vytváranie montážnych dier, štrbín a drážok je v <em>Stemfie-X</em> vytvorená trieda <em>Hole</em>. Táto generuje pomocné objekty, ktoré sú potom od vopred vytvorených dielov odčítané pomocou logickéj operácie <em>diffrence</em> <code class="docutils literal notranslate"><span class="pre">D()</span></code>. Štrbinu využívame aj pri konštrukciách, kde pri dieloch pod uhlom sa montážny otvor nenachádza v rastri <strong>BU</strong>. Princíp tvorby otvorov je zrejmý z nasledujúceho obrázku.</p>
+<figure class="align-default" id="holes-202">
+<a class="reference internal image-reference" href="_images/hole_build.png"><img alt="_images/hole_build.png" src="_images/hole_build.png" style="width: 500px;" />
 </a>
+<figcaption>
+<p><span class="caption-number">Obr. 28 </span><span class="caption-text">Postup vytvárania otvorov v dieloch,</span><a class="headerlink" href="#holes-202" title="Link to this image">#</a></p>
+</figcaption>
 </figure>
-<p>Pri návrhu vlastných konštrukcií často potrebujeme upraviť a modifikovať štandardné diely alebo vytvárať nové diely. Je zrejmé, že nie je možné vytvoriť univerzálny katalóg dielov, možnosti stavebnice <em>Stemfie-X</em> sú rozsiahle, a je preto vhodnejšie požadované diely a ich varianty vytvoriť “na mieru” pomocou programu.</p>
+<section id="funkcie">
+<h2><font color='purple'> <b> Funkcie </b></font><a class="headerlink" href="#funkcie" title="Link to this heading">#</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Hole(length)
+Hole_List(hole_list, length)
+Hole_Grid(dim_x, dim_y, length, offs_x, offs_y, offs_z)
+Hole_Slot(size, height, center)
+
+Parametre       Default   Popis 
+--------------------------------------------------------------
+length          1         dĺžka diery v BU
+hole_list                 zoznam pozícií dier v BU [[x1,y1], [x2,y2] ... ]
+dim_x, dim_y              rozmery pola dier v BU
+offs_x          1         posun pola dier v smere osi X v BU 
+offs_y          1         posun pola dier v smere osi Y v BU 
+offs_z          1         posun pola dier v smere osi Z v BU 
+size                      dĺžka štrbiny v BU
+height          1/4       výška štrbiny v BU
+center          False     umiestnenie štrbiny v strede sur. sustavy
+</pre></div>
+</div>
+<section id="priklady-pouzitia">
+<h3><font color='brown'> <b> Príklady použitia </b></font><a class="headerlink" href="#priklady-pouzitia" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">lib</span> <span class="kn">import</span> <span class="o">*</span>
+                                    <span class="c1"># Brace with slot and holes</span>
+<span class="n">bs</span> <span class="o">=</span> <span class="n">Brace</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">holes</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>          <span class="c1"># brace without holes</span>
+<span class="n">hh</span> <span class="o">=</span> <span class="n">Hole_Slot</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>                   <span class="c1"># slot</span>
+<span class="n">hs</span> <span class="o">=</span> <span class="n">Hole_List</span><span class="p">([</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">0</span><span class="p">]]</span> <span class="p">)</span>    <span class="c1"># holes</span>
+<span class="n">bs</span><span class="o">.</span><span class="n">D</span><span class="p">([</span><span class="n">hh</span><span class="p">,</span> <span class="n">hs</span><span class="p">])</span><span class="o">.</span><span class="n">Rz</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>               <span class="c1"># difference </span>
+<span class="n">display</span><span class="p">(</span><span class="n">SVG</span><span class="p">(</span><span class="n">bs</span><span class="o">.</span><span class="n">obj</span><span class="o">.</span><span class="n">toSvg</span><span class="p">()))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/166c66ab8ffa458547a2141858cc4a4bf1e3af215210851adcc7f6f4dbc6869c.svg" src="_images/166c66ab8ffa458547a2141858cc4a4bf1e3af215210851adcc7f6f4dbc6869c.svg" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">lib</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">bs</span> <span class="o">=</span> <span class="n">Brace</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="n">holes</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>          <span class="c1"># brace without holes</span>
+<span class="n">hh</span> <span class="o">=</span> <span class="n">Hole_Slot</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">BU_Tx</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>          <span class="c1"># slot + shift</span>
+<span class="n">hs</span> <span class="o">=</span> <span class="n">Hole_List</span><span class="p">([</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">0</span><span class="p">]]</span> <span class="p">)</span>    <span class="c1"># holes</span>
+<span class="n">bs</span><span class="o">.</span><span class="n">D</span><span class="p">([</span><span class="n">hh</span><span class="p">,</span> <span class="n">hs</span><span class="p">])</span><span class="o">.</span><span class="n">Rz</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>               <span class="c1"># difference </span>
+<span class="n">display</span><span class="p">(</span><span class="n">SVG</span><span class="p">(</span><span class="n">bs</span><span class="o">.</span><span class="n">obj</span><span class="o">.</span><span class="n">toSvg</span><span class="p">()))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/09137b0363270f3b283f36624d2f55f5a1eb949459f65c80f20710f9c4ac1b77.svg" src="_images/09137b0363270f3b283f36624d2f55f5a1eb949459f65c80f20710f9c4ac1b77.svg" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">lib</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">BU_Cube</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">],</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">h</span> <span class="o">=</span> <span class="n">Hole_Grid</span><span class="p">(</span> <span class="mi">4</span><span class="p">,</span><span class="mi">2</span> <span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">c</span><span class="o">.</span><span class="n">D</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">SVG</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">obj</span><span class="o">.</span><span class="n">toSvg</span><span class="p">()))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/580856bdfe18fb89e98aa552958ed1e1ba40ae648c0bf3b96d21dca0f9c6ceb5.svg" src="_images/580856bdfe18fb89e98aa552958ed1e1ba40ae648c0bf3b96d21dca0f9c6ceb5.svg" />
+</div>
+</div>
+</section>
+</section>
 </section>
 
 
@@ -353,12 +440,48 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="0525_prg_beam.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><font color='navy'> <b> Nosníky </b> </font></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="0900_instalacia.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><font color='navy'> <b> Inštalácia</b> </font></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funkcie"><font color="purple"> <b> Funkcie </b></font></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#priklady-pouzitia"><font color="brown"> <b> Príklady použitia </b></font></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

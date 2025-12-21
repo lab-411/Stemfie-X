@@ -101,31 +101,30 @@ _ = os.system("java -jar ./jar/plantuml.jar ./jar/prg_101.pnl")
 :width: 800px
 :name: stm_0102
 
-Štruktúra tried knižnice STEMFIE-X 
+Štruktúra tried knižnice Stemfie-X 
 ```
 
 ## <font color='purple'> <b> Použitie </b></font>
 
-Pre generovanie podkladov pre 3D tlač štandardných komponentov je potrebné importovať knižnicu `lib` a vygenerovať želaný komponent vytvorením objektu danej triedy. Vytvorený komponent exportujeme do súboru typu `step` alebo `stl`. Vygenerovaný komponent je možné skontrolovať vo vhodnom 3D prehliadači napr. [F3D](https://f3d.app/).
+Pre generovanie podkladov pre 3D tlač štandardných komponentov je potrebné importovať knižnicu `lib` a vygenerovať želaný komponent vytvorením objektu danej triedy. Vytvorený komponent exportujeme do súboru typu *.step* alebo *.stl*. Vygenerovaný komponent je možné skontrolovať vo vhodnom 3D prehliadači napr. [f3d](https://f3d.app/).
 
 ```{code-cell} ipython3  
 from lib import *
 w2 = Wheel(2)
-#w2.export_step('./step/wheel_02_14_12')
-#display(SVG(w2.obj.toSvg()))
+_ = w2.export_step('./step/wheel_02_14_12')
 ```
 
 ```{figure} ./img/wheel_02_14_12_1.png
-:width: 400px
+:width: 350px
 :name: stm_0103
 
-Vygenerovaný diel stavebnice v prehliadači F3D. 
+Vygenerovaný diel stavebnice v prehliadači *f3d*. 
 ```
 
 ## <font color='purple'> <b> Transformácie objektov </b></font>
 
-Metódy triedy *Stemfie_X* predstavujú v skrátenej podobe základné operácie na manipuláciu s objektmi.
-Pomocou týchto operácií môžete upravovať základné komponenty a pomocou nich vytvárať zložené alebo odvodené komponenty.
+Metódy triedy *Stemfie_X* predstavujú v zjednodušenej podobe základné operácie na manipuláciu s objektmi v 3D priestore.
+Pomocou týchto operácií môžete upravovať základné komponenty a vytvárať zložené alebo odvodené komponenty.
 
 ### <font color='brown'> <b> Posun </b></font>
 
@@ -174,7 +173,7 @@ Pre vytváranie zložených objektov sú definované základné logické operác
 
 ## <font color='purple'> <b> Vytvorenie zloženého objektu </b></font>
 
-S využitím knižnice základných komponentov a transformačných metód môžeme vytvárať zložené objekty. Najskôr vytvoríme jednotlivé objekty, pomocou transformačných vsťahov ich posunieme do správnej pozícia a nakoniec ich logickou operáciou zjednotíme do finálneho objektu.
+S využitím knižnice základných komponentov a transformačných metód môžeme vytvárať zložené objekty. Najskôr vytvoríme jednotlivé objekty, pomocou transformačných vzťahov ich posunieme do správnej pozícia a nakoniec ich logickou operáciou zjednotíme do finálneho objektu.
 
 ```{code-cell} ipython3  
 from lib import *                         # U-Shape Beam Block
@@ -183,7 +182,7 @@ b2 = Beam_Block([3,1,1]).Ry()
 b3 = Beam_Block([2,1,1]).Ry(-180).BU_Tx(1)
 
 b1.U([b2,b3])                             # b1 = b1 + b2 + b3
-b1.Rx(30)                                 # rotate for view
+b1.Rx(45).Ry(15)                          # rotate for view
 
-#display(SVG(b1.obj.toSvg()))
+show(b1, 400, 200)
 ```

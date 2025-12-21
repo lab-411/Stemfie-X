@@ -30,7 +30,7 @@
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -175,6 +175,8 @@
 <li class="toctree-l1"><a class="reference internal" href="0500_prg_ako_na_to.html"><font color="navy"> <b> Ako na to</b> </font></a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#"><font color="navy"> <b> Návrh komponentov</b> </font></a></li>
 <li class="toctree-l1"><a class="reference internal" href="0520_prg_brace.html"><font color="navy"> <b> Spojky </b> </font></a></li>
+<li class="toctree-l1"><a class="reference internal" href="0525_prg_beam.html"><font color="navy"> <b> Nosníky </b> </font></a></li>
+<li class="toctree-l1"><a class="reference internal" href="0530_prg_holes.html"><font color="navy"> <b> Montážne otvory </b> </font></a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Prílohy</span></p>
 <ul class="nav bd-sidenav">
@@ -363,35 +365,34 @@ document.write(`
 <a class="reference internal image-reference" href="_images/prg_101.png"><img alt="_images/prg_101.png" src="_images/prg_101.png" style="width: 800px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Obr. 24 </span><span class="caption-text">Štruktúra tried knižnice STEMFIE-X</span><a class="headerlink" href="#stm-0102" title="Link to this image">#</a></p>
+<p><span class="caption-number">Obr. 24 </span><span class="caption-text">Štruktúra tried knižnice Stemfie-X</span><a class="headerlink" href="#stm-0102" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="pouzitie">
 <h2><font color='purple'> <b> Použitie </b></font><a class="headerlink" href="#pouzitie" title="Link to this heading">#</a></h2>
-<p>Pre generovanie podkladov pre 3D tlač štandardných komponentov je potrebné importovať knižnicu <code class="docutils literal notranslate"><span class="pre">lib</span></code> a vygenerovať želaný komponent vytvorením objektu danej triedy. Vytvorený komponent exportujeme do súboru typu <code class="docutils literal notranslate"><span class="pre">step</span></code> alebo <code class="docutils literal notranslate"><span class="pre">stl</span></code>. Vygenerovaný komponent je možné skontrolovať vo vhodnom 3D prehliadači napr. <a class="reference external" href="https://f3d.app/">F3D</a>.</p>
+<p>Pre generovanie podkladov pre 3D tlač štandardných komponentov je potrebné importovať knižnicu <code class="docutils literal notranslate"><span class="pre">lib</span></code> a vygenerovať želaný komponent vytvorením objektu danej triedy. Vytvorený komponent exportujeme do súboru typu <em>.step</em> alebo <em>.stl</em>. Vygenerovaný komponent je možné skontrolovať vo vhodnom 3D prehliadači napr. <a class="reference external" href="https://f3d.app/">f3d</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">lib</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="n">w2</span> <span class="o">=</span> <span class="n">Wheel</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="c1">#w2.export_step(&#39;./step/wheel_02_14_12&#39;)</span>
-<span class="c1">#display(SVG(w2.obj.toSvg()))</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">w2</span><span class="o">.</span><span class="n">export_step</span><span class="p">(</span><span class="s1">&#39;./step/wheel_02_14_12&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <figure class="align-default" id="stm-0103">
-<a class="reference internal image-reference" href="_images/wheel_02_14_12_1.png"><img alt="_images/wheel_02_14_12_1.png" src="_images/wheel_02_14_12_1.png" style="width: 400px;" />
+<a class="reference internal image-reference" href="_images/wheel_02_14_12_1.png"><img alt="_images/wheel_02_14_12_1.png" src="_images/wheel_02_14_12_1.png" style="width: 350px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Obr. 25 </span><span class="caption-text">Vygenerovaný diel stavebnice v prehliadači F3D.</span><a class="headerlink" href="#stm-0103" title="Link to this image">#</a></p>
+<p><span class="caption-number">Obr. 25 </span><span class="caption-text">Vygenerovaný diel stavebnice v prehliadači <em>f3d</em>.</span><a class="headerlink" href="#stm-0103" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="transformacie-objektov">
 <h2><font color='purple'> <b> Transformácie objektov </b></font><a class="headerlink" href="#transformacie-objektov" title="Link to this heading">#</a></h2>
-<p>Metódy triedy <em>Stemfie_X</em> predstavujú v skrátenej podobe základné operácie na manipuláciu s objektmi.
-Pomocou týchto operácií môžete upravovať základné komponenty a pomocou nich vytvárať zložené alebo odvodené komponenty.</p>
+<p>Metódy triedy <em>Stemfie_X</em> predstavujú v zjednodušenej podobe základné operácie na manipuláciu s objektmi v 3D priestore.
+Pomocou týchto operácií môžete upravovať základné komponenty a vytvárať zložené alebo odvodené komponenty.</p>
 <section id="posun">
 <h3><font color='brown'> <b> Posun </b></font><a class="headerlink" href="#posun" title="Link to this heading">#</a></h3>
 <p>Posuny objektu v smeroch osí súradnicovej sústavy</p>
@@ -444,7 +445,7 @@ I(c)   I([c1,c2 ...])     intersection
 </section>
 <section id="vytvorenie-zlozeneho-objektu">
 <h2><font color='purple'> <b> Vytvorenie zloženého objektu </b></font><a class="headerlink" href="#vytvorenie-zlozeneho-objektu" title="Link to this heading">#</a></h2>
-<p>S využitím knižnice základných komponentov a transformačných metód môžeme vytvárať zložené objekty. Najskôr vytvoríme jednotlivé objekty, pomocou transformačných vsťahov ich posunieme do správnej pozícia a nakoniec ich logickou operáciou zjednotíme do finálneho objektu.</p>
+<p>S využitím knižnice základných komponentov a transformačných metód môžeme vytvárať zložené objekty. Najskôr vytvoríme jednotlivé objekty, pomocou transformačných vzťahov ich posunieme do správnej pozícia a nakoniec ich logickou operáciou zjednotíme do finálneho objektu.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">lib</span> <span class="kn">import</span> <span class="o">*</span>                         <span class="c1"># U-Shape Beam Block</span>
@@ -453,16 +454,14 @@ I(c)   I([c1,c2 ...])     intersection
 <span class="n">b3</span> <span class="o">=</span> <span class="n">Beam_Block</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">Ry</span><span class="p">(</span><span class="o">-</span><span class="mi">180</span><span class="p">)</span><span class="o">.</span><span class="n">BU_Tx</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="n">b1</span><span class="o">.</span><span class="n">U</span><span class="p">([</span><span class="n">b2</span><span class="p">,</span><span class="n">b3</span><span class="p">])</span>                             <span class="c1"># b1 = b1 + b2 + b3</span>
-<span class="n">b1</span><span class="o">.</span><span class="n">Rx</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>                                 <span class="c1"># rotate for view</span>
+<span class="n">b1</span><span class="o">.</span><span class="n">Rx</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span><span class="o">.</span><span class="n">Ry</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>                          <span class="c1"># rotate for view</span>
 
-<span class="c1">#display(SVG(b1.obj.toSvg()))</span>
+<span class="n">show</span><span class="p">(</span><span class="n">b1</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;lib.beams.Beam_Block at 0x73a978219d30&gt;
-</pre></div>
-</div>
+<img alt="_images/96e6c5c621b2ee2f393590b17f1606d87dcacbbfd4a6152ea0160d16bd4d6120.svg" src="_images/96e6c5c621b2ee2f393590b17f1606d87dcacbbfd4a6152ea0160d16bd4d6120.svg" />
 </div>
 </div>
 </section>

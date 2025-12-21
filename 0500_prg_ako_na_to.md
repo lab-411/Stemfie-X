@@ -60,9 +60,9 @@ Návrh dielu v CQ-Editore.
 
 ## <font color='purple'> <b> Export podkladov pre tlač </b> </font>
 
-Program vygeneruje príkazom *b1.export_step('part_b1')* podklady pre tlač vo formáte STEP. Tento formát je bezstratový, obsahuje vnútornú štriktúru a vygeberované dáta je možné používať v kompatibilných CAD systémoch, napríklad [FreeCAD](https://www.freecad.org/). 
+Program vygeneruje príkazom *b1.export_step('part_b1')* podklady pre tlač vo formáte STEP. Tento formát je bezstratový, obsahuje vnútornú štruktúru objektu a vygenerované dáta je možné používať v kompatibilných CAD systémoch, napríklad [FreeCAD](https://www.freecad.org/). 
 
-Pokdlady je možné vygenerovať aj vo formáte STL príkazom *b1.export_stl('part_b1')*, ktorý je tak isto možné použiť pre 3D tlač, formát STL je stratový, obsahuje len vonkajšie plochy objektu.
+Podklady je možné vygenerovať aj vo formáte STL príkazom *b1.export_stl('part_b1')*, ktorý je tak isto možné použiť pre 3D tlač, formát STL je stratový, obsahuje len vonkajšie plochy objektu.
 
 Exportované dáta môžeme prehliadať vo vhodnom prehliadači, napríklad [f3d](https://f3d.app/)
 
@@ -74,7 +74,7 @@ Prehliadanie vygenerovaných dát v prehliadači *f3d*.
 
 ## <font color='purple'> <b> 3D Tlač </b> </font>
 
-Vygenerované dáta spracujeme programom pre generovani povelového kódu pre 3D tlačiareň (gcode). Presný postup závisí od použitej tlačiarne, na obrázku je spracovanie podkladov pre tlač pomocou programu [PrusaSlicer](https://www.prusa3d.com). 
+Vytvorené dáta spracujeme programom pre generovani povelového kódu pre 3D tlačiareň (gcode). Presný postup závisí od použitej tlačiarne, na obrázku je spracovanie podkladov pre tlač pomocou programu [PrusaSlicer](https://www.prusa3d.com). 
 
 ```{figure} ./img/prg_slicer.png
 :width: 600px

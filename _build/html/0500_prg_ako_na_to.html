@@ -30,7 +30,7 @@
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -175,6 +175,8 @@
 <li class="toctree-l1 current active"><a class="current reference internal" href="#"><font color="navy"> <b> Ako na to</b> </font></a></li>
 <li class="toctree-l1"><a class="reference internal" href="0505_prg_lib.html"><font color="navy"> <b> Návrh komponentov</b> </font></a></li>
 <li class="toctree-l1"><a class="reference internal" href="0520_prg_brace.html"><font color="navy"> <b> Spojky </b> </font></a></li>
+<li class="toctree-l1"><a class="reference internal" href="0525_prg_beam.html"><font color="navy"> <b> Nosníky </b> </font></a></li>
+<li class="toctree-l1"><a class="reference internal" href="0530_prg_holes.html"><font color="navy"> <b> Montážne otvory </b> </font></a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Prílohy</span></p>
 <ul class="nav bd-sidenav">
@@ -392,8 +394,8 @@ b1.export_step(&#39;part_b1&#39;)    # vygenerovanie podkladov pre tlac vo forma
 </section>
 <section id="export-podkladov-pre-tlac">
 <h2><font color='purple'> <b> Export podkladov pre tlač </b> </font><a class="headerlink" href="#export-podkladov-pre-tlac" title="Link to this heading">#</a></h2>
-<p>Program vygeneruje príkazom <em>b1.export_step(‘part_b1’)</em> podklady pre tlač vo formáte STEP. Tento formát je bezstratový, obsahuje vnútornú štriktúru a vygeberované dáta je možné používať v kompatibilných CAD systémoch, napríklad <a class="reference external" href="https://www.freecad.org/">FreeCAD</a>.</p>
-<p>Pokdlady je možné vygenerovať aj vo formáte STL príkazom <em>b1.export_stl(‘part_b1’)</em>, ktorý je tak isto možné použiť pre 3D tlač, formát STL je stratový, obsahuje len vonkajšie plochy objektu.</p>
+<p>Program vygeneruje príkazom <em>b1.export_step(‘part_b1’)</em> podklady pre tlač vo formáte STEP. Tento formát je bezstratový, obsahuje vnútornú štruktúru objektu a vygenerované dáta je možné používať v kompatibilných CAD systémoch, napríklad <a class="reference external" href="https://www.freecad.org/">FreeCAD</a>.</p>
+<p>Podklady je možné vygenerovať aj vo formáte STL príkazom <em>b1.export_stl(‘part_b1’)</em>, ktorý je tak isto možné použiť pre 3D tlač, formát STL je stratový, obsahuje len vonkajšie plochy objektu.</p>
 <p>Exportované dáta môžeme prehliadať vo vhodnom prehliadači, napríklad <a class="reference external" href="https://f3d.app/">f3d</a></p>
 <figure class="align-default" id="id3">
 <a class="reference internal image-reference" href="_images/part_b1.png"><img alt="_images/part_b1.png" src="_images/part_b1.png" style="width: 300px;" />
@@ -405,7 +407,7 @@ b1.export_step(&#39;part_b1&#39;)    # vygenerovanie podkladov pre tlac vo forma
 </section>
 <section id="d-tlac">
 <h2><font color='purple'> <b> 3D Tlač </b> </font><a class="headerlink" href="#d-tlac" title="Link to this heading">#</a></h2>
-<p>Vygenerované dáta spracujeme programom pre generovani povelového kódu pre 3D tlačiareň (gcode). Presný postup závisí od použitej tlačiarne, na obrázku je spracovanie podkladov pre tlač pomocou programu <a class="reference external" href="https://www.prusa3d.com">PrusaSlicer</a>.</p>
+<p>Vytvorené dáta spracujeme programom pre generovani povelového kódu pre 3D tlačiareň (gcode). Presný postup závisí od použitej tlačiarne, na obrázku je spracovanie podkladov pre tlač pomocou programu <a class="reference external" href="https://www.prusa3d.com">PrusaSlicer</a>.</p>
 <figure class="align-default" id="id4">
 <a class="reference internal image-reference" href="_images/prg_slicer.png"><img alt="_images/prg_slicer.png" src="_images/prg_slicer.png" style="width: 600px;" />
 </a>
