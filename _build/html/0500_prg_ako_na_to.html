@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Stemfie-X &#8212; Stemfie-X 0.1 documentation</title>
+    <title>Ako na to &#8212; Stemfie-X 0.1 documentation</title>
   
   
   
@@ -46,12 +46,11 @@
     <script src="_static/copybutton.js?v=f281be69"></script>
     <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script src="_static/design-tabs.js?v=f930bc37"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '0500_prg_ako_na_to';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Vlastnosti" href="0005_uvod.html" />
+    <link rel="next" title="Návrh komponentov" href="0505_prg_lib.html" />
+    <link rel="prev" title="Priehradový most" href="0210_exm_bridge.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -114,8 +113,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -134,7 +131,7 @@
     
   
 
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo" href="index.html">
   
   
   
@@ -174,8 +171,8 @@
 <li class="toctree-l1"><a class="reference internal" href="0210_exm_bridge.html"><font color="navy"> <b> Priehradový most </b> </font></a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Programovanie</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="0500_prg_ako_na_to.html"><font color="navy"> <b> Ako na to</b> </font></a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><font color="navy"> <b> Ako na to</b> </font></a></li>
 <li class="toctree-l1"><a class="reference internal" href="0505_prg_lib.html"><font color="navy"> <b> Návrh komponentov</b> </font></a></li>
 <li class="toctree-l1"><a class="reference internal" href="0520_prg_brace.html"><font color="navy"> <b> Spojky </b> </font></a></li>
 </ul>
@@ -236,7 +233,7 @@
       
       
       
-      <li><a href="_sources/index.md" target="_blank"
+      <li><a href="_sources/0500_prg_ako_na_to.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -320,7 +317,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><center> <font color='navy'>  <b> Stemfie-X </b> </font> </center></h1>
+    <h1><font color='navy'> <b> Ako na to</b> </font></h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -330,9 +327,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#obsah"><font color="teal">  Obsah </font></a><ul class="nav section-nav flex-column">
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navrh-dielu"><font color="purple"> <b> Návrh dielu</b> </font></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#export-podkladov-pre-tlac"><font color="purple"> <b> Export podkladov pre tlač </b> </font></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-tlac"><font color="purple"> <b> 3D Tlač </b> </font></a></li>
 </ul>
             </nav>
         </div>
@@ -344,46 +341,78 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="stemfie-x">
-<h1><center> <font color='navy'>  <b> Stemfie-X </b> </font> </center><a class="headerlink" href="#stemfie-x" title="Link to this heading">#</a></h1>
-<center> 
-<h3> <font color='brown'>  <b> Autor </b> </font> </h3>
-</center> 
-<center> 
-<h3> <font color='brown'>  <b> LAB411 Production </b> </font>      </h3>
-<h3> <font color='brown'>  <b> Ver. 0.1, Dec. 2025 </b> </font>                   </h3>
-</center> 
-<hr class="docutils" />
-<section id="obsah">
-<h2><font color='teal'>  Obsah </font><a class="headerlink" href="#obsah" title="Link to this heading">#</a></h2>
-<div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Úvod</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="0005_uvod.html"><font color='navy'> <b> Vlastnosti </b> </font></a></li>
-<li class="toctree-l1"><a class="reference internal" href="0010_komponenty.html"><font color='navy'> <b> Diely </b> </font></a></li>
-<li class="toctree-l1"><a class="reference internal" href="0015_montaz.html"><font color='navy'> <b> Montáž  </b> </font></a></li>
+  <section class="tex2jax_ignore mathjax_ignore" id="ako-na-to">
+<h1><font color='navy'> <b> Ako na to</b> </font><a class="headerlink" href="#ako-na-to" title="Link to this heading">#</a></h1>
+<figure class="align-default" id="prg-100">
+<a class="reference internal image-reference" href="_images/banner.png"><img alt="_images/banner.png" src="_images/banner.png" style="width: 800px;" />
+</a>
+</figure>
+<p>Pri návrhu našej konštrukcie sme zistili, že potrebujeme spojku v tvare T o hrúbke 1/4 BU. Pri návrhu môžeme ako pomôcku na náčrty používať štvorčekový papier s rastrom 5mm (BU/2), na ktorom získame predstavu o skutočnej veľkosti dielov.</p>
+<figure class="align-default" id="id1">
+<a class="reference internal image-reference" href="_images/prg_navrh.jpg"><img alt="_images/prg_navrh.jpg" src="_images/prg_navrh.jpg" style="width: 350px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Obr. 20 </span><span class="caption-text">Náčrt dielu na štvorčekovom papieri.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Náš diel do stavebnice “vyrobíme” naprogramovaním v jazyku <em>Python</em> s použitím knižníc pre projektovanie dielov. K výrobe dielu potrebujeme</p>
+<ul class="simple">
+<li><p>elementárne znalosti informatiky a programovania, najlepšie v <em>Pythone</em> (súbor, adresár, spustenie programu, základné syntaktické konštrukcie, práca s knižnicami)</p></li>
+<li><p>nainštalovaný editor <em>CQ-Editor</em> s knižnicou <em>CadQuery</em> a v pracovnom adresári rozbalenú knižnicu pre <em>Stemfie-X</em> podľa <a class="reference internal" href="0900_instalacia.html"><span class="std std-doc">návodu</span></a></p></li>
+<li><p>nainštalované programy pre prehliadanie podkladov pre 3D tlač a generovanie dát pre tlačiareň</p></li>
+<li><p>znalosť práce s 3D tlačiarňou</p></li>
 </ul>
-</div>
-<div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Jednoduché konštrukcie</span></p>
+<section id="navrh-dielu">
+<h2><font color='purple'> <b> Návrh dielu</b> </font><a class="headerlink" href="#navrh-dielu" title="Link to this heading">#</a></h2>
+<p>Pri návrhu dielu postupujeme podľa nasledujúcich bodov</p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="0210_exm_bridge.html"><font color='navy'> <b> Priehradový most </b> </font></a></li>
-</ul>
+<li><p>vytvoríme si pracovný adresár a rozbalíme do podadresári <em>./lib</em> <a class="reference download internal" download="" href="_downloads/c7758403c3488bb679c27b0e286e55f6/lib.zip"><span class="xref download myst">knižnicu</span></a> pre návrh dielov</p></li>
+<li><p>spustíme editor <em>CQ-Editor</em>, vytvoríme nový súbor (<em>File -&gt; New</em>) a <strong>uložíme</strong> (<em>File -&gt; Save</em>) ho do pracovného adresára</p></li>
+<li><p>vytvoríme program pre návrh dielu</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>from lib import *            # import kniznice Stemfie-X
+b1 = Brace(5)                # vytvorenie spojky o velkost 5BU v rovine XY
+b2 = Brace(3).Rz().BU_Tx(2)  # vytvorenie spojky 3BU
+                             # Rz()      - otocenie o 90 stupnov okolo osi Z
+                             # BU_Tx(2)  - posun v smere osi X o dlzku 2BU      
+b1 = b1.U([b2])              # U() union - zjednotenie (spojenie) objektov 
+show_object(b1.obj)          # zobrazenie dielu
+b1.export_step(&#39;part_b1&#39;)    # vygenerovanie podkladov pre tlac vo formate STEP
+</pre></div>
 </div>
-<div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Programovanie</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="0500_prg_ako_na_to.html"><font color='navy'> <b> Ako na to</b> </font></a></li>
-<li class="toctree-l1"><a class="reference internal" href="0505_prg_lib.html"><font color='navy'> <b> Návrh komponentov</b> </font></a></li>
-<li class="toctree-l1"><a class="reference internal" href="0520_prg_brace.html"><font color='navy'> <b> Spojky </b> </font></a></li>
+</li>
 </ul>
-</div>
-<div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Prílohy</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="0900_instalacia.html"><font color='navy'> <b> Inštalácia</b> </font></a></li>
-</ul>
-</div>
+<p>Program spustíme pomocou zelenej šípky v záhlaví editoru alebo klávesou F5. Osi súradnicovej sústavy sú zobrazené v pravom dolnom rohu okna prehliadača. Pre zobrazenie chybových hláseni pri preklade treba mať aktivovanú voľbu <em>Current tracebak</em> vo voľbe <em>View</em>.</p>
+<figure class="align-default" id="id2">
+<a class="reference internal image-reference" href="_images/prg_cq.png"><img alt="_images/prg_cq.png" src="_images/prg_cq.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Obr. 21 </span><span class="caption-text">Návrh dielu v CQ-Editore.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="export-podkladov-pre-tlac">
+<h2><font color='purple'> <b> Export podkladov pre tlač </b> </font><a class="headerlink" href="#export-podkladov-pre-tlac" title="Link to this heading">#</a></h2>
+<p>Program vygeneruje príkazom <em>b1.export_step(‘part_b1’)</em> podklady pre tlač vo formáte STEP. Tento formát je bezstratový, obsahuje vnútornú štriktúru a vygeberované dáta je možné používať v kompatibilných CAD systémoch, napríklad <a class="reference external" href="https://www.freecad.org/">FreeCAD</a>.</p>
+<p>Pokdlady je možné vygenerovať aj vo formáte STL príkazom <em>b1.export_stl(‘part_b1’)</em>, ktorý je tak isto možné použiť pre 3D tlač, formát STL je stratový, obsahuje len vonkajšie plochy objektu.</p>
+<p>Exportované dáta môžeme prehliadať vo vhodnom prehliadači, napríklad <a class="reference external" href="https://f3d.app/">f3d</a></p>
+<figure class="align-default" id="id3">
+<a class="reference internal image-reference" href="_images/part_b1.png"><img alt="_images/part_b1.png" src="_images/part_b1.png" style="width: 300px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Obr. 22 </span><span class="caption-text">Prehliadanie vygenerovaných dát v prehliadači <em>f3d</em>.</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="d-tlac">
+<h2><font color='purple'> <b> 3D Tlač </b> </font><a class="headerlink" href="#d-tlac" title="Link to this heading">#</a></h2>
+<p>Vygenerované dáta spracujeme programom pre generovani povelového kódu pre 3D tlačiareň (gcode). Presný postup závisí od použitej tlačiarne, na obrázku je spracovanie podkladov pre tlač pomocou programu <a class="reference external" href="https://www.prusa3d.com">PrusaSlicer</a>.</p>
+<figure class="align-default" id="id4">
+<a class="reference internal image-reference" href="_images/prg_slicer.png"><img alt="_images/prg_slicer.png" src="_images/prg_slicer.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Obr. 23 </span><span class="caption-text">Generovanie dát pre 3D tlač.</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 </section>
 </section>
 
@@ -398,12 +427,21 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="0210_exm_bridge.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><font color='navy'> <b> Priehradový most </b> </font></p>
+      </div>
+    </a>
     <a class="right-next"
-       href="0005_uvod.html"
+       href="0505_prg_lib.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><font color='navy'> <b> Vlastnosti </b> </font></p>
+        <p class="prev-next-title"><font color='navy'> <b> Návrh komponentov</b> </font></p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -423,9 +461,9 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#obsah"><font color="teal">  Obsah </font></a><ul class="nav section-nav flex-column">
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navrh-dielu"><font color="purple"> <b> Návrh dielu</b> </font></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#export-podkladov-pre-tlac"><font color="purple"> <b> Export podkladov pre tlač </b> </font></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-tlac"><font color="purple"> <b> 3D Tlač </b> </font></a></li>
 </ul>
   </nav></div>
 

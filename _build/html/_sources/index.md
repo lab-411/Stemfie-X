@@ -36,8 +36,14 @@
 ```{toctree}
 :titlesonly: True
 :caption: Programovanie
-0500_prg_instalacia.md
+0500_prg_ako_na_to.md
 0505_prg_lib.md
 0520_prg_brace.md
+```
+
+```{toctree}
+:titlesonly: True
+:caption: Prílohy
+0900_instalacia.md
 ```
 

@@ -30,7 +30,7 @@
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -172,9 +172,13 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Programovanie</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="0500_prg_instalacia.html"><font color="navy"> <b> Inštalácia</b> </font></a></li>
+<li class="toctree-l1"><a class="reference internal" href="0500_prg_ako_na_to.html"><font color="navy"> <b> Ako na to</b> </font></a></li>
 <li class="toctree-l1"><a class="reference internal" href="0505_prg_lib.html"><font color="navy"> <b> Návrh komponentov</b> </font></a></li>
 <li class="toctree-l1"><a class="reference internal" href="0520_prg_brace.html"><font color="navy"> <b> Spojky </b> </font></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Prílohy</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0900_instalacia.html"><font color="navy"> <b> Inštalácia</b> </font></a></li>
 </ul>
 
     </div>
@@ -343,8 +347,8 @@ document.write(`
 </a>
 </figure>
 <p><code class="docutils literal notranslate"><span class="pre">Stemfie-X</span></code> je konštrukčná stavebnica zameraná na polytechnické vzdelávanie s podporou praktického osvojenia si skúseností z moderných technológií v oblasti návrhu a konštrukcie mechatronických systémov, konštrukčných materiálov, elektroniky, programovania a riadenia.</p>
-<p>Stavebnica pokrýva aktivity od jednoduchého spoznávania elementárnych princípov konštrukcie a činnosti mechanických systémov, cez návrh vlastných konštrukcií s využitím katalógu hotových dielov a 3D tlače vybraných dielov až po návrh zložitejších sústav s využitím programovania, parametrického projektovania, elektronických prvkov a riadenia.</p>
-<p>Základnými dielmi pre konštrukciu modelov sú pásy, bloky a platne s montážnymi otvormi vytlačené na 3D tlačiarni. Pre pokročilejšie konštrukcie je možné používať ozubené kolesá, kladky, držiaky motorov a serv. Pokročilí uživatelia si môžu upravovať a vytvárať vlastné diely pomocou konštruovania prostredníctvom programovania v jazyku Python. <strong>Možnosť tvorby vlastných dielov</strong> na základe vlastného návrhu <strong>odlišuje</strong> koncept stavebnice <em>Stemfie-X</em> od ostatných polytechnických stavebníc, kde je uživateľ odkázaný len na sadu dodávaných dielov bez možnosti ich úprav.</p>
+<p>Stavebnica pokrýva aktivity od jednoduchého spoznávania elementárnych princípov konštrukcie a činnosti mechanických systémov, cez návrh vlastných konštrukcií s využitím katalógu hotových dielov a 3D tlače vybraných dielov až po návrh zložitejších sústav s podporou programovania, parametrického projektovania, elektronických prvkov a riadenia.</p>
+<p>Základnými dielmi pre konštrukciu modelov sú spojky, bloky a platne s montážnymi otvormi vytlačené na 3D tlačiarni. Pre pokročilejšie konštrukcie je možné používať ozubené kolesá, kladky, držiaky motorov a serv. Pokročilí uživatelia si môžu upravovať a vytvárať vlastné diely pomocou konštruovania prostredníctvom programovania v jazyku Python. <strong>Možnosť tvorby vlastných dielov</strong> na základe vlastného návrhu <strong>odlišuje</strong> koncept stavebnice <em>Stemfie-X</em> od ostatných polytechnických stavebníc, kde je uživateľ odkázaný len na sadu dodávaných dielov bez možnosti ich úprav.</p>
 <figure class="align-default" id="id1">
 <a class="reference internal image-reference" href="_images/most.jpg"><img alt="_images/most.jpg" src="_images/most.jpg" style="width: 550px;" />
 </a>
@@ -355,15 +359,22 @@ document.write(`
 <p>Koncept stavebnice je navrhnutý tak, aby bola dostupná každého mladého konštruktéra. Všetky podklady a konštrukčné návrhy sú open-source, pre tlač dielov je možné využiť bežne dostupné 3D tlačiarne, pre tlač dielov je použitý recyklovateľný materiál PLA, ako spojovacie prvky sú použité skrutky a diely bežne dostupné v každom železiarstve, pre riadenie elektronických častí je možné využiť dostupné moduly a diely z platformy Arduino.</p>
 <section id="historia">
 <h2><font color='purple'> História </font><a class="headerlink" href="#historia" title="Link to this heading">#</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">Stemfie-X</span></code> je odvodená z konštrukčnej stavebnice pre deti  <a class="reference external" href="https://stemfie.org/"><em>STEMFIE</em></a>. Myšlienka stavebnice je založená na návrhu a následnej 3D tlači univerzálnych komponentov a spojovacích prvkov a konštrukcii vlastných modelov. Modely je možné zostavovať z náverhov hotových sád dielov, ktoré sa vytlačia na 3D tlačiarni, na návrh a konštrukciu vlastných modelov je možné použiť grafické programy a konštrukčné CAD systémy ako FreeCAD, Blender a Tinkercad.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Stemfie-X</span></code> je odvodená z konštrukčnej stavebnice pre deti  <a class="reference external" href="https://stemfie.org/"><em>STEMFIE</em></a>. Myšlienka stavebnice <em>STEMFIE</em> je založená na návrhu a následnej 3D tlači univerzálnych komponentov a spojovacích prvkov a konštrukcii vlastných modelov. Modely je možné zostavovať z návrhov hotových sád dielov, ktoré sa vytlačia na 3D tlačiarni, na návrh a konštrukciu vlastných modelov je možné použiť grafické programy a konštrukčné CAD systémy ako FreeCAD, Blender a Tinkercad.</p>
+<figure class="align-default" id="id2">
+<a class="reference internal image-reference" href="_images/stemfie.png"><img alt="_images/stemfie.png" src="_images/stemfie.png" style="width: 800px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Obr. 2 </span><span class="caption-text">WWW stránky stavebnice <a class="reference external" href="https://stemfie.org/"><em>STEMFIE</em></a>.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Stavebnica <em>Stemfie-X</em> využíva základné princípy projektu <em>STEMFIE</em> s úpravami pre použitie ako platforma pre vytváranie zložitejších štruktúr a modelov s použitím mechanických a elektronických prvkov - motorov, servopohonov, elektronických obvodov a riadenia mikrokontrolérmi. Stavebnica je primárne určená pre polytechnickú výučbu na základných a stredných školách a prvých semestrov vysokých škôl pri výučbe predmetov z oblasti programovania, parametrického modelovania, CAD systémov, konštrukcií strojov a mechanizmov.</p>
 <p>Základným rozdielom medzi <em>Stemfie-X</em> a <em>STEMFIE</em> je veľkosť jednotka (BU), ktorá určuje vzdialenosti medzi montážnymi otvormi, pôvodná veľkosť 12.5mm v <em>STEMFIE</em> je upravená na veľkosť 10mm a montážne otvory majú priemer 4 mm. Tieto modifikácie umožňujú použiť ako spojovací materiál štandardné skrutky M4 a diely stavebnice sú rozmerovo kompatibilné s kovovými dielmi stavebníc <em>Meccano</em>, <em>Merkur</em>, <em>eitech</em> a podobnými.</p>
 <p>Základnými prvkami stavebnice sú spojky a bloky, ktoré je možné modifikovať v násobkoch <strong>BU</strong>, rotačné diely tvoria kladky a kolesá, pre pokročílé konštrukcie je možné využiť ozubené kolesá a pomocné prvky pre montáž motorov, serv a senzorov.</p>
-<figure class="align-default" id="id2">
+<figure class="align-default" id="id3">
 <a class="reference internal image-reference" href="_images/demo_02.png"><img alt="_images/demo_02.png" src="_images/demo_02.png" style="width: 350px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Obr. 2 </span><span class="caption-text">Ukážka základných dielov stavebnice Stemfie-X.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+<p><span class="caption-number">Obr. 3 </span><span class="caption-text">Ukážka základných dielov stavebnice Stemfie-X.</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>

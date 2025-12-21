@@ -19,9 +19,11 @@ kernelspec:
 ```
 Pri návrhu vlastných konštrukcií často potrebujeme upraviť a modifikovať štandardné diely alebo vytvárať nové diely. Je zrejmé, že nie je možné vytvoriť univerzálny katalóg dielov, možnosti stavebnice *Stemfie-X* sú rozsiahle, a je preto vhodnejšie požadované diely a ich varianty vytvoriť "na mieru" pomocou programu. 
 
-Knižnicu *Stemfie-X* tvorí sada tried nad knižnicou *CadQuery*, ktoré implementujú elementárne objekty a operácie pre prácu s objektmi stavebnice. Diely stavebnice je možné vytvárať v jednom kroku volaním funkcií s parametrami dielov, nové diely je možné tvoriť z iných dielov pomocou jednoduchých operácií. Pre generovanie štandardných ako aj odvodených dielov stavebnice postačujú triedy knižnice *Stemfie-X*, pokročílí uživatelia ale môžu využiť všetky možnosti knižnice [CadQuery](https://cadquery.readthedocs.io/en/latest/) a jazyka Python. Pre tvorbu špeciálnych komponentov je možné triedy rozšírovať dedením a pridaním ďalších špecifických vlastností. 
+## <font color='purple'> <b> Štruktúra knižnice </b></font>
 
-Štruktúru knižnice *Stemfie-X* zobrazuje nasledujúci diagram
+Knižnicu *Stemfie-X* tvorí sada tried implementovaná pomocou knižnice *CadQuery*. Diely stavebnice je možné vytvárať v jednom kroku volaním funkcií s parametrami dielov, nové diely je možné tvoriť z iných dielov pomocou jednoduchých logických operácií (prienik, rozdiel, zjednotenie). Pre generovanie štandardných ako aj odvodených dielov stavebnice postačujú triedy knižnice *Stemfie-X*, pokročílí uživatelia ale môžu využiť všetky možnosti knižnice [CadQuery](https://cadquery.readthedocs.io/en/latest/) a jazyka Python. 
+
+Pre tvorbu špeciálnych komponentov je možné triedy knižnice rozšírovať dedením a pridávaním ďalších špecifických vlastností. Štruktúru knižnice *Stemfie-X* zobrazuje nasledujúci diagram
 
 ```{code-cell} ipython3  
 :tags: ["remove-cell"]

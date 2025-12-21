@@ -50,7 +50,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Spojky" href="0520_prg_brace.html" />
-    <link rel="prev" title="Inštalácia" href="0500_prg_instalacia.html" />
+    <link rel="prev" title="Ako na to" href="0500_prg_ako_na_to.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -172,9 +172,13 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Programovanie</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="0500_prg_instalacia.html"><font color="navy"> <b> Inštalácia</b> </font></a></li>
+<li class="toctree-l1"><a class="reference internal" href="0500_prg_ako_na_to.html"><font color="navy"> <b> Ako na to</b> </font></a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#"><font color="navy"> <b> Návrh komponentov</b> </font></a></li>
 <li class="toctree-l1"><a class="reference internal" href="0520_prg_brace.html"><font color="navy"> <b> Spojky </b> </font></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Prílohy</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0900_instalacia.html"><font color="navy"> <b> Inštalácia</b> </font></a></li>
 </ul>
 
     </div>
@@ -323,6 +327,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#struktura-kniznice"><font color="purple"> <b> Štruktúra knižnice </b></font></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pouzitie"><font color="purple"> <b> Použitie </b></font></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformacie-objektov"><font color="purple"> <b> Transformácie objektov </b></font></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#posun"><font color="brown"> <b> Posun </b></font></a></li>
@@ -350,15 +355,18 @@ document.write(`
 </a>
 </figure>
 <p>Pri návrhu vlastných konštrukcií často potrebujeme upraviť a modifikovať štandardné diely alebo vytvárať nové diely. Je zrejmé, že nie je možné vytvoriť univerzálny katalóg dielov, možnosti stavebnice <em>Stemfie-X</em> sú rozsiahle, a je preto vhodnejšie požadované diely a ich varianty vytvoriť “na mieru” pomocou programu.</p>
-<p>Knižnicu <em>Stemfie-X</em> tvorí sada tried nad knižnicou <em>CadQuery</em>, ktoré implementujú elementárne objekty a operácie pre prácu s objektmi stavebnice. Diely stavebnice je možné vytvárať v jednom kroku volaním funkcií s parametrami dielov, nové diely je možné tvoriť z iných dielov pomocou jednoduchých operácií. Pre generovanie štandardných ako aj odvodených dielov stavebnice postačujú triedy knižnice <em>Stemfie-X</em>, pokročílí uživatelia ale môžu využiť všetky možnosti knižnice <a class="reference external" href="https://cadquery.readthedocs.io/en/latest/">CadQuery</a> a jazyka Python. Pre tvorbu špeciálnych komponentov je možné triedy rozšírovať dedením a pridaním ďalších špecifických vlastností.</p>
-<p>Štruktúru knižnice <em>Stemfie-X</em> zobrazuje nasledujúci diagram</p>
+<section id="struktura-kniznice">
+<h2><font color='purple'> <b> Štruktúra knižnice </b></font><a class="headerlink" href="#struktura-kniznice" title="Link to this heading">#</a></h2>
+<p>Knižnicu <em>Stemfie-X</em> tvorí sada tried implementovaná pomocou knižnice <em>CadQuery</em>. Diely stavebnice je možné vytvárať v jednom kroku volaním funkcií s parametrami dielov, nové diely je možné tvoriť z iných dielov pomocou jednoduchých logických operácií (prienik, rozdiel, zjednotenie). Pre generovanie štandardných ako aj odvodených dielov stavebnice postačujú triedy knižnice <em>Stemfie-X</em>, pokročílí uživatelia ale môžu využiť všetky možnosti knižnice <a class="reference external" href="https://cadquery.readthedocs.io/en/latest/">CadQuery</a> a jazyka Python.</p>
+<p>Pre tvorbu špeciálnych komponentov je možné triedy knižnice rozšírovať dedením a pridávaním ďalších špecifických vlastností. Štruktúru knižnice <em>Stemfie-X</em> zobrazuje nasledujúci diagram</p>
 <figure class="align-default" id="stm-0102">
 <a class="reference internal image-reference" href="_images/prg_101.png"><img alt="_images/prg_101.png" src="_images/prg_101.png" style="width: 800px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Obr. 19 </span><span class="caption-text">Štruktúra tried knižnice STEMFIE-X</span><a class="headerlink" href="#stm-0102" title="Link to this image">#</a></p>
+<p><span class="caption-number">Obr. 24 </span><span class="caption-text">Štruktúra tried knižnice STEMFIE-X</span><a class="headerlink" href="#stm-0102" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
+</section>
 <section id="pouzitie">
 <h2><font color='purple'> <b> Použitie </b></font><a class="headerlink" href="#pouzitie" title="Link to this heading">#</a></h2>
 <p>Pre generovanie podkladov pre 3D tlač štandardných komponentov je potrebné importovať knižnicu <code class="docutils literal notranslate"><span class="pre">lib</span></code> a vygenerovať želaný komponent vytvorením objektu danej triedy. Vytvorený komponent exportujeme do súboru typu <code class="docutils literal notranslate"><span class="pre">step</span></code> alebo <code class="docutils literal notranslate"><span class="pre">stl</span></code>. Vygenerovaný komponent je možné skontrolovať vo vhodnom 3D prehliadači napr. <a class="reference external" href="https://f3d.app/">F3D</a>.</p>
@@ -376,7 +384,7 @@ document.write(`
 <a class="reference internal image-reference" href="_images/wheel_02_14_12_1.png"><img alt="_images/wheel_02_14_12_1.png" src="_images/wheel_02_14_12_1.png" style="width: 400px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Obr. 20 </span><span class="caption-text">Vygenerovaný diel stavebnice v prehliadači F3D.</span><a class="headerlink" href="#stm-0103" title="Link to this image">#</a></p>
+<p><span class="caption-number">Obr. 25 </span><span class="caption-text">Vygenerovaný diel stavebnice v prehliadači F3D.</span><a class="headerlink" href="#stm-0103" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -452,7 +460,7 @@ I(c)   I([c1,c2 ...])     intersection
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;lib.beams.Beam_Block at 0x7133cc1d1d30&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;lib.beams.Beam_Block at 0x73a978219d30&gt;
 </pre></div>
 </div>
 </div>
@@ -472,12 +480,12 @@ I(c)   I([c1,c2 ...])     intersection
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="0500_prg_instalacia.html"
+       href="0500_prg_ako_na_to.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><font color='navy'> <b> Inštalácia</b> </font></p>
+        <p class="prev-next-title"><font color='navy'> <b> Ako na to</b> </font></p>
       </div>
     </a>
     <a class="right-next"
@@ -505,6 +513,7 @@ I(c)   I([c1,c2 ...])     intersection
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#struktura-kniznice"><font color="purple"> <b> Štruktúra knižnice </b></font></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pouzitie"><font color="purple"> <b> Použitie </b></font></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformacie-objektov"><font color="purple"> <b> Transformácie objektov </b></font></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#posun"><font color="brown"> <b> Posun </b></font></a></li>

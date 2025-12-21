@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Stemfie-X &#8212; Stemfie-X 0.1 documentation</title>
+    <title>Inštalácia &#8212; Stemfie-X 0.1 documentation</title>
   
   
   
@@ -46,12 +46,10 @@
     <script src="_static/copybutton.js?v=f281be69"></script>
     <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script src="_static/design-tabs.js?v=f930bc37"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '0900_instalacia';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Vlastnosti" href="0005_uvod.html" />
+    <link rel="prev" title="Spojky" href="0520_prg_brace.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -114,8 +112,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -134,7 +130,7 @@
     
   
 
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo" href="index.html">
   
   
   
@@ -175,13 +171,12 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Programovanie</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="0500_prg_ako_na_to.html"><font color="navy"> <b> Ako na to</b> </font></a></li>
 <li class="toctree-l1"><a class="reference internal" href="0505_prg_lib.html"><font color="navy"> <b> Návrh komponentov</b> </font></a></li>
 <li class="toctree-l1"><a class="reference internal" href="0520_prg_brace.html"><font color="navy"> <b> Spojky </b> </font></a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Prílohy</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="0900_instalacia.html"><font color="navy"> <b> Inštalácia</b> </font></a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><font color="navy"> <b> Inštalácia</b> </font></a></li>
 </ul>
 
     </div>
@@ -236,7 +231,7 @@
       
       
       
-      <li><a href="_sources/index.md" target="_blank"
+      <li><a href="_sources/0900_instalacia.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -320,7 +315,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><center> <font color='navy'>  <b> Stemfie-X </b> </font> </center></h1>
+    <h1><font color='navy'> <b> Inštalácia</b> </font></h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -330,9 +325,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#obsah"><font color="teal">  Obsah </font></a><ul class="nav section-nav flex-column">
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instalacia-pre-linux"><font color="purple"> <b> Inštalácia pre Linux </b></font></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instalacia-pre-windows"><font color="purple"> <b> Inštalácia pre Windows</b></font></a></li>
 </ul>
             </nav>
         </div>
@@ -344,46 +338,40 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="stemfie-x">
-<h1><center> <font color='navy'>  <b> Stemfie-X </b> </font> </center><a class="headerlink" href="#stemfie-x" title="Link to this heading">#</a></h1>
-<center> 
-<h3> <font color='brown'>  <b> Autor </b> </font> </h3>
-</center> 
-<center> 
-<h3> <font color='brown'>  <b> LAB411 Production </b> </font>      </h3>
-<h3> <font color='brown'>  <b> Ver. 0.1, Dec. 2025 </b> </font>                   </h3>
-</center> 
-<hr class="docutils" />
-<section id="obsah">
-<h2><font color='teal'>  Obsah </font><a class="headerlink" href="#obsah" title="Link to this heading">#</a></h2>
-<div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Úvod</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="0005_uvod.html"><font color='navy'> <b> Vlastnosti </b> </font></a></li>
-<li class="toctree-l1"><a class="reference internal" href="0010_komponenty.html"><font color='navy'> <b> Diely </b> </font></a></li>
-<li class="toctree-l1"><a class="reference internal" href="0015_montaz.html"><font color='navy'> <b> Montáž  </b> </font></a></li>
+  <section class="tex2jax_ignore mathjax_ignore" id="instalacia">
+<h1><font color='navy'> <b> Inštalácia</b> </font><a class="headerlink" href="#instalacia" title="Link to this heading">#</a></h1>
+<figure class="align-default" id="prg-125">
+<a class="reference internal image-reference" href="_images/banner.png"><img alt="_images/banner.png" src="_images/banner.png" style="width: 800px;" />
+</a>
+</figure>
+<p>Programové vybavenie stavebnice <em>Stemfie-X</em> umožňuje návrh a generovanie podkladov pre štandardné diely stavebnice, návrh vlastných dielov ako aj tvorbu jednoduchých zostáv. Programové vybavenie je založené na programovacom jazyku <em>Python</em> a pozostáva z nasledujúcich častí</p>
+<ul class="simple">
+<li><p>Knižnica <em>Stemfie-X</em> pre vytváranie dielov stavebnice</p></li>
+<li><p>Knižnica <em>CadQuery</em> pre parametrické projektovanie založená na platforme <em>OpenCascade</em></p></li>
+<li><p>Editor pre tvorbu programov s prehliadačom <em>CQ-Editor</em></p></li>
+<li><p>Pomocné programy pre prehliadače generovaných dielov a zostáv (<em>f3d</em>, <em>FreeCAD</em>)</p></li>
+<li><p>Programy pre prípravu podkladov pre 3D tlač</p></li>
 </ul>
-</div>
-<div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Jednoduché konštrukcie</span></p>
+<section id="instalacia-pre-linux">
+<h2><font color='purple'> <b> Inštalácia pre Linux </b></font><a class="headerlink" href="#instalacia-pre-linux" title="Link to this heading">#</a></h2>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="0210_exm_bridge.html"><font color='navy'> <b> Priehradový most </b> </font></a></li>
-</ul>
+<li><p>Knižnica <em>Stemfie-X</em> je nadstavbou nad knižnicou <em>CadQuery</em> a je v dostupná v zdrojovom tvare v archíve <a class="reference download internal" download="" href="_downloads/c7758403c3488bb679c27b0e286e55f6/lib.zip"><span class="xref download myst">lib.zip</span></a>. Knižnicu po rozbalení umiestnite do pracovného adresáru a pri vytváraní ju importujte do vašeho programu ako štandardnú knižnicu v Pythone. Knižnica je univerzálna pre všetky platformy.</p></li>
+<li><p>Inštalácia platformy <em>CadQuery</em> je možná pomocou inštalátora <em>pip</em>. Inštalácia obsahuje všetky potrebné komponenty z <em>Open Cascade Technology (OCCT)</em> potrebné pre tvorbu konštrukcií v stavebnici. Dokumentácia ku <em>CadQuery</em> je dostupná <a class="reference external" href="https://cadquery.readthedocs.io/en/latest/intro.html">online</a>.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>sudo dnf install git
+pip install git+https://github.com/CadQuery/cadquery.git
+</pre></div>
 </div>
-<div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Programovanie</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="0500_prg_ako_na_to.html"><font color='navy'> <b> Ako na to</b> </font></a></li>
-<li class="toctree-l1"><a class="reference internal" href="0505_prg_lib.html"><font color='navy'> <b> Návrh komponentov</b> </font></a></li>
-<li class="toctree-l1"><a class="reference internal" href="0520_prg_brace.html"><font color='navy'> <b> Spojky </b> </font></a></li>
+</li>
+<li><p>Pre platformu <em>CadQuery</em> bolo vytvorené jednoduché prostredie <a class="reference external" href="https://github.com/CadQuery/CQ-editor">CQ-Editor</a>, v ktorom je možné vytvárať, editovať a prehliadať diely stavebnice. Inštalačný skript je dostupný na <a class="reference external" href="https://github.com/CadQuery/CQ-editor/releases/tag/nightly">github-e</a>.</p></li>
 </ul>
-</div>
-<div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Prílohy</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="0900_instalacia.html"><font color='navy'> <b> Inštalácia</b> </font></a></li>
-</ul>
-</div>
+<figure class="align-default" id="prg-126">
+<a class="reference internal image-reference" href="_images/cq_editor.png"><img alt="_images/cq_editor.png" src="_images/cq_editor.png" style="width: 650px;" />
+</a>
+</figure>
+</section>
+<section id="instalacia-pre-windows">
+<h2><font color='purple'> <b> Inštalácia pre Windows</b></font><a class="headerlink" href="#instalacia-pre-windows" title="Link to this heading">#</a></h2>
+<p>TODO</p>
 </section>
 </section>
 
@@ -398,14 +386,14 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="right-next"
-       href="0005_uvod.html"
-       title="next page">
+    <a class="left-prev"
+       href="0520_prg_brace.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><font color='navy'> <b> Vlastnosti </b> </font></p>
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><font color='navy'> <b> Spojky </b> </font></p>
       </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -423,9 +411,8 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#obsah"><font color="teal">  Obsah </font></a><ul class="nav section-nav flex-column">
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instalacia-pre-linux"><font color="purple"> <b> Inštalácia pre Linux </b></font></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instalacia-pre-windows"><font color="purple"> <b> Inštalácia pre Windows</b></font></a></li>
 </ul>
   </nav></div>
 

@@ -32,8 +32,8 @@ Programové vybavenie stavebnice *Stemfie-X* umožňuje návrh a generovanie pod
 
 * Inštalácia platformy *CadQuery* je možná pomocou inštalátora *pip*. Inštalácia obsahuje všetky potrebné komponenty z *Open Cascade Technology (OCCT)* potrebné pre tvorbu konštrukcií v stavebnici. Dokumentácia ku *CadQuery* je dostupná [online](https://cadquery.readthedocs.io/en/latest/intro.html).
 
-    sudo dnf install git
-    pip install git+https://github.com/CadQuery/cadquery.git
+      sudo dnf install git
+      pip install git+https://github.com/CadQuery/cadquery.git
     
     
 * Pre platformu *CadQuery* bolo vytvorené jednoduché prostredie [CQ-Editor](https://github.com/CadQuery/CQ-editor), v ktorom je možné vytvárať, editovať a prehliadať diely stavebnice. Inštalačný skript je dostupný na [github-e](https://github.com/CadQuery/CQ-editor/releases/tag/nightly).
