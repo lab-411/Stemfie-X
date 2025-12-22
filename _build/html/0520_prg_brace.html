@@ -183,6 +183,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Prílohy</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="0900_instalacia.html"><font color="navy"> <b> Inštalácia</b> </font></a></li>
+<li class="toctree-l1"><a class="reference internal" href="0905_viewer.html"><font color="navy"> <b> Vizualizácia </b> </font></a></li>
 </ul>
 
     </div>
@@ -336,6 +337,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pouzitie"><font color="purple"> <b> Použitie </b></font></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jednoducha-spojka"><font color="brown"> <b> Jednoduchá spojka </b></font></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spojka-so-strbinami"><font color="brown"> <b> Spojka so štrbinami </b></font></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oblukova-spojka"><font color="brown"> <b> Oblúková spojka </b></font></a></li>
 </ul>
@@ -388,15 +390,15 @@ brace_t_dd_hh_pp          abbreviated forms, unlisted parameters have default va
 brace_t_dd_hh
 brace_t_dd
 
-t  - brace type                            dd - brace size               hh - brace height
-     B - simple brace                           01 ... 99 BU                  01 =    1 BU
-     C - circle brace                                                         ...
-     A - arc brace                                                            10 =   10 BU
-     X - user defined non standard brace                                      12 =  1/2 BU 
-                                                                              14 =  1/4 BU
+t  - brace type                         dd - brace size               hh - brace height
+     B - simple brace                        01 ... 99 BU                  01 =    1 BU
+     C - circle brace                                                      ...
+     A - arc brace                                                         10 =   10 BU
+     X - user defined non standard brace                                   12 =  1/2 BU 
+                                                                           14 =  1/4 BU
     
-ss - number of slots                       pp - number of holes if it does not match the size
-     00 ... 99                                  00 ... 99
+ss - number of slots                    pp - number of holes if it does not match the size
+     00 ... 99                               00 ... 99
 
     
 brace_B_dd_hh_pp_ss
@@ -421,112 +423,101 @@ brace_A_dd_hh_pp_sss
 </section>
 <section id="pouzitie">
 <h2><font color='purple'> <b> Použitie </b></font><a class="headerlink" href="#pouzitie" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">lib</span> <span class="kn">import</span> <span class="o">*</span>
-
-<span class="n">b</span> <span class="o">=</span> <span class="n">Brace</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>       <span class="c1"># brace_B_05</span>
-<span class="n">show</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span><span class="mi">50</span><span class="p">)</span>
+<section id="jednoducha-spojka">
+<h3><font color='brown'> <b> Jednoduchá spojka </b></font><a class="headerlink" href="#jednoducha-spojka" title="Link to this heading">#</a></h3>
+<p>Pre vygenerovanie jednoduchej spojky o hrúbke <strong>1/4 BU</strong> stačí zadať jej rozmer v <strong>BU</strong> jednotkách.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>b0 = Brace(5)    # brace_B_05
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/2854e5048c49c32df3d82c9f7cb73f74a40b8a36ae6561cce91aea3b0dc781e7.svg" src="_images/2854e5048c49c32df3d82c9f7cb73f74a40b8a36ae6561cce91aea3b0dc781e7.svg" />
-</div>
-</div>
+<figure class="align-default" id="id1">
+<a class="reference internal image-reference" href="_images/brace_b0.png"><img alt="_images/brace_b0.png" src="_images/brace_b0.png" style="width: 200px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Obr. 26 </span><span class="caption-text">Jednoducha spojka</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
 <section id="spojka-so-strbinami">
 <h3><font color='brown'> <b> Spojka so štrbinami </b></font><a class="headerlink" href="#spojka-so-strbinami" title="Link to this heading">#</a></h3>
-<p>Štrbiny požadovanej dĺžky vytvoríme pomocou triedy <code class="docutils literal notranslate"><span class="pre">Hole_Slot</span></code> a posunieme ich pomocou operátora <strong>BU_Tx</strong> na potrebnú pozíciu.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">lib</span> <span class="kn">import</span> <span class="o">*</span>
-
-<span class="k">class</span> <span class="nc">Brace_B_17_14_13_02</span><span class="p">(</span><span class="n">Stemfie_X</span><span class="p">):</span>   <span class="c1"># length 17 BU , 1/4 BU height, 14 holes, 2 slots </span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>        
-        <span class="n">b1</span> <span class="o">=</span> <span class="n">Brace</span><span class="p">(</span><span class="mi">17</span><span class="p">,</span> <span class="n">holes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-        <span class="n">h1</span> <span class="o">=</span> <span class="n">Hole_Slot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">BU_Tx</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span>
-        <span class="n">h2</span> <span class="o">=</span> <span class="n">Hole_Slot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">BU_Tx</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-        <span class="n">b1</span><span class="o">.</span><span class="n">D</span><span class="p">([</span><span class="n">h1</span><span class="p">,</span> <span class="n">h2</span><span class="p">]</span> <span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">obj</span> <span class="o">=</span> <span class="n">b1</span><span class="o">.</span><span class="n">obj</span>
-        
-<span class="n">b10</span> <span class="o">=</span> <span class="n">Brace_B_17_14_13_02</span><span class="p">()</span>
-<span class="n">show</span><span class="p">(</span><span class="n">b10</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<p>Štrbiny požadovanej dĺžky vytvoríme pomocou triedy <strong>Hole_Slot</strong>, posunieme ich pomocou operátora <strong>BU_Tx</strong> do požadovanej pozície a pomocou operátpra <strong>D()</strong> odpočítame od štandardnej spojky.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>b1 = Brace(17)
+h1 = Hole_Slot(2, 1/2+1/4).BU_Tx(11)
+h2 = Hole_Slot(2, 1/2+1/4).BU_Tx(4)
+b1.D([h1, h2] )
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/5f95475e65cf360eaf73fe7f535990a1ec5b5d1eec7970d261cf3ac769fa48b7.svg" src="_images/5f95475e65cf360eaf73fe7f535990a1ec5b5d1eec7970d261cf3ac769fa48b7.svg" />
-</div>
-</div>
+<figure class="align-default" id="id2">
+<a class="reference internal image-reference" href="_images/brace_b1.png"><img alt="_images/brace_b1.png" src="_images/brace_b1.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Obr. 27 </span><span class="caption-text">Spojka so štrbinami.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 </section>
 <section id="oblukova-spojka">
 <h3><font color='brown'> <b> Oblúková spojka </b></font><a class="headerlink" href="#oblukova-spojka" title="Link to this heading">#</a></h3>
-<p>Výpočet oblúkovej spojky pri zadanej polohe počatku, konca oblúka a polomeru oblúka. Príklad pre</p>
+<p>Pri oblúkovej spojke musí mať tetiva oblúku veľkosť v násobkoch <strong>BU</strong>. Pre výpočet parametrov oblúkovej spojky zadáme dĺžku tetivy a polomer oblúka, napríklad</p>
 <ul class="simple">
 <li><p>radius = 4 BU</p></li>
 <li><p>brace length = 7 BU</p></li>
 </ul>
-<figure class="align-default" id="id1">
+<figure class="align-default" id="id3">
 <a class="reference internal image-reference" href="_images/comp_11.png"><img alt="_images/comp_11.png" src="_images/comp_11.png" style="width: 400px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Obr. 26 </span><span class="caption-text">Oblúková a lineárna spojka</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+<p><span class="caption-number">Obr. 28 </span><span class="caption-text">Oblúková a lineárna spojka</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Výpočet uhla a offsetu uhlovej spojky</p>
-<figure class="align-default" id="id2">
-<a class="reference internal image-reference" href="_images/tetiva.png"><img alt="_images/tetiva.png" src="_images/tetiva.png" style="width: 300px;" />
+<p>Z uvedených parametrov musíme pre konštrukciu spojky výpočítať uhol a offsetu voči stredu opísanej kružnice podľa obrázku</p>
+<figure class="align-default" id="id4">
+<a class="reference internal image-reference" href="_images/tetiva.png"><img alt="_images/tetiva.png" src="_images/tetiva.png" style="width: 350px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Obr. 27 </span><span class="caption-text">Tetiva oblúku</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+<p><span class="caption-number">Obr. 29 </span><span class="caption-text">Veličiny pre výpočet oblúkovej spojky</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>R    - circle radius, in BU units
-D    - chord length in BU units, D &gt;= 2*R+1
-
-beta - calculated angle
-H    - calculated offset
-</pre></div>
-</div>
+<p>Vstupnými hodnotami pre výpočet sú</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(R\)</span>    - circle radius, in BU units</p></li>
+<li><p><span class="math notranslate nohighlight">\(D\)</span>    - chord length in BU units, D &gt;= 2*R+1</p></li>
+</ul>
+<p>Výstupnými hodnotami sú</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\beta\)</span> - calculated angle</p></li>
+<li><p><span class="math notranslate nohighlight">\(H\)</span>    - calculated offset</p></li>
+</ul>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{align*}
 \beta &amp;= 2 \alpha      \\
-\\
 \frac{D-1}{2} &amp;= R \cdot \sin(\alpha)    \\
 \\
 \beta &amp;= 2 \alpha = 2 \cdot \arcsin \Big( \frac{D}{2R} \Big) \\
 H &amp;= R \cdot cos(\alpha) \\
 \end{align*}
 \end{split}\]</div>
-<p>Konštrukcia uhlovej spojky</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">lib</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">lib.utils</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">arcsin</span><span class="p">,</span> <span class="n">pi</span>
+<p>Konštrukcia oblúkovej spojky na základe výpočtu</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>from numpy import arcsin, pi
 
-<span class="n">D</span> <span class="o">=</span> <span class="mi">7</span>   <span class="c1"># D &gt;= 2*R+1  </span>
-<span class="n">R</span> <span class="o">=</span> <span class="mi">3</span>   <span class="c1"># arc radius</span>
+R = 3   # arc radius
+D = 7   # D &gt;= 2*R+1 
+N = 3   # pocet otvorov
 
-<span class="n">alpha</span> <span class="o">=</span> <span class="n">arcsin</span><span class="p">(</span> <span class="p">(</span><span class="n">D</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">R</span> <span class="p">)</span> <span class="p">)</span>
-<span class="n">beta</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">alpha</span>
-<span class="n">H</span> <span class="o">=</span> <span class="n">R</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span>
-<span class="n">bdeg</span> <span class="o">=</span> <span class="n">beta</span><span class="o">/</span><span class="n">pi</span><span class="o">*</span><span class="mi">180</span>     <span class="c1"># convert rad -&gt; deg</span>
+alpha = arcsin( (D-1) / (2*R ) )
+beta = 2*alpha/pi*180
+H = R*cos(alpha)
 
-<span class="n">h</span> <span class="o">=</span> <span class="n">R</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span>
-<span class="n">br1</span> <span class="o">=</span> <span class="n">Brace_Arc</span><span class="p">(</span><span class="n">R</span><span class="p">,</span> <span class="n">bdeg</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">Rz</span><span class="p">(</span><span class="mi">90</span><span class="o">-</span><span class="n">bdeg</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">BU_T</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="n">H</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
-<span class="n">bb4</span> <span class="o">=</span> <span class="n">Brace</span><span class="p">(</span><span class="n">D</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">BU_Tz</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
-
-<span class="n">br1</span><span class="o">.</span><span class="n">U</span><span class="p">(</span><span class="n">bb4</span><span class="p">)</span>
-<span class="n">show</span><span class="p">(</span><span class="n">br1</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">250</span><span class="p">)</span>
+b3 = Brace_Arc(R, bdeg, 1/4, N, center=True).Rz(90-bdeg/2).BU_T([0, -H, 0])
+b4 = Brace(D, center=True).BU_Tz(-1/2)
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/7f65b6025c2294800fa3adcead569bb848d879758a708095853b02392cd35833.svg" src="_images/7f65b6025c2294800fa3adcead569bb848d879758a708095853b02392cd35833.svg" />
-</div>
-</div>
+<figure class="align-default" id="id5">
+<a class="reference internal image-reference" href="_images/brace_b3.png"><img alt="_images/brace_b3.png" src="_images/brace_b3.png" style="width: 250px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Obr. 30 </span><span class="caption-text">Oblukova spojka.</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 </section>
 </section>
 </section>
@@ -581,6 +572,7 @@ H &amp;= R \cdot cos(\alpha) \\
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pouzitie"><font color="purple"> <b> Použitie </b></font></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jednoducha-spojka"><font color="brown"> <b> Jednoduchá spojka </b></font></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spojka-so-strbinami"><font color="brown"> <b> Spojka so štrbinami </b></font></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oblukova-spojka"><font color="brown"> <b> Oblúková spojka </b></font></a></li>
 </ul>

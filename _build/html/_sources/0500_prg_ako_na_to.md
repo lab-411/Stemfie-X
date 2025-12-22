@@ -41,14 +41,18 @@ Pri návrhu dielu postupujeme podľa nasledujúcich bodov
 * spustíme editor *CQ-Editor*, vytvoríme nový súbor (*File -> New*) a **uložíme** (*File -> Save*) ho do pracovného adresára
 * vytvoríme program pre návrh dielu
 
-      from lib import *            # import kniznice Stemfie-X
-      b1 = Brace(5)                # vytvorenie spojky o velkost 5BU v rovine XY
-      b2 = Brace(3).Rz().BU_Tx(2)  # vytvorenie spojky 3BU
-                                   # Rz()      - otocenie o 90 stupnov okolo osi Z
-                                   # BU_Tx(2)  - posun v smere osi X o dlzku 2BU      
-      b1 = b1.U([b2])              # U() union - zjednotenie (spojenie) objektov 
-      show_object(b1.obj)          # zobrazenie dielu
-      b1.export_step('part_b1')    # vygenerovanie podkladov pre tlac vo formate STEP
+```{code-block} python
+:caption: Prvý program
+
+from lib import *            # import kniznice Stemfie-X
+b1 = Brace(5)                # vytvorenie spojky o velkost 5BU v rovine XY
+b2 = Brace(3).Rz().BU_Tx(2)  # vytvorenie spojky 3BU
+                              # Rz()      - otocenie o 90 stupnov okolo osi Z
+                              # BU_Tx(2)  - posun v smere osi X o dlzku 2BU      
+b1 = b1.U([b2])              # U() union - zjednotenie (spojenie) objektov 
+show_object(b1.obj)          # zobrazenie dielu v CQ-Editor
+b1.export_step('part_b1')    # vygenerovanie podkladov pre tlac vo formate STEP
+```
 
 Program spustíme pomocou zelenej šípky v záhlaví editoru alebo klávesou F5. Osi súradnicovej sústavy sú zobrazené v pravom dolnom rohu okna prehliadača. Pre zobrazenie chybových hláseni pri preklade treba mať aktivovanú voľbu *Current tracebak* vo voľbe *View*.  
 
@@ -56,6 +60,17 @@ Program spustíme pomocou zelenej šípky v záhlaví editoru alebo klávesou F5
 :width: 600px
 
 Návrh dielu v CQ-Editore.
+```
+```{admonition} Zdrojové kódy
+:class: tip
+
+V tejto publikácii budeme zobrazovať zdrojové kódy príkladov bez príkazov pre import *Stemfie-X* knižníc *lib* a príkazov na export a zobrazenie objektov
+
+      b1 = Brace(5)                
+      b2 = Brace(3).Rz().BU_Tx(2)       
+      b1 = b1.U([b2])             
+      
+Príkazy na zobrazenie objektov sa líšia podľa použitého editora a príkazy na export objektov sa používajú v závislosti od kontextu príkladu. 
 ```
 
 ## <font color='purple'> <b> Export podkladov pre tlač </b> </font>

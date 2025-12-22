@@ -53,15 +53,15 @@ Základným typom je lineárna spojka *Brace*, oblúková spojka *Brace_Arc* a k
     brace_t_dd_hh
     brace_t_dd
 
-    t  - brace type                            dd - brace size               hh - brace height
-         B - simple brace                           01 ... 99 BU                  01 =    1 BU
-         C - circle brace                                                         ...
-         A - arc brace                                                            10 =   10 BU
-         X - user defined non standard brace                                      12 =  1/2 BU 
-                                                                                  14 =  1/4 BU
+    t  - brace type                         dd - brace size               hh - brace height
+         B - simple brace                        01 ... 99 BU                  01 =    1 BU
+         C - circle brace                                                      ...
+         A - arc brace                                                         10 =   10 BU
+         X - user defined non standard brace                                   12 =  1/2 BU 
+                                                                               14 =  1/4 BU
         
-    ss - number of slots                       pp - number of holes if it does not match the size
-         00 ... 99                                  00 ... 99
+    ss - number of slots                    pp - number of holes if it does not match the size
+         00 ... 99                               00 ... 99
 
         
     brace_B_dd_hh_pp_ss
@@ -83,36 +83,62 @@ Základným typom je lineárna spojka *Brace*, oblúková spojka *Brace_Arc* a k
         
 ## <font color='purple'> <b> Použitie </b></font>
 
-```{code-cell} ipython3  
-from lib import *
+### <font color='brown'> <b> Jednoduchá spojka </b></font>
 
-b = Brace(5)       # brace_B_05
-show(b, 400,50)
+Pre vygenerovanie jednoduchej spojky o hrúbke **1/4 BU** stačí zadať jej rozmer v **BU** jednotkách.
+
+    b0 = Brace(5)    # brace_B_05
+
+```{code-cell} ipython3  
+:tags: ["remove-cell"]
+
+from lib import *
+from lib.utils import *
+
+b0 = Brace(5)    # brace_B_05
+convert_to_image(b0, './src/brace_b0')
+```
+
+```{figure} ./src/brace_b0.png
+:width: 200px
+
+Jednoducha spojka
 ```
 
 
 ### <font color='brown'> <b> Spojka so štrbinami </b></font>
 
-Štrbiny požadovanej dĺžky vytvoríme pomocou triedy `Hole_Slot` a posunieme ich pomocou operátora **BU_Tx** na potrebnú pozíciu. 
+Štrbiny požadovanej dĺžky vytvoríme pomocou triedy **Hole_Slot**, posunieme ich pomocou operátora **BU_Tx** do požadovanej pozície a pomocou operátpra **D()** odpočítame od štandardnej spojky.
+     
+    b1 = Brace(17)
+    h1 = Hole_Slot(2, 1/2+1/4).BU_Tx(11)
+    h2 = Hole_Slot(2, 1/2+1/4).BU_Tx(4)
+    b1.D([h1, h2] )
+
 
 ```{code-cell} ipython3  
+:tags: ["remove-cell"]
 from lib import *
+from lib.utils import *
+       
+b1 = Brace(17)
+h1 = Hole_Slot(2, 1/2+1/4).BU_Tx(11)
+h2 = Hole_Slot(2, 1/2+1/4).BU_Tx(4)
+b1.D([h1, h2])
 
-class Brace_B_17_14_13_02(Stemfie_X):   # length 17 BU , 1/4 BU height, 14 holes, 2 slots 
-    def __init__(self):        
-        b1 = Brace(17, holes=True)
-        h1 = Hole_Slot(2, 1/2+1/4).BU_Tx(11)
-        h2 = Hole_Slot(2, 1/2+1/4).BU_Tx(4)
-        b1.D([h1, h2] )
-        self.obj = b1.obj
-        
-b10 = Brace_B_17_14_13_02()
-show(b10, 800, 50)
+convert_to_image(b1, './src/brace_b1')
+```
+
+
+```{figure} ./src/brace_b1.png
+:width: 600px
+
+Spojka so štrbinami.
 ```
 
 ### <font color='brown'> <b> Oblúková spojka </b></font>
 
-Výpočet oblúkovej spojky pri zadanej polohe počatku, konca oblúka a polomeru oblúka. Príklad pre 
+Pri oblúkovej spojke musí mať tetiva oblúku veľkosť v násobkoch **BU**. Pre výpočet parametrov oblúkovej spojky zadáme dĺžku tetivy a polomer oblúka, napríklad
 
 * radius = 4 BU
 * brace length = 7 BU
@@ -123,24 +149,27 @@ Výpočet oblúkovej spojky pri zadanej polohe počatku, konca oblúka a polomer
 Oblúková a lineárna spojka
 ```
 
-Výpočet uhla a offsetu uhlovej spojky
+Z uvedených parametrov musíme pre konštrukciu spojky výpočítať uhol a offsetu voči stredu opísanej kružnice podľa obrázku
 
 ```{figure} ./img/tetiva.png
-:width: 300px
+:width: 350px
 
-Tetiva oblúku
+Veličiny pre výpočet oblúkovej spojky
 ```
 
-    R    - circle radius, in BU units
-    D    - chord length in BU units, D >= 2*R+1
+Vstupnými hodnotami pre výpočet sú
 
-    beta - calculated angle
-    H    - calculated offset
+* $R$    - circle radius, in BU units
+* $D$    - chord length in BU units, D >= 2*R+1
+
+Výstupnými hodnotami sú 
+
+* $\beta$ - calculated angle
+* $H$    - calculated offset
 
 $$
 \begin{align*}
 \beta &= 2 \alpha      \\
-\\
 \frac{D-1}{2} &= R \cdot \sin(\alpha)    \\
 \\
 \beta &= 2 \alpha = 2 \cdot \arcsin \Big( \frac{D}{2R} \Big) \\
@@ -148,9 +177,25 @@ H &= R \cdot cos(\alpha) \\
 \end{align*}
 $$
 
-Konštrukcia uhlovej spojky
+Konštrukcia oblúkovej spojky na základe výpočtu
+
+
+    from numpy import arcsin, pi
+
+    R = 3   # arc radius
+    D = 7   # D >= 2*R+1 
+    N = 3   # pocet otvorov
+    
+    alpha = arcsin( (D-1) / (2*R ) )
+    beta = 2*alpha/pi*180
+    H = R*cos(alpha)
+
+    b3 = Brace_Arc(R, bdeg, 1/4, N, center=True).Rz(90-bdeg/2).BU_T([0, -H, 0])
+    b4 = Brace(D, center=True).BU_Tz(-1/2)
+
 
 ```{code-cell} ipython3  
+:tags: ["remove-cell"]
 from lib import *
 from lib.utils import *
 from numpy import arcsin, pi
@@ -159,17 +204,19 @@ D = 7   # D >= 2*R+1
 R = 3   # arc radius
 
 alpha = arcsin( (D-1) / (2*R ) )
-beta = 2*alpha
+beta = 2*alpha/pi*180
 H = R*cos(alpha)
-bdeg = beta/pi*180     # convert rad -> deg
 
-h = R*cos(alpha)
-br1 = Brace_Arc(R, bdeg, 1/4, 3, center=True).Rz(90-bdeg/2).BU_T([0, -H, 0])
-bb4 = Brace(D, center=True).BU_Tz(-1/2)
+b3 = Brace_Arc(R, beta, 1/4, 3, center=True).Rz(90-beta/2).BU_T([0, -H, 0])
+b4 = Brace(D, center=True).BU_Tz(-1/2)
 
-br1.U(bb4)
-show(br1, 500, 250)
+b3.U(b4)
+convert_to_image(b3, './src/brace_b3')
 ```
 
 
+```{figure} ./src/brace_b3.png
+:width: 250px
 
+Oblukova spojka.
+```

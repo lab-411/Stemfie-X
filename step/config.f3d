@@ -1,0 +1,16 @@
+[
+  {
+    "options": {
+      "background-color": "1,1,1",
+      "color": "0.39, 0.58, 0.92",
+      "anti-aliasing": true,
+      "watch":1,
+      "axis": true,
+      "grid": true,
+      "up": "+z",
+      "grid-absolute":true
+    }
+  }
+]
+
+

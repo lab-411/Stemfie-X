@@ -181,6 +181,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Prílohy</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="0900_instalacia.html"><font color="navy"> <b> Inštalácia</b> </font></a></li>
+<li class="toctree-l1"><a class="reference internal" href="0905_viewer.html"><font color="navy"> <b> Vizualizácia </b> </font></a></li>
 </ul>
 
     </div>
@@ -330,7 +331,8 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#struktura-kniznice"><font color="purple"> <b> Štruktúra knižnice </b></font></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pouzitie"><font color="purple"> <b> Použitie </b></font></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vytvaranie-objektov"><font color="purple"> <b> Vytváranie objektov </b></font></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#export-objektov"><font color="purple"> <b> Export objektov </b></font></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformacie-objektov"><font color="purple"> <b> Transformácie objektov </b></font></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#posun"><font color="brown"> <b> Posun </b></font></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rotacia"><font color="brown"> <b> Rotácia </b></font></a></li>
@@ -338,7 +340,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logicke-operacie"><font color="brown"> <b> Logické operácie </b></font></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vytvorenie-zlozeneho-objektu"><font color="purple"> <b> Vytvorenie zloženého objektu </b></font></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pouzitie"><font color="purple"> <b> Použitie </b></font></a></li>
 </ul>
             </nav>
         </div>
@@ -369,30 +371,56 @@ document.write(`
 </figcaption>
 </figure>
 </section>
-<section id="pouzitie">
-<h2><font color='purple'> <b> Použitie </b></font><a class="headerlink" href="#pouzitie" title="Link to this heading">#</a></h2>
-<p>Pre generovanie podkladov pre 3D tlač štandardných komponentov je potrebné importovať knižnicu <code class="docutils literal notranslate"><span class="pre">lib</span></code> a vygenerovať želaný komponent vytvorením objektu danej triedy. Vytvorený komponent exportujeme do súboru typu <em>.step</em> alebo <em>.stl</em>. Vygenerovaný komponent je možné skontrolovať vo vhodnom 3D prehliadači napr. <a class="reference external" href="https://f3d.app/">f3d</a>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">lib</span> <span class="kn">import</span> <span class="o">*</span>
+<section id="vytvaranie-objektov">
+<h2><font color='purple'> <b> Vytváranie objektov </b></font><a class="headerlink" href="#vytvaranie-objektov" title="Link to this heading">#</a></h2>
+<p>Pre generovanie podkladov pre 3D tlač štandardných komponentov je potrebné importovať knižnicu <code class="docutils literal notranslate"><span class="pre">lib</span></code> a vygenerovať želaný komponent vytvorením objektu danej triedy.</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-number">Listing 2. </span><span class="caption-text">Vytváranie objektov</span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">b1</span> <span class="o">=</span> <span class="n">Brace</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>            <span class="c1"># vytvorenie nov0ho objektu </span>
+<span class="n">q1</span> <span class="o">=</span> <span class="n">Beam</span><span class="p">([</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 <span class="n">w2</span> <span class="o">=</span> <span class="n">Wheel</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">_</span> <span class="o">=</span> <span class="n">w2</span><span class="o">.</span><span class="n">export_step</span><span class="p">(</span><span class="s1">&#39;./step/wheel_02_14_12&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+</section>
+<section id="export-objektov">
+<h2><font color='purple'> <b> Export objektov </b></font><a class="headerlink" href="#export-objektov" title="Link to this heading">#</a></h2>
+<p>Export objektov do súborov typu <em>.step</em> alebo <em>.stl</em> pre generovanie podkladov pre 3D tlač je pomocou funkcií</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>object.export_step(file_name)
+object.export_stl(file_name)
+
+  file_name - textový reťazec (string), bez prípony
+</pre></div>
 </div>
-<figure class="align-default" id="stm-0103">
-<a class="reference internal image-reference" href="_images/wheel_02_14_12_1.png"><img alt="_images/wheel_02_14_12_1.png" src="_images/wheel_02_14_12_1.png" style="width: 350px;" />
-</a>
-<figcaption>
-<p><span class="caption-number">Obr. 25 </span><span class="caption-text">Vygenerovaný diel stavebnice v prehliadači <em>f3d</em>.</span><a class="headerlink" href="#stm-0103" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
+<p>Náhlad objektu vo formáte <em>.png</em> vygenerujeme pomocou funkcie</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>convert_to_image(object, file_name, ax, ay, az)
+
+  object    - vygenerovaný stemfie komponent
+  file_name - textový reťazec (string), bez prípony
+  ax,ay,az  - poloha view-pointu pre náhlad na objekt
+</pre></div>
+</div>
+<p>Nasledujúci fragment programu ukazuje použitie funkcií pre export objektov</p>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-number">Listing 3. </span><span class="caption-text">Export objektov</span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">b1</span><span class="o">.</span><span class="n">export_step</span><span class="p">(</span><span class="s1">&#39;brace_B_05&#39;</span><span class="p">)</span>
+<span class="n">q1</span><span class="o">.</span><span class="n">export_stl</span><span class="p">(</span><span class="s1">&#39;beam_B_12_03_03_111&#39;</span><span class="p">)</span>
+
+<span class="n">convert_to_image</span><span class="p">(</span><span class="n">w2</span><span class="p">,</span> <span class="s1">&#39;wheel&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 </section>
 <section id="transformacie-objektov">
 <h2><font color='purple'> <b> Transformácie objektov </b></font><a class="headerlink" href="#transformacie-objektov" title="Link to this heading">#</a></h2>
-<p>Metódy triedy <em>Stemfie_X</em> predstavujú v zjednodušenej podobe základné operácie na manipuláciu s objektmi v 3D priestore.
-Pomocou týchto operácií môžete upravovať základné komponenty a vytvárať zložené alebo odvodené komponenty.</p>
+<p>Pri vytváraní nových komponentov stavebnice alebo tvorbe zostáv potrebujeme s objektami manipulovať v 3D priestore. Metódy triedy <em>Stemfie_X</em> pre manipuláciu s objektami sú zjednodušenou formou operácií z knižnice <em>CadQuery</em>. Všeobecný formát transformácií  má tvar</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>object = object.operation( &lt;param ...&gt; )
+</pre></div>
+</div>
+<p>Každá transformáciu vracia referenciu na transformovaný objekt, takže je možné transformácie reťaziť</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>objec = object.operation_1(&lt;param ...&gt;).operation_2(&lt;param&gt;)  ... 
+</pre></div>
+</div>
 <section id="posun">
 <h3><font color='brown'> <b> Posun </b></font><a class="headerlink" href="#posun" title="Link to this heading">#</a></h3>
 <p>Posuny objektu v smeroch osí súradnicovej sústavy</p>
@@ -443,27 +471,27 @@ I(c)   I([c1,c2 ...])     intersection
 </div>
 </section>
 </section>
-<section id="vytvorenie-zlozeneho-objektu">
-<h2><font color='purple'> <b> Vytvorenie zloženého objektu </b></font><a class="headerlink" href="#vytvorenie-zlozeneho-objektu" title="Link to this heading">#</a></h2>
+<section id="pouzitie">
+<h2><font color='purple'> <b> Použitie </b></font><a class="headerlink" href="#pouzitie" title="Link to this heading">#</a></h2>
 <p>S využitím knižnice základných komponentov a transformačných metód môžeme vytvárať zložené objekty. Najskôr vytvoríme jednotlivé objekty, pomocou transformačných vzťahov ich posunieme do správnej pozícia a nakoniec ich logickou operáciou zjednotíme do finálneho objektu.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">lib</span> <span class="kn">import</span> <span class="o">*</span>                         <span class="c1"># U-Shape Beam Block</span>
-<span class="n">b1</span> <span class="o">=</span> <span class="n">Beam_Block</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>                  <span class="c1"># components, rotating and shifting</span>
-<span class="n">b2</span> <span class="o">=</span> <span class="n">Beam_Block</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">Ry</span><span class="p">()</span>
-<span class="n">b3</span> <span class="o">=</span> <span class="n">Beam_Block</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">Ry</span><span class="p">(</span><span class="o">-</span><span class="mi">180</span><span class="p">)</span><span class="o">.</span><span class="n">BU_Tx</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-number">Listing 4. </span><span class="caption-text">Použitie transformácií na vytvorenie zloženého objektu</span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">b1</span> <span class="o">=</span> <span class="n">Brace</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">BU_Tx</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="mi">3</span><span class="o">+</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>  <span class="c1"># spojka v rovine XY a presun do stredu </span>
+<span class="n">c1</span> <span class="o">=</span> <span class="n">BU_Cylinder</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">BU_Tz</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>  <span class="c1"># valec a presun nad spojku</span>
+<span class="n">c1</span><span class="o">=</span>  <span class="n">c1</span><span class="o">.</span><span class="n">BU_Tx</span><span class="p">(</span><span class="mi">3</span><span class="o">+</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>                <span class="c1"># presun valca na konec spojky</span>
+<span class="n">c2</span> <span class="o">=</span> <span class="n">c1</span><span class="o">.</span><span class="n">MKy</span><span class="p">()</span>                       <span class="c1"># vytvorenie druheho valca zrkadlenim v osi Y s kopiou</span>
 
-<span class="n">b1</span><span class="o">.</span><span class="n">U</span><span class="p">([</span><span class="n">b2</span><span class="p">,</span><span class="n">b3</span><span class="p">])</span>                             <span class="c1"># b1 = b1 + b2 + b3</span>
-<span class="n">b1</span><span class="o">.</span><span class="n">Rx</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span><span class="o">.</span><span class="n">Ry</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>                          <span class="c1"># rotate for view</span>
-
-<span class="n">show</span><span class="p">(</span><span class="n">b1</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">b1</span><span class="o">.</span><span class="n">U</span><span class="p">([</span><span class="n">c1</span><span class="p">,</span><span class="n">c2</span><span class="p">])</span>                       <span class="c1"># zjednotenie objektov</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/96e6c5c621b2ee2f393590b17f1606d87dcacbbfd4a6152ea0160d16bd4d6120.svg" src="_images/96e6c5c621b2ee2f393590b17f1606d87dcacbbfd4a6152ea0160d16bd4d6120.svg" />
-</div>
-</div>
+<figure class="align-default" id="id4">
+<a class="reference internal image-reference" href="_images/b1_f3d.png"><img alt="_images/b1_f3d.png" src="_images/b1_f3d.png" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Obr. 25 </span><span class="caption-text">Vygenerovaný zložený objekt.</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 </section>
 </section>
 
@@ -513,7 +541,8 @@ I(c)   I([c1,c2 ...])     intersection
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#struktura-kniznice"><font color="purple"> <b> Štruktúra knižnice </b></font></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pouzitie"><font color="purple"> <b> Použitie </b></font></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vytvaranie-objektov"><font color="purple"> <b> Vytváranie objektov </b></font></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#export-objektov"><font color="purple"> <b> Export objektov </b></font></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformacie-objektov"><font color="purple"> <b> Transformácie objektov </b></font></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#posun"><font color="brown"> <b> Posun </b></font></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rotacia"><font color="brown"> <b> Rotácia </b></font></a></li>
@@ -521,7 +550,7 @@ I(c)   I([c1,c2 ...])     intersection
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logicke-operacie"><font color="brown"> <b> Logické operácie </b></font></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vytvorenie-zlozeneho-objektu"><font color="purple"> <b> Vytvorenie zloženého objektu </b></font></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pouzitie"><font color="purple"> <b> Použitie </b></font></a></li>
 </ul>
   </nav></div>
 

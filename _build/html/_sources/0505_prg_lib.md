@@ -17,6 +17,7 @@ kernelspec:
 :width: 800px
 :name: prg_100
 ```
+
 Pri návrhu vlastných konštrukcií často potrebujeme upraviť a modifikovať štandardné diely alebo vytvárať nové diely. Je zrejmé, že nie je možné vytvoriť univerzálny katalóg dielov, možnosti stavebnice *Stemfie-X* sú rozsiahle, a je preto vhodnejšie požadované diely a ich varianty vytvoriť "na mieru" pomocou programu. 
 
 ## <font color='purple'> <b> Štruktúra knižnice </b></font>
@@ -104,27 +105,56 @@ _ = os.system("java -jar ./jar/plantuml.jar ./jar/prg_101.pnl")
 Štruktúra tried knižnice Stemfie-X 
 ```
 
-## <font color='purple'> <b> Použitie </b></font>
+## <font color='purple'> <b> Vytváranie objektov </b></font>
 
-Pre generovanie podkladov pre 3D tlač štandardných komponentov je potrebné importovať knižnicu `lib` a vygenerovať želaný komponent vytvorením objektu danej triedy. Vytvorený komponent exportujeme do súboru typu *.step* alebo *.stl*. Vygenerovaný komponent je možné skontrolovať vo vhodnom 3D prehliadači napr. [f3d](https://f3d.app/).
+Pre generovanie podkladov pre 3D tlač štandardných komponentov je potrebné importovať knižnicu `lib` a vygenerovať želaný komponent vytvorením objektu danej triedy.
 
-```{code-cell} ipython3  
-from lib import *
+```{code-block} python
+:caption: Vytváranie objektov
+
+b1 = Brace(5)            # vytvorenie nov0ho objektu 
+q1 = Beam([1/2, 3, 3])
 w2 = Wheel(2)
-_ = w2.export_step('./step/wheel_02_14_12')
 ```
 
-```{figure} ./img/wheel_02_14_12_1.png
-:width: 350px
-:name: stm_0103
+## <font color='purple'> <b> Export objektov </b></font>
 
-Vygenerovaný diel stavebnice v prehliadači *f3d*. 
+Export objektov do súborov typu *.step* alebo *.stl* pre generovanie podkladov pre 3D tlač je pomocou funkcií 
+
+    object.export_step(file_name)
+    object.export_stl(file_name)
+    
+      file_name - textový reťazec (string), bez prípony
+
+Náhlad objektu vo formáte *.png* vygenerujeme pomocou funkcie 
+
+    convert_to_image(object, file_name, ax, ay, az)
+    
+      object    - vygenerovaný stemfie komponent
+      file_name - textový reťazec (string), bez prípony
+      ax,ay,az  - poloha view-pointu pre náhlad na objekt
+    
+Nasledujúci fragment programu ukazuje použitie funkcií pre export objektov
+
+```{code-block} python
+:caption: Export objektov
+
+b1.export_step('brace_B_05')
+q1.export_stl('beam_B_12_03_03_111')
+
+convert_to_image(w2, 'wheel')
 ```
 
 ## <font color='purple'> <b> Transformácie objektov </b></font>
 
-Metódy triedy *Stemfie_X* predstavujú v zjednodušenej podobe základné operácie na manipuláciu s objektmi v 3D priestore.
-Pomocou týchto operácií môžete upravovať základné komponenty a vytvárať zložené alebo odvodené komponenty.
+Pri vytváraní nových komponentov stavebnice alebo tvorbe zostáv potrebujeme s objektami manipulovať v 3D priestore. Metódy triedy *Stemfie_X* pre manipuláciu s objektami sú zjednodušenou formou operácií z knižnice *CadQuery*. Všeobecný formát transformácií  má tvar
+
+    object = object.operation( <param ...> )
+
+Každá transformáciu vracia referenciu na transformovaný objekt, takže je možné transformácie reťaziť
+
+    objec = object.operation_1(<param ...>).operation_2(<param>)  ... 
+
 
 ### <font color='brown'> <b> Posun </b></font>
 
@@ -171,18 +201,24 @@ Pre vytváranie zložených objektov sú definované základné logické operác
     D(c)   D([c1,c2 ...])     difference
     I(c)   I([c1,c2 ...])     intersection  
 
-## <font color='purple'> <b> Vytvorenie zloženého objektu </b></font>
+## <font color='purple'> <b> Použitie </b></font>
 
 S využitím knižnice základných komponentov a transformačných metód môžeme vytvárať zložené objekty. Najskôr vytvoríme jednotlivé objekty, pomocou transformačných vzťahov ich posunieme do správnej pozícia a nakoniec ich logickou operáciou zjednotíme do finálneho objektu.
 
-```{code-cell} ipython3  
-from lib import *                         # U-Shape Beam Block
-b1 = Beam_Block([3,1,1])                  # components, rotating and shifting
-b2 = Beam_Block([3,1,1]).Ry()
-b3 = Beam_Block([2,1,1]).Ry(-180).BU_Tx(1)
+```{code-block} python
+:caption: Použitie transformácií na vytvorenie zloženého objektu
+                       
+b1 = Brace(8, 1/4).BU_Tx(-(3+1/2))  # spojka v rovine XY a presun do stredu 
+c1 = BU_Cylinder(1).BU_Tz(1/2+1/4)  # valec a presun nad spojku
+c1=  c1.BU_Tx(3+1/2)                # presun valca na konec spojky
+c2 = c1.MKy()                       # vytvorenie druheho valca zrkadlenim v osi Y s kopiou
 
-b1.U([b2,b3])                             # b1 = b1 + b2 + b3
-b1.Rx(45).Ry(15)                          # rotate for view
+b1.U([c1,c2])                       # zjednotenie objektov
+```
 
-show(b1, 400, 200)
+
+```{figure} ./img/b1_f3d.png
+:width: 400px
+
+Vygenerovaný zložený objekt.
 ```

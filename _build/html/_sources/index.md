@@ -44,6 +44,7 @@
 :titlesonly: True
 :caption: Prílohy
 0900_instalacia.md
+0905_viewer.md
 ```
 
 ## <font color='purple'> Anotácia </font>   

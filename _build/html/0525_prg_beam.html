@@ -181,6 +181,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Prílohy</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="0900_instalacia.html"><font color="navy"> <b> Inštalácia</b> </font></a></li>
+<li class="toctree-l1"><a class="reference internal" href="0905_viewer.html"><font color="navy"> <b> Vizualizácia </b> </font></a></li>
 </ul>
 
     </div>
@@ -331,7 +332,11 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funkcie"><font color="purple"> <b> Funkcie </b></font></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#znacenie-dielov"><font color="brown"> <b> Značenie dielov </b></font></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pouzitie"><font color="brown"> <b> Použitie </b></font></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pouzitie"><font color="purple"> <b> Použitie </b></font></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jednoduche-nosniky"><font color="brown"> <b> Jednoduché nosniky </b></font></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kombinovane-nosniky"><font color="brown"> <b> Kombinované nosniky </b></font></a></li>
 </ul>
 </li>
 </ul>
@@ -355,7 +360,7 @@ document.write(`
 <a class="reference internal image-reference" href="_images/image_block.png"><img alt="_images/image_block.png" src="_images/image_block.png" style="width: 800px;" />
 </a>
 </figure>
-<p><code class="docutils literal notranslate"><span class="pre">Nosníky</span></code> (Baems) sú druhým základným typom dielov v <em>Stemfie-X</em> primárne určené pre použitie ako nosníky a platne. Verzie <em>U</em>, <em>L</em> a H je možné využiť ako základ pre menšie konštrukcie.</p>
+<p><strong>Nosníky</strong> (Baems) sú druhým základným typom dielov v <em>Stemfie-X</em> primárne určené pre použitie ako nosníky a platne. Verzie <em>U</em>, <em>L</em> a H je možné využiť ako základ pre menšie konštrukcie.</p>
 <section id="funkcie">
 <h2><font color='purple'> <b> Funkcie </b></font><a class="headerlink" href="#funkcie" title="Link to this heading">#</a></h2>
 <p>Základným typom je jednoduchy nosník (Beam_Block), odvodenými typmi sú verzie <em>U</em>, <em>H</em>, <em>L</em>.</p>
@@ -398,76 +403,74 @@ block_L_xx_yy_hx_hy
 </pre></div>
 </div>
 </section>
+</section>
 <section id="pouzitie">
-<h3><font color='brown'> <b> Použitie </b></font><a class="headerlink" href="#pouzitie" title="Link to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">lib</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">b1</span> <span class="o">=</span> <span class="n">Beam_Block</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span><span class="o">.</span><span class="n">Rz</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>                <span class="c1"># jednoduchý nosník Beam_Block</span>
-<span class="n">display</span><span class="p">(</span><span class="n">SVG</span><span class="p">(</span><span class="n">b1</span><span class="o">.</span><span class="n">obj</span><span class="o">.</span><span class="n">toSvg</span><span class="p">()))</span>
+<h2><font color='purple'> <b> Použitie </b></font><a class="headerlink" href="#pouzitie" title="Link to this heading">#</a></h2>
+<section id="jednoduche-nosniky">
+<h3><font color='brown'> <b> Jednoduché nosniky </b></font><a class="headerlink" href="#jednoduche-nosniky" title="Link to this heading">#</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>b1 = Beam_Block(7)
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/c68439aa0ba8e6a87f28a0545a4b1d2c29ee027396993b3a6b86b20dfc2d5fa4.svg" src="_images/c68439aa0ba8e6a87f28a0545a4b1d2c29ee027396993b3a6b86b20dfc2d5fa4.svg" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b2</span> <span class="o">=</span> <span class="n">Beam_Block</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span> <span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">])</span> <span class="c1"># 2x3 Beam_Block</span>
-<span class="n">b2</span><span class="o">.</span><span class="n">BU_Tx</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">BU_Tx</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">SVG</span><span class="p">(</span><span class="n">b2</span><span class="o">.</span><span class="n">obj</span><span class="o">.</span><span class="n">toSvg</span><span class="p">()))</span>
+<figure class="align-default" id="id1">
+<a class="reference internal image-reference" href="_images/block_b0.png"><img alt="_images/block_b0.png" src="_images/block_b0.png" style="width: 300px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Obr. 31 </span><span class="caption-text">Jednoduchý lineárny blok - <em>block_B_07</em></span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>b1 = Beam_Block([3, 3, 2])
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/c4f3ce444ad100d3dce80c67d3f3030ec92a6658d828dd1ce7c458a3ba8a960f.svg" src="_images/c4f3ce444ad100d3dce80c67d3f3030ec92a6658d828dd1ce7c458a3ba8a960f.svg" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b3</span> <span class="o">=</span> <span class="n">Beam_Block</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span> <span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">])</span>  <span class="c1"># 4x3 BU platňa</span>
-<span class="n">display</span><span class="p">(</span><span class="n">SVG</span><span class="p">(</span><span class="n">b3</span><span class="o">.</span><span class="n">obj</span><span class="o">.</span><span class="n">toSvg</span><span class="p">()))</span>
+<figure class="align-default" id="id2">
+<a class="reference internal image-reference" href="_images/block_b1.png"><img alt="_images/block_b1.png" src="_images/block_b1.png" style="width: 150px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Obr. 32 </span><span class="caption-text">Blok s montážnymi otvormi vo všetkých smeroch - <em>block_B_03_02_02</em>.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>b2 = Beam_Block([4, 3 ,1/2], [False, False, True])
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/58b5741e4855d669266a27eefd51ce41c4572f5de57168cfaae17a31e8b3a18b.svg" src="_images/58b5741e4855d669266a27eefd51ce41c4572f5de57168cfaae17a31e8b3a18b.svg" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b4</span> <span class="o">=</span> <span class="n">Beam_U_Block</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">Rx</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span>   <span class="c1"># 4x3 BU U-Shape plate </span>
-<span class="n">display</span><span class="p">(</span><span class="n">SVG</span><span class="p">(</span><span class="n">b4</span><span class="o">.</span><span class="n">obj</span><span class="o">.</span><span class="n">toSvg</span><span class="p">()))</span>
+<figure class="align-default" id="id3">
+<a class="reference internal image-reference" href="_images/block_b2.png"><img alt="_images/block_b2.png" src="_images/block_b2.png" style="width: 150px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Obr. 33 </span><span class="caption-text">Platňa 4x3BU - <em>block_B_04_03_12_001</em>.</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="kombinovane-nosniky">
+<h3><font color='brown'> <b> Kombinované nosniky </b></font><a class="headerlink" href="#kombinovane-nosniky" title="Link to this heading">#</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>b4 = Beam_U_Block(4,3)
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/3030701f3afeba7343b2d258caf6940dbedc5534c3cea176a3892450a9fa3779.svg" src="_images/3030701f3afeba7343b2d258caf6940dbedc5534c3cea176a3892450a9fa3779.svg" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b5</span> <span class="o">=</span> <span class="n">Beam_H_Block</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">Rx</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span>   <span class="c1"># 4x3 BU U-Shape plate </span>
-<span class="n">display</span><span class="p">(</span><span class="n">SVG</span><span class="p">(</span><span class="n">b5</span><span class="o">.</span><span class="n">obj</span><span class="o">.</span><span class="n">toSvg</span><span class="p">()))</span>
+<figure class="align-default" id="id4">
+<a class="reference internal image-reference" href="_images/block_b4.png"><img alt="_images/block_b4.png" src="_images/block_b4.png" style="width: 150px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Obr. 34 </span><span class="caption-text">Blok U - <em>block_U_04_03</em>.</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>b5 = Beam_H_Block(4,3)
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/b88d16f9fff6f813a4ca7297bbe8c0452e0cf758f6bbcb960adda1d66fda2c5c.svg" src="_images/b88d16f9fff6f813a4ca7297bbe8c0452e0cf758f6bbcb960adda1d66fda2c5c.svg" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b6</span> <span class="o">=</span> <span class="n">Beam_L_Block</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">Rx</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span>   <span class="c1"># 4x4 BU L-Shape plate </span>
-<span class="n">display</span><span class="p">(</span><span class="n">SVG</span><span class="p">(</span><span class="n">b6</span><span class="o">.</span><span class="n">obj</span><span class="o">.</span><span class="n">toSvg</span><span class="p">()))</span>
+<figure class="align-default" id="id5">
+<a class="reference internal image-reference" href="_images/block_b5.png"><img alt="_images/block_b5.png" src="_images/block_b5.png" style="width: 150px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Obr. 35 </span><span class="caption-text">Blok H - <em>block_H_04_03</em>.</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>b6 = Beam_L_Block(7,2,1/4, 1/2)
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/58817d33b39580e220077024069ea80c41232bf6927c7d776e228ac0fc5e14b5.svg" src="_images/58817d33b39580e220077024069ea80c41232bf6927c7d776e228ac0fc5e14b5.svg" />
-</div>
-</div>
+<figure class="align-default" id="id6">
+<a class="reference internal image-reference" href="_images/block_b6.png"><img alt="_images/block_b6.png" src="_images/block_b6.png" style="width: 220px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Obr. 36 </span><span class="caption-text">Blok L - <em>block_L_07_02_14</em>.</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 </section>
 </section>
 </section>
@@ -519,7 +522,11 @@ block_L_xx_yy_hx_hy
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funkcie"><font color="purple"> <b> Funkcie </b></font></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#znacenie-dielov"><font color="brown"> <b> Značenie dielov </b></font></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pouzitie"><font color="brown"> <b> Použitie </b></font></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pouzitie"><font color="purple"> <b> Použitie </b></font></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jednoduche-nosniky"><font color="brown"> <b> Jednoduché nosniky </b></font></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kombinovane-nosniky"><font color="brown"> <b> Kombinované nosniky </b></font></a></li>
 </ul>
 </li>
 </ul>

@@ -181,6 +181,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Prílohy</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="0900_instalacia.html"><font color="navy"> <b> Inštalácia</b> </font></a></li>
+<li class="toctree-l1"><a class="reference internal" href="0905_viewer.html"><font color="navy"> <b> Vizualizácia </b> </font></a></li>
 </ul>
 
     </div>
@@ -367,52 +368,64 @@ document.write(`
 <section id="navrh-dielu">
 <h2><font color='purple'> <b> Návrh dielu</b> </font><a class="headerlink" href="#navrh-dielu" title="Link to this heading">#</a></h2>
 <p>Pri návrhu dielu postupujeme podľa nasledujúcich bodov</p>
-<ul>
+<ul class="simple">
 <li><p>vytvoríme si pracovný adresár a rozbalíme do podadresári <em>./lib</em> <a class="reference download internal" download="" href="_downloads/c7758403c3488bb679c27b0e286e55f6/lib.zip"><span class="xref download myst">knižnicu</span></a> pre návrh dielov</p></li>
 <li><p>spustíme editor <em>CQ-Editor</em>, vytvoríme nový súbor (<em>File -&gt; New</em>) a <strong>uložíme</strong> (<em>File -&gt; Save</em>) ho do pracovného adresára</p></li>
-<li><p>vytvoríme program pre návrh dielu</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>from lib import *            # import kniznice Stemfie-X
-b1 = Brace(5)                # vytvorenie spojky o velkost 5BU v rovine XY
-b2 = Brace(3).Rz().BU_Tx(2)  # vytvorenie spojky 3BU
-                             # Rz()      - otocenie o 90 stupnov okolo osi Z
-                             # BU_Tx(2)  - posun v smere osi X o dlzku 2BU      
-b1 = b1.U([b2])              # U() union - zjednotenie (spojenie) objektov 
-show_object(b1.obj)          # zobrazenie dielu
-b1.export_step(&#39;part_b1&#39;)    # vygenerovanie podkladov pre tlac vo formate STEP
+<li><p>vytvoríme program pre návrh dielu</p></li>
+</ul>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-number">Listing 1. </span><span class="caption-text">Prvý program</span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">lib</span> <span class="kn">import</span> <span class="o">*</span>            <span class="c1"># import kniznice Stemfie-X</span>
+<span class="n">b1</span> <span class="o">=</span> <span class="n">Brace</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>                <span class="c1"># vytvorenie spojky o velkost 5BU v rovine XY</span>
+<span class="n">b2</span> <span class="o">=</span> <span class="n">Brace</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">Rz</span><span class="p">()</span><span class="o">.</span><span class="n">BU_Tx</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># vytvorenie spojky 3BU</span>
+                              <span class="c1"># Rz()      - otocenie o 90 stupnov okolo osi Z</span>
+                              <span class="c1"># BU_Tx(2)  - posun v smere osi X o dlzku 2BU      </span>
+<span class="n">b1</span> <span class="o">=</span> <span class="n">b1</span><span class="o">.</span><span class="n">U</span><span class="p">([</span><span class="n">b2</span><span class="p">])</span>              <span class="c1"># U() union - zjednotenie (spojenie) objektov </span>
+<span class="n">show_object</span><span class="p">(</span><span class="n">b1</span><span class="o">.</span><span class="n">obj</span><span class="p">)</span>          <span class="c1"># zobrazenie dielu v CQ-Editor</span>
+<span class="n">b1</span><span class="o">.</span><span class="n">export_step</span><span class="p">(</span><span class="s1">&#39;part_b1&#39;</span><span class="p">)</span>    <span class="c1"># vygenerovanie podkladov pre tlac vo formate STEP</span>
 </pre></div>
 </div>
-</li>
-</ul>
+</div>
 <p>Program spustíme pomocou zelenej šípky v záhlaví editoru alebo klávesou F5. Osi súradnicovej sústavy sú zobrazené v pravom dolnom rohu okna prehliadača. Pre zobrazenie chybových hláseni pri preklade treba mať aktivovanú voľbu <em>Current tracebak</em> vo voľbe <em>View</em>.</p>
-<figure class="align-default" id="id2">
+<figure class="align-default" id="id3">
 <a class="reference internal image-reference" href="_images/prg_cq.png"><img alt="_images/prg_cq.png" src="_images/prg_cq.png" style="width: 600px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Obr. 21 </span><span class="caption-text">Návrh dielu v CQ-Editore.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+<p><span class="caption-number">Obr. 21 </span><span class="caption-text">Návrh dielu v CQ-Editore.</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
+<div class="tip admonition">
+<p class="admonition-title">Zdrojové kódy</p>
+<p>V tejto publikácii budeme zobrazovať zdrojové kódy príkladov bez príkazov pre import <em>Stemfie-X</em> knižníc <em>lib</em> a príkazov na export a zobrazenie objektov</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  b1 = Brace(5)                
+  b2 = Brace(3).Rz().BU_Tx(2)       
+  b1 = b1.U([b2])             
+</pre></div>
+</div>
+<p>Príkazy na zobrazenie objektov sa líšia podľa použitého editora a príkazy na export objektov sa používajú v závislosti od kontextu príkladu.</p>
+</div>
 </section>
 <section id="export-podkladov-pre-tlac">
 <h2><font color='purple'> <b> Export podkladov pre tlač </b> </font><a class="headerlink" href="#export-podkladov-pre-tlac" title="Link to this heading">#</a></h2>
 <p>Program vygeneruje príkazom <em>b1.export_step(‘part_b1’)</em> podklady pre tlač vo formáte STEP. Tento formát je bezstratový, obsahuje vnútornú štruktúru objektu a vygenerované dáta je možné používať v kompatibilných CAD systémoch, napríklad <a class="reference external" href="https://www.freecad.org/">FreeCAD</a>.</p>
 <p>Podklady je možné vygenerovať aj vo formáte STL príkazom <em>b1.export_stl(‘part_b1’)</em>, ktorý je tak isto možné použiť pre 3D tlač, formát STL je stratový, obsahuje len vonkajšie plochy objektu.</p>
 <p>Exportované dáta môžeme prehliadať vo vhodnom prehliadači, napríklad <a class="reference external" href="https://f3d.app/">f3d</a></p>
-<figure class="align-default" id="id3">
+<figure class="align-default" id="id4">
 <a class="reference internal image-reference" href="_images/part_b1.png"><img alt="_images/part_b1.png" src="_images/part_b1.png" style="width: 300px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Obr. 22 </span><span class="caption-text">Prehliadanie vygenerovaných dát v prehliadači <em>f3d</em>.</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+<p><span class="caption-number">Obr. 22 </span><span class="caption-text">Prehliadanie vygenerovaných dát v prehliadači <em>f3d</em>.</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="d-tlac">
 <h2><font color='purple'> <b> 3D Tlač </b> </font><a class="headerlink" href="#d-tlac" title="Link to this heading">#</a></h2>
 <p>Vytvorené dáta spracujeme programom pre generovani povelového kódu pre 3D tlačiareň (gcode). Presný postup závisí od použitej tlačiarne, na obrázku je spracovanie podkladov pre tlač pomocou programu <a class="reference external" href="https://www.prusa3d.com">PrusaSlicer</a>.</p>
-<figure class="align-default" id="id4">
+<figure class="align-default" id="id5">
 <a class="reference internal image-reference" href="_images/prg_slicer.png"><img alt="_images/prg_slicer.png" src="_images/prg_slicer.png" style="width: 600px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Obr. 23 </span><span class="caption-text">Generovanie dát pre 3D tlač.</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+<p><span class="caption-number">Obr. 23 </span><span class="caption-text">Generovanie dát pre 3D tlač.</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
