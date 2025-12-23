@@ -36,7 +36,7 @@ class BU_Cube(BU_Component):
 
 class BU_Cylinder(BU_Component):
     # radius, height in BU units
-    def __init__(self, diameter=1/2, height=1, angle=360, hole=True, center=True):
+    def __init__(self, diameter=1, height=1, angle=360, hole=True, center=True):
         BU_Component.__init__(self)
         
         r = diameter * self.BU / 2

@@ -55,5 +55,22 @@ Program spustíme s parametrom s cestou ku konfiguračnému súboru a menom zobr
 
 
 
-
-
+%::::{grid} 4
+%
+%```{grid-item-card} Title
+%:img-top: ./img/test_tetiva.png
+%:class-card: sd-text-black
+%:img-alt: my text
+%
+%Text
+%```
+%
+%```{grid-item-card} Title
+%:img-top: ./img/test_tetiva.png
+%:class-card: sd-text-black
+%:img-alt: my text
+%
+%Text
+%```
+%
+%::::
