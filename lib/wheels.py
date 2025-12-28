@@ -13,7 +13,7 @@ class Wheel(Stemfie_X):
         Stemfie_X.__init__(self)  
         
         self.r = r if r in [1,2,3] else 1
-        self.d = d if d>=1/4  else 1/2
+        self.d = d #if d>=1/4  else 1/2
         self.beams = beams if beams in [3,4] else 3
         self.h = h if h>=1/4  else 1/4
         
@@ -51,8 +51,9 @@ class Wheel(Stemfie_X):
         w1.BU_Tz(self.h/2)
        
         # upevnenie osi
-        dd = BU_Cylinder(1, self.d).BU_Tz(self.h/2 + self.d) # / 2)
-        w1.U(dd)
+        if self.d > 0:
+            dd = BU_Cylinder(1, self.d).BU_Tz(-self.d/2) # / 2)
+            w1.U(dd)
         self.obj = w1.obj
         
     

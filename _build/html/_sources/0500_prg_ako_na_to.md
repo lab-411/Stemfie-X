@@ -61,6 +61,7 @@ Program spustíme pomocou zelenej šípky v záhlaví editoru alebo klávesou F5
 
 Návrh dielu v CQ-Editore.
 ```
+
 ```{admonition} Zdrojové kódy
 :class: tip
 

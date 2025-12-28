@@ -35,7 +35,7 @@ class BU_Cube(BU_Component):
 
 
 class BU_Cylinder(BU_Component):
-    # radius, height in BU units
+    # diameter, height in BU units
     def __init__(self, diameter=1, height=1, angle=360, hole=True, center=True):
         BU_Component.__init__(self)
         
@@ -51,14 +51,24 @@ class BU_Cylinder(BU_Component):
             self.Tx(self.BU/2).Ty(self.BU/2).Tz(h/2)
 
 
-class BU_Polyline(BU_Component):
-    # x,y - in BU units
-    # hole_list = [ [x1,y1], [x2,y2] ... ]
+class BU_PolyLine(BU_Component):
     def __init__(self, point_list, height=1):
+        # point_list - array of points [ [x1,y1], [x2,y2] ... ]  x,y - in BU units
+        # height     - in BU units
         BU_Component.__init__(self)
         point_list = np.array(point_list)*self.BU
         self.obj = self.obj.polyline(point_list).close()
         self.obj = self.obj.extrude(height*self.BU)
+        
+        
+class BU_PolyRot(BU_Component):
+    def __init__(self, point_list, angle=360):
+        # point_list - array of points [ [x1,y1], [x2,y2] ... ]  x,y - in BU units
+        # angle    - in degrees
+        BU_Component.__init__(self)
+        point_list = np.array(point_list)*self.BU
+        self.obj = self.obj.polyline(point_list).close()
+        self.obj = self.obj.revolve(angle)
         
         
 class BU_Bar(BU_Component):
@@ -69,3 +79,20 @@ class BU_Bar(BU_Component):
         
         if center == False:
             self.Tz(h/2)
+
+
+class BU_Cone(BU_Component):
+    def __init__(self, diam1=0, diam2=1, height=1, angle=360, center=True):
+        # d1 - priemer vrchu kuzela
+        # d2 - priemer zakladne kuzela
+        # h  - vyska kuzela
+        BU_Component.__init__(self)
+        r1=diam1/2*self.BU
+        r2=diam2/2*self.BU
+        height = height*self.BU
+        point_list =  [  [r1, 0], [r1, height], [r2, height], [r1,0]]
+        point_list = np.array(point_list)
+        self.obj = self.obj.polyline(point_list).close()
+        self.obj = self.obj.revolve(angle)
+
+

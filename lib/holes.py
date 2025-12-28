@@ -14,9 +14,9 @@ class Common_Hole(Stemfie_X):
 
 class Hole(Common_Hole):
     
-    def __init__(self, length=1):
+    def __init__(self, length=1, diam=HR):
         Common_Hole.__init__(self, length)
-        self.obj = self.obj.circle(self.HR)
+        self.obj = self.obj.circle(diam)
         self.obj = self.obj.extrude(self.length)
 
 

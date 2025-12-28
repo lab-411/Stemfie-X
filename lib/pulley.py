@@ -14,6 +14,42 @@ from lib.components import *
 from lib.beams import *
 from lib.holes import Hole_List, Hole
 
+class Pulley_01(Stemfie_X):
+    
+    def __init__(self, diam=1, thick=1, holes=True, fill=False, beams=3):
+        Stemfie_X.__init__(self) 
+    
+        d1 = diam*self.BU - 0.5
+        d2 = d1-2.5
+        h  = thick*self.BU - 0.05*self.BU
+        
+        # lava a prava strana kladky
+        p1 = BU_Component()
+        p1.obj = (p1.obj
+            .circle(d1)
+            .workplane(offset=h/2)
+            .circle(d2)
+            .loft(combine = True)
+        )
+        
+        p2 = BU_Component()
+        p2.obj = (p2.obj
+            .circle(d2)
+            .workplane(offset=h/2)
+            .circle(d1)
+            .loft(combine = True)
+            .translate([0,0,h/2])
+        )
+        self.U([p1,p2])
+        self.T([0,0,-h/2])
+        
+        # specifikacia podla priemerov kladiek
+        
+        hh = Hole(1).BU_Tz(-1/2)
+        self.D(hh)
+
+
+
 
 class Pulley(Stemfie_X):
     '''
@@ -28,7 +64,7 @@ class Pulley(Stemfie_X):
     thick - hrubka kladky
     
     '''
-    def __init__(self, dt, thick=1, holes=True, fill=False, beams=3):
+    def __init__(self, dt=1, thick=1, holes=True, fill=False, beams=3):
         Stemfie_X.__init__(self)  
         
         if dt<1: dt = 1

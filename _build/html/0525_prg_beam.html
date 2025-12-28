@@ -174,9 +174,11 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="0500_prg_ako_na_to.html"><font color="navy"> <b> Ako na to</b> </font></a></li>
 <li class="toctree-l1"><a class="reference internal" href="0505_prg_lib.html"><font color="navy"> <b> Návrh komponentov</b> </font></a></li>
+<li class="toctree-l1"><a class="reference internal" href="0535_prg_base.html"><font color="navy"> <b> Základné bloky </b> </font></a></li>
 <li class="toctree-l1"><a class="reference internal" href="0520_prg_brace.html"><font color="navy"> <b> Spojky </b> </font></a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#"><font color="navy"> <b> Nosníky </b> </font></a></li>
 <li class="toctree-l1"><a class="reference internal" href="0530_prg_holes.html"><font color="navy"> <b> Montážne otvory </b> </font></a></li>
+<li class="toctree-l1"><a class="reference internal" href="0540_prg_pulley.html"><font color="navy"> <b> Kladky </b> </font></a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Prílohy</span></p>
 <ul class="nav bd-sidenav">
@@ -415,7 +417,7 @@ block_L_xx_yy_hx_hy
 <a class="reference internal image-reference" href="_images/block_b0.png"><img alt="_images/block_b0.png" src="_images/block_b0.png" style="width: 300px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Obr. 31 </span><span class="caption-text">Jednoduchý lineárny blok - <em>block_B_07</em></span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+<p><span class="caption-number">Obr. 33 </span><span class="caption-text">Jednoduchý lineárny blok - <em>block_B_07</em></span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>b1 = Beam_Block([3, 3, 2])
@@ -425,7 +427,7 @@ block_L_xx_yy_hx_hy
 <a class="reference internal image-reference" href="_images/block_b1.png"><img alt="_images/block_b1.png" src="_images/block_b1.png" style="width: 150px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Obr. 32 </span><span class="caption-text">Blok s montážnymi otvormi vo všetkých smeroch - <em>block_B_03_02_02</em>.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+<p><span class="caption-number">Obr. 34 </span><span class="caption-text">Blok s montážnymi otvormi vo všetkých smeroch - <em>block_B_03_02_02</em>.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>b2 = Beam_Block([4, 3 ,1/2], [False, False, True])
@@ -435,7 +437,7 @@ block_L_xx_yy_hx_hy
 <a class="reference internal image-reference" href="_images/block_b2.png"><img alt="_images/block_b2.png" src="_images/block_b2.png" style="width: 150px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Obr. 33 </span><span class="caption-text">Platňa 4x3BU - <em>block_B_04_03_12_001</em>.</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+<p><span class="caption-number">Obr. 35 </span><span class="caption-text">Platňa 4x3BU - <em>block_B_04_03_12_001</em>.</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -448,7 +450,7 @@ block_L_xx_yy_hx_hy
 <a class="reference internal image-reference" href="_images/block_b4.png"><img alt="_images/block_b4.png" src="_images/block_b4.png" style="width: 150px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Obr. 34 </span><span class="caption-text">Blok U - <em>block_U_04_03</em>.</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+<p><span class="caption-number">Obr. 36 </span><span class="caption-text">Blok U - <em>block_U_04_03</em>.</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>b5 = Beam_H_Block(4,3)
@@ -458,7 +460,7 @@ block_L_xx_yy_hx_hy
 <a class="reference internal image-reference" href="_images/block_b5.png"><img alt="_images/block_b5.png" src="_images/block_b5.png" style="width: 150px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Obr. 35 </span><span class="caption-text">Blok H - <em>block_H_04_03</em>.</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+<p><span class="caption-number">Obr. 37 </span><span class="caption-text">Blok H - <em>block_H_04_03</em>.</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>b6 = Beam_L_Block(7,2,1/4, 1/2)
@@ -468,7 +470,7 @@ block_L_xx_yy_hx_hy
 <a class="reference internal image-reference" href="_images/block_b6.png"><img alt="_images/block_b6.png" src="_images/block_b6.png" style="width: 220px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Obr. 36 </span><span class="caption-text">Blok L - <em>block_L_07_02_14</em>.</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+<p><span class="caption-number">Obr. 38 </span><span class="caption-text">Blok L - <em>block_L_07_02_14</em>.</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>

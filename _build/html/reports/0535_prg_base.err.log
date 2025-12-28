@@ -1,0 +1,73 @@
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/dist-packages/jupyter_core/utils/__init__.py", line 154, in wrapped
+    asyncio.get_running_loop()
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^
+RuntimeError: no running event loop
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/pf/.local/lib/python3.13/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+    ~~~~~~~~~^
+        nb,
+        ^^^
+    ...<4 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/dist-packages/nbclient/client.py", line 1319, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/dist-packages/jupyter_core/utils/__init__.py", line 158, in wrapped
+    return loop.run_until_complete(inner)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/usr/lib/python3.13/asyncio/base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/dist-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+        cell, index, execution_count=self.code_cells_executed + 1
+    )
+  File "/usr/local/lib/python3.13/dist-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/usr/local/lib/python3.13/dist-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+#:tags: ["remove-cell"]
+
+from lib import *
+from lib.utils import *
+
+bc  = BU_Cube([1, 1.5, 2])                                     # base_B_03_02_01  3x2x1 BU cube
+by1 = BU_Cylinder(1,2, hole=True, center=False)                # base_C_01_01
+by2 = BU_Cylinder(1.5,2, hole=False, center=False, angle=270)  # base_C_01_02_270
+br  = BU_Cone(0.25, 1.5, 2 ).Rx(180).BU_Tz(-4)
+bc.U([by1.BU_Tx(2), by2.BU_Tx(4.5),  br.BU_Tx(6)]  )
+convert_to_image(bc, './src/img_0535a')
+------------------
+
+
+[31m---------------------------------------------------------------------------[39m
+[31mNameError[39m                                 Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[1][39m[32m, line 9[39m
+[32m      7[39m by1 = BU_Cylinder([32m1[39m,[32m2[39m, hole=[38;5;28;01mTrue[39;00m, center=[38;5;28;01mFalse[39;00m)                [38;5;66;03m# base_C_01_01[39;00m
+[32m      8[39m by2 = BU_Cylinder([32m1.5[39m,[32m2[39m, hole=[38;5;28;01mFalse[39;00m, center=[38;5;28;01mFalse[39;00m, angle=[32m270[39m)  [38;5;66;03m# base_C_01_02_270[39;00m
+[32m----> [39m[32m9[39m br  = [43mBU_Cone[49m[43m([49m[32;43m0.25[39;49m[43m,[49m[43m [49m[32;43m1.5[39;49m[43m,[49m[43m [49m[32;43m2[39;49m[43m [49m[43m)[49m.Rx([32m180[39m).BU_Tz(-[32m4[39m)
+[32m     10[39m bc.U([by1.BU_Tx([32m2[39m), by2.BU_Tx([32m4.5[39m),  br.BU_Tx([32m6[39m)]  )
+[32m     11[39m convert_to_image(bc, [33m'[39m[33m./src/img_0535a[39m[33m'[39m)
+
+[36mFile [39m[32m~/ownCloud/Share-Projekty/1010_GitHub_lab-411/Stemfie-X/lib/components.py:90[39m, in [36mBU_Cone.__init__[39m[34m(self, diam1, diam2, height, angle, center)[39m
+[32m     85[39m [38;5;28;01mdef[39;00m [34m__init__[39m([38;5;28mself[39m, diam1=[32m0[39m, diam2=[32m1[39m, height=[32m1[39m, angle=[32m360[39m, center=[38;5;28;01mTrue[39;00m):
+[32m     86[39m     [38;5;66;03m# d1 - priemer vrchu kuzela[39;00m
+[32m     87[39m     [38;5;66;03m# d2 - priemer zakladne kuzela[39;00m
+[32m     88[39m     [38;5;66;03m# h  - vyska kuzela[39;00m
+[32m     89[39m     BU_Component.[34m__init__[39m([38;5;28mself[39m)
+[32m---> [39m[32m90[39m     r1=[43md1[49m/[32m2[39m*[38;5;28mself[39m.BU
+[32m     91[39m     r2=d2/[32m2[39m*[38;5;28mself[39m.BU
+[32m     92[39m     height = height*[38;5;28mself[39m.BU
+
+[31mNameError[39m: name 'd1' is not defined
+

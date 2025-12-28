@@ -35,9 +35,11 @@
 :caption: Programovanie
 0500_prg_ako_na_to.md
 0505_prg_lib.md
+0535_prg_base.md
 0520_prg_brace.md
 0525_prg_beam.md
 0530_prg_holes.md
+0540_prg_pulley.md
 ```
 
 ```{toctree}

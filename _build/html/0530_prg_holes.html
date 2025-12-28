@@ -49,7 +49,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = '0530_prg_holes';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Inštalácia" href="0900_instalacia.html" />
+    <link rel="next" title="Kladky" href="0540_prg_pulley.html" />
     <link rel="prev" title="Nosníky" href="0525_prg_beam.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -174,9 +174,11 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="0500_prg_ako_na_to.html"><font color="navy"> <b> Ako na to</b> </font></a></li>
 <li class="toctree-l1"><a class="reference internal" href="0505_prg_lib.html"><font color="navy"> <b> Návrh komponentov</b> </font></a></li>
+<li class="toctree-l1"><a class="reference internal" href="0535_prg_base.html"><font color="navy"> <b> Základné bloky </b> </font></a></li>
 <li class="toctree-l1"><a class="reference internal" href="0520_prg_brace.html"><font color="navy"> <b> Spojky </b> </font></a></li>
 <li class="toctree-l1"><a class="reference internal" href="0525_prg_beam.html"><font color="navy"> <b> Nosníky </b> </font></a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#"><font color="navy"> <b> Montážne otvory </b> </font></a></li>
+<li class="toctree-l1"><a class="reference internal" href="0540_prg_pulley.html"><font color="navy"> <b> Kladky </b> </font></a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Prílohy</span></p>
 <ul class="nav bd-sidenav">
@@ -356,7 +358,7 @@ document.write(`
 <a class="reference internal image-reference" href="_images/hole_build.png"><img alt="_images/hole_build.png" src="_images/hole_build.png" style="width: 500px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Obr. 37 </span><span class="caption-text">Postup vytvárania otvorov v dieloch,</span><a class="headerlink" href="#holes-202" title="Link to this image">#</a></p>
+<p><span class="caption-number">Obr. 39 </span><span class="caption-text">Postup vytvárania otvorov v dieloch,</span><a class="headerlink" href="#holes-202" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <section id="funkcie">
@@ -381,51 +383,56 @@ center          False     umiestnenie štrbiny v strede sur. sustavy
 </div>
 <section id="priklady-pouzitia">
 <h3><font color='brown'> <b> Príklady použitia </b></font><a class="headerlink" href="#priklady-pouzitia" title="Link to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">lib</span> <span class="kn">import</span> <span class="o">*</span>
-                                    <span class="c1"># Brace with slot and holes</span>
-<span class="n">bs</span> <span class="o">=</span> <span class="n">Brace</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">holes</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>          <span class="c1"># brace without holes</span>
-<span class="n">hh</span> <span class="o">=</span> <span class="n">Hole_Slot</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>                   <span class="c1"># slot</span>
-<span class="n">hs</span> <span class="o">=</span> <span class="n">Hole_List</span><span class="p">([</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">0</span><span class="p">]]</span> <span class="p">)</span>    <span class="c1"># holes</span>
-<span class="n">bs</span><span class="o">.</span><span class="n">D</span><span class="p">([</span><span class="n">hh</span><span class="p">,</span> <span class="n">hs</span><span class="p">])</span><span class="o">.</span><span class="n">Rz</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>               <span class="c1"># difference </span>
-<span class="n">display</span><span class="p">(</span><span class="n">SVG</span><span class="p">(</span><span class="n">bs</span><span class="o">.</span><span class="n">obj</span><span class="o">.</span><span class="n">toSvg</span><span class="p">()))</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>bs = Brace(5, holes=False)          # brace without holes
+hh = Hole_Slot(3)                   # slot
+hs = Hole_List([ [3,0], [4,0]] )    # holes
+bs.D([hh, hs])                      # difference
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/166c66ab8ffa458547a2141858cc4a4bf1e3af215210851adcc7f6f4dbc6869c.svg" src="_images/166c66ab8ffa458547a2141858cc4a4bf1e3af215210851adcc7f6f4dbc6869c.svg" />
-</div>
-</div>
+<figure class="align-default" id="id1">
+<a class="reference internal image-reference" href="_images/0520a.png"><img alt="_images/0520a.png" src="_images/0520a.png" style="width: 200px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Obr. 40 </span><span class="caption-text">Jednoducha spojka</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">lib</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="n">bs</span> <span class="o">=</span> <span class="n">Brace</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="n">holes</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>          <span class="c1"># brace without holes</span>
 <span class="n">hh</span> <span class="o">=</span> <span class="n">Hole_Slot</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">BU_Tx</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>          <span class="c1"># slot + shift</span>
 <span class="n">hs</span> <span class="o">=</span> <span class="n">Hole_List</span><span class="p">([</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">0</span><span class="p">]]</span> <span class="p">)</span>    <span class="c1"># holes</span>
-<span class="n">bs</span><span class="o">.</span><span class="n">D</span><span class="p">([</span><span class="n">hh</span><span class="p">,</span> <span class="n">hs</span><span class="p">])</span><span class="o">.</span><span class="n">Rz</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>               <span class="c1"># difference </span>
-<span class="n">display</span><span class="p">(</span><span class="n">SVG</span><span class="p">(</span><span class="n">bs</span><span class="o">.</span><span class="n">obj</span><span class="o">.</span><span class="n">toSvg</span><span class="p">()))</span>
+<span class="n">bs</span><span class="o">.</span><span class="n">D</span><span class="p">([</span><span class="n">hh</span><span class="p">,</span> <span class="n">hs</span><span class="p">])</span>              <span class="c1"># difference </span>
+<span class="n">convert_to_image</span><span class="p">(</span><span class="n">bs</span><span class="p">,</span> <span class="s1">&#39;./src/0520b&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/09137b0363270f3b283f36624d2f55f5a1eb949459f65c80f20710f9c4ac1b77.svg" src="_images/09137b0363270f3b283f36624d2f55f5a1eb949459f65c80f20710f9c4ac1b77.svg" />
 </div>
-</div>
+<figure class="align-default" id="id2">
+<a class="reference internal image-reference" href="_images/0520b.png"><img alt="_images/0520b.png" src="_images/0520b.png" style="width: 250px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Obr. 41 </span><span class="caption-text">Jednoducha spojka</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">lib</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="n">c</span> <span class="o">=</span> <span class="n">BU_Cube</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">],</span> <span class="kc">False</span><span class="p">)</span>
 <span class="n">h</span> <span class="o">=</span> <span class="n">Hole_Grid</span><span class="p">(</span> <span class="mi">4</span><span class="p">,</span><span class="mi">2</span> <span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">c</span><span class="o">.</span><span class="n">D</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">SVG</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">obj</span><span class="o">.</span><span class="n">toSvg</span><span class="p">()))</span>
+<span class="n">convert_to_image</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="s1">&#39;./src/0520c&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/580856bdfe18fb89e98aa552958ed1e1ba40ae648c0bf3b96d21dca0f9c6ceb5.svg" src="_images/580856bdfe18fb89e98aa552958ed1e1ba40ae648c0bf3b96d21dca0f9c6ceb5.svg" />
 </div>
-</div>
+<figure class="align-default" id="id3">
+<a class="reference internal image-reference" href="_images/0520c.png"><img alt="_images/0520c.png" src="_images/0520c.png" style="width: 150px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Obr. 42 </span><span class="caption-text">Jednoducha spojka</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 </section>
 </section>
 </section>
@@ -451,11 +458,11 @@ center          False     umiestnenie štrbiny v strede sur. sustavy
       </div>
     </a>
     <a class="right-next"
-       href="0900_instalacia.html"
+       href="0540_prg_pulley.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><font color='navy'> <b> Inštalácia</b> </font></p>
+        <p class="prev-next-title"><font color='navy'> <b> Kladky </b> </font></p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

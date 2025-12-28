@@ -49,14 +49,26 @@ Postup vytvárania otvorov v dieloch,
             
 ### <font color='brown'> <b> Príklady použitia </b></font>
 
+    bs = Brace(5, holes=False)          # brace without holes
+    hh = Hole_Slot(3)                   # slot
+    hs = Hole_List([ [3,0], [4,0]] )    # holes
+    bs.D([hh, hs])                      # difference 
+
 ```{code-cell} ipython3  
+:tags: ["remove-cell"]
 from lib import *
                                     # Brace with slot and holes
 bs = Brace(5, holes=False)          # brace without holes
 hh = Hole_Slot(3)                   # slot
 hs = Hole_List([ [3,0], [4,0]] )    # holes
-bs.D([hh, hs]).Rz(30)               # difference 
-display(SVG(bs.obj.toSvg()))
+bs.D([hh, hs])                      # difference 
+convert_to_image(bs, './src/0520a')
+```
+
+```{figure} ./src/0520a.png
+:width: 200px
+
+Jednoducha spojka
 ```
 
 
@@ -65,8 +77,14 @@ from lib import *
 bs = Brace(6, holes=False)          # brace without holes
 hh = Hole_Slot(4).BU_Tx(1)          # slot + shift
 hs = Hole_List([ [0,0], [5,0]] )    # holes
-bs.D([hh, hs]).Rz(30)               # difference 
-display(SVG(bs.obj.toSvg()))
+bs.D([hh, hs])              # difference 
+convert_to_image(bs, './src/0520b')
+```
+
+```{figure} ./src/0520b.png
+:width: 250px
+
+Jednoducha spojka
 ```
 
 ```{code-cell} ipython3  
@@ -74,5 +92,11 @@ from lib import *
 c = BU_Cube([4,4,1/4], False)
 h = Hole_Grid( 4,2 , 1, 1/2, 1/2)
 c.D(h)
-display(SVG(c.obj.toSvg()))
+convert_to_image(c, './src/0520c')
+```
+
+```{figure} ./src/0520c.png
+:width: 150px
+
+Jednoducha spojka
 ```

@@ -52,7 +52,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Nosníky" href="0525_prg_beam.html" />
-    <link rel="prev" title="Návrh komponentov" href="0505_prg_lib.html" />
+    <link rel="prev" title="Základné bloky" href="0535_prg_base.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -176,9 +176,11 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="0500_prg_ako_na_to.html"><font color="navy"> <b> Ako na to</b> </font></a></li>
 <li class="toctree-l1"><a class="reference internal" href="0505_prg_lib.html"><font color="navy"> <b> Návrh komponentov</b> </font></a></li>
+<li class="toctree-l1"><a class="reference internal" href="0535_prg_base.html"><font color="navy"> <b> Základné bloky </b> </font></a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#"><font color="navy"> <b> Spojky </b> </font></a></li>
 <li class="toctree-l1"><a class="reference internal" href="0525_prg_beam.html"><font color="navy"> <b> Nosníky </b> </font></a></li>
 <li class="toctree-l1"><a class="reference internal" href="0530_prg_holes.html"><font color="navy"> <b> Montážne otvory </b> </font></a></li>
+<li class="toctree-l1"><a class="reference internal" href="0540_prg_pulley.html"><font color="navy"> <b> Kladky </b> </font></a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Prílohy</span></p>
 <ul class="nav bd-sidenav">
@@ -433,7 +435,7 @@ brace_A_dd_hh_pp_sss
 <a class="reference internal image-reference" href="_images/brace_b0.png"><img alt="_images/brace_b0.png" src="_images/brace_b0.png" style="width: 200px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Obr. 26 </span><span class="caption-text">Jednoducha spojka</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+<p><span class="caption-number">Obr. 28 </span><span class="caption-text">Jednoducha spojka</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -450,7 +452,7 @@ b1.D([h1, h2] )
 <a class="reference internal image-reference" href="_images/brace_b1.png"><img alt="_images/brace_b1.png" src="_images/brace_b1.png" style="width: 600px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Obr. 27 </span><span class="caption-text">Spojka so štrbinami.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+<p><span class="caption-number">Obr. 29 </span><span class="caption-text">Spojka so štrbinami.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -465,7 +467,7 @@ b1.D([h1, h2] )
 <a class="reference internal image-reference" href="_images/comp_11.png"><img alt="_images/comp_11.png" src="_images/comp_11.png" style="width: 400px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Obr. 28 </span><span class="caption-text">Oblúková a lineárna spojka</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+<p><span class="caption-number">Obr. 30 </span><span class="caption-text">Oblúková a lineárna spojka</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Z uvedených parametrov musíme pre konštrukciu spojky výpočítať uhol a offsetu voči stredu opísanej kružnice podľa obrázku</p>
@@ -473,7 +475,7 @@ b1.D([h1, h2] )
 <a class="reference internal image-reference" href="_images/tetiva.png"><img alt="_images/tetiva.png" src="_images/tetiva.png" style="width: 350px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Obr. 29 </span><span class="caption-text">Veličiny pre výpočet oblúkovej spojky</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+<p><span class="caption-number">Obr. 31 </span><span class="caption-text">Veličiny pre výpočet oblúkovej spojky</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Vstupnými hodnotami pre výpočet sú</p>
@@ -515,7 +517,7 @@ b4 = Brace(D, center=True).BU_Tz(-1/2)
 <a class="reference internal image-reference" href="_images/brace_b3.png"><img alt="_images/brace_b3.png" src="_images/brace_b3.png" style="width: 250px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Obr. 30 </span><span class="caption-text">Oblukova spojka.</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+<p><span class="caption-number">Obr. 32 </span><span class="caption-text">Oblukova spojka.</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -534,12 +536,12 @@ b4 = Brace(D, center=True).BU_Tz(-1/2)
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="0505_prg_lib.html"
+       href="0535_prg_base.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><font color='navy'> <b> Návrh komponentov</b> </font></p>
+        <p class="prev-next-title"><font color='navy'> <b> Základné bloky </b> </font></p>
       </div>
     </a>
     <a class="right-next"
