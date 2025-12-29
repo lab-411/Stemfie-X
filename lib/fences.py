@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 
 from numpy import pi, sin, cos
+from lib.common import *
 from lib.base import *
-from lib.components import *
 from lib.beams import *
 from lib.holes import Hole_List, Hole
 

@@ -11,8 +11,8 @@ Motor_D25_Holder    Mounting block for Motor_D25
 
 """
 
+from lib.common import *
 from lib.base import *
-from lib.components import *
 from lib.beams import *
 from lib.holes import Hole_List, Hole
 from lib.construct import *

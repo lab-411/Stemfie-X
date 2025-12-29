@@ -20,7 +20,7 @@ kernelspec:
 
 ## <font color='purple'> <b> Prehliadač *F3D* </b></font>
 
-Programč [F3D](https://f3d.app/) je univerzálny open-source prehliadač 3D dát podporujúci množstvo [formátov](https://f3d.app/docs/user/SUPPORTED_FORMATS). Inštalácia je možné zo stránok projektu alebo z repozitárov distribúcií, pre operačné systémy založené na distribúcii Ubuntu  
+Programč [F3D](https://f3d.app/) je univerzálny open-source prehliadač 3D dát podporujúci množstvo [formátov](https://f3d.app/docs/user/SUPPORTED_FORMATS). Prehliadač je možné používaž ako [webovú aplikáciu](https://f3d.app/viewer) alebo ako štandardnú aplikáciu. Inštalácia je možná zo stránok projektu alebo z repozitárov distribúcií, pre operačné systémy založené na distribúcii Ubuntu  
 
     sudo apt-get install f3d
 
@@ -30,7 +30,7 @@ Programu je možné používať ako prednastavený systémový prehliadač pre s
 
 Parameter *--watch* umožní automatické obnovenie zobrazovaného objektu pri zmene zobrazovaného súboru. Pretože knižnica *Stemfie-X* vytvára primárne objekty v rovine XY, parameter *--up +z* definuje orientáciu mriežky a smer pohľadu. Ovládanie programu je jednoduché, on-screen help sa vyvolá klávesou `h`. 
 
-Konfiguráciu programu je možné uložiť do konfiguračného súboru *config.f3d* 
+Konfiguráciu programu je možné uložiť do konfiguračného súboru [*config.f3d*](./src/config.f3d) 
 
     [
       {
@@ -51,6 +51,11 @@ Program spustíme s parametrom s cestou ku konfiguračnému súboru a menom zobr
 
     f3d --config=./config.f3d <file_name>.step 
     
+```{figure} ./img/f3d.png
+:width: 500px
+
+Vizualizácia súboru vo formáte STEP v programe *f3d*
+```
 
 
 

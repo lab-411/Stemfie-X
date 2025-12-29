@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 
 from numpy import pi, sin, cos
+from lib.common import *
 from lib.base import *
-from lib.components import *
 from lib.beams import *
 from lib.holes import Hole_List, Hole
 
@@ -135,5 +135,39 @@ class Wheel(Stemfie_X):
         w1.U(dd)
         
         self.obj = w1.obj
-        
-        
+
+
+
+
+class Wheel_A(Stemfie_X):
+    '''
+    Plna kladka
+    '''
+
+    def __init__(self, diam=1, thick=1/4, dp=1/2):
+        '''
+        diam  - priemer
+        thick - hrubka
+        dp    - odsadenie vnutra kladky
+        '''
+
+        self.diam = diam
+        self.thick = thick
+
+        Stemfie_X.__init__(self)
+
+        d1 = BU_Cylinder(self.diam, self.thick)
+
+        self.U([d1])
+
+
+        dd = BU_Cylinder(1, dp).BU_Tz(self.thick)
+        self.U(dd)
+        hh = Hole(2, self.HRX)  # otvor pre hriadel
+        self.D(hh)
+        self.name = self.create_name()
+
+    def create_name(self):
+        dd = self.convert_param(self.diam)
+        tt = self.convert_param(self.thick)
+        return 'wheel_A_'+dd+'_'+tt

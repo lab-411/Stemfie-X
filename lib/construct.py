@@ -5,7 +5,7 @@ Created on Mon Nov  4 18:37:59 2024
 
 @author: pf
 """
-from lib.base import Stemfie_X, np, Stemfie_X_Base
+from lib.common import Stemfie_X, np, Stemfie_X_Base
 import cadquery as cq
 
 class Construct(Stemfie_X_Base):

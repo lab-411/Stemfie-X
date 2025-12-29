@@ -30,7 +30,7 @@
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -351,7 +351,7 @@ document.write(`
 </figure>
 <section id="prehliadac-f3d">
 <h2><font color='purple'> <b> Prehliadač <em>F3D</em> </b></font><a class="headerlink" href="#prehliadac-f3d" title="Link to this heading">#</a></h2>
-<p>Programč <a class="reference external" href="https://f3d.app/">F3D</a> je univerzálny open-source prehliadač 3D dát podporujúci množstvo <a class="reference external" href="https://f3d.app/docs/user/SUPPORTED_FORMATS">formátov</a>. Inštalácia je možné zo stránok projektu alebo z repozitárov distribúcií, pre operačné systémy založené na distribúcii Ubuntu</p>
+<p>Programč <a class="reference external" href="https://f3d.app/">F3D</a> je univerzálny open-source prehliadač 3D dát podporujúci množstvo <a class="reference external" href="https://f3d.app/docs/user/SUPPORTED_FORMATS">formátov</a>. Prehliadač je možné používaž ako <a class="reference external" href="https://f3d.app/viewer">webovú aplikáciu</a> alebo ako štandardnú aplikáciu. Inštalácia je možná zo stránok projektu alebo z repozitárov distribúcií, pre operačné systémy založené na distribúcii Ubuntu</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>sudo apt-get install f3d
 </pre></div>
 </div>
@@ -360,7 +360,7 @@ document.write(`
 </pre></div>
 </div>
 <p>Parameter <em>–watch</em> umožní automatické obnovenie zobrazovaného objektu pri zmene zobrazovaného súboru. Pretože knižnica <em>Stemfie-X</em> vytvára primárne objekty v rovine XY, parameter <em>–up +z</em> definuje orientáciu mriežky a smer pohľadu. Ovládanie programu je jednoduché, on-screen help sa vyvolá klávesou <code class="docutils literal notranslate"><span class="pre">h</span></code>.</p>
-<p>Konfiguráciu programu je možné uložiť do konfiguračného súboru <em>config.f3d</em></p>
+<p>Konfiguráciu programu je možné uložiť do konfiguračného súboru <a class="reference download internal" download="" href="_downloads/cade54f917afdd0971e975aaf386055f/config.f3d"><span class="xref download myst"><em>config.f3d</em></span></a></p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[
   {
     &quot;options&quot;: {
@@ -381,6 +381,13 @@ document.write(`
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>f3d --config=./config.f3d &lt;file_name&gt;.step 
 </pre></div>
 </div>
+<figure class="align-default" id="id1">
+<a class="reference internal image-reference" href="_images/f3d.png"><img alt="_images/f3d.png" src="_images/f3d.png" style="width: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Obr. 46 </span><span class="caption-text">Vizualizácia súboru vo formáte STEP v programe <em>f3d</em></span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 </section>
 </section>
 

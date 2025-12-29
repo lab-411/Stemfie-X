@@ -5,12 +5,14 @@ Created on Mon Nov  4 18:10:45 2024
 
 @author: pf
 """
-from lib.base import *
+from lib.common import *
+
 
 class Common_Hole(Stemfie_X):
     def __init__(self, length=1):
         Stemfie_X.__init__(self)
         self.length = length*self.BU
+
 
 class Hole(Common_Hole):
     

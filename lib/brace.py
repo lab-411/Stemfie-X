@@ -8,8 +8,8 @@ Created on Mon Nov  4 18:05:31 2024
 
 from numpy import pi,sin,cos,abs
 
+from lib.common import *
 from lib.base import *
-from lib.components import *
 from lib.holes import Hole_List
 
 class Braces(Stemfie_X):

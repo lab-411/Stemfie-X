@@ -6,8 +6,8 @@ Created on Mon Nov  4 17:58:15 2024
 @author: pf
 """
 
+from lib.common import *
 from lib.base import *
-from lib.components import *
 from lib.holes import Hole_Grid
 
 class Beam_Block(Stemfie_X):

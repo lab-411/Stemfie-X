@@ -5,216 +5,100 @@ Created on Mon Nov  4 17:58:15 2024
 
 @author: pf
 
-Base Stemfie-X class
+Základné komponenty odvodne od objektov CadQuery. 
+
+251225  - premenovanuy BU_PolyLine
+        - doplneny BU_PolyRot
+        - doplneny BU_Axe (os s priemeron HRX)
+251229  - doplneney PolyCone
 """
 
-import numpy as np
-import copy as cp
-
-import cadquery as cq
-from cadquery import exporters
-
-BU = 10        # Basic Unit
-HR = 1.95      # Hole Radius
+from lib.common import *
+from lib.holes import *
 
 
-class Stemfie_X_Base():
-    def __init__(self): 
-        self.BU = BU 
-        self.HR = HR 
-
-
-class Stemfie_X(Stemfie_X_Base):
-
-    def __init__(self): 
-        Stemfie_X_Base.__init__(self)
-        self.obj = cq.Workplane("XY" , origin=(0,0,0))
+class BU_Component(Stemfie_X):
+    def __init__(self):
+        Stemfie_X.__init__(self)
         
 
-    #---------------------------------------------------------------------
-    # translate operations
-    #---------------------------------------------------------------------
-    def Tx(self, n=10):
-        self.obj = self.obj.translate([n,0,0])
-        return self
-    
-    
-    def Ty(self, n=10):
-        self.obj = self.obj.translate([0,n,0])
-        return self
-    
-    
-    def Tz(self, n=10):
-        self.obj = self.obj.translate([0,0,n])
-        return self
-    
-    
-    def T(self, t):
-        # t - list [x,y,z] or [x,y]
-        if len(t)==2:
-            t.append(0)
-        self.obj = self.obj.translate(t)
-        return self
-        
-    
-    def BU_T(self, t):
-        # t - list [x,y,z] or [x,y]
-        if len(t)==2:
-            t.append(0)
-        
-        [x,y,z] = np.array(t)*self.BU
-        self.obj = self.obj.translate([x,y,z])
-        return self
-    
-    
-    def BU_Tx(self, n=1):
-        self.obj = self.obj.translate([n*self.BU,0,0])
-        return self
-    
-    
-    def BU_Ty(self, n=1):
-        self.obj = self.obj.translate([0,n*self.BU,0])
-        return self
-    
-    
-    def BU_Tz(self, n=1):
-        self.obj = self.obj.translate([0,0,n*self.BU])
-        return self
-    
-    
-    def BU_Txy(self, c1, c2=None):
-        '''
-        BU_Txy([x,y])
-        BU_Txy(x,y)
-        '''
-        if c2==None:
-            self.BU_T(c1)
+class BU_Cube(BU_Component):
+    # basic cube
+    def __init__(self, dim=[1,1,1], center=True):
+        """
+        BU_Cube([x,y,x])
+        BU_Cube(d)
+        """
+        BU_Component.__init__(self)
+        if type(dim) == list:
+            x,y,z = np.array(dim)*self.BU
         else:
-            self.BU_T([c1,c2])
-        return self
-    
-    
-    def Rx(self, angle=90):
-        self.obj=self.obj.rotate([0,0,0], [1,0,0], angle)
-        return self
-    
-    
-    def Ry(self, angle=90):
-        self.obj=self.obj.rotate([0,0,0], [0,1,0], angle)
-        return self
-    
-    
-    def Rz(self, angle=90):
-        self.obj=self.obj.rotate([0,0,0], [0,0,1], angle)
-        return self
-    
-    #---------------------------------------------------------------------
-    # boolean operations
-    #---------------------------------------------------------------------
-    def D(self, comp):
-        # difference
-        if isinstance(comp, list):
-            for c in comp:
-                self.obj=self.obj.cut(c.obj)
-        else:
-            self.obj=self.obj.cut(comp.obj)
-        return self
-    
-    
-    def I(self, comp):
-        # intersection
-        if isinstance(comp, list):
-            for c in comp:
-                self.obj=self.obj.intersect(c.obj)
-        else:
-            self.obj=self.obj.intersect(comp.obj)
-        return self
-    
-    
-    def U(self, comp):
-        # union
-        if isinstance(comp, list):
-            for c in comp:
-                self.obj=self.obj.union(c.obj)
-        else:
-            self.obj=self.obj.union(comp.obj)
-        return self
-    
-    #---------------------------------------------------------------------
-    # mirror 
-    # mirror with copy
-    #---------------------------------------------------------------------
-    def Mx(self):
-        self.obj=self.obj.mirror(mirrorPlane="XZ", basePointVector=(0, 0, 0))
-        return self
-    
-    
-    def My(self):
-        self.obj=self.obj.mirror(mirrorPlane="YZ", basePointVector=(0, 0, 0))
-        return self
-    
-    
-    def Mz(self):
-        self.obj=self.obj.mirror(mirrorPlane="XY", basePointVector=(0, 0, 0))
-        return self
-    
-    
-    def MKx(self):
-        temp = cp.copy(self)
-        self.obj=self.obj.mirror(mirrorPlane="XZ", basePointVector=(0, 0, 0))
-        self.U(temp)
-        return self
-    
-    
-    def MKy(self):
-        temp = cp.copy(self)
-        self.obj=self.obj.mirror(mirrorPlane="YZ", basePointVector=(0, 0, 0))
-        self.U(temp)
-        return self
-        
-        
-    def MKz(self):
-        temp = cp.copy(self)
-        self.obj=self.obj.mirror(mirrorPlane="XY", basePointVector=(0, 0, 0))
-        self.U(temp)
-        return self
-    
-    #---------------------------------------------------------------------
-    # utils
-    #---------------------------------------------------------------------
-    def convert_param(self, val):
-        data = {      1:"01",       2:"02",       3:"03",     4:"04",       5:"05", 
-                      6:"06",       7:"07",       8:"08",     9:"09",      10:"10", 
-                     11:"11",      12:"12",      13:"13",    14:"14",      15:"15", 
-                     16:"16",      17:"17",      18:"18",    19:"19",      20:"20",
-                    1/4:"14",     1/2:"12",     3/4:"34",   1/8:"18", (1+1/4):"54",
-                    3/8:"38",     5/8:"58",     7/8:"78", 
-                (1+1/2):"32", (1+3/4):"74",  }
-                
-        k = data.keys()
-        if val in k:
-            return data[val]
-        else: return "XX"
-    
-    
-    def copy(self):
-        return cp.copy(self)
-    
-    
-    def export_stl(self, file_name):
-        if file_name.endswith('.stl') == False: 
-            file_name = file_name + '.stl'
-        self.obj.export(file_name)
-        return self
-    
-        
-    def export_step(self, file_name):
-        if file_name.endswith('.step') == False: 
-            file_name = file_name + '.step'
-        self.obj.export(file_name)
-        return self
+            x = y = z = dim*self.BU
+            
+        self.obj = (self.obj).box(x,y,z)
+        if center == False:
+            self.Tx(x/2).Ty(y/2).Tz(z/2)
 
-    
 
+class BU_Cylinder(BU_Component):
+    # diameter, height in BU units
+    def __init__(self, diameter=1, height=1, angle=360, hole=True, center=True):
+        BU_Component.__init__(self)
         
+        r = diameter * self.BU / 2
+        h = height * self.BU
+        
+        self.obj = (self.obj).cylinder(height=h, radius=r, angle=angle)
+        
+        if hole==True:
+            ht = Hole(height).BU_Tz(-height/2)
+            self.D(ht)
+        if center == False:
+            self.Tx(self.BU/2).Ty(self.BU/2).Tz(h/2)
+
+
+class BU_PolyLine(BU_Component):
+    def __init__(self, point_list, height=1):
+        # point_list - array of points [ [x1,y1], [x2,y2] ... ]  x,y - in BU units
+        # height     - in BU units
+        BU_Component.__init__(self)
+        point_list = np.array(point_list)*self.BU
+        self.obj = self.obj.polyline(point_list).close()
+        self.obj = self.obj.extrude(height*self.BU)
+        
+        
+class BU_PolyRot(BU_Component):
+    def __init__(self, point_list, angle=360):
+        # point_list - array of points [ [x1,y1], [x2,y2] ... ]  x,y - in BU units
+        # angle    - in degrees
+        BU_Component.__init__(self)
+        point_list = np.array(point_list)*self.BU
+        self.obj = self.obj.polyline(point_list).close()
+        self.obj = self.obj.revolve(angle)
+        
+        
+class BU_Axe(BU_Component):
+    def __init__(self, length, center=True):
+        BU_Component.__init__(self)
+        h = length * self.BU
+        self.obj = (self.obj).cylinder(radius=self.HRX, height=h)
+        
+        if center == False:
+            self.Tz(h/2)
+
+
+class BU_Cone(BU_Component):
+    def __init__(self, diam1=0, diam2=1, height=1, angle=360, center=True):
+        # d1 - priemer vrchu kuzela
+        # d2 - priemer zakladne kuzela
+        # h  - vyska kuzela
+        BU_Component.__init__(self)
+        r1=diam1/2*self.BU
+        r2=diam2/2*self.BU
+        height = height*self.BU
+        point_list =  [  [r1, 0], [r1, height], [r2, height], [r1,0]]
+        point_list = np.array(point_list)
+        self.obj = self.obj.polyline(point_list).close()
+        self.obj = self.obj.revolve(angle)
+
 

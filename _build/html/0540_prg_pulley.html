@@ -30,7 +30,7 @@
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -362,35 +362,74 @@ document.write(`
 <section id="funkcie">
 <h2><font color='purple'> <b> Funkcie </b></font><a class="headerlink" href="#funkcie" title="Link to this heading">#</a></h2>
 <p>Knižnica obsahuje základné veľkosti kladiek a držiakov.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Pulley(type, holes=True, fill=False, thick=0.8, beams=3)
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Pulley_A(diam, thick, dp)
+Pulley_B(diam, thick, dp, dh, rh)
+Pulley_C(diam, thick, dp, dh, rh)
 
 Parametre       Default   Popis 
 --------------------------------------------------------------
-type            1         typ kladky, polomer
-                              1   - r = BU     mala kladka bez pomocnych dier
-                              1.5 - r = BU*1.5 kladka 4 diery
-                              2   - r = BU*2   kladka s 8 dierami
-                              2.5 - r = BU*2.5 kladka s 8 dierami
-                              3   - r = BU*3   kladka s odlahcenim
-holes           True      vypln kladky dierami
-fill            False     odlahcenie kladky
-thick           0.8       hrubka kladky
-beams           3         po4et ramien pri veľkej kladke (3,4)
+diam                      priemer kladky
+thick           1         hrubka kladky
+dp              1/2       zahlbenie kladky (vnutorny priemer)
+dh              1/4       hrubka nosnej vyplne kladky
+rh              [1]       pole priemerov otvorov
 
-Pulley_Holder_1(height)
-Pulley_Holder_2(height)
+Pulley_Holder_A(height)   držiak o šírke 1BU
+Pulley_Holder_B(height)   držiak o šírke 2BU
 </pre></div>
 </div>
 <section id="znacenie-dielov">
 <h3><font color='brown'> <b> Značenie dielov </b></font><a class="headerlink" href="#znacenie-dielov" title="Link to this heading">#</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pulley_t_dd_hh
+
+t  - typ kladky
+     A - jednoducha plna kladka pre mensie priemery 
+     B - odlahcena kladka pre väčšie priemery
+     C - odlahčená kladka s lúčmi pre veľke priemery
+
+dd - priemer hladky
+hh - hrubka kladky
+
+pulhold_t_nn
+
+t  - typ držiaka
+hh - výška držiaka
+</pre></div>
+</div>
 </section>
 </section>
 <section id="priklady-pouzitia">
 <h2><font color='purple'> <b> Príklady použitia </b></font><a class="headerlink" href="#priklady-pouzitia" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>sdsds</p></li>
-<li><p>sdsds  <code class="docutils literal notranslate"><span class="pre">sdsds</span></code> <em>sdsd</em></p></li>
-</ul>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>p0 = Pulley_A(2,1)        # pulley_A_02_01
+</pre></div>
+</div>
+<figure class="align-default" id="id1">
+<a class="reference internal image-reference" href="_images/img_0540a.png"><img alt="_images/img_0540a.png" src="_images/img_0540a.png" style="width: 110px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Obr. 43 </span><span class="caption-text">Jednoducha plná kladka</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>p1 = Pulley_B(3,1)        # pulley_B_03_01
+</pre></div>
+</div>
+<figure class="align-default" id="id2">
+<a class="reference internal image-reference" href="_images/img_0540b.png"><img alt="_images/img_0540b.png" src="_images/img_0540b.png" style="width: 160px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Obr. 44 </span><span class="caption-text">Odľahčená kladka</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>p1 = Pulley_B(3,1)        # pulley_B_03_01
+</pre></div>
+</div>
+<figure class="align-default" id="id3">
+<a class="reference internal image-reference" href="_images/img_0540c.png"><img alt="_images/img_0540c.png" src="_images/img_0540c.png" style="width: 180px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Obr. 45 </span><span class="caption-text">Odľahčená veľká kladka</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 </section>
 </section>
 

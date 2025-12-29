@@ -30,32 +30,93 @@ Kladky sú konštrukčnými prvkami pre tvorbu jednoduchých strojov (jednoduch�
 
 Knižnica obsahuje základné veľkosti kladiek a držiakov.
 
-    Pulley(type, holes=True, fill=False, thick=0.8, beams=3)
+    Pulley_A(diam, thick, dp)
+    Pulley_B(diam, thick, dp, dh, rh)
+    Pulley_C(diam, thick, dp, dh, rh)
     
     Parametre       Default   Popis 
     --------------------------------------------------------------
-    type            1         typ kladky, polomer
-                                  1   - r = BU     mala kladka bez pomocnych dier
-                                  1.5 - r = BU*1.5 kladka 4 diery
-                                  2   - r = BU*2   kladka s 8 dierami
-                                  2.5 - r = BU*2.5 kladka s 8 dierami
-                                  3   - r = BU*3   kladka s odlahcenim
-    holes           True      vypln kladky dierami
-    fill            False     odlahcenie kladky
-    thick           0.8       hrubka kladky
-    beams           3         po4et ramien pri veľkej kladke (3,4)
+    diam                      priemer kladky
+    thick           1         hrubka kladky
+    dp              1/2       zahlbenie kladky (vnutorny priemer)
+    dh              1/4       hrubka nosnej vyplne kladky
+    rh              [1]       pole priemerov otvorov
     
-    Pulley_Holder_1(height)
-    Pulley_Holder_2(height)
+    Pulley_Holder_A(height)   držiak o šírke 1BU
+    Pulley_Holder_B(height)   držiak o šírke 2BU
 
 ### <font color='brown'> <b> Značenie dielov </b></font>
 
+    pulley_t_dd_hh
 
-                          
-         
+    t  - typ kladky
+         A - jednoduchá plná kladka pre menšie priemery 
+         B - odľahčená kladka pre väčšie priemery
+         C - odľahčená kladka s lúčmi pre veľke priemery
+    
+    dd - priemer hladky
+    hh - hrubka kladky
+    
+    pulhold_t_nn
+    
+    t  - typ držiaka
+    hh - výška držiaka
+    
 ## <font color='purple'> <b> Príklady použitia </b></font>
 
-* sdsds
-* sdsds  `sdsds` *sdsd*  
+    p0 = Pulley_A(2,1)        # pulley_A_02_01
+
+```{code-cell} ipython3  
+:tags: ["remove-cell"]
+
+from lib import *
+from lib.utils import *
+
+p0 = Pulley_A(2,1)
+convert_to_image(p0, './src/img_0540a')
+```
+
+```{figure} ./src/img_0540a.png
+:width: 110px
+
+Jednoducha plná kladka
+```
+
+
+    p1 = Pulley_B(3,1)        # pulley_B_03_01
+
+```{code-cell} ipython3  
+:tags: ["remove-cell"]
+
+from lib import *
+from lib.utils import *
+
+p1 = Pulley_B(3,1)
+convert_to_image(p1, './src/img_0540b')
+```
+
+```{figure} ./src/img_0540b.png
+:width: 160px
+
+Odľahčená kladka
+```
+
+    p1 = Pulley_B(3,1)        # pulley_B_03_01
+
+```{code-cell} ipython3  
+:tags: ["remove-cell"]
+
+from lib import *
+from lib.utils import *
+
+p2 = Pulley_C(4,1)
+convert_to_image(p2, './src/img_0540c')
+```
+
+```{figure} ./src/img_0540c.png
+:width: 180px
+
+Odľahčená veľká kladka
+```
 
 

@@ -4,6 +4,7 @@
 Pnematiky a disky
 '''
 from lib import *
+
 class Tire_01(Stemfie_X):
     '''
     Pnematika so zadanymi parametrami.
@@ -43,12 +44,14 @@ class Tire_01(Stemfie_X):
         
         #---------------------------------------------------------------
         # disk
+        dx = 0.015        # zmensenie priemeru disku voci pneumatike  
         cc = ch/2/BU
+        t1=t1-dx
         p = [ [0, s0+h0], [1/2,s0+h0], [1/2, s0], [t1/2, s0],
               [t1/2, 0], [t1/2+cc, -cc], [3/8+cc, -cc], 
               [3/8, 0], [3/8, 1/2], [1/8, 3/4], [0, 3/4] 
         ]
-        br = BU_Bar(s0+h0).Rx().BU_Ty(-(1-h0)/2)
+        br = BU_Axe(s0+h0).Rx().BU_Ty(-(1-h0)/2)
         self.disc = BU_PolyRot(p, 360).BU_Ty(-1)
         self.disc.D([br]) 
 
