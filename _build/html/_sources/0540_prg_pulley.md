@@ -50,9 +50,9 @@ Knižnica obsahuje základné veľkosti kladiek a držiakov.
     pulley_t_dd_hh
 
     t  - typ kladky
-         A - jednoducha plna kladka pre mensie priemery 
-         B - odlahcena kladka pre väčšie priemery
-         C - odlahčená kladka s lúčmi pre veľke priemery
+         A - jednoduchá plná kladka pre menšie priemery 
+         B - odľahčená kladka pre väčšie priemery
+         C - odľahčená kladka s lúčmi pre veľke priemery
     
     dd - priemer hladky
     hh - hrubka kladky
