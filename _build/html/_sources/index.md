@@ -45,6 +45,13 @@
 
 ```{toctree}
 :titlesonly: True
+:caption: Projekty
+1020_prj_spirograf.md
+```
+
+
+```{toctree}
+:titlesonly: True
 :caption: Prílohy
 0900_instalacia.md
 0905_viewer.md
