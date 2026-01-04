@@ -29,6 +29,7 @@
 :caption: Jednoduché konštrukcie
 0210_exm_bridge.md
 0220_exm_small_crane.md
+0225_exm_maly_mlyn.md
 ```
 
 ```{toctree}
