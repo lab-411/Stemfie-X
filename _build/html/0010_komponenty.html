@@ -377,14 +377,19 @@ document.write(`
 <p><span class="caption-number">Obr. 4 </span><span class="caption-text">Základné parametre dielov (spojka, D=8, H=1/4).</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Na rozdiel od stavebníc, ktoré majú diely z plechu, musíme pri našich konštrukciách uvažovať hrúbku dielov. Štandardné parametre dielov sú</p>
+<p>Na rozdiel od stavebníc, ktoré majú diely z plechu, musíme pri našich konštrukciách uvažovať hrúbku dielov. Štandardné parametre dielov sú definované ako</p>
 <ul class="simple">
 <li><p>veľkost <strong>BU</strong> je 10mm</p></li>
 <li><p>priemer montážnych otvorov <strong>HR</strong> je 4mm</p></li>
+<li><p>priemer otvorov pre osi a hriadele <strong>HRX</strong> je 4.1mm</p></li>
 <li><p>veľkost dielov <strong>D</strong> je celočíselná v násobkoch 1,2 … <strong>BU</strong></p></li>
 <li><p>hrúbka dielov <strong>H</strong> je 1, 1/2, 1/3, 1/4 <strong>BU</strong></p></li>
 </ul>
-<p>Pre jednoduchšiu orientáciu sú diely stavebnice označené typom, ktorý vychádza z ich tvaru a rozmerov.</p>
+<p>Pre jednoduchšiu orientáciu sú diely stavebnice označené typom, ktorý vychádza z ich tvaru a rozmerov, napríklad zobrazená spojka má označenie <em>brace_B_08</em>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Úpravy štandardných parametrov</p>
+<p>Pri vytváraní podkladov pre 3D tlač pomocou s využitím knižnice <em>Stemfie-X</em> možeme zmenou hodnôt premenných <strong>BU</strong>, <strong>HR</strong> a <strong>HRX</strong> upraviť vlastnosti a rozmery dielov stavebnice. Napríklad ak chceme pre spájanie dielov využiť skrutky, ktoré si v dieloch “vyrežú” vlastný závit, je vhodné hodnotu <strong>HR</strong> zmeniť na veľkosť 3.85mm.</p>
+</div>
 <section id="d-tlac">
 <h3><font color='brown'> <b> 3D Tlač   </b> </font><a class="headerlink" href="#d-tlac" title="Link to this heading">#</a></h3>
 <p>Doporučené parametre 3D tlače upravte podľa vašej tlačiarne a použitého materiálu. Diely stavebnice sú v tejto pulikácii generované vo formáte <em>.step</em> alebo <em>.stl</em>, pre ich tlač použite programové vybavenie doporučované výrobcom tlačiarne.</p>
