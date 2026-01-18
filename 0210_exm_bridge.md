@@ -22,7 +22,7 @@ kernelspec:
     Stupeň náročnosti   Začiatočník 
     
 
-```{figure} ./model/0210_most/most_03.png
+```{figure} ./model/0210_most/img/most_03.png
 :width: 700px
 :name: exam_002
 
@@ -72,7 +72,7 @@ Model priehradového cestného mostu
 
 Vytvorte si vlastné návrhy mostov podľa dostupných fotografií alebo nákresov.
 
-```{figure} ./model/0210_most/mosty.gif
+```{figure} ./model/0210_most/img/mosty.gif
 :width: 700px
 :name: exam_005
 
@@ -80,7 +80,7 @@ Typy priehradových mostov.
 ```
 
 
-```{figure} ./model/0210_most/most_05.png
+```{figure} ./model/0210_most/img/most_05.png
 :width: 700px
 :name: exam_004
 
