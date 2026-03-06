@@ -21,7 +21,7 @@ kernelspec:
     Model               Malý žeriav
     Stupeň náročnosti   Začiatočník 
  
-Malý žeriav s jednoducho kladkou a navijakom. Rameno žeriavu je možné zdvihať, kabína sa môže otáčať.
+Malý žeriav s jednoducho kladkou a navijakom. Rameno žeriavu je možné zdvihať, kabína sa môže otáčať. 
 
 ```{figure} ./model/0215_mini_zeriav/img/img_sc_01.png
 :width: 400px

@@ -3,9 +3,8 @@
 :width: 800px 
 ```
 <center> 
-<h3> <font color='brown'>  <b> Autor </b> </font> </h3>
 <h3> <font color='brown'>  <b> LAB-411 Production </b> </font> </h3>
-<h3> <font color='brown'>  <b> Verzia 0.15 / Jan. 2026 </b> </font>                   </h3>
+<h3> <font color='brown'>  <b> Verzia 0.15 / Mar. 2026 </b> </font>                   </h3>
 </center> 
 
 
@@ -64,7 +63,7 @@
 
 ## <font color='purple'> Vydavateľstvo </font> 
 
-Vydalo vydavateľstvo *LAB-411 Production, FŠT-TNUNI, Ku kyselke, 91106 Trenčín, Slovensko* v roku 2026.
+Vydalo vydavateľstvo *LAB-411 Production* v roku 2026.
 
 **ISBN: xxx-xx-xxxxxx-x**
 
