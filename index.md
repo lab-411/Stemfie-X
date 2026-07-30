@@ -19,34 +19,41 @@
 :titlesonly: True
 :caption: Úvod
 0005_uvod.md
-0010_komponenty.md
+0007_prehlad.md
 0015_montaz.md
 ```
 
 ```{toctree}
 :titlesonly: True
 :caption: Jednoduché konštrukcie
-0220_exm_maly_mlyn.md
 0210_exm_bridge.md
+0220_exm_maly_mlyn.md
 0215_exm_small_crane.md
-0225_exm_maly_nakladac.md
+```
+
+```{toctree}
+:titlesonly: True
+:caption: Knižnica komponentov
+0100_kniznica.md
 ```
 
 ```{toctree}
 :titlesonly: True
 :caption: Programovanie
+0010_komponenty.md
 0500_prg_ako_na_to.md
-0505_prg_lib.md
-0535_prg_base.md
 0520_prg_brace.md
 0525_prg_beam.md
-0530_prg_holes.md
 0540_prg_pulley.md
+0530_prg_holes.md
+0505_prg_lib.md
+0535_prg_base.md
 ```
 
 ```{toctree}
 :titlesonly: True
 :caption: Projekty
+1250_prj_bridge_waren.md
 1020_prj_spirograf.md
 ```
 
@@ -56,6 +63,7 @@
 :caption: Prílohy
 0900_instalacia.md
 0905_viewer.md
+0930_3d_tlac.md
 ```
 
 ## <font color='purple'> Anotácia </font>   

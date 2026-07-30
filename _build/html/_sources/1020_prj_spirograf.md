@@ -11,7 +11,7 @@ kernelspec:
   language: python
   name: python3
 ---
-# <font color='navy'> <b> Spirograf </b> </font>
+# <font color='navy'> Spirograf  </font>
 
 ```{figure} ./img/banner.png
 :width: 800px
@@ -24,9 +24,9 @@ kernelspec:
 
 S využitím knižnice pre návrh ozubených kolies možeme programom vytvoriť diely pre jednoduchý spirograf. Návrhom ozubených koles s rôznym počtom zubov môžeme dosiahnúť rôznu periódu pri ktorej sa budú krivky opakovať. 
 
-## <font color='purple'> <b> Návrh </b></font>
+## <font color='purple'> Návrh dielov </font>
 
-### <font color='brown'> <b> Základňa spirografu </b></font>
+### <font color='brown'> Základňa spirografu </font>
 
 ```{code-cell} ipython3  
 from lib import *
@@ -55,7 +55,7 @@ convert_to_image(bs, './src/sp_base_90')
 Základňa spirografu
 ```
 
-### <font color='brown'> <b> Ozubené kolesá </b></font>
+### <font color='brown'> Ozubené kolesá </font>
 
 ```{code-cell} ipython3  
 sg = Spur_Gear(50, bore=2.5)

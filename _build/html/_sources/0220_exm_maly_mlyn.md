@@ -11,25 +11,29 @@ kernelspec:
   language: python
   name: python3
 ---
-# <font color='navy'> <b> Malý veterný mlyn </b> </font>
+
+
+# <font color='navy'> Veterný mlyn </font>
 
 ```{figure} ./img/banner.png
 :width: 800px
 :name: exam_001
 ```
+Veterný mlyn je jednoduchý kinematický model, ktorého súčasťou je jednoduchý kladkostroj. 
 
-    Model               Malý mlyn
-    Stupeň náročnosti   Začiatočník 
-    
 
 ```{figure} ./model/0220_maly_mlyn/img/small_windmill.png
 :width: 400px
 
 ```
 
+## <font color='purple'> Montáž </font>
 
 
-## <font color='purple'> <b> Diely </b></font>
+## <font color='purple'> Diely </font>
+
+````{dropdown} Diely modelu
+
 
 ```{list-table}
 :header-rows: 1
@@ -79,6 +83,8 @@ kernelspec:
   - šedá
   -
 ```
+
+````
 
 ```{figure} ./model/0220_maly_mlyn/img/windmill_assembly.jpg
 :width: 250px

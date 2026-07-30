@@ -11,12 +11,16 @@ kernelspec:
   language: python
   name: python3
 ---
-# <font color='navy'> <b> Ako na to</b> </font>
+# <font color='navy'> Vytváranie dielov </font>
 
 ```{figure} ./img/banner.png
 :width: 800px
 :name: prg_100
 ```
+Pri návrhu vlastných modelov a konštrukcií môže vzniknúť potreba použitia dielu, ktorý sa nenachádza v knižnici komponentov. V inom prípade potrebujeme vytvoriť neštandardný diel ako je napríklad držiak motora, serva, senzora. Nové diely môžeme vytvárať pomocou skriptov v programovacom jazyku Python využitím knižníc pre tvorbu komponentov a ich kombináciou pomocou logických operácií. Pokročilí uživatelia môžu pri tvorbe dielov využívať aj vlastnosti knižnice *CadQuery*, pomocou ktorej je knižnica *Stemfe-X* naprogramovaná. 
+
+
+## <font color='purple'>  Príklad konštrukcie nového dielu </font>
 
 Pri návrhu našej konštrukcie sme zistili, že potrebujeme spojku v tvare T o hrúbke 1/4 BU. Pri návrhu môžeme ako pomôcku na náčrty používať štvorčekový papier s rastrom 5mm (BU/2), na ktorom získame predstavu o skutočnej veľkosti dielov. 
 
@@ -33,7 +37,7 @@ Náš diel do stavebnice "vyrobíme" naprogramovaním v jazyku *Python* s použi
 * nainštalované programy pre prehliadanie podkladov pre 3D tlač a generovanie dát pre tlačiareň
 * znalosť práce s 3D tlačiarňou 
 
-## <font color='purple'> <b> Návrh dielu</b> </font>
+## <font color='purple'>  Návrh dielu </font>
 
 Pri návrhu dielu postupujeme podľa nasledujúcich bodov
 
@@ -42,7 +46,7 @@ Pri návrhu dielu postupujeme podľa nasledujúcich bodov
 * vytvoríme program pre návrh dielu
 
 ```{code-block} python
-:caption: Prvý program
+:caption: Vytvorenie T-spojky 
 
 from lib import *            # import kniznice Stemfie-X
 b1 = Brace(5)                # vytvorenie spojky o velkost 5BU v rovine XY
@@ -62,19 +66,19 @@ Program spustíme pomocou zelenej šípky v záhlaví editoru alebo klávesou F5
 Návrh dielu v CQ-Editore.
 ```
 
-```{admonition} Zdrojové kódy
-:class: tip
+%```{admonition} Zdrojové kódy
+%:class: tip
+%
+%V tejto publikácii budeme zobrazovať zdrojové kódy príkladov bez príkazov pre import *Stemfie-X* knižníc *lib* a príkazov na export a zobrazenie objektov
+%
+%      b1 = Brace(5)                
+%      b2 = Brace(3).Rz().BU_Tx(2)       
+%      b1 = b1.U([b2])             
+%      
+%Príkazy na zobrazenie objektov sa líšia podľa použitého editora a príkazy na export objektov sa používajú v závislosti od kontextu príkladu. 
+%```
 
-V tejto publikácii budeme zobrazovať zdrojové kódy príkladov bez príkazov pre import *Stemfie-X* knižníc *lib* a príkazov na export a zobrazenie objektov
-
-      b1 = Brace(5)                
-      b2 = Brace(3).Rz().BU_Tx(2)       
-      b1 = b1.U([b2])             
-      
-Príkazy na zobrazenie objektov sa líšia podľa použitého editora a príkazy na export objektov sa používajú v závislosti od kontextu príkladu. 
-```
-
-## <font color='purple'> <b> Export podkladov pre tlač </b> </font>
+## <font color='purple'>  Export podkladov pre tlač  </font>
 
 Program vygeneruje príkazom *b1.export_step('part_b1')* podklady pre tlač vo formáte STEP. Tento formát je bezstratový, obsahuje vnútornú štruktúru objektu a vygenerované dáta je možné používať v kompatibilných CAD systémoch, napríklad [FreeCAD](https://www.freecad.org/). 
 
@@ -88,7 +92,7 @@ Exportované dáta môžeme prehliadať vo vhodnom prehliadači, napríklad [f3d
 Prehliadanie vygenerovaných dát v prehliadači *f3d*.
 ```
 
-## <font color='purple'> <b> 3D Tlač </b> </font>
+## <font color='purple'>  3D Tlač  </font>
 
 Vytvorené dáta spracujeme programom pre generovani povelového kódu pre 3D tlačiareň (gcode). Presný postup závisí od použitej tlačiarne, na obrázku je spracovanie podkladov pre tlač pomocou programu [PrusaSlicer](https://www.prusa3d.com). 
 

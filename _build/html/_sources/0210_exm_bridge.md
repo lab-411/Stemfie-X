@@ -11,25 +11,41 @@ kernelspec:
   language: python
   name: python3
 ---
-# <font color='navy'> <b> Priehradový most </b> </font>
+# <font color='navy'> Priehradový most  </font>
 
 ```{figure} ./img/banner.png
 :width: 800px
 :name: exam_001
 ```
+Model priehradového mostu patrí medzi jednoduché statické konštrukcie pre začiatočníkov. Model mostu je zameraný na získanie elementárnych zručností pri používaní náradia, spojovacieho materiálu a správneho postupu montáže. Výsledný model zároveň intuitívne prezentuje elementárne poznatky zo statiky, kde je zrejmé, že nosnosť poskladaného mosta je väčšia ako jednoduchej lávky. 
 
-    Model               Priehradový most
-    Stupeň náročnosti   Začiatočník 
-    
+Model mostu je zostavený zo štandardných dielov stavebnice bez dodatočných modifikácií a úprav dielov. 
 
 ```{figure} ./model/0210_most/img/most_03.png
 :width: 700px
 :name: exam_002
 
-Model priehradového cestného mostu
+Model jednoduchého priehradového cestného mostu
 ```
 
-## <font color='purple'> <b> Diely </b></font>
+## <font color='purple'> Montáž </font>
+
+
+Postup montáže jedného segmentu mostu je zrejmý z nasledujúceho obrázku. Veľkosť mostu môžete upraviť pridávaním segmentov mostu. Pre montáž sú použité štandardné skrutky M4x6. V prípade potreby si môžete parametre modelu (napríklad šírku mostu) upraviť vygenerovaním upravených dielov pomocou programom s využitím knižnice komponentov.  
+
+```{figure} ./model/0210_most/img/most_07.png
+:width: 300px
+:name: exam_021
+
+Postup montáže časti segmentu mostu.
+```
+
+
+## <font color='purple'> Diely </font>
+
+Farebné prevedenie dielov je orientačné, pre konštrukciu si môžete zvoliť vlastné farebné prevednie. 
+
+````{dropdown} Zoznam dielov priehradového mostu.
 
 ```{list-table}
 :header-rows: 1
@@ -63,27 +79,10 @@ Model priehradového cestného mostu
   - šedá
   - [block_U_02_05_14_12](./model/0210_most/parts/block_U_02_05_14_12.step)
 * - 36
-  - Skrutka M4x10
+  - Skrutka M4x6
   - šedá
   - 
 ```
+````
 
-## <font color='purple'> <b> Návrhy a vylepšenia </b></font>
-
-Vytvorte si vlastné návrhy mostov podľa dostupných fotografií alebo nákresov.
-
-```{figure} ./model/0210_most/img/mosty.gif
-:width: 700px
-:name: exam_005
-
-Typy priehradových mostov.
-```
-
-
-```{figure} ./model/0210_most/img/most_05.png
-:width: 700px
-:name: exam_004
-
-Priehradový most s nosníkmi typu [Warren](https://en.wikipedia.org/wiki/Warren_truss) 
-```
 

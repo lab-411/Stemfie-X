@@ -16,43 +16,53 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-  
-  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="_static/documentation_options.js?v=f6d3da1f"></script>
-    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="_static/copybutton.js?v=f281be69"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>DOCUMENTATION_OPTIONS.pagename = '0215_exm_small_crane';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Malý nakladac" href="0225_exm_maly_nakladac.html" />
-    <link rel="prev" title="Priehradový most" href="0210_exm_bridge.html" />
+    <link rel="next" title="Knižnica komponentov" href="0100_kniznica.html" />
+    <link rel="prev" title="Veterný mlyn" href="0220_exm_maly_mlyn.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -68,19 +78,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -88,7 +87,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search..."
          aria-label="Search..."
          autocomplete="off"
@@ -96,8 +94,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -113,7 +111,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -143,54 +142,56 @@
     
     
     <img src="_static/logo_411.png" class="logo__image only-light" alt="Stemfie-X 0.2 documentation - Home"/>
-    <script>document.write(`<img src="_static/logo_411.png" class="logo__image only-dark" alt="Stemfie-X 0.2 documentation - Home"/>`);</script>
+    <img src="_static/logo_411.png" class="logo__image only-dark pst-js-only" alt="Stemfie-X 0.2 documentation - Home"/>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Úvod</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="0005_uvod.html"><font color="navy"> <b> Vlastnosti </b> </font></a></li>
-<li class="toctree-l1"><a class="reference internal" href="0010_komponenty.html"><font color="navy"> <b> Diely </b> </font></a></li>
-<li class="toctree-l1"><a class="reference internal" href="0015_montaz.html"><font color="navy"> <b> Montáž  </b> </font></a></li>
+<li class="toctree-l1"><a class="reference internal" href="0005_uvod.html"><font color="navy"> Stemfie-X </font></a></li>
+<li class="toctree-l1"><a class="reference internal" href="0007_prehlad.html"><font color="navy"> Konštrukčné prvky </font></a></li>
+<li class="toctree-l1"><a class="reference internal" href="0015_montaz.html"><font color="navy"> Montáž </font></a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Jednoduché konštrukcie</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="0220_exm_maly_mlyn.html"><font color="navy"> <b> Malý veterný mlyn </b> </font></a></li>
-<li class="toctree-l1"><a class="reference internal" href="0210_exm_bridge.html"><font color="navy"> <b> Priehradový most </b> </font></a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#"><font color="navy"> <b> Žeriav </b> </font></a></li>
-<li class="toctree-l1"><a class="reference internal" href="0225_exm_maly_nakladac.html"><font color="navy"> <b> Malý nakladac </b> </font></a></li>
+<li class="toctree-l1"><a class="reference internal" href="0210_exm_bridge.html"><font color="navy"> Priehradový most  </font></a></li>
+<li class="toctree-l1"><a class="reference internal" href="0220_exm_maly_mlyn.html"><font color="navy"> Veterný mlyn </font></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><font color="navy"> Žeriav  </font></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Knižnica komponentov</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0100_kniznica.html"><font color="navy"> Knižnica komponentov  </font></a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Programovanie</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="0500_prg_ako_na_to.html"><font color="navy"> <b> Ako na to</b> </font></a></li>
+<li class="toctree-l1"><a class="reference internal" href="0010_komponenty.html"><font color="navy">  Parametre  </font></a></li>
+<li class="toctree-l1"><a class="reference internal" href="0500_prg_ako_na_to.html"><font color="navy"> Vytváranie dielov </font></a></li>
+<li class="toctree-l1"><a class="reference internal" href="0520_prg_brace.html"><font color="navy">  Spojky  </font></a></li>
+<li class="toctree-l1"><a class="reference internal" href="0525_prg_beam.html"><font color="navy"> <b> Nosníky </b> </font></a></li>
+<li class="toctree-l1"><a class="reference internal" href="0540_prg_pulley.html"><font color="navy"> <b> Kladky </b> </font></a></li>
+<li class="toctree-l1"><a class="reference internal" href="0530_prg_holes.html"><font color="navy"> <b> Montážne otvory </b> </font></a></li>
 <li class="toctree-l1"><a class="reference internal" href="0505_prg_lib.html"><font color="navy"> <b> Návrh komponentov</b> </font></a></li>
 <li class="toctree-l1"><a class="reference internal" href="0535_prg_base.html"><font color="navy"> <b> Základné bloky </b> </font></a></li>
-<li class="toctree-l1"><a class="reference internal" href="0520_prg_brace.html"><font color="navy"> <b> Spojky </b> </font></a></li>
-<li class="toctree-l1"><a class="reference internal" href="0525_prg_beam.html"><font color="navy"> <b> Nosníky </b> </font></a></li>
-<li class="toctree-l1"><a class="reference internal" href="0530_prg_holes.html"><font color="navy"> <b> Montážne otvory </b> </font></a></li>
-<li class="toctree-l1"><a class="reference internal" href="0540_prg_pulley.html"><font color="navy"> <b> Kladky </b> </font></a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Projekty</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="1020_prj_spirograf.html"><font color="navy"> <b> Spirograf </b> </font></a></li>
+<li class="toctree-l1"><a class="reference internal" href="1250_prj_bridge_waren.html"><font color="navy"> Most typu Warren  </font></a></li>
+<li class="toctree-l1"><a class="reference internal" href="1020_prj_spirograf.html"><font color="navy"> Spirograf  </font></a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Prílohy</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="0900_instalacia.html"><font color="navy"> <b> Inštalácia</b> </font></a></li>
 <li class="toctree-l1"><a class="reference internal" href="0905_viewer.html"><font color="navy"> <b> Vizualizácia </b> </font></a></li>
+<li class="toctree-l1"><a class="reference internal" href="0930_3d_tlac.html"><font color="navy"> 3D Tlač  </font></a></li>
 </ul>
 
     </div>
@@ -199,9 +200,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -284,7 +290,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -298,25 +304,17 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
 </div></div>
@@ -329,7 +327,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><font color='navy'> <b> Žeriav </b> </font></h1>
+    <h1><font color='navy'> Žeriav  </font></h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -339,7 +337,14 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diely"><font color="purple"> <b> Diely </b></font></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#montaz"><font color="purple"> Montáž </font></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rameno-zeriavu"><font color="brown"> Rameno žeriavu </font></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#podvozok"><font color="brown"> Podvozok </font></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kabina"><font color="brown"> Kabína </font></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zostava-zeriava"><font color="brown"> Zostava žeriava </font></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diely"><font color="purple"> Diely </font></a></li>
 </ul>
             </nav>
         </div>
@@ -351,150 +356,241 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="zeriav">
-<h1><font color='navy'> <b> Žeriav </b> </font><a class="headerlink" href="#zeriav" title="Link to this heading">#</a></h1>
+  
+<style>
+  .ss-layout-default-AB_CD { grid-template-areas: 'A B' 'C D'; }
+  .ss-layout-default-AB { grid-template-areas: 'A B'; }
+@media (max-width: 576px) {
+  .ss-layout-sm-A_B_C_D { grid-template-areas: 'A' 'B' 'C' 'D'; }
+  .ss-layout-sm-A_B { grid-template-areas: 'A' 'B'; }
+}
+</style>
+<section class="tex2jax_ignore mathjax_ignore" id="zeriav">
+<h1><font color='navy'> Žeriav  </font><a class="headerlink" href="#zeriav" title="Link to this heading">#</a></h1>
 <figure class="align-default" id="exam-001">
 <a class="reference internal image-reference" href="_images/banner.png"><img alt="_images/banner.png" src="_images/banner.png" style="width: 800px;" />
 </a>
 </figure>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Model               Malý žeriav
-Stupeň náročnosti   Začiatočník 
-</pre></div>
-</div>
-<p>Malý žeriav s jednoducho kladkou a navijakom. Rameno žeriavu je možné zdvihať, kabína sa môže otáčať.</p>
-<figure class="align-default">
-<a class="reference internal image-reference" href="_images/img_sc_01.png"><img alt="_images/img_sc_01.png" src="_images/img_sc_01.png" style="width: 400px;" />
-</a>
-</figure>
+<p>Kinematický model malého žeriavu s jednoducho kladkou a navijakom. V modeli sú použité rotačné spoje, rameno žeriavu je možné zdvihať, kabína sa môže otáčať, pre zdvíhanie bremena je použitý navijak.</p>
 <figure class="align-default" id="id1">
+<a class="reference internal image-reference" href="_images/zeriav_01.jpg"><img alt="_images/zeriav_01.jpg" src="_images/zeriav_01.jpg" style="width: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Obr. 18 </span><span class="caption-text">Malý žeriav.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="montaz">
+<h2><font color='purple'> Montáž </font><a class="headerlink" href="#montaz" title="Link to this heading">#</a></h2>
+<section id="rameno-zeriavu">
+<h3><font color='brown'> Rameno žeriavu </font><a class="headerlink" href="#rameno-zeriavu" title="Link to this heading">#</a></h3>
+<figure class="sphinx-subfigure align-default" id="id2" style="width: 700px">
+<div class="sphinx-subfigure-grid ss-layout-default-AB_CD ss-layout-sm-A_B_C_D" style="display: grid; gap: 2px; grid-gap: 2px;">
+<div class="sphinx-subfigure-area" style="display: flex; flex-direction: column; justify-content: center; align-items: center; grid-area: A;">
+<a class="reference internal image-reference" href="_images/diely_01.jpg"><img alt="Diely ramena" src="_images/diely_01.jpg" style="width: 300px;" />
+</a>
+<span class="caption">Diely ramena</span>
+</div>
+<div class="sphinx-subfigure-area" style="display: flex; flex-direction: column; justify-content: center; align-items: center; grid-area: B;">
+<a class="reference internal image-reference" href="_images/diely_02.jpg"><img alt="Montáž" src="_images/diely_02.jpg" style="width: 300px;" />
+</a>
+<span class="caption">Montáž</span>
+</div>
+<div class="sphinx-subfigure-area" style="display: flex; flex-direction: column; justify-content: center; align-items: center; grid-area: C;">
+<a class="reference internal image-reference" href="_images/rameno_03.png"><img alt="Zostava" src="_images/rameno_03.png" style="width: 300px;" />
+</a>
+<span class="caption">Zostava</span>
+</div>
+<div class="sphinx-subfigure-area" style="display: flex; flex-direction: column; justify-content: center; align-items: center; grid-area: D;">
+<a class="reference internal image-reference" href="_images/rameno_04.png"><img alt="Zostava" src="_images/rameno_04.png" style="width: 300px;" />
+</a>
+<span class="caption">Zostava</span>
+</div>
+</div>
+<figcaption>
+<p><span class="caption-number">Obr. 19 </span><span class="caption-text">Konštrukcia ramena žeriavu.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="podvozok">
+<h3><font color='brown'> Podvozok </font><a class="headerlink" href="#podvozok" title="Link to this heading">#</a></h3>
+<figure class="sphinx-subfigure align-default" id="id3" style="width: 700px">
+<div class="sphinx-subfigure-grid ss-layout-default-AB ss-layout-sm-A_B" style="display: grid; gap: 2px; grid-gap: 2px;">
+<div class="sphinx-subfigure-area" style="display: flex; flex-direction: column; justify-content: center; align-items: center; grid-area: A;">
+<a class="reference internal image-reference" href="_images/diely_03.jpg"><img alt="Diely podvozku" src="_images/diely_03.jpg" style="width: 300px;" />
+</a>
+<span class="caption">Diely podvozku</span>
+</div>
+<div class="sphinx-subfigure-area" style="display: flex; flex-direction: column; justify-content: center; align-items: center; grid-area: B;">
+<a class="reference internal image-reference" href="_images/podvozok_01.png"><img alt="Zostava podvozku" src="_images/podvozok_01.png" style="width: 300px;" />
+</a>
+<span class="caption">Zostava podvozku</span>
+</div>
+</div>
+<figcaption>
+<p><span class="caption-number">Obr. 20 </span><span class="caption-text">Konštrukcia podvozku žeriavu.</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="kabina">
+<h3><font color='brown'> Kabína </font><a class="headerlink" href="#kabina" title="Link to this heading">#</a></h3>
+<figure class="sphinx-subfigure align-default" id="id4" style="width: 700px">
+<div class="sphinx-subfigure-grid ss-layout-default-AB_CD ss-layout-sm-A_B_C_D" style="display: grid; gap: 2px; grid-gap: 2px;">
+<div class="sphinx-subfigure-area" style="display: flex; flex-direction: column; justify-content: center; align-items: center; grid-area: A;">
+<a class="reference internal image-reference" href="_images/diely_04.jpg"><img alt="Konštrukcia navijaku" src="_images/diely_04.jpg" style="width: 300px;" />
+</a>
+<span class="caption">Konštrukcia navijaku</span>
+</div>
+<div class="sphinx-subfigure-area" style="display: flex; flex-direction: column; justify-content: center; align-items: center; grid-area: B;">
+<a class="reference internal image-reference" href="_images/diely_05.jpg"><img alt="Podpera ramena" src="_images/diely_05.jpg" style="width: 300px;" />
+</a>
+<span class="caption">Podpera ramena</span>
+</div>
+<div class="sphinx-subfigure-area" style="display: flex; flex-direction: column; justify-content: center; align-items: center; grid-area: C;">
+<a class="reference internal image-reference" href="_images/kabina_05.png"><img alt="Zostava kabíny" src="_images/kabina_05.png" style="width: 300px;" />
+</a>
+<span class="caption">Zostava kabíny</span>
+</div>
+<div class="sphinx-subfigure-area" style="display: flex; flex-direction: column; justify-content: center; align-items: center; grid-area: D;">
+<a class="reference internal image-reference" href="_images/kabina_03.png"><img alt="Zostava navijaku" src="_images/kabina_03.png" style="width: 300px;" />
+</a>
+<span class="caption">Zostava navijaku</span>
+</div>
+</div>
+<figcaption>
+<p><span class="caption-number">Obr. 21 </span><span class="caption-text">Konštrukcia ramena žeriavu.</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="zostava-zeriava">
+<h3><font color='brown'> Zostava žeriava </font><a class="headerlink" href="#zostava-zeriava" title="Link to this heading">#</a></h3>
+<figure class="align-default" id="id5">
 <a class="reference internal image-reference" href="_images/img_sc_02.png"><img alt="_images/img_sc_02.png" src="_images/img_sc_02.png" style="width: 350px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Obr. 21 </span><span class="caption-text">Zostava malého žeriavu.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+<p><span class="caption-number">Obr. 22 </span><span class="caption-text">Zostava malého žeriavu.</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
+</section>
+</section>
 <section id="diely">
-<h2><font color='purple'> <b> Diely </b></font><a class="headerlink" href="#diely" title="Link to this heading">#</a></h2>
+<h2><font color='purple'> Diely </font><a class="headerlink" href="#diely" title="Link to this heading">#</a></h2>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Diely modelu</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
-<tr class="row-odd"><th class="head"><p>Počet</p></th>
-<th class="head"><p>Popis</p></th>
-<th class="head"><p>Farba</p></th>
-<th class="head"><p>Súbor (step)</p></th>
+<tr class="row-odd"><th class="head"><p class="sd-card-text">Počet</p></th>
+<th class="head"><p class="sd-card-text">Popis</p></th>
+<th class="head"><p class="sd-card-text">Farba</p></th>
+<th class="head"><p class="sd-card-text">Súbor (step)</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>2</p></td>
-<td><p>Spojka, podvozok</p></td>
-<td><p>červená</p></td>
-<td><p><a class="reference download internal" download="" href="_downloads/023c718bffa24991388b76080ea06386/brace_B_09.step"><span class="xref download myst">brace_B_09</span></a></p></td>
+<tr class="row-even"><td><p class="sd-card-text">2</p></td>
+<td><p class="sd-card-text">Spojka, podvozok</p></td>
+<td><p class="sd-card-text">červená</p></td>
+<td><p class="sd-card-text"><a class="reference download internal" download="" href="_downloads/f159fe0a9b71e292e36848ebb2a21efd/brace_B_09_14.step"><span class="xref download myst">brace_B_09</span></a></p></td>
 </tr>
-<tr class="row-odd"><td><p>3</p></td>
-<td><p>Nosník, podvozok a kabína</p></td>
-<td><p>šedá</p></td>
-<td><p><a class="reference download internal" download="" href="_downloads/9469676b862fea03cb379dbc0d1ddb35/block_B_03.step"><span class="xref download myst">block_B_03</span></a></p></td>
+<tr class="row-odd"><td><p class="sd-card-text">3</p></td>
+<td><p class="sd-card-text">Nosník, podvozok a kabína</p></td>
+<td><p class="sd-card-text">šedá</p></td>
+<td><p class="sd-card-text"><a class="reference download internal" download="" href="_downloads/387c90518bd20fd637f4ac15ad9ff6e7/block_B_03_02_01.step"><span class="xref download myst">block_B_03_02_01</span></a></p></td>
 </tr>
-<tr class="row-even"><td><p>1</p></td>
-<td><p>Podlaha kabíny</p></td>
-<td><p>modrá</p></td>
-<td><p><a class="reference download internal" download="" href="_downloads/dedab0d0df04a1d7d7686e6de6aa5c97/block_U_05_03.step"><span class="xref download myst">block_U_05_03</span></a></p></td>
+<tr class="row-even"><td><p class="sd-card-text">1</p></td>
+<td><p class="sd-card-text">Podlaha kabíny</p></td>
+<td><p class="sd-card-text">modrá</p></td>
+<td><p class="sd-card-text"><a class="reference download internal" download="" href="_downloads/dedab0d0df04a1d7d7686e6de6aa5c97/block_U_05_03.step"><span class="xref download myst">block_U_05_03</span></a></p></td>
 </tr>
-<tr class="row-odd"><td><p>1</p></td>
-<td><p>Strecha kabíny</p></td>
-<td><p>modrá</p></td>
-<td><p><a class="reference download internal" download="" href="_downloads/14b5e5a60fa2c45a739bad147c82c92f/block_U_02_03.step"><span class="xref download myst">block_U_02_03</span></a></p></td>
+<tr class="row-odd"><td><p class="sd-card-text">1</p></td>
+<td><p class="sd-card-text">Strecha kabíny</p></td>
+<td><p class="sd-card-text">modrá</p></td>
+<td><p class="sd-card-text"><a class="reference download internal" download="" href="_downloads/14b5e5a60fa2c45a739bad147c82c92f/block_U_02_03.step"><span class="xref download myst">block_U_02_03</span></a></p></td>
 </tr>
-<tr class="row-even"><td><p>2</p></td>
-<td><p>Stena kabíny</p></td>
-<td><p>oranžová</p></td>
-<td><p><a class="reference download internal" download="" href="_downloads/f10726df20d693d454d2351fdbc3de61/block_X_05_04.step"><span class="xref download myst">block_X_05_04</span></a></p></td>
+<tr class="row-even"><td><p class="sd-card-text">2</p></td>
+<td><p class="sd-card-text">Stena kabíny</p></td>
+<td><p class="sd-card-text">oranžová</p></td>
+<td><p class="sd-card-text"><a class="reference download internal" download="" href="_downloads/f10726df20d693d454d2351fdbc3de61/block_X_05_04.step"><span class="xref download myst">block_X_05_04</span></a></p></td>
 </tr>
-<tr class="row-odd"><td><p>2</p></td>
-<td><p>Rameno žeriava</p></td>
-<td><p>šedá</p></td>
-<td><p><a class="reference download internal" download="" href="_downloads/6cbba9d821b3b71b2887b454e94f6900/brace_B_15.step"><span class="xref download myst">brace_B_15</span></a></p></td>
+<tr class="row-odd"><td><p class="sd-card-text">2</p></td>
+<td><p class="sd-card-text">Rameno žeriava</p></td>
+<td><p class="sd-card-text">šedá</p></td>
+<td><p class="sd-card-text"><a class="reference download internal" download="" href="_downloads/1d4fd7b04d95a01fc258c6723ebc8a2e/brace_B_17_14.step"><span class="xref download myst">brace_B_17</span></a></p></td>
 </tr>
-<tr class="row-even"><td><p>2</p></td>
-<td><p>Spojka ramena</p></td>
-<td><p>zelená</p></td>
-<td><p><a class="reference download internal" download="" href="_downloads/ea948cac73ef1cda9dd1e895a5b780ad/base_C_01_01.step"><span class="xref download myst">base_C_01_01</span></a></p></td>
+<tr class="row-even"><td><p class="sd-card-text">2</p></td>
+<td><p class="sd-card-text">Spojka ramena</p></td>
+<td><p class="sd-card-text">zelená</p></td>
+<td><p class="sd-card-text"><a class="reference internal" href="#./model/0215_mini_zeriav/parts/base_C_01_01.step"><span class="xref myst">base_C_01_01</span></a></p></td>
 </tr>
-<tr class="row-odd"><td><p>1</p></td>
-<td><p>Hák žeriava</p></td>
-<td><p>modrá</p></td>
-<td><p><a class="reference download internal" download="" href="_downloads/6a78927fed797edcdb49d95f0537f370/comp_C_hook_block_02.step"><span class="xref download myst">comp_C_hook_block_02</span></a></p></td>
+<tr class="row-odd"><td><p class="sd-card-text">1</p></td>
+<td><p class="sd-card-text">Hák žeriava</p></td>
+<td><p class="sd-card-text">modrá</p></td>
+<td><p class="sd-card-text"><a class="reference internal" href="#./model/0215_mini_zeriav/parts/comp_C_hook_block_02.step"><span class="xref myst">comp_C_hook_block_02</span></a></p></td>
 </tr>
-<tr class="row-even"><td><p>1</p></td>
-<td><p>Ložisko</p></td>
-<td><p>šedá</p></td>
-<td><p><a class="reference download internal" download="" href="_downloads/89bb980e905f2d20dc4d3192e0ab3c77/base_C_01_12.step"><span class="xref download myst">base_C_01_12</span></a></p></td>
+<tr class="row-even"><td><p class="sd-card-text">1</p></td>
+<td><p class="sd-card-text">Ložisko</p></td>
+<td><p class="sd-card-text">šedá</p></td>
+<td><p class="sd-card-text"><a class="reference internal" href="#./model/0215_mini_zeriav/parts/base_C_01_12.step"><span class="xref myst">base_C_01_12</span></a></p></td>
 </tr>
-<tr class="row-odd"><td><p>1</p></td>
-<td><p>Kladka</p></td>
-<td><p>červená</p></td>
-<td><p><a class="reference download internal" download="" href="_downloads/2bb32c45ce53c6388fc7f6663e694f8d/pulley_A_15.step"><span class="xref download myst">pulley_A_15</span></a></p></td>
+<tr class="row-odd"><td><p class="sd-card-text">1</p></td>
+<td><p class="sd-card-text">Kladka</p></td>
+<td><p class="sd-card-text">červená</p></td>
+<td><p class="sd-card-text"><a class="reference download internal" download="" href="_downloads/2bb32c45ce53c6388fc7f6663e694f8d/pulley_A_15.step"><span class="xref download myst">pulley_A_15</span></a></p></td>
 </tr>
-<tr class="row-even"><td><p>2</p></td>
-<td><p>Koleso navijaka</p></td>
-<td><p>červená</p></td>
-<td><p><a class="reference download internal" download="" href="_downloads/e826a16630f56094a0461665acdcd95c/wheel_A_15_14.step"><span class="xref download myst">wheel_A_15_14</span></a></p></td>
+<tr class="row-even"><td><p class="sd-card-text">2</p></td>
+<td><p class="sd-card-text">Koleso navijaka</p></td>
+<td><p class="sd-card-text">červená</p></td>
+<td><p class="sd-card-text"><a class="reference download internal" download="" href="_downloads/e826a16630f56094a0461665acdcd95c/wheel_A_15_14.step"><span class="xref download myst">wheel_A_15_14</span></a></p></td>
 </tr>
-<tr class="row-odd"><td><p>1</p></td>
-<td><p>Kľuka navíjaka</p></td>
-<td><p>červená</p></td>
-<td><p><a class="reference download internal" download="" href="_downloads/c7ce143691d1ef65bed17cc49fd98b1e/wheel_B_02_14.step"><span class="xref download myst">wheel_B_02_14</span></a></p></td>
+<tr class="row-odd"><td><p class="sd-card-text">1</p></td>
+<td><p class="sd-card-text">Kľuka navíjaka</p></td>
+<td><p class="sd-card-text">červená</p></td>
+<td><p class="sd-card-text"><a class="reference download internal" download="" href="_downloads/c7ce143691d1ef65bed17cc49fd98b1e/wheel_B_02_14.step"><span class="xref download myst">wheel_B_02_14</span></a></p></td>
 </tr>
-<tr class="row-even"><td><p>2</p></td>
-<td><p>Valec navijaka, kľuka</p></td>
-<td><p>červená</p></td>
-<td><p><a class="reference download internal" download="" href="_downloads/979d622f599c3f025c3475edab61f41c/base_C_01_15.step"><span class="xref download myst">base_C_01_15</span></a></p></td>
+<tr class="row-even"><td><p class="sd-card-text">2</p></td>
+<td><p class="sd-card-text">Valec navijaka, kľuka</p></td>
+<td><p class="sd-card-text">červená</p></td>
+<td><p class="sd-card-text"><a class="reference download internal" download="" href="_downloads/979d622f599c3f025c3475edab61f41c/base_C_01_15.step"><span class="xref download myst">base_C_01_15</span></a></p></td>
 </tr>
-<tr class="row-odd"><td><p>4</p></td>
-<td><p>Disk kolesa</p></td>
-<td><p>béžová</p></td>
-<td><p><a class="reference download internal" download="" href="_downloads/d1cbebb702984ef47e3d6d03771564c3/tire_D_01_03_15.step"><span class="xref download myst">tire_D_01_03_15</span></a></p></td>
+<tr class="row-odd"><td><p class="sd-card-text">4</p></td>
+<td><p class="sd-card-text">Disk kolesa</p></td>
+<td><p class="sd-card-text">béžová</p></td>
+<td><p class="sd-card-text"><a class="reference download internal" download="" href="_downloads/d1cbebb702984ef47e3d6d03771564c3/tire_D_01_03_15.step"><span class="xref download myst">tire_D_01_03_15</span></a></p></td>
 </tr>
-<tr class="row-even"><td><p>4</p></td>
-<td><p>Pneumatika</p></td>
-<td><p>čierna</p></td>
-<td><p><a class="reference download internal" download="" href="_downloads/442a2834aea85e6ba77189856853c10e/tire_T_01_03_15.step"><span class="xref download myst">tire_T_01_03_15</span></a></p></td>
+<tr class="row-even"><td><p class="sd-card-text">4</p></td>
+<td><p class="sd-card-text">Pneumatika</p></td>
+<td><p class="sd-card-text">čierna</p></td>
+<td><p class="sd-card-text"><a class="reference download internal" download="" href="_downloads/442a2834aea85e6ba77189856853c10e/tire_T_01_03_15.step"><span class="xref download myst">tire_T_01_03_15</span></a></p></td>
 </tr>
-<tr class="row-odd"><td><p>18</p></td>
-<td><p>Skrutka M4x5</p></td>
-<td><p>šedá</p></td>
+<tr class="row-odd"><td><p class="sd-card-text">18</p></td>
+<td><p class="sd-card-text">Skrutka M4x5</p></td>
+<td><p class="sd-card-text">šedá</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>1</p></td>
-<td><p>Skrutka M4x20</p></td>
-<td><p>šedá</p></td>
+<tr class="row-even"><td><p class="sd-card-text">1</p></td>
+<td><p class="sd-card-text">Skrutka M4x20</p></td>
+<td><p class="sd-card-text">šedá</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>2</p></td>
-<td><p>Hriadel D4 x 55mm, kolesá</p></td>
-<td><p>šedá</p></td>
+<tr class="row-odd"><td><p class="sd-card-text">2</p></td>
+<td><p class="sd-card-text">Hriadel D4 x 55mm, kolesá</p></td>
+<td><p class="sd-card-text">šedá</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>1</p></td>
-<td><p>Hriadel D4 x 25mm, kabína</p></td>
-<td><p>šedá</p></td>
+<tr class="row-even"><td><p class="sd-card-text">1</p></td>
+<td><p class="sd-card-text">Hriadel D4 x 25mm, kabína</p></td>
+<td><p class="sd-card-text">šedá</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>2</p></td>
-<td><p>Hriadel D4 x 15mm, kladka a rameno</p></td>
-<td><p>šedá</p></td>
+<tr class="row-odd"><td><p class="sd-card-text">2</p></td>
+<td><p class="sd-card-text">Hriadel D4 x 15mm, kladka a rameno</p></td>
+<td><p class="sd-card-text">šedá</p></td>
 <td></td>
 </tr>
 </tbody>
 </table>
 </div>
-<figure class="align-default" id="id2">
-<a class="reference internal image-reference" href="_images/img_zeriav_02.jpg"><img alt="_images/img_zeriav_02.jpg" src="_images/img_zeriav_02.jpg" style="width: 400px;" />
-</a>
-<figcaption>
-<p><span class="caption-number">Obr. 22 </span><span class="caption-text">Konštrukcia.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-</section>
+</div>
+</details></section>
 </section>
 
 
@@ -509,20 +605,20 @@ Stupeň náročnosti   Začiatočník
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="0210_exm_bridge.html"
+       href="0220_exm_maly_mlyn.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><font color='navy'> <b> Priehradový most </b> </font></p>
+        <p class="prev-next-title"><font color='navy'> Veterný mlyn </font></p>
       </div>
     </a>
     <a class="right-next"
-       href="0225_exm_maly_nakladac.html"
+       href="0100_kniznica.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><font color='navy'> <b> Malý nakladac </b> </font></p>
+        <p class="prev-next-title"><font color='navy'> Knižnica komponentov  </font></p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -533,16 +629,25 @@ Stupeň náročnosti   Začiatočník
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diely"><font color="purple"> <b> Diely </b></font></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#montaz"><font color="purple"> Montáž </font></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rameno-zeriavu"><font color="brown"> Rameno žeriavu </font></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#podvozok"><font color="brown"> Podvozok </font></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kabina"><font color="brown"> Kabína </font></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zostava-zeriava"><font color="brown"> Zostava žeriava </font></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diely"><font color="purple"> Diely </font></a></li>
 </ul>
   </nav></div>
 
@@ -591,8 +696,8 @@ By pf
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

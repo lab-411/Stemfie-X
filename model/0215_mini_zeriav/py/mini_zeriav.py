@@ -1,5 +1,5 @@
 import sys
-sys.path.append("../../../") 
+sys.path.append("../") 
 
 from lib import *
 from lib.utils import *
@@ -9,10 +9,12 @@ from lib.tires import *
 # podvozok a kolesa
 #-----------------------------------------------------------------------
 
-b1 = Brace(9)
-b2 = Beam_Block(3)
+b1 = Brace(9)                # bocnica
+b2 = Beam_Block(3)           # priecny nosnik
+b3 = Beam_Block([3,2,1])     # nosnik kabiny
 b1.export_step("../parts/brace_B_09")
 b2.export_step("../parts/block_B_03")
+b3.export_step("../parts/block_B_03_02")
 
 t = Tire_01(3,1.5)
 t.tire.export_step('../parts/tire_T_01_03_15')
@@ -38,8 +40,8 @@ b7.export_step("../parts/block_U_02_03")
 #-----------------------------------------------------------------------
 # rameno, kladka a vystuze
 #-----------------------------------------------------------------------
-b5 = Brace(15)
-b5.export_step("../parts/brace_B_15")
+b5 = Brace(17)
+b5.export_step("../parts/brace_B_17")
 
 pp = Pulley_A(1.5, 0.9)
 pp.export_step('../parts/pulley_A_15')

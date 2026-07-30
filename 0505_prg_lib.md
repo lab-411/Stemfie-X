@@ -24,6 +24,23 @@ Pri návrhu vlastných konštrukcií často potrebujeme upraviť a modifikovať 
 
 Knižnicu *Stemfie-X* tvorí sada tried implementovaná pomocou knižnice *CadQuery*. Diely stavebnice je možné vytvárať v jednom kroku volaním funkcií s parametrami dielov, nové diely je možné tvoriť z iných dielov pomocou jednoduchých logických operácií (prienik, rozdiel, zjednotenie). Pre generovanie štandardných ako aj odvodených dielov stavebnice postačujú triedy knižnice *Stemfie-X*, pokročílí uživatelia ale môžu využiť všetky možnosti knižnice [CadQuery](https://cadquery.readthedocs.io/en/latest/) a jazyka Python. 
 
+
+### <font color='brown'> <b> Prehľad knižníc </b></font>
+
+
+```{csv-table} Knižnica [***brace***](0520_prg_brace)
+    :header: Trieda,Popis
+    :header-rows: 0
+    :width: 65%
+    :widths: 40,60
+    :align: center
+
+    Brace(), základná spojka
+    Brace_Arc(), oblúková spojka
+    Brace_Circle(), kruhová spojka
+    Brace_Plate(), rozšírená spojka
+```
+
 Pre tvorbu špeciálnych komponentov je možné triedy knižnice rozšírovať dedením a pridávaním ďalších špecifických vlastností. Štruktúru knižnice *Stemfie-X* zobrazuje nasledujúci diagram
 
 ```{code-cell} ipython3  
