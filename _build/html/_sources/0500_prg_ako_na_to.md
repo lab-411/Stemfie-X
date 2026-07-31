@@ -11,7 +11,7 @@ kernelspec:
   language: python
   name: python3
 ---
-# <font color='navy'> Vytváranie dielov </font>
+# <font color='navy'> Programovanie </font>
 
 ```{figure} ./img/banner.png
 :width: 800px
@@ -19,8 +19,30 @@ kernelspec:
 ```
 Pri návrhu vlastných modelov a konštrukcií môže vzniknúť potreba použitia dielu, ktorý sa nenachádza v knižnici komponentov. V inom prípade potrebujeme vytvoriť neštandardný diel ako je napríklad držiak motora, serva, senzora. Nové diely môžeme vytvárať pomocou skriptov v programovacom jazyku Python využitím knižníc pre tvorbu komponentov a ich kombináciou pomocou logických operácií. Pokročilí uživatelia môžu pri tvorbe dielov využívať aj vlastnosti knižnice *CadQuery*, pomocou ktorej je knižnica *Stemfe-X* naprogramovaná. 
 
+## <font color='purple'> Parametre </font>
 
-## <font color='purple'>  Príklad konštrukcie nového dielu </font>
+Princíp stavebnice *STEMFIE-X* umožňuje tvorbu širokého spektra konštrukčných prvkov. Aby bola dodržaná vzájomná kompatibilita dielov, je vhodné pri návrhu dielov dodržať jednoduché základné pravidlá. 
+
+Vlastnosti dielov stavebnice *STEMFIE-X* definuje základná jednotka **BU** (Basic Unit), priemer montážnych otvorov **HR_BASE** (Hole Radius) pre montážne prvky (skrutky a pod.) a otvory pre pohyblivé spoje, hiadele a osi **HR_AXIS**. Na rozdiel od kovových stavebníc, ktoré majú diely z plechu a pri ktorých sa neuvažuje s jeho hrúbkou, musíme pri našich konštrukciách uvažovať s hrúbkou dielov. Rozmery dielov sú udávané v násobkoch alebo podieloch BU. 
+
+
+ Štandardné parametre dielov sú definované ako
+
+* štandardná veľkost jednotky **BU** je 10mm
+* štandardný priemer montážnych otvorov **HR_BASE** je 4 mm
+* priemer otvorov pre rotačné spoje, osi a hriadele **HR_AXIS** je 4.25 mm
+* veľkost dielov **D** je celočíselná v násobkoch 1, 2 ... **BU** 
+* hrúbka dielov **H** je v násobkoch 1, 1/2, 1/3, 1/4 **BU**
+
+```{admonition} Úpravy štandardných parametrov
+:class: tip
+
+Pri vytváraní podkladov pre 3D tlač pomocou s využitím knižnice *Stemfie-X* možeme zmenou hodnôt premenných **BU**, **HR_BASE** a **HR_AXIS** upraviť vlastnosti a rozmery dielov stavebnice. Napríklad ak chceme pre spájanie dielov využiť skrutky, ktoré si v dieloch "vyrežú" vlastný závit, je vhodné hodnotu **HR_BASE** zmeniť na veľkosť 3.95mm. Skutočná veľkosť otvorov vo vytlačených dieloch závisí od použitého materiálu a parametrov tlače. 
+
+```
+
+
+## <font color='purple'>  Konštrukcia nového dielu </font>
 
 Pri návrhu našej konštrukcie sme zistili, že potrebujeme spojku v tvare T o hrúbke 1/4 BU. Pri návrhu môžeme ako pomôcku na náčrty používať štvorčekový papier s rastrom 5mm (BU/2), na ktorom získame predstavu o skutočnej veľkosti dielov. 
 

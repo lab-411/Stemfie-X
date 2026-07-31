@@ -11,7 +11,7 @@ kernelspec:
   language: python
   name: python3
 ---
-# <font color='navy'> Most typu Warren  </font>
+# <font color='navy'> Most Warren  </font>
 
 ```{figure} ./img/banner.png
 :width: 800px

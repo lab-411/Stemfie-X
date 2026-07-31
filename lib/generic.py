@@ -5,11 +5,17 @@ Created on Mon Nov  4 17:58:15 2024
 
 @author: pf
 
-Basic components in BU units,
+Základné komponenty odvodne od objektov CadQuery. 
+
+251225  - premenovanuy BU_PolyLine
+        - doplneny BU_PolyRot
+        - doplneny BU_Axe (os s priemeron HRX)
+251229  - doplneney PolyCone
 """
 
 from lib.base import *
 from lib.holes import *
+
 
 class BU_Component(Stemfie_X):
     def __init__(self):
@@ -71,11 +77,11 @@ class BU_PolyRot(BU_Component):
         self.obj = self.obj.revolve(angle)
         
         
-class BU_Bar(BU_Component):
-    def __init__(self, length, center=True):
+class BU_Axe(BU_Component):
+    def __init__(self, length, center=True, radius=HR_AXIS):
         BU_Component.__init__(self)
         h = length * self.BU
-        self.obj = (self.obj).cylinder(radius=self.HR, height=h)
+        self.obj = (self.obj).cylinder(h, radius)
         
         if center == False:
             self.Tz(h/2)

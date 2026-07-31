@@ -11,7 +11,7 @@ kernelspec:
   language: python
   name: python3
 ---
-# <font color='navy'> <b> Kladky </b> </font>
+# <font color='navy'>  Kladky  </font>
 
 ```{figure} ./img/banner.png
 :width: 800px
@@ -26,7 +26,7 @@ kernelspec:
 
 Kladky sú konštrukčnými prvkami pre tvorbu jednoduchých strojov (jednoduchá kladka, kladkostroj) a lanových prevodov.  
 
-## <font color='purple'> <b> Funkcie </b></font>
+## <font color='purple'> Knižnica </font>
 
 Knižnica obsahuje základné veľkosti kladiek a držiakov.
 
@@ -45,7 +45,7 @@ Knižnica obsahuje základné veľkosti kladiek a držiakov.
     Pulley_Holder_A(height)   držiak o šírke 1BU
     Pulley_Holder_B(height)   držiak o šírke 2BU
 
-### <font color='brown'> <b> Značenie dielov </b></font>
+### <font color='brown'>  Značenie dielov </font>
 
     pulley_t_dd_hh
 
@@ -62,7 +62,7 @@ Knižnica obsahuje základné veľkosti kladiek a držiakov.
     t  - typ držiaka
     hh - výška držiaka
     
-## <font color='purple'> <b> Príklady použitia </b></font>
+## <font color='purple'> Príklady použitia </font>
 
     p0 = Pulley_A(2,1)        # pulley_A_02_01
 

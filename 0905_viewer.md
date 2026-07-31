@@ -11,14 +11,14 @@ kernelspec:
   language: python
   name: python3
 ---
-# <font color='navy'> <b> Vizualizácia </b> </font>
+# <font color='navy'>  Vizualizácia  </font>
 
 ```{figure} ./img/banner.png
 :width: 800px
 :name: prg_125
 ```
 
-## <font color='purple'> <b> Prehliadač *F3D* </b></font>
+## <font color='purple'> Prehliadač *F3D* </font>
 
 Programč [F3D](https://f3d.app/) je univerzálny open-source prehliadač 3D dát podporujúci množstvo [formátov](https://f3d.app/docs/user/SUPPORTED_FORMATS). Prehliadač je možné používaž ako [webovú aplikáciu](https://f3d.app/viewer) alebo ako štandardnú aplikáciu. Inštalácia je možná zo stránok projektu alebo z repozitárov distribúcií, pre operačné systémy založené na distribúcii Ubuntu  
 

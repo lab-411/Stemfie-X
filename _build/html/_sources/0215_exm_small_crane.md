@@ -11,7 +11,7 @@ kernelspec:
   language: python
   name: python3
 ---
-# <font color='navy'> Žeriav  </font>
+# <font color='navy'> Malý žeriav  </font>
 
 ```{figure} ./img/banner.png
 :width: 800px
@@ -19,7 +19,7 @@ kernelspec:
 ```
 
  
-Kinematický model malého žeriavu s jednoducho kladkou a navijakom. V modeli sú použité rotačné spoje, rameno žeriavu je možné zdvihať, kabína sa môže otáčať, pre zdvíhanie bremena je použitý navijak. 
+Model malého žeriavu umožňuje zdvíhanie bremena pomocou jednoduchej kladky a navijakom. V modeli sú použité rotačné spoje, rameno žeriavu je možné zdvihať a kabína sa môže otáčať. Model je určený pre mierne pokročilých staviteľov, v prípade potreby vyžaduje mierne úpravy otvorov pre hriadele a fixáciu otočných prvkov vhodným lepidlom. 
 
 ```{figure} ./model/0215_mini_zeriav/img/zeriav_01.jpg
 :width: 500px
@@ -29,11 +29,16 @@ Malý žeriav.
 
 ## <font color='purple'> Montáž </font>
 
+Model pozostáva z ramena, kabíny a podvozku. Samostatne zložíme rameno a podvozok, na podlahu kabíny upevníme rameno zospodu jednou skrutkou M4x5. Priskrutkujeme jednu stenu kabíny, nasadíme navijak, druhú stenu a strechu. Nasadíme a v prípade potreby fixujeme kľuku navijaku, doplníme povrázok a hák.  
+
 
 ### <font color='brown'> Rameno žeriavu </font>
 
-````{subfigure} AB|CD
-:layout-sm: A|B|C|D
+Pre montážou kladku, podperu ramena a podstavu nasadeníme tesnena hriadele o dĺžke 16mm, samotné hriadele sa v nosníkoch ramena majú otáčať voľne. V prípade potreby mierne upravíme veľkosti otvorov v ramenách ihlovým pilníkom.  
+
+
+````{subfigure} AB
+:layout-sm: A|B
 :gap: 2px
 :subcaptions: below
 :width: 700px
@@ -43,90 +48,14 @@ Malý žeriav.
 :width: 300px
 ```
 
-```{image} ./model/0215_mini_zeriav/img/diely_02.jpg
-:alt: Montáž
-:width: 300px
-```
-
 ```{image} ./model/0215_mini_zeriav/img/rameno_03.png
-:alt: Zostava
+:alt: Zostava ramena
 :width: 300px
 ```
-
-```{image} ./model/0215_mini_zeriav/img/rameno_04.png
-:alt: Zostava
-:width: 300px
-```
-
 Konštrukcia ramena žeriavu.
 ````
 
-### <font color='brown'> Podvozok </font>
-
-````{subfigure} AB
-:layout-sm: A|B
-:gap: 2px
-:subcaptions: below
-:width: 700px
-
-```{image} ./model/0215_mini_zeriav/img/diely_03.jpg
-:alt: Diely podvozku
-:width: 300px
-```
-
-```{image} ./model/0215_mini_zeriav/img/podvozok_01.png
-:alt: Zostava podvozku
-:width: 300px
-```
-
-Konštrukcia podvozku žeriavu.
-````
-
-### <font color='brown'> Kabína </font>
-
-````{subfigure} AB|CD
-:layout-sm: A|B|C|D
-:gap: 2px
-:subcaptions: below
-:width: 700px
-
-```{image} ./model/0215_mini_zeriav/img/diely_04.jpg
-:alt: Konštrukcia navijaku
-:width: 300px
-```
-
-```{image} ./model/0215_mini_zeriav/img/diely_05.jpg
-:alt: Podpera ramena
-:width: 300px
-```
-
-```{image} ./model/0215_mini_zeriav/img/kabina_05.png
-:alt: Zostava kabíny
-:width: 300px
-```
-
-```{image} ./model/0215_mini_zeriav/img/kabina_03.png
-:alt: Zostava navijaku
-:width: 300px
-```
-
-Konštrukcia ramena žeriavu.
-````
-
-
-
-### <font color='brown'> Zostava žeriava </font>
-
-```{figure} ./model/0215_mini_zeriav/img/img_sc_02.png
-:width: 350px
-
-Zostava malého žeriavu.
-```
-
-
-## <font color='purple'> Diely </font>
-
-````{dropdown} Diely modelu
+````{dropdown} Diely ramena žeriavu.
 
 ```{list-table}
 :header-rows: 1
@@ -136,87 +65,227 @@ Zostava malého žeriavu.
   - Farba
   - Súbor (step)
 * - 2
-  - Spojka, podvozok
+  - Rameno žeriavu
+  - žltá
+  - [brace_B_17_14](./model/0215_mini_zeriav/parts/brace_B_17_14.step)
+* - 2
+  - Spojka
   - červená
-  - [brace_B_09](./model/0215_mini_zeriav/parts/brace_B_09_14.step)
-* - 3
-  - Nosník, podvozok a kabína
-  - šedá
-  - [block_B_03_02_01](./model/0215_mini_zeriav/parts/block_B_03_02_01.step)
-* - 1
-  - Podlaha kabíny
-  - modrá
-  - [block_U_05_03](./model/0215_mini_zeriav/parts/block_U_05_03.step)
-* - 1
-  - Strecha kabíny
-  - modrá
-  - [block_U_02_03](./model/0215_mini_zeriav/parts/block_U_02_03.step)
-* - 2
-  - Stena kabíny
-  - oranžová
-  - [block_X_05_04](./model/0215_mini_zeriav/parts/block_X_05_04.step)
-* - 2
-  - Rameno žeriava
-  - šedá
-  - [brace_B_17](./model/0215_mini_zeriav/parts/brace_B_17_14.step)
-* - 2
-  - Spojka ramena
-  - zelená
-  - [base_C_01_01](./model/0215_mini_zeriav/parts/base_C_01_01.step)
-* - 1
-  - Hák žeriava
-  - modrá
-  - [comp_C_hook_block_02](./model/0215_mini_zeriav/parts/comp_C_hook_block_02.step)
-* - 1
-  - Ložisko
-  - šedá
-  - [base_C_01_12](./model/0215_mini_zeriav/parts/base_C_01_12.step)
+  - [brace_B_02_01](./model/0215_mini_zeriav/parts/brace_B_02_01.step)
 * - 1
   - Kladka
-  - červená
+  - oranžová
   - [pulley_A_15](./model/0215_mini_zeriav/parts/pulley_A_15.step)
-* - 2
-  - Koleso navijaka
-  - červená
-  - [wheel_A_15_14](./model/0215_mini_zeriav/parts/wheel_A_15_14.step)
 * - 1
-  - Kľuka navíjaka
+  - Podpera
+  - oranžová
+  - [podpera](./model/0215_mini_zeriav/parts/podpera.step)
+* - 1
+  - Podstava
   - červená
-  - [wheel_B_02_14](./model/0215_mini_zeriav/parts/wheel_B_02_14.step)
+  - [rack_2](./model/0215_mini_zeriav/parts/rack_2.step)
+* - 3
+  - Hriadel 4x15mm
+  - 
+  - 
+* - 8
+  - Skrutka M4x8
+  - 
+  - 
+```
+````
+
+
+### <font color='brown'> Podvozok </font>
+
+Hriadele kolies by sa mali v bočniciach podvozku otáčať voľne, os pre otáčanie kabíny by mala byť tesne nasunutá do bloku pdovozku.
+
+````{subfigure} AB
+:layout-sm: A|B
+:gap: 2px
+:subcaptions: below
+:width: 700px
+
+```{image} ./model/0215_mini_zeriav/img/diely_03.jpg
+:alt: Diely podvozku
+:height: 200px
+```
+
+```{image} ./model/0215_mini_zeriav/img/podvozok_01.png
+:alt: Zostava podvozku
+:height: 200px
+```
+
+Konštrukcia podvozku žeriavu.
+````
+
+````{dropdown} Diely podvozku žeriavu.
+
+```{list-table}
+:header-rows: 1
+
+* - Počet
+  - Popis
+  - Farba
+  - Súbor (step)
 * - 2
-  - Valec navijaka, kľuka
-  - červená
-  - [base_C_01_15](./model/0215_mini_zeriav/parts/base_C_01_15.step)
+  - Bočnica
+  - žltá
+  - [brace_B_09_14](./model/0215_mini_zeriav/parts/brace_B_09_14.step)
+* - 1
+  - Blok predný
+  - žltá
+  - [block_B_03_01_01](./model/0215_mini_zeriav/parts/block_B_03_01_01.step)
+* - 1
+  - Blok zadný
+  - žltá
+  - [block_B_03_02_01](./model/0215_mini_zeriav/parts/block_B_03_02_01.step)
 * - 4
   - Disk kolesa
-  - béžová
+  - červená
   - [tire_D_01_03_15](./model/0215_mini_zeriav/parts/tire_D_01_03_15.step)
 * - 4
   - Pneumatika
   - čierna
   - [tire_T_01_03_15](./model/0215_mini_zeriav/parts/tire_T_01_03_15.step)
-* - 18
-  - Skrutka M4x5
-  - šedá
+* - 2
+  - Hriadel 4x50mm
+  - 
   - 
 * - 1
-  - Skrutka M4x20
-  - šedá
+  - Hriadel 4x30mm
   - 
-* - 2
-  - Hriadel D4 x 55mm, kolesá
-  - šedá
-  -
-* - 1
-  - Hriadel D4 x 25mm, kabína
-  - šedá
-  -
-* - 2
-  - Hriadel D4 x 15mm, kladka a rameno
-  - šedá
-  -
+  - 
+* - 6
+  - Skrutka M4x8
+  - 
+  - 
 ```
 ````
+
+
+### <font color='brown'> Kabína </font>
+
+Pre upevnenie strechy kabíny sú použité skrutky M4x5, dlhšie krutky bu zasahovali do navijaku.
+
+````{subfigure} AB
+:layout-sm: A|B
+:gap: 2px
+:subcaptions: below
+:width: 700px
+
+
+```{image} ./model/0215_mini_zeriav/img/kabina_05.png
+:alt: Zostava kabíny
+:height: 200px
+```
+
+```{image} ./model/0215_mini_zeriav/img/navijak_01.png
+:alt: Zostava navijaku
+:height: 200px
+```
+
+Konštrukcia kabíny.
+````
+
+````{dropdown} Diely kabíny žeriavu.
+
+```{list-table}
+:header-rows: 1
+
+* - Počet
+  - Popis
+  - Farba
+  - Súbor (step)
+* - 2
+  - Bočnica kabíny
+  - bledomodrá
+  - [block_X_05_04](./model/0215_mini_zeriav/parts/block_X_05_04.step)
+* - 1
+  - Podlaha
+  - šedá
+  - [block_U_05_03](./model/0215_mini_zeriav/parts/block_U_05_03.step)
+* - 1
+  - Strecha
+  - šedá
+  - [block_U_02_03](./model/0215_mini_zeriav/parts/block_U_02_03.step)
+* - 4
+  - Skrutka M4x5
+  - 
+  - Upevnenie strechy
+* - 4
+  - Skrutka M4x8
+  - 
+  - Upevnenie podlahy
+```
+````
+
+````{dropdown} Diely navijaka.
+
+```{list-table}
+:header-rows: 1
+
+* - Počet
+  - Popis
+  - Farba
+  - Súbor (step)
+* - 2
+  - Bočnica navijaka
+  - žltá
+  - [wheel_A_15_14](./model/0215_mini_zeriav/parts/wheel_A_15_14.step)
+* - 1
+  - Valec navijaka
+  - žltá
+  - [base_C_01_13](./model/0215_mini_zeriav/parts/base_C_01_13.step)
+* - 1
+  - Teleso kluky
+  - zelená
+  - [wheel_B_02_14](./model/0215_mini_zeriav/parts/wheel_B_02_14.step)
+* - 1
+  - Rúčka kluky
+  - zelená
+  - [base_C_01_15](./model/0215_mini_zeriav/parts/base_C_01_15.step)
+* - 1
+  - Hák
+  - červená
+  - [comp_C_hook_block_02](./model/0215_mini_zeriav/parts/comp_C_hook_block_02.step)
+* - 1
+  - Skrutka M4x20
+  - 
+  - Upevnenie kluky
+```
+````
+
+
+
+### <font color='brown'> Zostava žeriava </font>
+
+```{figure} ./model/0215_mini_zeriav/img/img_sc_02.png
+:width: 350px
+
+Zostava malého žeriavu (ver. 1.0).
+```
+
+
+````{subfigure} AB
+:layout-sm: A|B
+:gap: 2px
+:subcaptions: below
+:width: 700px
+
+```{image} ./model/0215_mini_zeriav/img/diely_05.jpg
+:alt: Detail kabíny a podpery ramena
+:height: 200px
+```
+
+```{image} ./model/0215_mini_zeriav/img/diely_04.jpg
+:alt: Detail navijaku
+:height: 200px
+```
+
+Detaily konštrukcie.
+````
+
 
 
 

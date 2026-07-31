@@ -7,8 +7,8 @@ STEMFIE-X wrapper above the gears library
 https://github.com/meadiode/cq_gears
 
 """
-from lib.common import *
 from lib.base import *
+from lib.generic import *
 from lib.beams import *
 from lib.holes import Hole_List, Hole
 from lib.construct import *
@@ -19,7 +19,7 @@ from numpy import array
 
 class Spur_Gear(Stemfie_X):
     
-    def __init__(self, teeth_number=20, width=1/2, bore=HR*2):
+    def __init__(self, teeth_number=20, width=1/2, bore=HR_BASE*2):
         Stemfie_X.__init__(self)  
         module=1.0
         spur_gear = SpurGear(module, teeth_number, width=self.BU*width, bore_d=bore)

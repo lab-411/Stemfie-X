@@ -11,7 +11,7 @@ kernelspec:
   language: python
   name: python3
 ---
-# <font color='navy'> <b> Základné bloky </b> </font>
+# <font color='navy'> Bloky </font>
 
 ```{figure} ./img/banner.png
 :width: 800px
@@ -26,7 +26,7 @@ kernelspec:
 
 Základnými blokmi stavebnice sú jednoduché tvary ako hranoly, valce, tyče. Používajú ako základ pre konštrukciu zložených dielov alebo ako dištančné prvky. Pomocou logických operácií (zjednotenie, prienik, rozdiel) môžeme z nich vytvátať komplikovanejšie objekty. Neobsahujú montážne otvory, tie je možné doplniť pomocou triedy `Hole` z knižnice. 
 
-## <font color='purple'> <b> Funkcie </b></font>
+## <font color='purple'> Knižnica </font>
 
 Knižnica základných komponentov s rozmermi zadávanými v **BU** jednotkách. Parameter **center** určuje, či komponent bude umiestnený v strede súradnicovej sústavy, čo je výhodné pri konštrukcii osovo symetrických dielov. 
 
@@ -68,14 +68,17 @@ Funkcie pre tvorbu základných blokov sú založené na zjednodušenom rozhran�
          X - user defined                    ...
                                   
          
-## <font color='purple'> <b> Príklady použitia </b></font>
+## <font color='purple'>  Príklady použitia </font>
 
+```{code-block} Python
+:caption: Jednoduché bloky
+from lib import *
+b1 = BU_Cube([1, 1.5, 2])     
+b2 = BU_Cylinder(1,2, hole=True, center=False)  
+b3 = BU_Cylinder(1.5,2, hole=False, center=False, angle=270) 
+b4 = BU_Cone(0.25, 1.5, 2 )
+```
 
-    b1 = BU_Cube([1, 1.5, 2])     
-    b2 = BU_Cylinder(1,2, hole=True, center=False)  
-    b3 = BU_Cylinder(1.5,2, hole=False, center=False, angle=270) 
-    b4 = BU_Cone(0.25, 1.5, 2 )
-    
 
 ```{code-cell} ipython3  
 :tags: ["remove-cell"]
@@ -97,9 +100,13 @@ convert_to_image(bc, './src/img_0535a')
 Jednoduché bloky.
 ```
 
-    q = [ [0,0], [1,0], [1,1], [2,1], [2,0], [3,0], [3,2], [0,2], [0,0]]
-    b1 = BU_PolyLine(q, 1/2)
-    b2 = BU_PolyRot(q, 90)
+```{code-block} Python
+:caption: Operácie s blokmi
+from lib import *
+q = [ [0,0], [1,0], [1,1], [2,1], [2,0], [3,0], [3,2], [0,2], [0,0]]
+b1 = BU_PolyLine(q, 1/2)
+b2 = BU_PolyRot(q, 90)
+```
 
 
 ```{code-cell} ipython3  

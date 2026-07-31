@@ -11,7 +11,7 @@ kernelspec:
   language: python
   name: python3
 ---
-# <font color='navy'> <b> Inštalácia</b> </font>
+# <font color='navy'> Inštalácia </font>
 
 ```{figure} ./img/banner.png
 :width: 800px
@@ -26,7 +26,7 @@ Programové vybavenie stavebnice *Stemfie-X* umožňuje návrh a generovanie pod
 * Pomocné programy pre prehliadače generovaných dielov a zostáv (*f3d*, *FreeCAD*)
 * Programy pre prípravu podkladov pre 3D tlač
 
-## <font color='purple'> <b> Inštalácia pre Linux </b></font>
+## <font color='purple'>  Inštalácia pre Linux </font>
 
 * Knižnica *Stemfie-X* je nadstavbou nad knižnicou *CadQuery* a je v dostupná v zdrojovom tvare v archíve [lib.zip](./lib/lib.zip). Knižnicu po rozbalení umiestnite do pracovného adresáru a pri vytváraní ju importujte do vašeho programu ako štandardnú knižnicu v Pythone. Knižnica je univerzálna pre všetky platformy. 
 
@@ -44,7 +44,7 @@ Programové vybavenie stavebnice *Stemfie-X* umožňuje návrh a generovanie pod
 :name: prg_126
 ```
 
-## <font color='purple'> <b> Inštalácia pre Windows</b></font>
+## <font color='purple'>  Inštalácia pre Windows </font>
 
 TODO
     

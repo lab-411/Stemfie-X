@@ -12,7 +12,7 @@ kernelspec:
   name: python3
 ---
 
-# <font color='navy'> Montáž </font>
+# <font color='navy'> Montážne prvky </font>
 
 
 ```{figure} ./img/banner.png
@@ -92,7 +92,7 @@ Použitie stlpikov.
 
 ## <font color='purple'> Pohyblivé spoje </font>
 
-Pre pohyblivé spoje (osi kolies a kladiek, otočné spoje a podobne) môžeme využiť kovové alebo pastové hriadele s priemerom 4mm. Plastové paličky vhodného priemeru sú dostupné v kuchynských potrebách alebo v hobby-marketoch ako paličky pre zváranie plastov. Kovové hriadele rôznych v dĺžkach od 10 do 60mm sú dostupné ako nastavovacie kolíky v obchodoch so spojovacím materiálom.
+Pre pohyblivé spoje (osi kolies a kladiek, otočné spoje a podobne) môžeme využiť kovové alebo plastové hriadele s priemerom 4mm. Plastové paličky vhodného priemeru sú dostupné v kuchynských potrebách alebo v hobby-marketoch ako paličky pre zváranie plastov. Kovové hriadele rôznych v dĺžkach od 10 do 60mm sú dostupné ako nastavovacie kolíky v obchodoch so spojovacím materiálom.
 
 Montážne otvory pre použitie hriadeľov je potrebné primerane zväčšiť, je vhodné si vopred skalibrovať 3D tlačiareň, pretože otvory vo vytlačených  dieloch majú zvyčajne menší priemer v závislosti od nastavených parametrov tlače a použitého materiálu. V prípad potreby je možné otvory pre hriadele a osi jemne upraviť ihlovým pilníkom.
 

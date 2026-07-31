@@ -4,12 +4,15 @@
 Created on Mon Nov  4 18:05:31 2024
 
 @author: pf
+
+History:
+260719 - doplneny atribut pre priemer otvorov 
 """
 
 from numpy import pi,sin,cos,abs
 
-from lib.common import *
 from lib.base import *
+from lib.generic import *
 from lib.holes import Hole_List
 
 class Braces(Stemfie_X):
@@ -18,9 +21,17 @@ class Braces(Stemfie_X):
     
 
 class Brace(Braces):
+    '''
+    Zakladna spojka s definovanou dlzkou a hrubkou.
+    '''
     
-    def __init__(self, size, height=1/4, holes=True, center=False):
+    def __init__(self, size, height=1/4, holes=True, center=False, hole_rad=HR_BASE):
         Braces.__init__(self)
+        
+        self.size = size
+        self.height = height
+        self.holes = holes
+        self.name = self.create_name()
         
         if size > 1:
             bs = (
@@ -29,7 +40,6 @@ class Brace(Braces):
                 .arc( ( (size-1)*self.BU, 0), self.BU/2, 0.0, 360.0)
                 .hull()
             )
-            #self.obj = cq.Workplane("XY")
             self.obj = self.obj.placeSketch(bs)
             self.obj = self.obj.extrude(height*self.BU)
             
@@ -38,7 +48,7 @@ class Brace(Braces):
                 for i in range(size):
                     h[i][0] = i
                 
-                hole_list = Hole_List(h, height)
+                hole_list = Hole_List(h, height, hole_rad)
                 self = self.D(hole_list)
                 
             if center==True:
@@ -53,16 +63,29 @@ class Brace(Braces):
                 
             if center==True:
                 self.BU_Tz(-height/2)
-                
 
+    def create_name(self):
+        s = 'brace_B_'
+        s = s + self.convert_param(self.size) + '_'
+        s = s + self.convert_param(self.height)
+        return s    
+            
+            
+                
 class Brace_Arc(Braces):
     
-    def __init__(self, r, angle, height=1/4, num_holes=4, center=False):
+    def __init__(self, r, angle, height=1/4, num_holes=4, center=False, hole_rad=HR_BASE):
         '''
         angle - 0...180 deg
         '''
 
         Braces.__init__(self)
+        
+        self.r = r
+        self.angle = angle
+        self.height = height
+        self.num_holes = num_holes
+        self.name = self.create_name()
         
         alpha = abs(angle/180*pi)   # deg -> rad 
         
@@ -92,7 +115,7 @@ class Brace_Arc(Braces):
         rdx = cos(beta)*d
         rdy = sin(beta)*d
 
-        self.obj = ( #cq.Workplane("XY")
+        self.obj = ( 
                 self.obj
                .moveTo(r-d, 0)
                 
@@ -111,24 +134,43 @@ class Brace_Arc(Braces):
                .close()
                )
         
+        # doplnenie vnutornych montaznych otvorov
         if num_holes > 1:
+            self.HR = hole_rad
             gamma = alpha / (num_holes-1)
             for n in range(num_holes):
                 hx = cos(gamma*n)*r
                 hy = sin(gamma*n)*r
                 self.obj = self.obj.moveTo(hx,hy)
                 self.obj = self.obj.circle(self.HR)
-               
+        
+        # vutvorenie komponentu
         self.obj = self.obj.extrude(height)
         
         if center==True:
             self.Tz(-height/2)
             
+    def create_name(self):
+        s = 'brace_A_'
+        s = s + self.convert_param(self.r) + '_'
+        s = s + self.convert_param(self.height) + '_'
+        s = s + self.convert_param(self.num_holes) + '_'
+        s = s + f'{int(self.angle):03d}'
+        return s 
+            
 
 class Brace_Circle(Braces): 
     
-    def __init__(self, r, height=1/4, num_holes=4, center=False):
+    def __init__(self, r, height=1/4, num_holes=4, center=False, hole_rad=HR_BASE):
         Braces.__init__(self)
+        
+        self.r = r
+        self.height = height
+        self.num_holes = num_holes
+        self.name = self.create_name()
+        
+        self.HR = hole_rad
+        
         if r<1: r = 1
         if num_holes < 1: num_holes = 1
         
@@ -136,15 +178,16 @@ class Brace_Circle(Braces):
         r = r*self.BU
         height = height*self.BU
         
-        self.obj = ( #cq.Workplane("XY")
+        self.obj = ( 
                 self.obj
                .moveTo(0, 0)
                .circle(r-d)
                .circle(r+d)
-               #.extrude(height)
                 )
         
+        # doplnenie vnutornych montaznych otvorov
         if num_holes > 1:
+            self.HR = hole_diam
             gamma = pi*2/ (num_holes)
             for n in range(num_holes):
                 hx = cos(gamma*n)*r
@@ -152,16 +195,29 @@ class Brace_Circle(Braces):
                 self.obj = self.obj.moveTo(hx,hy)
                 self.obj = self.obj.circle(self.HR)
                
+        # vytvorenie komponentu
         self.obj = self.obj.extrude(height) 
         
         if center==True:
             self.BU_Tz(-height/2)
+            
+    def create_name(self):
+        s = 'brace_C_'
+        s = s + self.convert_param(self.r) + '_'
+        s = s + self.convert_param(self.height) + '_'
+        s = s + self.convert_param(self.num_holes)
+        return s 
 
 
 class Brace_Plate(Braces):
     
-    def __init__(self, x, y, height=1/4, holes=True, center=False):
+    def __init__(self, x=3, y=3, height=1/4, holes=True, center=False, hole_rad=HR_BASE):
         Braces.__init__(self)
+        
+        self.xx = x
+        self.yy = y
+        self.height = height
+        self.name = self.create_name()
         
         xx = (x-1) * self.BU
         yy = (y-1) * self.BU
@@ -180,7 +236,7 @@ class Brace_Plate(Braces):
             self.obj = self.obj.extrude(height*self.BU)
            
             if holes==True:                
-                hole_list = Hole_Grid(x,y, height)
+                hole_list = Hole_Grid(x,y, height,0,0,0, hole_rad)
                 self = self.D(hole_list)
                 
             if center==True:
@@ -193,5 +249,10 @@ class Brace_Plate(Braces):
             if y==1:
                 self.Rz()
                 
-            
+    def create_name(self):
+        s = 'brace_P_'
+        s = s + self.convert_param(self.xx) + '_'
+        s = s + self.convert_param(self.yy) + '_'
+        s = s + self.convert_param(self.height)
+        return s             
                 

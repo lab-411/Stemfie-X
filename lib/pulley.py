@@ -9,8 +9,8 @@ Pulley
 Pulley_Holder
 """
 from numpy import pi, sin, cos
-from lib.common import *
 from lib.base import *
+from lib.generic import *
 from lib.beams import *
 from lib.holes import Hole_List, Hole
 
@@ -58,7 +58,7 @@ class Pulley_A(Stemfie_X):
         )
         self.U([p1,p2])
         
-        hh = Hole(2, self.HRX)  # otvor pre hriadel
+        hh = Hole(2, HR_AXIS)  # otvor pre hriadel
         self.D(hh)
         self.name = self.create_name()
         
@@ -116,7 +116,7 @@ class Pulley_B(Stemfie_X):
         cd = BU_Cylinder(diam-dp-3/10, 1).BU_Tz(1/2+dh)
         self.D(cd)
         self.U(cc)
-        hh = Hole(2, 2.1)#.BU_Tz(1/2)
+        hh = Hole(2, HR_AXIS)#.BU_Tz(1/2)
         self.D(hh)
         
         # diery po obvode
@@ -211,7 +211,7 @@ class Pulley_C(Stemfie_X):
         hr.BU_Tz(-1/2)
         self.D(hr)
                 
-        hh = Hole(2, self.HRX)
+        hh = Hole(2, HR_AXIS)
         self.D(hh)
         
         self.name = self.create_name()

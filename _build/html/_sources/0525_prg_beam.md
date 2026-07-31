@@ -11,7 +11,7 @@ kernelspec:
   language: python
   name: python3
 ---
-# <font color='navy'> <b> Nosníky </b> </font>
+# <font color='navy'> Nosníky </font>
 
 ```{figure} ./img/banner.png
 :width: 800px
@@ -24,9 +24,9 @@ kernelspec:
 
 ```
 
-**Nosníky** (Baems) sú druhým základným typom dielov v *Stemfie-X* primárne určené pre použitie ako nosníky a platne. Verzie *U*, *L* a H je možné využiť ako základ pre menšie konštrukcie.
+**Nosníky** (Baems) sú druhým základným typom dielov v *Stemfie-X* primárne určené pre použitie ako nosníky a platne. Verzie *U*, *L* a H je možné využiť ako základne pre menšie konštrukcie.
 
-## <font color='purple'> <b> Funkcie </b></font>
+## <font color='purple'> Knižnica </font>
 
 Základným typom je jednoduchy nosník (Beam_Block), odvodenými typmi sú verzie *U*, *H*, *L*. 
 
@@ -43,7 +43,7 @@ Základným typom je jednoduchy nosník (Beam_Block), odvodenými typmi sú verz
     center          True      poloha v strede súradnicovej sústavy 
 
     
-### <font color='brown'> <b> Značenie dielov </b></font>
+### <font color='brown'> Značenie dielov </font>
 
     block_t_xx_yy_zz_hhh    basic form
     block_t_xx_yy           abbreviated forms
@@ -68,13 +68,20 @@ Základným typom je jednoduchy nosník (Beam_Block), odvodenými typmi sú verz
     block_L_xx_yy_hx_hy
         
 
-## <font color='purple'> <b> Použitie </b></font>     
+## <font color='purple'>  Použitie  </font>     
 
-### <font color='brown'> <b> Jednoduché nosniky </b></font>
+### <font color='brown'> Jednoduché nosniky a bloky </font>
 
+Pomocou parametrov funkcie *Beam_Block()* môžeme vytvárať rôzne typy noníkov, blokov a platní.
 
-    b1 = Beam_Block(7)          
-
+```{code-block} Python
+:caption: Jednoduchý nosník s montážnymi otvormi v xyz smeroch.
+from lib import *
+b1 = Beam_Block(7)  
+b1.export_step(b1.name)
+```
+    
+    
 ```{code-cell} ipython3  
 :tags: ["remove-cell"]
 
@@ -88,29 +95,43 @@ convert_to_image(b0, './src/block_b0')
 ```{figure} ./src/block_b0.png
 :width: 300px
 
-Jednoduchý lineárny blok - *block_B_07*
+Jednoduchý nosník.
 ```
 
-    b1 = Beam_Block([3, 3, 2])   
-    
+%--------------------------------------------------
+
+```{code-block} Python
+:caption: Blok s redukovanými montážnymi otvormi.
+from lib import *
+b2 = Beam_Block([3, 3, 2], [False, True, True]) 
+b2.export_step(b2.name)
+```
+
 ```{code-cell} ipython3  
 :tags: ["remove-cell"]
 
 from lib import *
 from lib.utils import *
 
-b1 = Beam_Block([3, 3, 2])
+b1 = Beam_Block([3, 3, 2], [False, True, True])
 convert_to_image(b1, './src/block_b1')
 ```
 
 ```{figure} ./src/block_b1.png
 :width: 150px
 
-Blok s montážnymi otvormi vo všetkých smeroch - *block_B_03_02_02*.
+Blok s redukovanými montážnymi otvormi.
 ```
 
+%--------------------------------------------------
 
-    b2 = Beam_Block([4, 3 ,1/2], [False, False, True])  
+```{code-block} Python
+:caption: Montážna platňa 4x3 BU 
+from lib import *
+b3 = Beam_Block([4, 3 ,1/2], [False, False, True]) 
+b3.export_step(b3.name)
+```
+ 
 
 ```{code-cell} ipython3  
 :tags: ["remove-cell"]
@@ -125,13 +146,19 @@ convert_to_image(b2, './src/block_b2')
 ```{figure} ./src/block_b2.png
 :width: 150px
 
-Platňa 4x3BU - *block_B_04_03_12_001*.
+Montážna platňa 4x3 BU 
 ```
 
-### <font color='brown'> <b> Kombinované nosniky </b></font>
+### <font color='brown'> Kombinované nosniky </font>
 
-    
-    b4 = Beam_U_Block(4,3) 
+Kombinované nosníky sú tuhšie ako jednoduché platne, môžeme ich použiť pri tvorbe väčších a namáhaných konštrukcií. 
+
+```{code-block} Python
+:caption: Blok typu U
+from lib import *
+b4 = Beam_U_Block(4,3)
+b4.export_step(b4.name)
+```
 
 ```{code-cell} ipython3  
 :tags: ["remove-cell"]
@@ -146,13 +173,18 @@ convert_to_image(b4, './src/block_b4')
 ```{figure} ./src/block_b4.png
 :width: 150px
 
-Blok U - *block_U_04_03*.
+Blok typu U
 ```
     
-% --------------
+%--------------------------------------------------
 
-    b5 = Beam_H_Block(4,3) 
-    
+```{code-block} Python
+:caption: Blok typu H
+from lib import *
+b5 = Beam_H_Block(4,3) 
+b5.export_step(b5.name)
+```
+
 ```{code-cell} ipython3  
 :tags: ["remove-cell"]
 
@@ -166,13 +198,17 @@ convert_to_image(b5, './src/block_b5')
 ```{figure} ./src/block_b5.png
 :width: 150px
 
-Blok H - *block_H_04_03*.
+Blok typu H 
 ```
 
-%---------------
-    
-    b6 = Beam_L_Block(7,2,1/4, 1/2)
+%--------------------------------------------------
 
+```{code-block} Python
+:caption: Blok typu L
+from lib import *
+b6 = Beam_L_Block(7,2,1/4, 1/2)
+b6.export_step(b6.name)
+```
 
 ```{code-cell} ipython3  
 :tags: ["remove-cell"]
@@ -187,5 +223,5 @@ convert_to_image(b6, './src/block_b6')
 ```{figure} ./src/block_b6.png
 :width: 220px
 
-Blok L - *block_L_07_02_14*.
+Blok typu L 
 ```

@@ -27,7 +27,13 @@ kernelspec:
 
 **Spojky** (Brace) sú základným konštrukčným typom dielov v *Stemfie-X* primárne určený pre spájanie dielov, ale je možné ich využiť aj ako konštrukčný prvok na vytváranie vystužených konštrukcií ako sú ramená žeriavov, robotov a pod. Spojky môžu obsahovať montážne otvory ako aj štrbiny. Štandardná hrúbka spojky je 1/4 **BU** (2.5mm), pomocou knižnice je možné programovo vytvárať spojky rôznych tvarov a konfigurácií. Lineárna spojka je rozmerovo kompatibilná s kovovými spojkami stavebníc *Meccano* a *Merkur* so vzdialenosťami montážnych otvorov 10mm. 
 
-## <font color='purple'>  Funkcie </font>
+```{figure} ./img/brace_rozmery.png
+:width: 400px
+
+Základné parametre spojky (spojka, D=8, H=1/4).
+```
+
+## <font color='purple'> Knižnica </font>
 
 Pomocou knižnice môžeme vytvárať záladné typy spojok a pomocou logických operácií aj odvodené modifikácie. Základným typom je lineárna spojka *Brace*, oblúková spojka *Brace_Arc*, kruhová spojka *Brace_Circle* a rozšírená spjka *Brace_Plate*. Funkcie pre generovanie spojok majú formát:
 
@@ -97,7 +103,7 @@ Pre prehľadnejšie označovanie spojok v zoznamoch dielov a katalógoch je vhod
         
 ## <font color='purple'>  Príklady použitia </font>
 
-### <font color='brown'> Vytvorenie jednoduchej spojky </font>
+### <font color='brown'> Jednoduchá spojka </font>
 
 Pre vygenerovanie jednoduchej spojky o štandardnej hrúbke **1/4 BU** je postačujúce zadať jej rozmer v **BU** jednotkách.
 
@@ -126,7 +132,7 @@ Jednoducha spojka
 ```
 
 
-### <font color='brown'> Vytvorenie spojky so štrbinami </font>
+### <font color='brown'> Spojka so štrbinami </font>
 
 Štrbiny požadovanej dĺžky vytvoríme pomocou triedy **Hole_Slot**, posunieme ich pomocou operátora **BU_Tx** do požadovanej pozície a pomocou operátora **D()** odpočítame od štandardnej spojky.
 
@@ -165,7 +171,7 @@ convert_to_image(b2, './src/brace_b2')
 Spojka so štrbinami.
 ```
 
-### <font color='brown'> Vytvorenie uhlovej spojky </font>
+### <font color='brown'> Uhlová spojka </font>
 
 Uhlovú spojku vytvoríme operáciou zjednotenia dvoch štandardných spojok.
 

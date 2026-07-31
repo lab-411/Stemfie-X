@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 
 from numpy import pi, sin, cos
-from lib.common import *
 from lib.base import *
+from lib.generic import *
 from lib.beams import *
 from lib.holes import Hole_List, Hole
 
@@ -43,9 +43,9 @@ class Wheel(Stemfie_X):
         # diery ...
         hr = BU_Component()
         hr.obj = hr.obj.pushPoints(hole_grid) 
-        hr.obj = hr.obj.circle(self.HR)
-        hr.obj = hr.obj.extrude(self.BU * self.h)
-        hr.obj = hr.obj.translate([0,0,-self.h/2*self.BU])
+        hr.obj = hr.obj.circle(HR_BASE)
+        hr.obj = hr.obj.extrude(BU * self.h)
+        hr.obj = hr.obj.translate([0,0,-self.h/2*BU])
         w1.D(hr)
         
         w1.BU_Tz(self.h/2)
@@ -77,9 +77,9 @@ class Wheel(Stemfie_X):
                 
         hr = BU_Component()
         hr.obj = hr.obj.pushPoints(hole_grid) 
-        hr.obj = hr.obj.circle(self.HR)
-        hr.obj = hr.obj.extrude(self.BU * self.h)
-        hr.obj = hr.obj.translate([0,0,-self.h/2*self.BU])
+        hr.obj = hr.obj.circle(HR_BASE)
+        hr.obj = hr.obj.extrude(BU * self.h)
+        hr.obj = hr.obj.translate([0,0,-self.h/2*BU])
         w1.D(hr)
         
         w1.BU_Tz(self.h/2)
@@ -118,9 +118,9 @@ class Wheel(Stemfie_X):
             
         hr = BU_Component()
         hr.obj = hr.obj.pushPoints(hole_grid) 
-        hr.obj = hr.obj.circle(self.HR)
-        hr.obj = hr.obj.extrude(self.BU * self.h)
-        hr.obj = hr.obj.translate([0,0,-self.h/2*self.BU])
+        hr.obj = hr.obj.circle(HR_BASE)
+        hr.obj = hr.obj.extrude(BU * self.h)
+        hr.obj = hr.obj.translate([0,0,-self.h/2*BU])
         w1.D(hr)
         
         if self.beams == 3:
@@ -163,7 +163,7 @@ class Wheel_A(Stemfie_X):
 
         dd = BU_Cylinder(1, dp).BU_Tz(self.thick)
         self.U(dd)
-        hh = Hole(2, self.HRX)  # otvor pre hriadel
+        hh = Hole(2, HR_AXIS)  # otvor pre hriadel
         self.D(hh)
         self.name = self.create_name()
 
