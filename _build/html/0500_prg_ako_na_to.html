@@ -334,7 +334,7 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parametre"><font color="purple"> Parametre </font></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parametre-stavebnice"><font color="purple"> Parametre stavebnice </font></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#konstrukcia-noveho-dielu"><font color="purple">  Konštrukcia nového dielu </font></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navrh-dielu"><font color="purple">  Návrh dielu </font></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#export-podkladov-pre-tlac"><font color="purple">  Export podkladov pre tlač  </font></a></li>
@@ -356,11 +356,12 @@
 <a class="reference internal image-reference" href="_images/banner.png"><img alt="_images/banner.png" src="_images/banner.png" style="width: 800px;" />
 </a>
 </figure>
-<p>Pri návrhu vlastných modelov a konštrukcií môže vzniknúť potreba použitia dielu, ktorý sa nenachádza v knižnici komponentov. V inom prípade potrebujeme vytvoriť neštandardný diel ako je napríklad držiak motora, serva, senzora. Nové diely môžeme vytvárať pomocou skriptov v programovacom jazyku Python využitím knižníc pre tvorbu komponentov a ich kombináciou pomocou logických operácií. Pokročilí uživatelia môžu pri tvorbe dielov využívať aj vlastnosti knižnice <em>CadQuery</em>, pomocou ktorej je knižnica <em>Stemfe-X</em> naprogramovaná.</p>
-<section id="parametre">
-<h2><font color='purple'> Parametre </font><a class="headerlink" href="#parametre" title="Link to this heading">#</a></h2>
+<p>Základným princípom stavebnice <em>STEMFIE-X</em> je možnosť vytvárania vlastných dielov stavebnice, ich modifikácie a úprav. Na rozdiel od klasických konštrukčných stavebníc nemá <em>STEMFIE-X</em> pevne stanovený rozsah komponentov a príslušenstva, šikovný konštruktér si môže nové diely stavebnice vytvárať podľa potreby.</p>
+<p>Pri návrhu modelov a konštrukcií takto môže vzniknúť potreba použitia dielu, ktorý sa nenachádza v knižnici komponentov, alebo potrebujeme vytvoriť neštandardný diel ako je napríklad držiak motora, serva, senzora. Nové diely môžeme vytvárať pomocou skriptov v programovacom jazyku <em>Python</em> využitím knižnice <em>STEMFIE-X</em> pre tvorbu komponentov, komplikovanejšie komponenty môžeme vytvárať kombináciou pomocou logických operácií. Pokročilí uživatelia môžu pri tvorbe dielov využívať aj vlastnosti knižnice <em>CadQuery</em>, pomocou ktorej je knižnica <em>STEMFIE-X</em> naprogramovaná.</p>
+<section id="parametre-stavebnice">
+<h2><font color='purple'> Parametre stavebnice </font><a class="headerlink" href="#parametre-stavebnice" title="Link to this heading">#</a></h2>
 <p>Princíp stavebnice <em>STEMFIE-X</em> umožňuje tvorbu širokého spektra konštrukčných prvkov. Aby bola dodržaná vzájomná kompatibilita dielov, je vhodné pri návrhu dielov dodržať jednoduché základné pravidlá.</p>
-<p>Vlastnosti dielov stavebnice <em>STEMFIE-X</em> definuje základná jednotka <strong>BU</strong> (Basic Unit), priemer montážnych otvorov <strong>HR_BASE</strong> (Hole Radius) pre montážne prvky (skrutky a pod.) a otvory pre pohyblivé spoje, hiadele a osi <strong>HR_AXIS</strong>. Na rozdiel od kovových stavebníc, ktoré majú diely z plechu a pri ktorých sa neuvažuje s jeho hrúbkou, musíme pri našich konštrukciách uvažovať s hrúbkou dielov. Rozmery dielov sú udávané v násobkoch alebo podieloch BU.</p>
+<p>Vlastnosti dielov stavebnice <em>STEMFIE-X</em> definuje základná jednotka <strong>BU</strong> (Basic Unit), priemer montážnych otvorov <strong>HR_BASE</strong> (Hole Radius) pre montážne prvky (skrutky a pod.) a otvory pre pohyblivé spoje, hiadele a osi <strong>HR_AXIS</strong>. Na rozdiel od kovových stavebníc, ktoré majú diely z plechu a pri ktorých sa neuvažuje s ich hrúbkou, musíme pri našich konštrukciách uvažovať s hrúbkou dielov. Rozmery dielov sú udávané v násobkoch alebo podieloch <strong>BU</strong>.</p>
 <p>Štandardné parametre dielov sú definované ako</p>
 <ul class="simple">
 <li><p>štandardná veľkost jednotky <strong>BU</strong> je 10mm</p></li>
@@ -376,7 +377,7 @@
 </section>
 <section id="konstrukcia-noveho-dielu">
 <h2><font color='purple'>  Konštrukcia nového dielu </font><a class="headerlink" href="#konstrukcia-noveho-dielu" title="Link to this heading">#</a></h2>
-<p>Pri návrhu našej konštrukcie sme zistili, že potrebujeme spojku v tvare T o hrúbke 1/4 BU. Pri návrhu môžeme ako pomôcku na náčrty používať štvorčekový papier s rastrom 5mm (BU/2), na ktorom získame predstavu o skutočnej veľkosti dielov.</p>
+<p>Pri návrhu našej konštrukcie sme zistili, že potrebujeme spojku v tvare T o hrúbke 1/4 BU. Pri návrhu môžeme ako pomôcku na náčrty používať štvorčekový papier s rastrom 5mm (<strong>BU/2</strong>), na ktorom získame predstavu o skutočnej veľkosti dielov.</p>
 <figure class="align-default" id="id1">
 <a class="reference internal image-reference" href="_images/prg_navrh.jpg"><img alt="_images/prg_navrh.jpg" src="_images/prg_navrh.jpg" style="width: 350px;" />
 </a>
@@ -384,11 +385,11 @@
 <p><span class="caption-number">Obr. 24 </span><span class="caption-text">Náčrt dielu na štvorčekovom papieri.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Náš diel do stavebnice “vyrobíme” naprogramovaním v jazyku <em>Python</em> s použitím knižníc pre projektovanie dielov. K výrobe dielu potrebujeme</p>
+<p>Náš diel do stavebnice “vyrobíme” naprogramovaním v jazyku <em>Python</em> s použitím knižnice <em>STEMFIE-X</em> pre projektovanie dielov. K výrobe dielu potrebujeme</p>
 <ul class="simple">
 <li><p>elementárne znalosti informatiky a programovania, najlepšie v <em>Pythone</em> (súbor, adresár, spustenie programu, základné syntaktické konštrukcie, práca s knižnicami)</p></li>
 <li><p>nainštalovaný editor <em>CQ-Editor</em> s knižnicou <em>CadQuery</em> a v pracovnom adresári rozbalenú knižnicu pre <em>Stemfie-X</em> podľa <a class="reference internal" href="0900_instalacia.html"><span class="std std-doc">návodu</span></a></p></li>
-<li><p>nainštalované programy pre prehliadanie podkladov pre 3D tlač a generovanie dát pre tlačiareň</p></li>
+<li><p>nainštalované programy pre <a class="reference internal" href="0905_viewer.html"><span class="std std-doc">prehliadanie</span></a> podkladov pre 3D tlač a generovanie dát (slicer) pre tlačiareň</p></li>
 <li><p>znalosť práce s 3D tlačiarňou</p></li>
 </ul>
 </section>
@@ -397,7 +398,7 @@
 <p>Pri návrhu dielu postupujeme podľa nasledujúcich bodov</p>
 <ul class="simple">
 <li><p>vytvoríme si pracovný adresár a rozbalíme do podadresári <em>./lib</em> <a class="reference download internal" download="" href="_downloads/c7758403c3488bb679c27b0e286e55f6/lib.zip"><span class="xref download myst">knižnicu</span></a> pre návrh dielov</p></li>
-<li><p>spustíme editor <em>CQ-Editor</em>, vytvoríme nový súbor (<em>File -&gt; New</em>) a <strong>uložíme</strong> (<em>File -&gt; Save</em>) ho do pracovného adresára</p></li>
+<li><p>spustíme program  <em>CQ-Editor</em>, vytvoríme nový súbor (<em>File -&gt; New</em>) a <strong>uložíme</strong> (<em>File -&gt; Save</em>) ho do pracovného adresára</p></li>
 <li><p>vytvoríme program pre návrh dielu</p></li>
 </ul>
 <div class="literal-block-wrapper docutils container" id="id2">
@@ -405,8 +406,8 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">lib</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>            <span class="c1"># import kniznice Stemfie-X</span>
 <span class="n">b1</span> <span class="o">=</span> <span class="n">Brace</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>                <span class="c1"># vytvorenie spojky o velkost 5BU v rovine XY</span>
 <span class="n">b2</span> <span class="o">=</span> <span class="n">Brace</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">Rz</span><span class="p">()</span><span class="o">.</span><span class="n">BU_Tx</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># vytvorenie spojky 3BU</span>
-                              <span class="c1"># Rz()      - otocenie o 90 stupnov okolo osi Z</span>
-                              <span class="c1"># BU_Tx(2)  - posun v smere osi X o dlzku 2BU      </span>
+                             <span class="c1"># Rz()      - otocenie o 90 stupnov okolo osi Z</span>
+                             <span class="c1"># BU_Tx(2)  - posun v smere osi X o dlzku 2BU      </span>
 <span class="n">b1</span> <span class="o">=</span> <span class="n">b1</span><span class="o">.</span><span class="n">U</span><span class="p">([</span><span class="n">b2</span><span class="p">])</span>              <span class="c1"># U() union - zjednotenie (spojenie) objektov </span>
 <span class="n">show_object</span><span class="p">(</span><span class="n">b1</span><span class="o">.</span><span class="n">obj</span><span class="p">)</span>          <span class="c1"># zobrazenie dielu v CQ-Editor</span>
 <span class="n">b1</span><span class="o">.</span><span class="n">export_step</span><span class="p">(</span><span class="s1">&#39;part_b1&#39;</span><span class="p">)</span>    <span class="c1"># vygenerovanie podkladov pre tlac vo formate STEP</span>
@@ -495,7 +496,7 @@
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parametre"><font color="purple"> Parametre </font></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parametre-stavebnice"><font color="purple"> Parametre stavebnice </font></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#konstrukcia-noveho-dielu"><font color="purple">  Konštrukcia nového dielu </font></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navrh-dielu"><font color="purple">  Návrh dielu </font></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#export-podkladov-pre-tlac"><font color="purple">  Export podkladov pre tlač  </font></a></li>

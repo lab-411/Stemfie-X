@@ -17,13 +17,15 @@ kernelspec:
 :width: 800px
 :name: prg_100
 ```
-Pri návrhu vlastných modelov a konštrukcií môže vzniknúť potreba použitia dielu, ktorý sa nenachádza v knižnici komponentov. V inom prípade potrebujeme vytvoriť neštandardný diel ako je napríklad držiak motora, serva, senzora. Nové diely môžeme vytvárať pomocou skriptov v programovacom jazyku Python využitím knižníc pre tvorbu komponentov a ich kombináciou pomocou logických operácií. Pokročilí uživatelia môžu pri tvorbe dielov využívať aj vlastnosti knižnice *CadQuery*, pomocou ktorej je knižnica *Stemfe-X* naprogramovaná. 
+Základným princípom stavebnice *STEMFIE-X* je možnosť vytvárania vlastných dielov stavebnice, ich modifikácie a úprav. Na rozdiel od klasických konštrukčných stavebníc nemá *STEMFIE-X* pevne stanovený rozsah komponentov a príslušenstva, šikovný konštruktér si môže nové diely stavebnice vytvárať podľa potreby.
 
-## <font color='purple'> Parametre </font>
+Pri návrhu modelov a konštrukcií takto môže vzniknúť potreba použitia dielu, ktorý sa nenachádza v knižnici komponentov, alebo potrebujeme vytvoriť neštandardný diel ako je napríklad držiak motora, serva, senzora. Nové diely môžeme vytvárať pomocou skriptov v programovacom jazyku *Python* využitím knižnice *STEMFIE-X* pre tvorbu komponentov, komplikovanejšie komponenty môžeme vytvárať kombináciou pomocou logických operácií. Pokročilí uživatelia môžu pri tvorbe dielov využívať aj vlastnosti knižnice *CadQuery*, pomocou ktorej je knižnica *STEMFIE-X* naprogramovaná. 
+
+## <font color='purple'> Parametre stavebnice </font>
 
 Princíp stavebnice *STEMFIE-X* umožňuje tvorbu širokého spektra konštrukčných prvkov. Aby bola dodržaná vzájomná kompatibilita dielov, je vhodné pri návrhu dielov dodržať jednoduché základné pravidlá. 
 
-Vlastnosti dielov stavebnice *STEMFIE-X* definuje základná jednotka **BU** (Basic Unit), priemer montážnych otvorov **HR_BASE** (Hole Radius) pre montážne prvky (skrutky a pod.) a otvory pre pohyblivé spoje, hiadele a osi **HR_AXIS**. Na rozdiel od kovových stavebníc, ktoré majú diely z plechu a pri ktorých sa neuvažuje s jeho hrúbkou, musíme pri našich konštrukciách uvažovať s hrúbkou dielov. Rozmery dielov sú udávané v násobkoch alebo podieloch BU. 
+Vlastnosti dielov stavebnice *STEMFIE-X* definuje základná jednotka **BU** (Basic Unit), priemer montážnych otvorov **HR_BASE** (Hole Radius) pre montážne prvky (skrutky a pod.) a otvory pre pohyblivé spoje, hiadele a osi **HR_AXIS**. Na rozdiel od kovových stavebníc, ktoré majú diely z plechu a pri ktorých sa neuvažuje s ich hrúbkou, musíme pri našich konštrukciách uvažovať s hrúbkou dielov. Rozmery dielov sú udávané v násobkoch alebo podieloch **BU**. 
 
 
  Štandardné parametre dielov sú definované ako
@@ -44,7 +46,7 @@ Pri vytváraní podkladov pre 3D tlač pomocou s využitím knižnice *Stemfie-X
 
 ## <font color='purple'>  Konštrukcia nového dielu </font>
 
-Pri návrhu našej konštrukcie sme zistili, že potrebujeme spojku v tvare T o hrúbke 1/4 BU. Pri návrhu môžeme ako pomôcku na náčrty používať štvorčekový papier s rastrom 5mm (BU/2), na ktorom získame predstavu o skutočnej veľkosti dielov. 
+Pri návrhu našej konštrukcie sme zistili, že potrebujeme spojku v tvare T o hrúbke 1/4 BU. Pri návrhu môžeme ako pomôcku na náčrty používať štvorčekový papier s rastrom 5mm (**BU/2**), na ktorom získame predstavu o skutočnej veľkosti dielov. 
 
 ```{figure} ./img/prg_navrh.jpg
 :width: 350px
@@ -52,11 +54,11 @@ Pri návrhu našej konštrukcie sme zistili, že potrebujeme spojku v tvare T o 
 Náčrt dielu na štvorčekovom papieri.
 ```
 
-Náš diel do stavebnice "vyrobíme" naprogramovaním v jazyku *Python* s použitím knižníc pre projektovanie dielov. K výrobe dielu potrebujeme 
+Náš diel do stavebnice "vyrobíme" naprogramovaním v jazyku *Python* s použitím knižnice *STEMFIE-X* pre projektovanie dielov. K výrobe dielu potrebujeme 
 
 * elementárne znalosti informatiky a programovania, najlepšie v *Pythone* (súbor, adresár, spustenie programu, základné syntaktické konštrukcie, práca s knižnicami)
 * nainštalovaný editor *CQ-Editor* s knižnicou *CadQuery* a v pracovnom adresári rozbalenú knižnicu pre *Stemfie-X* podľa [návodu](./0900_instalacia.md) 
-* nainštalované programy pre prehliadanie podkladov pre 3D tlač a generovanie dát pre tlačiareň
+* nainštalované programy pre [prehliadanie](./0905_viewer.md) podkladov pre 3D tlač a generovanie dát (slicer) pre tlačiareň
 * znalosť práce s 3D tlačiarňou 
 
 ## <font color='purple'>  Návrh dielu </font>
@@ -64,7 +66,7 @@ Náš diel do stavebnice "vyrobíme" naprogramovaním v jazyku *Python* s použi
 Pri návrhu dielu postupujeme podľa nasledujúcich bodov
 
 * vytvoríme si pracovný adresár a rozbalíme do podadresári *./lib* [knižnicu](./lib/lib.zip) pre návrh dielov 
-* spustíme editor *CQ-Editor*, vytvoríme nový súbor (*File -> New*) a **uložíme** (*File -> Save*) ho do pracovného adresára
+* spustíme program  *CQ-Editor*, vytvoríme nový súbor (*File -> New*) a **uložíme** (*File -> Save*) ho do pracovného adresára
 * vytvoríme program pre návrh dielu
 
 ```{code-block} python
@@ -73,8 +75,8 @@ Pri návrhu dielu postupujeme podľa nasledujúcich bodov
 from lib import *            # import kniznice Stemfie-X
 b1 = Brace(5)                # vytvorenie spojky o velkost 5BU v rovine XY
 b2 = Brace(3).Rz().BU_Tx(2)  # vytvorenie spojky 3BU
-                              # Rz()      - otocenie o 90 stupnov okolo osi Z
-                              # BU_Tx(2)  - posun v smere osi X o dlzku 2BU      
+                             # Rz()      - otocenie o 90 stupnov okolo osi Z
+                             # BU_Tx(2)  - posun v smere osi X o dlzku 2BU      
 b1 = b1.U([b2])              # U() union - zjednotenie (spojenie) objektov 
 show_object(b1.obj)          # zobrazenie dielu v CQ-Editor
 b1.export_step('part_b1')    # vygenerovanie podkladov pre tlac vo formate STEP

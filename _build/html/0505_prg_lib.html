@@ -334,16 +334,16 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vytvaranie-objektov"><font color="purple"> Vytváranie objektov </font></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vytvaranie-komponentov"><font color="purple"> Vytváranie komponentov </font></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformacie-objektov"><font color="purple"> Transformácie objektov </font></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linearny-posun"><font color="brown"> Lineárny posun </font></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rotacia"><font color="brown"> Rotácia </font></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zrkadlenie"><font color="brown">  Zrkadlenie </font></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operacie-linearneho-posunu"><font color="brown"> Operácie lineárneho posunu </font></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operacie-rotacie"><font color="brown"> Operácie rotácie </font></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operacie-zrkadlenia"><font color="brown"> Operácie zrkadlenia </font></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logicke-operacie"><font color="brown">  Logické operácie </font></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#priklad"><font color="brown">  Príklad </font></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#export-objektov"><font color="purple"> Export objektov </font></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#export-komponentov"><font color="purple"> Export komponentov </font></a></li>
 </ul>
             </nav>
         </div>
@@ -361,13 +361,12 @@
 <a class="reference internal image-reference" href="_images/banner.png"><img alt="_images/banner.png" src="_images/banner.png" style="width: 800px;" />
 </a>
 </figure>
-<p>Pri návrhu vlastných konštrukcií často potrebujeme upraviť a modifikovať štandardné diely alebo vytvárať nové diely. Je zrejmé, že nie je možné vytvoriť univerzálny katalóg dielov, možnosti stavebnice <em>Stemfie-X</em> sú rozsiahle, a je preto vhodnejšie požadované diely a ich varianty vytvoriť “na mieru” pomocou programu v jazyku <em>Python</em> a knižnicu <em>Stemfie-X</em>.</p>
-<p>Knižnicu <em>Stemfie-X</em> tvorí sada tried implementovaná pomocou knižnice <em>CadQuery</em>. Diely stavebnice je možné vytvárať v jednom kroku volaním funkcií s parametrami dielov, nové diely je možné tvoriť z iných dielov pomocou jednoduchých logických operácií (prienik, rozdiel, zjednotenie). Pre generovanie štandardných ako aj odvodených dielov stavebnice postačujú triedy knižnice <em>Stemfie-X</em>, pokročílí uživatelia ale môžu využiť všetky možnosti knižnice <a class="reference external" href="https://cadquery.readthedocs.io/en/latest/">CadQuery</a> a jazyka <em>Python</em>.</p>
-<section id="vytvaranie-objektov">
-<h2><font color='purple'> Vytváranie objektov </font><a class="headerlink" href="#vytvaranie-objektov" title="Link to this heading">#</a></h2>
-<p>Pre generovanie podkladov pre 3D tlač štandardných komponentov je potrebné importovať knižnicu <code class="docutils literal notranslate"><span class="pre">lib</span></code> a vygenerovať želaný komponent vytvorením objektu danej triedy.</p>
+<p>Knižnicu <em>STEMFIE-X</em> tvorí sada tried implementovaná pomocou knižnice <em><a class="reference external" href="https://cadquery.readthedocs.io/en/latest/">CadQuery</a></em>. Diely stavebnice je možné vytvárať v jednom kroku volaním funkcií s parametrami dielov, nové diely je možné tvoriť z iných dielov pomocou jednoduchých logických operácií (prienik, rozdiel, zjednotenie). Pre vytváranie štandardných ako aj odvodených dielov stavebnice postačujú triedy knižnice <em>STEMFIE-X</em>, pokročílí uživatelia ale môžu využiť všetky možnosti knižnice <em><a class="reference external" href="https://cadquery.readthedocs.io/en/latest/">CadQuery</a></em> a jazyka <em>Python</em>.</p>
+<section id="vytvaranie-komponentov">
+<h2><font color='purple'> Vytváranie komponentov </font><a class="headerlink" href="#vytvaranie-komponentov" title="Link to this heading">#</a></h2>
+<p>Pre generovanie podkladov pre 3D tlač štandardných komponentov je potrebné v programe importovať knižnicu <a class="reference download internal" download="" href="_downloads/c7758403c3488bb679c27b0e286e55f6/lib.zip"><span class="xref download myst">lib</span></a> a vygenerovať želaný komponent vytvorením objektu danej triedy.</p>
 <div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-number">Listing 2. </span><span class="caption-text">Vytváranie objektov</span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 2. </span><span class="caption-text">Vytvorenie komponentu stavebnice</span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">lib</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>           <span class="c1"># import kniznice</span>
 <span class="n">b1</span> <span class="o">=</span> <span class="n">Brace</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>               <span class="c1"># vytvorenie noveho komponentu - spojky o velkosti 5 BU</span>
 <span class="n">b1</span><span class="o">.</span><span class="n">export_step</span><span class="p">(</span><span class="n">b1</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>     <span class="c1"># export spojky vo formate step pre 3D tlac</span>
@@ -379,14 +378,20 @@
 <h2><font color='purple'> Transformácie objektov </font><a class="headerlink" href="#transformacie-objektov" title="Link to this heading">#</a></h2>
 <p>Pri vytváraní nových komponentov stavebnice alebo tvorbe zostáv potrebujeme s objektami manipulovať v 3D priestore. Metódy triedy <em>Stemfie_X</em> pre manipuláciu s objektami sú zjednodušenou formou operácií z knižnice <em>CadQuery</em>. Všeobecný formát transformácií  má tvar</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>object = object.operation( &lt;param ...&gt; )
+
+b1 = Brace(5)           # vytvoreny novy komponent
+b1.BU_Tx(3)             # operacia posunu - v smere osi X o vdialenost 3*BU
 </pre></div>
 </div>
 <p>Každá transformáciu vracia referenciu na transformovaný objekt, takže je možné transformácie reťaziť</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>objec = object.operation_1(&lt;param ...&gt;).operation_2(&lt;param&gt;)  ... 
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>object = object.operation_1(&lt;param ...&gt;).operation_2(&lt;param&gt;)  ... 
+
+b1.BU_Tz(1).Rx(45)      # posun a nasledna rotacia objektu
 </pre></div>
 </div>
-<section id="linearny-posun">
-<h3><font color='brown'> Lineárny posun </font><a class="headerlink" href="#linearny-posun" title="Link to this heading">#</a></h3>
+<p>Operácie s prefixom <em>BU_</em> pracujú s jednotkami <em>BU</em>, bez prefixu s dĺžkovými jednotkami v mm alebo pri rotáciách v stupňoch.</p>
+<section id="operacie-linearneho-posunu">
+<h3><font color='brown'> Operácie lineárneho posunu </font><a class="headerlink" href="#operacie-linearneho-posunu" title="Link to this heading">#</a></h3>
 <p>Posuny objektu v smeroch osí súradnicovej sústavy</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>BU_Tx(n)                      # posun objektu v smere x,y,z v jednotkách BU 
 BU_Ty(n)
@@ -405,18 +410,18 @@ T([x,y,z])     T(x,y,z)      # všeobecný posun v [mm]
 </pre></div>
 </div>
 </section>
-<section id="rotacia">
-<h3><font color='brown'> Rotácia </font><a class="headerlink" href="#rotacia" title="Link to this heading">#</a></h3>
-<p>Rotácie objektu okolo osí súradnicivej sústavy. Veľkosť uhla je v stupňoch.</p>
+<section id="operacie-rotacie">
+<h3><font color='brown'> Operácie rotácie </font><a class="headerlink" href="#operacie-rotacie" title="Link to this heading">#</a></h3>
+<p>Rotácie objektu okolo osí súradnicovej sústavy. Veľkosť uhla <em>angle</em> je v stupňoch.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Rx(angle)
 Ry(angle)
 Rz(angle)
 </pre></div>
 </div>
 </section>
-<section id="zrkadlenie">
-<h3><font color='brown'>  Zrkadlenie </font><a class="headerlink" href="#zrkadlenie" title="Link to this heading">#</a></h3>
-<p>Zrkadlenie objektu podľa osí súradnicivej sústavy.</p>
+<section id="operacie-zrkadlenia">
+<h3><font color='brown'> Operácie zrkadlenia </font><a class="headerlink" href="#operacie-zrkadlenia" title="Link to this heading">#</a></h3>
+<p>V prípade potreby vutvárania symetrických objekton môžeme využiť operácie zrkadlenie objektu podľa osí súradnicovej sústavy. Pri zrkadlení môžeme pôvodný obket zachovať a vytvoriť jeho novú kópiu.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Mx()       # zrkadlenie objektu
 My()
 Mz()
@@ -429,7 +434,7 @@ MKz()
 </section>
 <section id="logicke-operacie">
 <h3><font color='brown'>  Logické operácie </font><a class="headerlink" href="#logicke-operacie" title="Link to this heading">#</a></h3>
-<p>Pre vytváranie zložených objektov sú definované základné logické operácie - zjednotenie, rozdiel a prienik.</p>
+<p>Pre vytváranie zložených objektov sú definované základné logické operácie - zjednotenie, rozdiel a prienik. Výsledkom logickej operácie je objekt obsahujúci argument logickej operácie, napríklad výsledkom zjednotenia dvoch objektov je jeden objekt. Arguementom logických operácií môže byť jeden objekt alebo viacero objektov, ktoré sú položkami zoznamu.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>U(c)   U([c1,c2 ...])     union
 D(c)   D([c1,c2 ...])     difference
 I(c)   I([c1,c2 ...])     intersection  
@@ -447,6 +452,7 @@ I(c)   I([c1,c2 ...])     intersection
 <span class="n">c2</span> <span class="o">=</span> <span class="n">c1</span><span class="o">.</span><span class="n">MKy</span><span class="p">()</span>                       <span class="c1"># vytvorenie druheho valca zrkadlenim v osi Y s kopiou</span>
 
 <span class="n">b1</span><span class="o">.</span><span class="n">U</span><span class="p">([</span><span class="n">c1</span><span class="p">,</span><span class="n">c2</span><span class="p">])</span>                       <span class="c1"># zjednotenie objektov</span>
+<span class="n">b1</span><span class="o">.</span><span class="n">export_step</span><span class="p">(</span><span class="s1">&#39;part_b1&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -459,30 +465,33 @@ I(c)   I([c1,c2 ...])     intersection
 </figure>
 </section>
 </section>
-<section id="export-objektov">
-<h2><font color='purple'> Export objektov </font><a class="headerlink" href="#export-objektov" title="Link to this heading">#</a></h2>
-<p>Export objektov do súborov typu <em>.step</em> alebo <em>.stl</em> pre generovanie podkladov pre 3D tlač je pomocou funkcií</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>object.export_step(file_name)
-object.export_stl(file_name)
+<section id="export-komponentov">
+<h2><font color='purple'> Export komponentov </font><a class="headerlink" href="#export-komponentov" title="Link to this heading">#</a></h2>
+<p>Export komponentov stavebnice do súborov typu <em>.step</em> alebo <em>.stl</em> pre generovanie podkladov pre 3D tlač je pomocou funkcií</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>object.export_step(file_name)   # export vo formate STEP  
+object.export_stl(file_name)    # export vo formate STL
 
-  file_name - textový reťazec (string), bez prípony
+    object    - vytvoreny komponent
+    file_name - textový reťazec (string), bez prípony
 </pre></div>
 </div>
 <p>Náhlad objektu vo formáte <em>.png</em> vygenerujeme pomocou funkcie</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>convert_to_image(object, file_name, ax, ay, az)
 
-  object    - vygenerovaný stemfie komponent
-  file_name - textový reťazec (string), bez prípony
-  ax,ay,az  - poloha view-pointu pre náhlad na objekt
+    object    - vytvoreny komponent
+    file_name - meno grafického súboru, textový reťazec (string), bez prípony
+    ax,ay,az  - poloha view-pointu pre náhlad na objekt
 </pre></div>
 </div>
-<p>Nasledujúci programu ukazuje použitie funkcií pre export objektov</p>
+<p>Nasledujúci programu ukazuje použitie funkcií pre export komponentov</p>
 <div class="literal-block-wrapper docutils container" id="id4">
 <div class="code-block-caption"><span class="caption-number">Listing 4. </span><span class="caption-text">Export objektov</span><a class="headerlink" href="#id4" title="Link to this code">#</a></div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">b1</span><span class="o">.</span><span class="n">export_step</span><span class="p">(</span><span class="s1">&#39;brace_B_05&#39;</span><span class="p">)</span>
-<span class="n">q1</span><span class="o">.</span><span class="n">export_stl</span><span class="p">(</span><span class="s1">&#39;beam_B_12_03_03_111&#39;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">lib</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>              <span class="c1"># import kniznice</span>
+<span class="n">b1</span> <span class="o">=</span> <span class="n">Brace</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>                  <span class="c1"># vytvorenie komponentu</span>
+<span class="n">b1</span><span class="o">.</span><span class="n">export_step</span><span class="p">(</span><span class="n">b1</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>        <span class="c1"># export komponentu s automaticky generovanym menom</span>
 
-<span class="n">convert_to_image</span><span class="p">(</span><span class="n">w2</span><span class="p">,</span> <span class="s1">&#39;wheel&#39;</span><span class="p">)</span>
+                            
+<span class="n">convert_to_image</span><span class="p">(</span><span class="n">b1</span><span class="p">,</span> <span class="n">b1</span><span class="p">,</span><span class="n">name</span><span class="p">)</span>  <span class="c1"># vyvorenie png obrazku s nahladom komponentu</span>
 </pre></div>
 </div>
 </div>
@@ -536,16 +545,16 @@ object.export_stl(file_name)
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vytvaranie-objektov"><font color="purple"> Vytváranie objektov </font></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vytvaranie-komponentov"><font color="purple"> Vytváranie komponentov </font></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformacie-objektov"><font color="purple"> Transformácie objektov </font></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linearny-posun"><font color="brown"> Lineárny posun </font></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rotacia"><font color="brown"> Rotácia </font></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zrkadlenie"><font color="brown">  Zrkadlenie </font></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operacie-linearneho-posunu"><font color="brown"> Operácie lineárneho posunu </font></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operacie-rotacie"><font color="brown"> Operácie rotácie </font></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operacie-zrkadlenia"><font color="brown"> Operácie zrkadlenia </font></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logicke-operacie"><font color="brown">  Logické operácie </font></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#priklad"><font color="brown">  Príklad </font></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#export-objektov"><font color="purple"> Export objektov </font></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#export-komponentov"><font color="purple"> Export komponentov </font></a></li>
 </ul>
   </nav></div>
 

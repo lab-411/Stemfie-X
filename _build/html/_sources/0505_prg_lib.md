@@ -18,18 +18,19 @@ kernelspec:
 :name: prg_100
 ```
 
-Pri návrhu vlastných konštrukcií často potrebujeme upraviť a modifikovať štandardné diely alebo vytvárať nové diely. Je zrejmé, že nie je možné vytvoriť univerzálny katalóg dielov, možnosti stavebnice *Stemfie-X* sú rozsiahle, a je preto vhodnejšie požadované diely a ich varianty vytvoriť "na mieru" pomocou programu v jazyku *Python* a knižnicu *Stemfie-X*. 
+% Pri návrhu vlastných konštrukcií často potrebujeme upraviť a modifikovať štandardné diely alebo vytvárať nové diely. Je zrejmé, že nie je možné vytvoriť 
+% univerzálny katalóg dielov, možnosti stavebnice *STEMFIE-X* sú rozsiahle, a je preto vhodnejšie požadované diely a ich varianty vytvoriť v prípade potreby % "na mieru" pomocou programu v jazyku *Python* a knižnicu *STEMFIE-X*. 
 
-Knižnicu *Stemfie-X* tvorí sada tried implementovaná pomocou knižnice *CadQuery*. Diely stavebnice je možné vytvárať v jednom kroku volaním funkcií s parametrami dielov, nové diely je možné tvoriť z iných dielov pomocou jednoduchých logických operácií (prienik, rozdiel, zjednotenie). Pre generovanie štandardných ako aj odvodených dielov stavebnice postačujú triedy knižnice *Stemfie-X*, pokročílí uživatelia ale môžu využiť všetky možnosti knižnice [CadQuery](https://cadquery.readthedocs.io/en/latest/) a jazyka *Python*. 
+Knižnicu *STEMFIE-X* tvorí sada tried implementovaná pomocou knižnice *[CadQuery](https://cadquery.readthedocs.io/en/latest/)*. Diely stavebnice je možné vytvárať v jednom kroku volaním funkcií s parametrami dielov, nové diely je možné tvoriť z iných dielov pomocou jednoduchých logických operácií (prienik, rozdiel, zjednotenie). Pre vytváranie štandardných ako aj odvodených dielov stavebnice postačujú triedy knižnice *STEMFIE-X*, pokročílí uživatelia ale môžu využiť všetky možnosti knižnice *[CadQuery](https://cadquery.readthedocs.io/en/latest/)* a jazyka *Python*. 
 
 
 
-## <font color='purple'> Vytváranie objektov </font>
+## <font color='purple'> Vytváranie komponentov </font>
 
-Pre generovanie podkladov pre 3D tlač štandardných komponentov je potrebné importovať knižnicu `lib` a vygenerovať želaný komponent vytvorením objektu danej triedy.
+Pre generovanie podkladov pre 3D tlač štandardných komponentov je potrebné v programe importovať knižnicu [lib](./lib/lib.zip) a vygenerovať želaný komponent vytvorením objektu danej triedy.
 
 ```{code-block} python
-:caption: Vytváranie objektov
+:caption: Vytvorenie komponentu stavebnice
 from lib import *           # import kniznice
 b1 = Brace(5)               # vytvorenie noveho komponentu - spojky o velkosti 5 BU
 b1.export_step(b1.name)     # export spojky vo formate step pre 3D tlac
@@ -40,13 +41,20 @@ b1.export_step(b1.name)     # export spojky vo formate step pre 3D tlac
 Pri vytváraní nových komponentov stavebnice alebo tvorbe zostáv potrebujeme s objektami manipulovať v 3D priestore. Metódy triedy *Stemfie_X* pre manipuláciu s objektami sú zjednodušenou formou operácií z knižnice *CadQuery*. Všeobecný formát transformácií  má tvar
 
     object = object.operation( <param ...> )
+    
+    b1 = Brace(5)           # vytvoreny novy komponent
+    b1.BU_Tx(3)             # operacia posunu - v smere osi X o vdialenost 3*BU
 
 Každá transformáciu vracia referenciu na transformovaný objekt, takže je možné transformácie reťaziť
 
-    objec = object.operation_1(<param ...>).operation_2(<param>)  ... 
+    object = object.operation_1(<param ...>).operation_2(<param>)  ... 
+    
+    b1.BU_Tz(1).Rx(45)      # posun a nasledna rotacia objektu
+    
+Operácie s prefixom *BU_* pracujú s jednotkami *BU*, bez prefixu s dĺžkovými jednotkami v mm alebo pri rotáciách v stupňoch.
 
 
-### <font color='brown'> Lineárny posun </font>
+### <font color='brown'> Operácie lineárneho posunu </font>
 
 Posuny objektu v smeroch osí súradnicovej sústavy
 
@@ -66,17 +74,17 @@ Posuny objektu v smeroch osí súradnicovej sústavy
     T([x,y,z])     T(x,y,z)      # všeobecný posun v [mm]
     
   
-### <font color='brown'> Rotácia </font>
+### <font color='brown'> Operácie rotácie </font>
 
-Rotácie objektu okolo osí súradnicivej sústavy. Veľkosť uhla je v stupňoch.
+Rotácie objektu okolo osí súradnicovej sústavy. Veľkosť uhla *angle* je v stupňoch.
 
     Rx(angle)
     Ry(angle)
     Rz(angle)
 
-### <font color='brown'>  Zrkadlenie </font> 
+### <font color='brown'> Operácie zrkadlenia </font> 
 
-Zrkadlenie objektu podľa osí súradnicivej sústavy.
+V prípade potreby vutvárania symetrických objekton môžeme využiť operácie zrkadlenie objektu podľa osí súradnicovej sústavy. Pri zrkadlení môžeme pôvodný obket zachovať a vytvoriť jeho novú kópiu.
 
     Mx()       # zrkadlenie objektu
     My()
@@ -88,7 +96,7 @@ Zrkadlenie objektu podľa osí súradnicivej sústavy.
 
 ### <font color='brown'>  Logické operácie </font>
 
-Pre vytváranie zložených objektov sú definované základné logické operácie - zjednotenie, rozdiel a prienik. 
+Pre vytváranie zložených objektov sú definované základné logické operácie - zjednotenie, rozdiel a prienik. Výsledkom logickej operácie je objekt obsahujúci argument logickej operácie, napríklad výsledkom zjednotenia dvoch objektov je jeden objekt. Arguementom logických operácií môže byť jeden objekt alebo viacero objektov, ktoré sú položkami zoznamu.
 
     U(c)   U([c1,c2 ...])     union
     D(c)   D([c1,c2 ...])     difference
@@ -107,6 +115,7 @@ c1=  c1.BU_Tx(3+1/2)                # presun valca na konec spojky
 c2 = c1.MKy()                       # vytvorenie druheho valca zrkadlenim v osi Y s kopiou
 
 b1.U([c1,c2])                       # zjednotenie objektov
+b1.export_step('part_b1')
 ```
 
 
@@ -116,30 +125,33 @@ b1.U([c1,c2])                       # zjednotenie objektov
 Vygenerovaný zložený objekt.
 ```
 
-## <font color='purple'> Export objektov </font>
+## <font color='purple'> Export komponentov </font>
 
-Export objektov do súborov typu *.step* alebo *.stl* pre generovanie podkladov pre 3D tlač je pomocou funkcií 
+Export komponentov stavebnice do súborov typu *.step* alebo *.stl* pre generovanie podkladov pre 3D tlač je pomocou funkcií 
 
-    object.export_step(file_name)
-    object.export_stl(file_name)
+    object.export_step(file_name)   # export vo formate STEP  
+    object.export_stl(file_name)    # export vo formate STL
     
-      file_name - textový reťazec (string), bez prípony
+        object    - vytvoreny komponent
+        file_name - textový reťazec (string), bez prípony
 
 Náhlad objektu vo formáte *.png* vygenerujeme pomocou funkcie 
 
     convert_to_image(object, file_name, ax, ay, az)
     
-      object    - vygenerovaný stemfie komponent
-      file_name - textový reťazec (string), bez prípony
-      ax,ay,az  - poloha view-pointu pre náhlad na objekt
+        object    - vytvoreny komponent
+        file_name - meno grafického súboru, textový reťazec (string), bez prípony
+        ax,ay,az  - poloha view-pointu pre náhlad na objekt
     
-Nasledujúci programu ukazuje použitie funkcií pre export objektov
+Nasledujúci programu ukazuje použitie funkcií pre export komponentov
 
 ```{code-block} python
 :caption: Export objektov
 
-b1.export_step('brace_B_05')
-q1.export_stl('beam_B_12_03_03_111')
+from lib import *              # import kniznice
+b1 = Brace(5)                  # vytvorenie komponentu
+b1.export_step(b1.name)        # export komponentu s automaticky generovanym menom
 
-convert_to_image(w2, 'wheel')
+                            
+convert_to_image(b1, b1,name)  # vyvorenie png obrazku s nahladom komponentu
 ```
