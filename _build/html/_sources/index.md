@@ -57,7 +57,6 @@
 1020_prj_spirograf.md
 ```
 
-
 ```{toctree}
 :titlesonly: True
 :caption: Prílohy
@@ -80,12 +79,18 @@ Vydalo vydavateľstvo *LAB-411 Production* v roku 2026.
 Publikované na platforme *Sphinx* s využitím jazyka *MyST Markdown*, programovacieho jazyka *Python* a knižnice *CadQuery*. Zdrojové kódy sú dostupné na 
 
     https://github.com/lab-411/Stemfie-X
+    
+## <font color='purple'> Preklady / Translations </font>
+
+Preklady do iných jazykov sú možné v zmysle licencie MIT uvedenej nižšie. V zmysle nariadenia Európskeho parlamentu a Rady (EÚ) 2024/1689 z 13. júna 2024 autori tohoto diela **nepovolujú** využitie tohoto diela a ani jeho častí pre použitie v oblasti umelej inteligenice žiadnym aktuálnym ako aj budúcim spôsobom. 
+
+Translations into other languages ​​are possible under the terms of the MIT license listed below. In accordance with Regulation (EU) 2024/1689 of the European Parliament and of the Council of 13 June 2024, the authors of this work **do not** authorize the use of this work or any part of it for use in the field of artificial intelligence in any current or future manner.
 
 
-## <font color='purple'> Citovanie </font>
+## <font color='purple'> Citovanie publikácie </font>
 
 
-## <font color='purple'>  Licencie </font>   
+## <font color='purple'>  Licencie a citácie zdrojov </font>   
 
 Publikácia **Stemfie-X** je vydaná pod licenciou MIT
 
@@ -107,6 +112,11 @@ Publikácia **Stemfie-X** je vydaná pod licenciou MIT
     HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF 
     CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
     OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+    
+Licencia k **STEMFIE Construction Set**
+
+    STEMFIE Licensing Terms
+    https://stemfie.org/license
 
 
 Licencia k distribúcii programu **Sphinx**
