@@ -34,7 +34,7 @@ Model pozostáva z ramena, kabíny a podvozku. Samostatne zložíme rameno a pod
 
 ### <font color='brown'> Rameno žeriavu </font>
 
-Pre montážou kladku, podperu ramena a podstavu nasadeníme tesnena hriadele o dĺžke 16mm, samotné hriadele sa v nosníkoch ramena majú otáčať voľne. V prípade potreby mierne upravíme veľkosti otvorov v ramenách ihlovým pilníkom.  
+Pre montážou kladku, podperu ramena a podstavu nasadeníme tesne na hriadele o dĺžke 16mm. Otvory v dieloch sú upravené pre požitie hriadeľov, samotné hriadele sa v nosníkoch ramena majú otáčať voľne. V prípade potreby upravte veľkosti otvorov v ramenách ihlovým pilníkom.  
 
 
 ````{subfigure} AB

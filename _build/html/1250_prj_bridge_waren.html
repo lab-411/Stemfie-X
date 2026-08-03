@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Most Warren &#8212; Stemfie-X 0.2 documentation</title>
+    <title>Konštrukcie mostov &#8212; Stemfie-X 0.2 documentation</title>
   
   
   
@@ -32,7 +32,7 @@
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
@@ -55,6 +55,8 @@
     <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '1250_prj_bridge_waren';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -180,7 +182,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Projekty</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#"><font color="navy"> Most Warren  </font></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><font color="navy"> Konštrukcie mostov  </font></a></li>
 <li class="toctree-l1"><a class="reference internal" href="1020_prj_spirograf.html"><font color="navy"> Spirograf  </font></a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Prílohy</span></p>
@@ -324,7 +326,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><font color='navy'> Most Warren  </font></h1>
+    <h1><font color='navy'> Konštrukcie mostov  </font></h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -334,9 +336,11 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navrh-dielov"><font color="purple"> Návrh dielov  </font></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diely"><font color="purple"> Diely </font></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#konstrukcie-mostov"><font color="purple"> Konštrukcie mostov </font></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navrh-mostu-typu-warren"><font color="purple"> Návrh mostu typu Warren  </font></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#navrh-modifikovanych-dielov"><font color="brown"> Návrh modifikovaných dielov  </font></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zostava-a-diely"><font color="brown"> Zostava a diely </font></a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -348,36 +352,82 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="most-warren">
-<h1><font color='navy'> Most Warren  </font><a class="headerlink" href="#most-warren" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="konstrukcie-mostov">
+<h1><font color='navy'> Konštrukcie mostov  </font><a class="headerlink" href="#konstrukcie-mostov" title="Link to this heading">#</a></h1>
 <figure class="align-default" id="exam-001">
 <a class="reference internal image-reference" href="_images/banner.png"><img alt="_images/banner.png" src="_images/banner.png" style="width: 800px;" />
 </a>
 </figure>
-<p>Pr model priehradového mostu typu Warren potrebujeme okrem štandardných dielov z knižnice vygenerovať upravené komponenty, ktoré vyplývajú z geometrie konštrukcie.</p>
-<figure class="align-default" id="exam-004">
-<a class="reference internal image-reference" href="_images/most_05.png"><img alt="_images/most_05.png" src="_images/most_05.png" style="width: 700px;" />
-</a>
-<figcaption>
-<p><span class="caption-number">Obr. 51 </span><span class="caption-text">Priehradový most s nosníkmi typu <a class="reference external" href="https://en.wikipedia.org/wiki/Warren_truss">Warren</a></span><a class="headerlink" href="#exam-004" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<section id="navrh-dielov">
-<h2><font color='purple'> Návrh dielov  </font><a class="headerlink" href="#navrh-dielov" title="Link to this heading">#</a></h2>
-</section>
-<section id="diely">
-<h2><font color='purple'> Diely </font><a class="headerlink" href="#diely" title="Link to this heading">#</a></h2>
-</section>
-<section id="konstrukcie-mostov">
-<h2><font color='purple'> Konštrukcie mostov </font><a class="headerlink" href="#konstrukcie-mostov" title="Link to this heading">#</a></h2>
-<p>Na základe uvedeného postupu si môžete vytvoriť vlastné návrhy mostov podľa dostupných fotografií alebo nákresov.</p>
+<p>Stavebné inžinierstvo pozná niekoľko základných konfigurácií priehradových mostných konštrukcií. S využitím štandardných ako aj modifikovaných dielov si môžete vytvoriť most podľa Vašich predstáv a preskúmať vlastnosti konštrukcie.</p>
 <figure class="align-default" id="exam-005">
 <a class="reference internal image-reference" href="_images/mosty.gif"><img alt="_images/mosty.gif" src="_images/mosty.gif" style="width: 700px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Obr. 52 </span><span class="caption-text">Typy priehradových mostov.</span><a class="headerlink" href="#exam-005" title="Link to this image">#</a></p>
+<p><span class="caption-number">Obr. 51 </span><span class="caption-text">Typy priehradových mostov.</span><a class="headerlink" href="#exam-005" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
+<section id="navrh-mostu-typu-warren">
+<h2><font color='purple'> Návrh mostu typu Warren  </font><a class="headerlink" href="#navrh-mostu-typu-warren" title="Link to this heading">#</a></h2>
+<p>Pre model priehradového mostu typu Warren potrebujeme okrem štandardných dielov z knižnice vygenerovať upravené komponenty, ktoré vyplývajú z geometrie konštrukcie. Most je možné zostaviť zo štandardných dielov, jediným špecifickým dielom je šikmá výztuha.</p>
+<figure class="align-default" id="exam-004">
+<a class="reference internal image-reference" href="_images/most_05.png"><img alt="_images/most_05.png" src="_images/most_05.png" style="width: 700px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Obr. 52 </span><span class="caption-text">Model priehradového mostu s nosníkmi typu <a class="reference external" href="https://en.wikipedia.org/wiki/Warren_truss">Warren</a></span><a class="headerlink" href="#exam-004" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="navrh-modifikovanych-dielov">
+<h3><font color='brown'> Návrh modifikovaných dielov  </font><a class="headerlink" href="#navrh-modifikovanych-dielov" title="Link to this heading">#</a></h3>
+<p>Vzdialenosť otvorov pre šikmú výztuhu nie je celočíselným násobkom <strong>BU</strong>,</p>
+<div class="math notranslate nohighlight">
+\[
+L=\sqrt{70^2 + 70^2} = 98.99
+\]</div>
+<p>a je približne o 1 mm kratšia ako je dĺžka štandardnej spojky.</p>
+<figure class="align-default" id="exam-1250b">
+<a class="reference internal image-reference" href="_images/vypocet_view.png"><img alt="_images/vypocet_view.png" src="_images/vypocet_view.png" style="width: 350px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Obr. 53 </span><span class="caption-text">Dĺžka šikmej výztuhy (všetky miery v mm).</span><a class="headerlink" href="#exam-1250b" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Pre spojenie dielov preto použijeme spojku so štrbinou, z dôvodu jednoduchosti a zámennosti použijeme štrbiny na oboch koncoch spojky. Z obrázku je zrejmý presah štrbiny nad montážnym otvorom.</p>
+<figure class="align-default" id="exam-1250c">
+<a class="reference internal image-reference" href="_images/vypocet_zostava.png"><img alt="_images/vypocet_zostava.png" src="_images/vypocet_zostava.png" style="width: 330px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Obr. 54 </span><span class="caption-text">Zostava so šikmou výztuhou…</span><a class="headerlink" href="#exam-1250c" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-number">Listing 18. </span><span class="caption-text">Konštrukcia šikmej výztuhy.</span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">lib</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="n">b6</span> <span class="o">=</span> <span class="n">Brace</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">h2</span> <span class="o">=</span> <span class="n">Hole_Slot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">h3</span> <span class="o">=</span> <span class="n">Hole_Slot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">BU_Tx</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+<span class="n">b6</span><span class="o">.</span><span class="n">D</span><span class="p">([</span><span class="n">h2</span><span class="p">,</span><span class="n">h3</span><span class="p">])</span>
+<span class="n">b6</span><span class="o">.</span><span class="n">export_step</span><span class="p">(</span><span class="s1">&#39;../parts/brace_B_11_07_02&#39;</span><span class="p">)</span>  
+</pre></div>
+</div>
+</div>
+<figure class="align-default" id="id2">
+<a class="reference internal image-reference" href="_images/brace_b6.png"><img alt="_images/brace_b6.png" src="_images/brace_b6.png" style="width: 300px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Obr. 55 </span><span class="caption-text">Šikmá výstuha</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="zostava-a-diely">
+<h3><font color='brown'> Zostava a diely </font><a class="headerlink" href="#zostava-a-diely" title="Link to this heading">#</a></h3>
+<figure class="align-default" id="exam-1250a">
+<a class="reference internal image-reference" href="_images/zostava.png"><img alt="_images/zostava.png" src="_images/zostava.png" style="width: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Obr. 56 </span><span class="caption-text">Zostava segmentu mostu.</span><a class="headerlink" href="#exam-1250a" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
 </section>
 </section>
 
@@ -428,9 +478,11 @@
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navrh-dielov"><font color="purple"> Návrh dielov  </font></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diely"><font color="purple"> Diely </font></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#konstrukcie-mostov"><font color="purple"> Konštrukcie mostov </font></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navrh-mostu-typu-warren"><font color="purple"> Návrh mostu typu Warren  </font></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#navrh-modifikovanych-dielov"><font color="brown"> Návrh modifikovaných dielov  </font></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zostava-a-diely"><font color="brown"> Zostava a diely </font></a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
