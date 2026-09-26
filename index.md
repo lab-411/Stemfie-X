@@ -3,8 +3,9 @@
 :width: 800px 
 ```
 <center> 
+<h3> <font color='brown'>  <b> Peter Fabo </b> </font> </h3>
 <h3> <font color='brown'>  <b> LAB-411 Production </b> </font> </h3>
-<h3> <font color='brown'>  <b> Verzia 0.16 / Júl 2026 </b> </font>                   </h3>
+<h3> <font color='brown'>  <b> Verzia 0.18 / September 2026 </b> </font>                   </h3>
 </center> 
 
 
@@ -29,6 +30,7 @@
 0210_exm_bridge.md
 0220_exm_maly_mlyn.md
 0215_exm_small_crane.md
+0225_exm_maly_nakladac.md
 ```
 
 %```{toctree}
