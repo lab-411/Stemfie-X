@@ -11,14 +11,14 @@ kernelspec:
   language: python
   name: python3
 ---
-# <font color='navy'> Otvory  </font>
+# <font color='navy'> Montážne otvory  </font>
 
 ```{figure} ./img/banner.png
 :width: 800px
 :name: holes_201
 ```
 
-Pre vytváranie montážnych dier, štrbín a drážok je v *Stemfie-X* vytvorená trieda *Hole*. Táto generuje pomocné objekty, ktoré sú potom od vopred vytvorených dielov odčítané pomocou logickéj operácie *diffrence* `D()`. Štrbinu využívame aj pri konštrukciách, kde pri dieloch pod uhlom sa montážny otvor nenachádza v rastri **BU**. Princíp tvorby otvorov je zrejmý z nasledujúceho obrázku.
+Pre vytváranie montážnych dier, štrbín a drážok je v *Stemfie-X* vytvorená trieda *Hole*. Táto generuje pomocné objekty, ktoré sú potom od vopred vytvorených dielov odčítané pomocou logickéj operácie *Difference* `D()`. Štrbinu využívame aj pri konštrukciách, kde pri dieloch pod uhlom sa montážny otvor nenachádza v rastri **BU**. Princíp tvorby otvorov je zrejmý z nasledujúceho obrázku.
 
 ```{figure} ./img/hole_build.png
 :width: 500px

@@ -18,14 +18,11 @@ kernelspec:
 :name: prg_100
 ```
 
-% Pri návrhu vlastných konštrukcií často potrebujeme upraviť a modifikovať štandardné diely alebo vytvárať nové diely. Je zrejmé, že nie je možné vytvoriť 
-% univerzálny katalóg dielov, možnosti stavebnice *STEMFIE-X* sú rozsiahle, a je preto vhodnejšie požadované diely a ich varianty vytvoriť v prípade potreby % "na mieru" pomocou programu v jazyku *Python* a knižnicu *STEMFIE-X*. 
-
-Knižnicu *STEMFIE-X* tvorí sada tried implementovaná pomocou knižnice *[CadQuery](https://cadquery.readthedocs.io/en/latest/)*. Diely stavebnice je možné vytvárať v jednom kroku volaním funkcií s parametrami dielov, nové diely je možné tvoriť z iných dielov pomocou jednoduchých logických operácií (prienik, rozdiel, zjednotenie). Pre vytváranie štandardných ako aj odvodených dielov stavebnice postačujú triedy knižnice *STEMFIE-X*, pokročílí uživatelia ale môžu využiť všetky možnosti knižnice *[CadQuery](https://cadquery.readthedocs.io/en/latest/)* a jazyka *Python*. 
-
-
+Pri návrhu vlastných konštrukcií často potrebujeme upraviť a modifikovať štandardné diely z katalógu alebo vytvárať nové diely podľa vlastného návrhu. Možnosť tvorby vlastných dielov a konštrukcií podľa vlastného návrhu je základnou ideou stavebnice *STEMFIE-X*. Návrh dielov sa vytvára pomocou skriptov v programovacom jazyku *Python* pomocou knižnice *STEMFIE-X*, ktorá obsahuje postupy pre tvorbu základných typov dielov a operácie pre ich manipuláciu. Komplikovanejšie diely sa vytvárajú zo základných typov pomocou ich modifikácií a úprav.   
 
 ## <font color='purple'> Vytváranie komponentov </font>
+
+Knižnicu *STEMFIE-X* tvorí sada tried v programovacom jazyku *Python* implementovaná pomocou knižnice *[CadQuery](https://cadquery.readthedocs.io/en/latest/)*. Vlastné diely stavebnice je možné vytvárať programom jednoducho v jednom kroku volaním funkcií s parametrami dielov, nové diely je možné tvoriť z iných dielov pomocou jednoduchých logických operácií (prienik, rozdiel, zjednotenie). Pre vytváranie štandardných ako aj odvodených dielov stavebnice postačujú triedy knižnice *STEMFIE-X*, pokročílí uživatelia ale môžu využiť všetky možnosti knižnice *[CadQuery](https://cadquery.readthedocs.io/en/latest/)* a jazyka *Python*. 
 
 Pre generovanie podkladov pre 3D tlač štandardných komponentov je potrebné v programe importovať knižnicu [lib](./lib/lib.zip) a vygenerovať želaný komponent vytvorením objektu danej triedy.
 
@@ -84,7 +81,7 @@ Rotácie objektu okolo osí súradnicovej sústavy. Veľkosť uhla *angle* je v 
 
 ### <font color='brown'> Operácie zrkadlenia </font> 
 
-V prípade potreby vutvárania symetrických objekton môžeme využiť operácie zrkadlenie objektu podľa osí súradnicovej sústavy. Pri zrkadlení môžeme pôvodný obket zachovať a vytvoriť jeho novú kópiu.
+V prípade potreby vytvárania symetrických objektov a konštrukcií môžeme využiť operácie zrkadlenie objektu podľa osí súradnicovej sústavy. Pri zrkadlení môžeme pôvodný objekt zachovať a vytvoriť jeho novú kópiu.
 
     Mx()       # zrkadlenie objektu
     My()
@@ -96,13 +93,15 @@ V prípade potreby vutvárania symetrických objekton môžeme využiť operáci
 
 ### <font color='brown'>  Logické operácie </font>
 
-Pre vytváranie zložených objektov sú definované základné logické operácie - zjednotenie, rozdiel a prienik. Výsledkom logickej operácie je objekt obsahujúci argument logickej operácie, napríklad výsledkom zjednotenia dvoch objektov je jeden objekt. Arguementom logických operácií môže byť jeden objekt alebo viacero objektov, ktoré sú položkami zoznamu.
+Pre vytváranie zložených objektov sú definované základné logické operácie - zjednotenie (union), rozdiel (difference) a prienik (intersection). Výsledkom logickej operácie je objekt obsahujúci argument logickej operácie, napríklad výsledkom zjednotenia dvoch objektov je jeden objekt. Arguementom logických operácií môže byť jeden objekt alebo viacero objektov, ktoré sú položkami zoznamu.
 
     U(c)   U([c1,c2 ...])     union
     D(c)   D([c1,c2 ...])     difference
     I(c)   I([c1,c2 ...])     intersection  
 
-### <font color='brown'>  Príklad </font>
+
+````{admonition} Príklad použitia logických operácií  
+:class: dropdown, note 
 
 S využitím knižnice základných komponentov a transformačných metód môžeme vytvárať zložené objekty. Najskôr vytvoríme jednotlivé objekty, pomocou transformačných vzťahov ich posunieme do správnej pozícia a nakoniec ich logickou operáciou zjednotíme do finálneho zloženého objektu.
 
@@ -112,18 +111,19 @@ S využitím knižnice základných komponentov a transformačných metód môž
 b1 = Brace(8, 1/4).BU_Tx(-(3+1/2))  # spojka v rovine XY a presun do stredu 
 c1 = BU_Cylinder(1).BU_Tz(1/2+1/4)  # valec a presun nad spojku
 c1=  c1.BU_Tx(3+1/2)                # presun valca na konec spojky
-c2 = c1.MKy()                       # vytvorenie druheho valca zrkadlenim v osi Y s kopiou
-
+c2 = c1.MKy()                       # vytvorenie druheho valca 
+                                    # zrkadlenim v osi Y s kopiou
 b1.U([c1,c2])                       # zjednotenie objektov
-b1.export_step('part_b1')
+b1.export_step('part_b1')           # export dielu
 ```
-
 
 ```{figure} ./img/b1_f3d.png
 :width: 400px
 
 Vygenerovaný zložený objekt.
 ```
+````
+
 
 ## <font color='purple'> Export komponentov </font>
 

@@ -72,7 +72,7 @@ Základným typom je jednoduchy nosník (Beam_Block), odvodenými typmi sú verz
 
 ### <font color='brown'> Jednoduché nosniky a bloky </font>
 
-Pomocou parametrov funkcie *Beam_Block()* môžeme vytvárať rôzne typy noníkov, blokov a platní.
+Pomocou parametrov funkcie *Beam_Block()* môžeme vytvárať rôzne typy nosníkov, blokov a platní.
 
 ```{code-block} Python
 :caption: Jednoduchý nosník s montážnymi otvormi v xyz smeroch.
