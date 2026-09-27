@@ -7,22 +7,16 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'Stemfie-X'
-copyright = '2026, pf'
-author = 'pf'
+copyright = '2026, LAB - 411'
+author = 'Peter Fabo'
 release = '0.2'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 
-extensions = [
-      "myst_nb",
-      "sphinx_design",
-      "sphinx_copybutton",
-      "sphinx_togglebutton",
-      "sphinx_subfigure",
-      "sphinxcontrib.tikz"
-       ]
+extensions = ["myst_nb", "sphinx_copybutton", "sphinx_design", "sphinxcontrib.plantuml", 
+"sphinx.ext.graphviz", "sphinx_togglebutton", "sphinxcontrib.tikz", "sphinx_subfigure"]
 
 myst_enable_extensions = [
     "amsmath",
@@ -61,3 +55,11 @@ numfig_format = {
 html_theme = 'sphinx_book_theme'
 #html_static_path = ['_static']
 html_logo = "logo_411.png"
+
+plantuml = ["java", "-jar", "./plantuml/plantuml-1.2026.2.jar"]
+
+latex_elements = {
+    'extrapackages': r'\usepackage{xcolor}',
+    'extrapackages': r'\usepackage{fbox}',
+    'extrapackages': r'\usepackage{pgfplots}',
+}

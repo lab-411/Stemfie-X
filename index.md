@@ -66,6 +66,7 @@
 0905_viewer.md
 0910_struktura.md
 0930_3d_tlac.md
+0920_material.md
 ```
 
 ## <font color='purple'> Anotácia </font>   

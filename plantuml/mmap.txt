@@ -1,0 +1,34 @@
+
+
+@startmindmap
+*[#yellow] Staff
+    * MK
+        *_ Spracovanie dát
+            *_ Algoritmy
+            *_ Implementácia STM
+        *_ RF Signály
+            *_ Metódy príjmu
+            *_ SDR
+            *_ Algoritmy
+        *_ Komunikácia a prenos dát
+    * PJ
+        *_ Technológie
+            *_ Materiály
+            *_ 3D Tlač
+            *_ Projekcia
+        *_ IT
+            *_ Servery, Počítače, Prístroje
+            *_ Siete
+            *_ Konfigurácie a prístupy
+        *_ HW
+    * PF
+        *_ Fyzika
+        *_ Simulácie
+            *_ FDTD
+            *_ SPICE
+        *_ Elektronika
+            *_ Návrh
+            *_ Implementácia
+
+
+@endmindmap

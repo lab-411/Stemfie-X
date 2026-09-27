@@ -1,0 +1,82 @@
+@startmindmap
+*[#Orange] Aktivity
+    *[#yellow] Meteo
+        * Atmosféra
+            *_ RF Metódy
+                *_ Obnova predchádzajúceho stavu
+                *_ Vývoj metód
+                    *_ Adaptácia pre RF pásmo do 6GHz
+                    *_ Využitie pseudonáhodných zdrojov
+                    *_ Metódy s oneskorovacími vedeniami s opt. vláknami
+            *_ Klasifikácia javov
+                *_ Fúzia senzorov a prediktívne metódy (KF)
+                *_ Identifikácia atmosferických javov
+                *_ Detekcia
+                    *_ Nemerateľné zrážky a kondenzáty
+                    *_ Čierny ľad
+                    *_ Predikcia vývoja hmly
+                    *_ Denný chod refraktivity
+                    *_ Priestorová distribúcia zrážok
+                    *_ Dynamické parametre atmosferických zmien
+            *_ Vývoj
+                *_ <color:blue>Hardware</color>
+                    *_ SDR
+                    *_ Antény
+                    *_ Meteostanica
+                *_ <color:red>Software</color>
+                    *_ Paralelné algoritmy
+                    *_ Databáza
+                    *_ Vizaulizácia a prezentácia
+                    *_ Mesh-Komunikácia
+        *[#lightblue] DDT
+            *_ RF Metódy
+                *_ Vyžitie prieniku Frenelových zón
+                *_ Koherentná detekcia v LOS
+                *_ Šumový ožarovač aktívneho priestoru
+                *_ Klasifikácia cieľov a ich parametrov
+                *_ Využitie cudzích zdrojov s pseudonáhodným výskytom
+            *_ Vývoj
+                *_ <color:blue>Hardware</color>
+                    *_ Úzkopásmove SDR
+                    *_ Kompozitné antény
+                    *_ Filtre
+                    *_ Detekcia cudzích RF zdrojov, high-speed RT scaner
+                    *_ Komunikačná platforma pre distrib. systém
+                *_ <color:red>Software</color>
+                    *_ Algoritmy detekcie demaskujúcich príznakov
+                    *_ Frekvenčná analýza turbulencie
+
+
+        * Senzory
+            *_ Senzory povrchovej kontaminácie
+            *_ Senzory kondenzácie
+            *_ Senzory transportu tepla a pôdnej vlhkosti
+            *_ Ultra-Low power Long-Range komunikačný systém pre senzory
+
+left side
+    *[#yellow] Kritická infraštruktúra
+        * Dyna
+            *_ Senzory
+                *_ Pasívne single cable
+                *_ Aktívne multistrand
+                *_ Technologická optimalizácia
+            *_ Vývoj
+                *_ Aparatúra
+                *_ Diaľková komunikácia a zber dát
+                *_ Software
+                *_ Databáza
+            *_ Aplikácie
+                *_ Mosty
+                *_ Zemné kotvy
+                *_ Predpäté prvky stavebných konštrukcií
+                *_ Monitorovanie v reálnom čase
+        * Pasívna navigácia
+            *_ Vývoj
+                *_ Pasívne markery
+                *_ Pasívne programovateľné markery
+                *_ VLF detekčný lokalizačný systém
+                *_ Digitálna map
+            *_ Adaptácia
+                *_ Autonómne robotické systémy
+                *_ Autonómne dopravné systémy
+@endmindmap
